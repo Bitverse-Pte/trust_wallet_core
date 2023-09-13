@@ -101,18 +101,18 @@ packages:
     dependency: transitive
     description:
       name: ffi
-      sha256: a38574032c5f1dd06c4aee541789906c12ccaab8ba01446e800d9c5b79c4a978
+      sha256: "13a6ccf6a459a125b3fcdb6ec73bd5ff90822e071207c663bfd1f70062d51d18"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "1.2.1"
   ffigen:
     dependency: "direct dev"
     description:
       name: ffigen
-      sha256: ec6a2439159d27c871d92862fb9f3012ef19d9ec4b0fa383c69c8553b2dd2ac5
+      sha256: "46012325a02479bf844cf672a5cb8eb6a4b5120a2fbd69104f8ac4d60cb16b60"
       url: "https://pub.dev"
     source: hosted
-    version: "6.1.2"
+    version: "4.1.3"
   file:
     dependency: transitive
     description:
@@ -150,7 +150,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.0.2"
+    version: "0.0.2+2023082801"
   fuchsia_remote_debug_protocol:
     dependency: transitive
     description: flutter

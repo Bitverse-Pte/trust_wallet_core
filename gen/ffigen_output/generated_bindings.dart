@@ -12702,8 +12702,8 @@ abstract class TWCoinType {
   static const int TWCoinTypeAeternity = 457;
   static const int TWCoinTypeAion = 425;
   static const int TWCoinTypeBinance = 714;
-  static const int TWCoinTypeBitcoin = 0;
-  static const int TWCoinTypeBitcoinTestnet = 1;
+  static const int TWCoinTypeBitcoin = 1;
+  static const int TWCoinTypeBitcoinTestnet = 20000001;
   static const int TWCoinTypeBitcoinCash = 145;
   static const int TWCoinTypeBitcoinGold = 156;
   static const int TWCoinTypeCallisto = 820;
@@ -12822,6 +12822,10 @@ abstract class TWCoinType {
   static const int TWCoinTypePersistence = 16000118;
   static const int TWCoinTypeAkash = 17000118;
   static const int TWCoinTypeNoble = 18000118;
+  static const int TWCoinTypeMantle = 10005000;
+  static const int TWCoinTypeMantleTestnet = 10005001;
+  static const int TWCoinTypeGoerli = 10000005;
+  static const int TWCoinTypeBitgert = 10032520;
 }
 
 /// CoinTypeConfiguration functions

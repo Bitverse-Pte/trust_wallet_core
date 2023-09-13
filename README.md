@@ -9,7 +9,7 @@ This project is a dart api mapping for trust wallet core, It contain all api for
 2: add bitcoin testnet support for test purpose
 
 #for the included libs, what code changed compare to official repo?
-check [https://github.com/weishirongzhen/wallet-core](https://github.com/weishirongzhen/wallet-core) fork from official repo and change some code.
+check [https://github.com/Bitverse-Pte/wallet-core](https://github.com/Bitverse-Pte/wallet-core) fork from official repo and change some code.
 
 If you want to replace your own build, follow official build step then replace android .aar file and ios .xcframework into following folder
 
