@@ -33,7 +33,17 @@ class PrivateKey {
     return TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));
   }
 
-  PublicKey getPublicKey(int curve, [bool compressed = false]) {
+  PublicKey getPublicKey(int coinType){
+    final data = TWPrivateKeyImpl.getPublicKey(_nativehandle, coinType);
+    return PublicKey._(data);
+  }
+
+  PublicKey getPublicKeyByType(int pubkeyType) {
+    final data = TWPrivateKeyImpl.getPublicKeyByType(_nativehandle, pubkeyType);
+    return PublicKey._(data);
+  }
+
+  PublicKey getPublicKeyByCompressed(int curve, [bool compressed = false]) {
     switch (curve) {
       case TWCurve.TWCurveSECP256k1:
         return getPublicKeySecp256k1(compressed);

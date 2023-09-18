@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
+import 'package:flutter_trust_wallet_core_example/cosmos_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/tron_example.dart';
@@ -35,7 +36,9 @@ class _ExampleState extends State<Example> {
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
+    //String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
+    String mnemonic = "destroy metal hawk trouble best spatial upon sport fall notice supply only";
+    //String mnemonic = "lens merge apology vast reunion someone dutch pond entire gather swear time";
     wallet = HDWallet.createWithMnemonic(mnemonic);
   }
 
@@ -81,6 +84,12 @@ class _ExampleState extends State<Example> {
                     name: 'Bitcoin Transaction',
                     builder: (_) {
                       return BitcoinTransactionExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'Cosmos',
+                    builder: (_) {
+                      return CosmosExample(wallet);
                     },
                   ),
                   _exampleItem(

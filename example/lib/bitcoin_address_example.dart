@@ -21,30 +21,40 @@ class _BitcoinAddressExampleState extends BaseExampleState<BitcoinAddressExample
   void initState() {
     super.initState();
     int coin = TWCoinType.TWCoinTypeBitcoin;
-    final privakye2 = widget.wallet.getKey(coin, "m/44'/0'/0'/0/0");
+    final privakye2 = widget.wallet.getKey(coin, "m/84'/0'/0'/0/0");
     logger.d(hex.encode(privakye2.data()));
     final publicKey2 = privakye2.getPublicKeySecp256k1(true);
     logger.d(widget.wallet.getExtendedPublicKey(TWPurpose.TWPurposeBIP44, coin, TWHDVersion.TWHDVersionXPUB));
     final bitcoinAddress = BitcoinAddress.createWithPublicKey(publicKey2, 0);
     logger.d(bitcoinAddress.description());
-    final segwitAddress = SegwitAddress.createWithPublicKey(HRP.Bitcoin, publicKey2);
-    final segwitAddressTestnet = SegwitAddress.createWithPublicKey(HRP.BitcoinTestnet, publicKey2);
+
+    final segwitAddress = SegwitAddress.createWithPublicKey(TWCoinType.TWCoinTypeHRP(TWCoinType.TWCoinTypeBitcoin), publicKey2);
     logger.d(segwitAddress.description());
-    logger.d(segwitAddressTestnet.description());
+
+    final privatekeytestnet = widget.wallet.getKey(coin, "m/84'/1'/0'/0/0");
+    final publicKeyTestnet = privatekeytestnet.getPublicKeySecp256k1(true);
+    final segwitAddressTestnet = SegwitAddress.createWithPublicKey(TWCoinType.TWCoinTypeHRP(TWCoinType.TWCoinTypeBitcoinTestnet), publicKeyTestnet);
+
+    logger.d('testnet: '+segwitAddressTestnet.description());
     final address2 = AnyAddress.createWithPublicKey(publicKey2, 0);
 
     final pubKeyHash = Hash.hashSHA256RIPEMD(publicKey2.data());
     final bitcoinScript = BitcoinScript.buildPayToWitnessPubkeyHash(pubKeyHash);
+
     final scriptHash = Hash.hashSHA256RIPEMD(bitcoinScript.data());
     final data = Uint8List.fromList([5]..addAll(scriptHash.toList()));
     final bitcoinAddress2 = BitcoinAddress.createWithData(data);
     logger.d(bitcoinAddress2.description());
 
-
     final bip84Privakey = widget.wallet.getKeyForCoin(TWCoinType.TWCoinTypeBitcoin);
+    final publicKeyBip84 = bip84Privakey.getPublicKeySecp256k1(true);
+    final segwitAddressBip84 = SegwitAddress.createWithPublicKey(HRP.Bitcoin, publicKeyBip84);
+    logger.d(segwitAddressBip84.description());
+
     final wif = WIF.encode(hex.encode(bip84Privakey.data()), TWCoinType.TWCoinTypeBitcoin);
     logger.d("bip84 origin privakey = ${hex.encode(bip84Privakey.data())}");
     logger.d("bip84 wif privakey = $wif");
+
 
     final keystore = StoredKey.importHDWallet(widget.wallet.mnemonic(), "wtf", "123", TWCoinType.TWCoinTypeBitcoin);
     logger.d("keystore json = ${keystore?.exportJson()}");
