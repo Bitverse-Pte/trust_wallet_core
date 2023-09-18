@@ -19,15 +19,15 @@ class _CosmosExampleState extends BaseExampleState<CosmosExample> {
   @override
   void initState() {
     super.initState();
-    int coinId = 20000001;
-    String derivationPath = "m/84'/1'/0'/0/0";
+    int coinId = 60;
+    String derivationPath = "m/44'/60'/0'/0/0";
 
     final privateKey = widget.wallet.getKey(coinId, derivationPath);
     String address1 = CoinType.deriveAddress(coinId, privateKey);
     logger.d("1: $address1");
 
     int pkType = TWCoinType.TWCoinTypePublicKeyType(coinId);
-    PublicKey? publicKey = privateKey.getPublicKey(pkType);
+    PublicKey? publicKey = privateKey.getPublicKeyByType(pkType);
     String address2 = CoinType.deriveAddressFromPublicKey(coinId, publicKey);
     logger.d("2: $address2");
 
