@@ -19,7 +19,7 @@ class _CosmosExampleState extends BaseExampleState<CosmosExample> {
   @override
   void initState() {
     super.initState();
-    int coinId = 60;
+    int coinId = 118;
     String derivationPath = "m/44'/60'/0'/0/0";
 
     final privateKey = widget.wallet.getKey(coinId, derivationPath);
