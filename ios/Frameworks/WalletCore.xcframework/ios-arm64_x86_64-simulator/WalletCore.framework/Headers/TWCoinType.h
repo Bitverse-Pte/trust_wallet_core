@@ -9,6 +9,7 @@
 #include "TWBase.h"
 #include "TWBlockchain.h"
 #include "TWCurve.h"
+#include "TWDerivation.h"
 #include "TWHDVersion.h"
 #include "TWHRP.h"
 #include "TWPurpose.h"
@@ -32,13 +33,14 @@ enum TWCoinType {
     TWCoinTypeAeternity = 457,
     TWCoinTypeAion = 425,
     TWCoinTypeBinance = 714,
-    TWCoinTypeBitcoin = 0,
-    TWCoinTypeBitcoinTestnet = 1,
+    TWCoinTypeBitcoin = 1,
+    TWCoinTypeBitcoinTestnet = 20000001,
     TWCoinTypeBitcoinCash = 145,
     TWCoinTypeBitcoinGold = 156,
     TWCoinTypeCallisto = 820,
     TWCoinTypeCardano = 1815, // Note: Cardano Shelley testnet uses purpose 1852 (not 44) 1852/1815
     TWCoinTypeCosmos = 118,
+    TWCoinTypePivx = 119,
     TWCoinTypeDash = 5,
     TWCoinTypeDecred = 42,
     TWCoinTypeDigiByte = 20,
@@ -93,6 +95,7 @@ enum TWCoinType {
     TWCoinTypeBandChain = 494,
     TWCoinTypeSmartChainLegacy = 10000714,
     TWCoinTypeSmartChain = 20000714,
+    TWCoinTypeTBinance = 30000714,
     TWCoinTypeOasis = 474,
     TWCoinTypePolygon = 966,
     TWCoinTypeTHORChain = 931,
@@ -109,10 +112,15 @@ enum TWCoinType {
     TWCoinTypeRonin = 10002020,
     TWCoinTypeOsmosis = 10000118,
     TWCoinTypeECash = 899,
+    TWCoinTypeIOST = 291,
     TWCoinTypeCronosChain = 10000025,
     TWCoinTypeSmartBitcoinCash = 10000145,
     TWCoinTypeKuCoinCommunityChain = 10000321,
+    TWCoinTypeBitcoinDiamond = 999,
     TWCoinTypeBoba = 10000288,
+    TWCoinTypeSyscoin = 57,
+    TWCoinTypeVerge = 77,
+    TWCoinTypeZen = 121,
     TWCoinTypeMetis = 1001088,
     TWCoinTypeAurora = 1323161554,
     TWCoinTypeEvmos = 10009001,
@@ -123,9 +131,12 @@ enum TWCoinType {
     TWCoinTypeKlaytn = 10008217,
     TWCoinTypeMeter = 18000,
     TWCoinTypeOKXChain = 996,
+    TWCoinTypeStratis = 105105,
+    TWCoinTypeKomodo = 141,
     TWCoinTypeNervos = 309,
     TWCoinTypeEverscale = 396,
     TWCoinTypeAptos = 637,
+    TWCoinTypeNebl = 146,
     TWCoinTypeHedera = 3030,
     TWCoinTypeSecret = 529,
     TWCoinTypeNativeInjective = 10000060,
@@ -152,6 +163,23 @@ enum TWCoinType {
     TWCoinTypePersistence = 16000118,
     TWCoinTypeAkash = 17000118,
     TWCoinTypeNoble = 18000118,
+    TWCoinTypeScroll = 534353,
+    TWCoinTypeRootstock = 137,
+    TWCoinTypeThetaFuel = 361,
+    TWCoinTypeConfluxeSpace = 1030,
+    TWCoinTypeAcala = 787,
+    TWCoinTypeAcalaEVM = 10000787,
+    TWCoinTypeOpBNB = 204,
+    TWCoinTypeNeon = 245022934,
+    TWCoinTypeBase = 8453,
+    TWCoinTypeSei = 19000118,
+    TWCoinTypeArbitrumNova = 10042170,
+    TWCoinTypeLinea = 59144,
+    TWCoinTypeGreenfield = 5600,
+    TWCoinTypeMantle = 10005000,
+    TWCoinTypeMantleTestnet = 10005001,
+    TWCoinTypeGoerli = 10000005,
+    TWCoinTypeBitgert = 10032520,
 };
 
 /// Returns the blockchain for a coin type.
@@ -229,6 +257,12 @@ TWString* _Nonnull TWCoinTypeDeriveAddress(enum TWCoinType coin,
 TW_EXPORT_METHOD
 TWString* _Nonnull TWCoinTypeDeriveAddressFromPublicKey(enum TWCoinType coin,
                                                         struct TWPublicKey* _Nonnull publicKey);
+
+/// Derives the address for a particular coin from the public key with the derivation.
+TW_EXPORT_METHOD
+TWString* _Nonnull TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(enum TWCoinType coin,
+                                                                     struct TWPublicKey* _Nonnull publicKey,
+                                                                     enum TWDerivation derivation);
 
 /// HRP for this coin type
 ///

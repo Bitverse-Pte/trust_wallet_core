@@ -31,14 +31,14 @@ class Example extends StatefulWidget {
 
 class _ExampleState extends State<Example> {
   late HDWallet wallet;
+  //String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
+  String mnemonic = "destroy metal hawk trouble best spatial upon sport fall notice supply only";
+  //String mnemonic = "lens merge apology vast reunion someone dutch pond entire gather swear time";
 
   @override
   void initState() {
     FlutterTrustWalletCore.init();
     super.initState();
-    //String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
-    String mnemonic = "destroy metal hawk trouble best spatial upon sport fall notice supply only";
-    //String mnemonic = "lens merge apology vast reunion someone dutch pond entire gather swear time";
     wallet = HDWallet.createWithMnemonic(mnemonic);
   }
 
@@ -110,7 +110,8 @@ class _ExampleState extends State<Example> {
             ElevatedButton(
               onPressed: () async {
                 wallet.delete();
-                wallet = HDWallet();
+                //wallet = HDWallet();
+                wallet = HDWallet.createWithMnemonic(mnemonic);
                 setState(() {});
               },
               child: Text("gen"),

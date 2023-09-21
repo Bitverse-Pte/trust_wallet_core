@@ -19,17 +19,25 @@ class _CosmosExampleState extends BaseExampleState<CosmosExample> {
   @override
   void initState() {
     super.initState();
-    int coinId = 118;
-    String derivationPath = "m/44'/60'/0'/0/0";
+    int coinId = TWCoinType.TWCoinTypeCosmos;
+    /// 可以指定派生路径
+    /// String derivationPath = "m/44'/60'/0'/0/0";
+    /// final privateKey = widget.wallet.getKey(coinId, derivationPath);
+    /// 也可以不指定派生路径，直接使用底层库默认的
+    final privateKey = widget.wallet.getKeyForCoin(coinId);
 
-    final privateKey = widget.wallet.getKey(coinId, derivationPath);
+    /// 通过私钥直接派生
     String address1 = CoinType.deriveAddress(coinId, privateKey);
     logger.d("1: $address1");
 
+    /// 通过私钥生成公钥后再派生
     int pkType = TWCoinType.TWCoinTypePublicKeyType(coinId);
     PublicKey? publicKey = privateKey.getPublicKeyByType(pkType);
     String address2 = CoinType.deriveAddressFromPublicKey(coinId, publicKey);
     logger.d("2: $address2");
+
+    /// 也可以通过coinId直接获取地址
+    logger.d("address ${widget.wallet.getAddressForCoin(118)}");
 
     privateKey.delete();
     publicKey.delete();

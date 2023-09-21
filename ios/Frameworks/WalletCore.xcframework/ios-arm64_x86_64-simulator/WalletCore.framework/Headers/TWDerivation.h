@@ -21,10 +21,10 @@ enum TWDerivation {
     TWDerivationBitcoinSegwit = 2,
     TWDerivationBitcoinLegacy = 3,
     TWDerivationBitcoinTestnet = 4,
-    TWDerivationBitcoinTestnetSegwit = 5,
-    TWDerivationBitcoinTestnetLegacy = 6,
-    TWDerivationLitecoinLegacy = 7,
-    TWDerivationSolanaSolana = 8,
+    TWDerivationLitecoinLegacy = 5,
+    TWDerivationSolanaSolana = 6,
+    TWDerivationBitcoinTestnetSegwit = 7,
+    TWDerivationBitcoinTestnetLegacy = 8,
 };
 
 TW_EXTERN_C_END

@@ -21,8 +21,8 @@ class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactio
     super.initState();
     int coin = TWCoinType.TWCoinTypeBitcoinTestnet;
     final addressBtc = widget.wallet.getAddressForCoin(coin);
-    final toAddress = "tb1qks8l9haxjszn9r6yf2dm65ed3w6wmz85r379ms";
-    final changeAddress = "mvcJcHN3ZhELVVhncfjARUMtfRELwhGXgL";
+    final toAddress = "tb1qpe908rcwfwgvaw4taey8gm5jefwzw5kvqhulah";
+    final changeAddress = "tb1qghgse35j7d3hmu5j9eplhhdw9ts90747s50mfx";
     final secretPrivateKeyBtc = widget.wallet.getKeyForCoin(coin);
     final signingInput = Bitcoin.SigningInput(
       amount: $fixnum.Int64.parseInt('37000'),
@@ -33,18 +33,18 @@ class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactio
       coinType: coin,
       utxo: [
         Bitcoin.UnspentTransaction(
-          amount: $fixnum.Int64.parseInt('20000'),
+          amount: $fixnum.Int64.parseInt('1625420'),
           outPoint: Bitcoin.OutPoint(
-            hash: hex.decode('1b23757cdc023b3ac9f033522abb9f845815b65cce1e25411e8ad950899c0e71').reversed.toList(),
+            hash: hex.decode('0000000000002962091d1fed512cd5d51ae4b10e8261cdfa2abf004ce94fe9f1').reversed.toList(),
             index: 0,
             sequence: 4294967295,
           ),
           script: BitcoinScript.lockScriptForAddress(addressBtc, coin).data().toList(),
         ),
         Bitcoin.UnspentTransaction(
-          amount: $fixnum.Int64.parseInt('20000'),
+          amount: $fixnum.Int64.parseInt('1192500'),
           outPoint: Bitcoin.OutPoint(
-            hash: hex.decode('7611002ff116fad20ef12ad30010a07d5b25edf37209504dd42a6a4c5c27aa75').reversed.toList(),
+            hash: hex.decode('00000000000000798d0d5f4a96d6074b9b9550782c24cc4c2c25d37da2558908').reversed.toList(),
             index: 0,
             sequence: 4294967295,
           ),
