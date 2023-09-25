@@ -1,31 +1,21 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Nebulas.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Input data necessary to create a signed transaction.
 class SigningInput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasPrice', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasLimit', $pb.PbFieldType.OY)
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
-    ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp', $pb.PbFieldType.OY)
-    ..aOS(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload')
-    ..a<$core.List<$core.int>>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     $core.String? fromAddress,
     $core.List<$core.int>? chainId,
@@ -38,41 +28,57 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.String? payload,
     $core.List<$core.int>? privateKey,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
     if (nonce != null) {
-      _result.nonce = nonce;
+      $result.nonce = nonce;
     }
     if (gasPrice != null) {
-      _result.gasPrice = gasPrice;
+      $result.gasPrice = gasPrice;
     }
     if (gasLimit != null) {
-      _result.gasLimit = gasLimit;
+      $result.gasLimit = gasLimit;
     }
     if (toAddress != null) {
-      _result.toAddress = toAddress;
+      $result.toAddress = toAddress;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (timestamp != null) {
-      _result.timestamp = timestamp;
+      $result.timestamp = timestamp;
     }
     if (payload != null) {
-      _result.payload = payload;
+      $result.payload = payload;
     }
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
-    return _result;
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fromAddress')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'chainId', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'gasPrice', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'gasLimit', $pb.PbFieldType.OY)
+    ..aOS(6, _omitFieldNames ? '' : 'toAddress')
+    ..a<$core.List<$core.int>>(7, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(8, _omitFieldNames ? '' : 'timestamp', $pb.PbFieldType.OY)
+    ..aOS(9, _omitFieldNames ? '' : 'payload')
+    ..a<$core.List<$core.int>>(10, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -82,8 +88,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -92,6 +100,7 @@ class SigningInput extends $pb.GeneratedMessage {
   static SigningInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningInput>(create);
   static SigningInput? _defaultInstance;
 
+  /// sender's address.
   @$pb.TagNumber(1)
   $core.String get fromAddress => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -101,6 +110,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// Chain identifier (uint256, serialized little endian)
   @$pb.TagNumber(2)
   $core.List<$core.int> get chainId => $_getN(1);
   @$pb.TagNumber(2)
@@ -110,6 +120,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearChainId() => clearField(2);
 
+  /// Nonce (uint256, serialized little endian)
   @$pb.TagNumber(3)
   $core.List<$core.int> get nonce => $_getN(2);
   @$pb.TagNumber(3)
@@ -119,6 +130,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearNonce() => clearField(3);
 
+  /// Gas price (uint256, serialized little endian)
   @$pb.TagNumber(4)
   $core.List<$core.int> get gasPrice => $_getN(3);
   @$pb.TagNumber(4)
@@ -128,6 +140,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearGasPrice() => clearField(4);
 
+  /// Gas limit (uint256, serialized little endian)
   @$pb.TagNumber(5)
   $core.List<$core.int> get gasLimit => $_getN(4);
   @$pb.TagNumber(5)
@@ -137,6 +150,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearGasLimit() => clearField(5);
 
+  /// Recipient's address.
   @$pb.TagNumber(6)
   $core.String get toAddress => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -146,6 +160,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearToAddress() => clearField(6);
 
+  /// Amount to send in wei, 1 NAS = 10^18 Wei (uint256, serialized little endian)
   @$pb.TagNumber(7)
   $core.List<$core.int> get amount => $_getN(6);
   @$pb.TagNumber(7)
@@ -155,6 +170,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearAmount() => clearField(7);
 
+  /// Timestamp to create transaction (uint256, serialized little endian)
   @$pb.TagNumber(8)
   $core.List<$core.int> get timestamp => $_getN(7);
   @$pb.TagNumber(8)
@@ -164,6 +180,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearTimestamp() => clearField(8);
 
+  /// Optional payload
   @$pb.TagNumber(9)
   $core.String get payload => $_getSZ(8);
   @$pb.TagNumber(9)
@@ -173,6 +190,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearPayload() => clearField(9);
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(10)
   $core.List<$core.int> get privateKey => $_getN(9);
   @$pb.TagNumber(10)
@@ -183,34 +201,36 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPrivateKey() => clearField(10);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'algorithm', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature', $pb.PbFieldType.OY)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'raw')
-    ..hasRequiredFields = false
-  ;
-
-  SigningOutput._() : super();
   factory SigningOutput({
     $core.int? algorithm,
     $core.List<$core.int>? signature,
     $core.String? raw,
   }) {
-    final _result = create();
+    final $result = create();
     if (algorithm != null) {
-      _result.algorithm = algorithm;
+      $result.algorithm = algorithm;
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
     if (raw != null) {
-      _result.raw = raw;
+      $result.raw = raw;
     }
-    return _result;
+    return $result;
   }
+  SigningOutput._() : super();
   factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'algorithm', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'raw')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -220,8 +240,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -230,6 +252,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
+  /// Algorithm code
   @$pb.TagNumber(1)
   $core.int get algorithm => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -239,6 +262,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAlgorithm() => clearField(1);
 
+  /// The signature
   @$pb.TagNumber(2)
   $core.List<$core.int> get signature => $_getN(1);
   @$pb.TagNumber(2)
@@ -248,6 +272,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSignature() => clearField(2);
 
+  /// Encoded transaction
   @$pb.TagNumber(3)
   $core.String get raw => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -258,29 +283,31 @@ class SigningOutput extends $pb.GeneratedMessage {
   void clearRaw() => clearField(3);
 }
 
+/// Generic data
 class Data extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Data', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type')
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  Data._() : super();
   factory Data({
     $core.String? type,
     $core.List<$core.int>? payload,
   }) {
-    final _result = create();
+    final $result = create();
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (payload != null) {
-      _result.payload = payload;
+      $result.payload = payload;
     }
-    return _result;
+    return $result;
   }
+  Data._() : super();
   factory Data.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Data.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Data', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'type')
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'payload', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -290,8 +317,10 @@ class Data extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Data copyWith(void Function(Data) updates) => super.copyWith((message) => updates(message as Data)) as Data; // ignore: deprecated_member_use
+  Data copyWith(void Function(Data) updates) => super.copyWith((message) => updates(message as Data)) as Data;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Data create() => Data._();
   Data createEmptyInstance() => create();
@@ -319,24 +348,8 @@ class Data extends $pb.GeneratedMessage {
   void clearPayload() => clearField(2);
 }
 
+/// Raw transaction data
 class RawTransaction extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RawTransaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hash', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value', $pb.PbFieldType.OY)
-    ..a<$fixnum.Int64>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..aInt64(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp')
-    ..aOM<Data>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', subBuilder: Data.create)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasPrice', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'gasLimit', $pb.PbFieldType.OY)
-    ..a<$core.int>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'alg', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sign', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  RawTransaction._() : super();
   factory RawTransaction({
     $core.List<$core.int>? hash,
     $core.List<$core.int>? from,
@@ -351,47 +364,65 @@ class RawTransaction extends $pb.GeneratedMessage {
     $core.int? alg,
     $core.List<$core.int>? sign,
   }) {
-    final _result = create();
+    final $result = create();
     if (hash != null) {
-      _result.hash = hash;
+      $result.hash = hash;
     }
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (to != null) {
-      _result.to = to;
+      $result.to = to;
     }
     if (value != null) {
-      _result.value = value;
+      $result.value = value;
     }
     if (nonce != null) {
-      _result.nonce = nonce;
+      $result.nonce = nonce;
     }
     if (timestamp != null) {
-      _result.timestamp = timestamp;
+      $result.timestamp = timestamp;
     }
     if (data != null) {
-      _result.data = data;
+      $result.data = data;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
     if (gasPrice != null) {
-      _result.gasPrice = gasPrice;
+      $result.gasPrice = gasPrice;
     }
     if (gasLimit != null) {
-      _result.gasLimit = gasLimit;
+      $result.gasLimit = gasLimit;
     }
     if (alg != null) {
-      _result.alg = alg;
+      $result.alg = alg;
     }
     if (sign != null) {
-      _result.sign = sign;
+      $result.sign = sign;
     }
-    return _result;
+    return $result;
   }
+  RawTransaction._() : super();
   factory RawTransaction.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RawTransaction.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RawTransaction', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Nebulas.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'to', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'value', $pb.PbFieldType.OY)
+    ..a<$fixnum.Int64>(5, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..aInt64(6, _omitFieldNames ? '' : 'timestamp')
+    ..aOM<Data>(7, _omitFieldNames ? '' : 'data', subBuilder: Data.create)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'chainId', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(9, _omitFieldNames ? '' : 'gasPrice', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(10, _omitFieldNames ? '' : 'gasLimit', $pb.PbFieldType.OY)
+    ..a<$core.int>(11, _omitFieldNames ? '' : 'alg', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(12, _omitFieldNames ? '' : 'sign', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -401,8 +432,10 @@ class RawTransaction extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RawTransaction copyWith(void Function(RawTransaction) updates) => super.copyWith((message) => updates(message as RawTransaction)) as RawTransaction; // ignore: deprecated_member_use
+  RawTransaction copyWith(void Function(RawTransaction) updates) => super.copyWith((message) => updates(message as RawTransaction)) as RawTransaction;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RawTransaction create() => RawTransaction._();
   RawTransaction createEmptyInstance() => create();
@@ -411,6 +444,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   static RawTransaction getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RawTransaction>(create);
   static RawTransaction? _defaultInstance;
 
+  /// tx hash
   @$pb.TagNumber(1)
   $core.List<$core.int> get hash => $_getN(0);
   @$pb.TagNumber(1)
@@ -420,6 +454,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearHash() => clearField(1);
 
+  /// source address
   @$pb.TagNumber(2)
   $core.List<$core.int> get from => $_getN(1);
   @$pb.TagNumber(2)
@@ -429,6 +464,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFrom() => clearField(2);
 
+  /// destination address
   @$pb.TagNumber(3)
   $core.List<$core.int> get to => $_getN(2);
   @$pb.TagNumber(3)
@@ -438,6 +474,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearTo() => clearField(3);
 
+  /// amount (uint256, serialized little endian)
   @$pb.TagNumber(4)
   $core.List<$core.int> get value => $_getN(3);
   @$pb.TagNumber(4)
@@ -447,6 +484,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearValue() => clearField(4);
 
+  /// Nonce (should be larger than in the last transaction of the account)
   @$pb.TagNumber(5)
   $fixnum.Int64 get nonce => $_getI64(4);
   @$pb.TagNumber(5)
@@ -456,6 +494,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearNonce() => clearField(5);
 
+  /// transaction timestamp
   @$pb.TagNumber(6)
   $fixnum.Int64 get timestamp => $_getI64(5);
   @$pb.TagNumber(6)
@@ -465,6 +504,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearTimestamp() => clearField(6);
 
+  /// generic data
   @$pb.TagNumber(7)
   Data get data => $_getN(6);
   @$pb.TagNumber(7)
@@ -476,6 +516,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   Data ensureData() => $_ensure(6);
 
+  /// chain ID (4 bytes)
   @$pb.TagNumber(8)
   $core.int get chainId => $_getIZ(7);
   @$pb.TagNumber(8)
@@ -485,6 +526,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearChainId() => clearField(8);
 
+  /// gas price (uint256, serialized little endian)
   @$pb.TagNumber(9)
   $core.List<$core.int> get gasPrice => $_getN(8);
   @$pb.TagNumber(9)
@@ -494,6 +536,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearGasPrice() => clearField(9);
 
+  /// gas limit (uint256, serialized little endian)
   @$pb.TagNumber(10)
   $core.List<$core.int> get gasLimit => $_getN(9);
   @$pb.TagNumber(10)
@@ -503,6 +546,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(10)
   void clearGasLimit() => clearField(10);
 
+  /// algorithm
   @$pb.TagNumber(11)
   $core.int get alg => $_getIZ(10);
   @$pb.TagNumber(11)
@@ -512,6 +556,7 @@ class RawTransaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(11)
   void clearAlg() => clearField(11);
 
+  /// signature
   @$pb.TagNumber(12)
   $core.List<$core.int> get sign => $_getN(11);
   @$pb.TagNumber(12)
@@ -522,3 +567,6 @@ class RawTransaction extends $pb.GeneratedMessage {
   void clearSign() => clearField(12);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

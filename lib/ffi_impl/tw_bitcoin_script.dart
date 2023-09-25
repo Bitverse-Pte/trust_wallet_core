@@ -371,6 +371,65 @@ abstract class TWBitcoinScript {
   static late final _TWBitcoinScriptBuildPayToWitnessScriptHashPtr = _lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>('TWBitcoinScriptBuildPayToWitnessScriptHash');
   static late final _TWBitcoinScriptBuildPayToWitnessScriptHash = _TWBitcoinScriptBuildPayToWitnessScriptHashPtr.asFunction<Pointer<Void> Function(Pointer<Void>)>();
 
+
+  /// Builds the Ordinals inscripton for BRC20 transfer.
+  ///
+  /// \param ticker ticker of the brc20
+  /// \param amount uint64 transfer amount
+  /// \param pubkey Non-null pointer to a pubkey
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
+  Pointer<Void> TWBitcoinScriptBuildBRC20InscribeTransfer(
+      Pointer<Utf8> ticker,
+      Pointer<Utf8> amount,
+      Pointer<Void> pubkey,
+      ) {
+    return _TWBitcoinScriptBuildBRC20InscribeTransfer(
+      ticker,
+      amount,
+      pubkey,
+    );
+  }
+
+  late final _TWBitcoinScriptBuildBRC20InscribeTransferPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Utf8>,
+              Pointer<Utf8>, Pointer<Void>)>>(
+      'TWBitcoinScriptBuildBRC20InscribeTransfer');
+  late final _TWBitcoinScriptBuildBRC20InscribeTransfer =
+  _TWBitcoinScriptBuildBRC20InscribeTransferPtr.asFunction<
+      Pointer<Void> Function(Pointer<Utf8>,
+          Pointer<Utf8>, Pointer<Void>)>();
+
+  /// Builds the Ordinals inscripton for NFT construction.
+  ///
+  /// \param mimeType the MIME type of the payload
+  /// \param payload the payload to inscribe
+  /// \param pubkey Non-null pointer to a pubkey
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
+  Pointer<Void> TWBitcoinScriptBuildOrdinalNftInscription(
+      Pointer<Utf8> mimeType,
+      Pointer<Void> payload,
+      Pointer<Void> pubkey,
+      ) {
+    return _TWBitcoinScriptBuildOrdinalNftInscription(
+      mimeType,
+      payload,
+      pubkey,
+    );
+  }
+
+  late final _TWBitcoinScriptBuildOrdinalNftInscriptionPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Utf8>,
+              Pointer<Void>, Pointer<Void>)>>(
+      'TWBitcoinScriptBuildOrdinalNftInscription');
+  late final _TWBitcoinScriptBuildOrdinalNftInscription =
+  _TWBitcoinScriptBuildOrdinalNftInscriptionPtr.asFunction<
+      Pointer<Void> Function(Pointer<Utf8>,
+          Pointer<Void>, Pointer<Void>)>();
+
   /// Builds a appropriate lock script for the given address..
   ///
   /// \param address Non-null pointer to an address
@@ -389,6 +448,34 @@ abstract class TWBitcoinScript {
 
   static late final _TWBitcoinScriptLockScriptForAddressPtr = _lookup<NativeFunction<Pointer<Void> Function(Pointer<Utf8>, Int32)>>('TWBitcoinScriptLockScriptForAddress');
   static late final _TWBitcoinScriptLockScriptForAddress = _TWBitcoinScriptLockScriptForAddressPtr.asFunction<Pointer<Void> Function(Pointer<Utf8>, int)>();
+
+
+  /// Builds a appropriate lock script for the given address with replay.
+  Pointer<Void> TWBitcoinScriptLockScriptForAddressReplay(
+      Pointer<Utf8> address,
+      int coin,
+      Pointer<Void> blockHash,
+      int blockHeight,
+      ) {
+    return _TWBitcoinScriptLockScriptForAddressReplay(
+      address,
+      coin,
+      blockHash,
+      blockHeight,
+    );
+  }
+
+  late final _TWBitcoinScriptLockScriptForAddressReplayPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+              Pointer<Utf8>,
+              Int32,
+              Pointer<Void>,
+              Int64)>>('TWBitcoinScriptLockScriptForAddressReplay');
+  late final _TWBitcoinScriptLockScriptForAddressReplay =
+  _TWBitcoinScriptLockScriptForAddressReplayPtr.asFunction<
+      Pointer<Void> Function(
+          Pointer<Utf8>, int, Pointer<Void>, int)>();
 
   /// Return the default HashType for the given coin, such as TWBitcoinSigHashTypeAll.
   ///

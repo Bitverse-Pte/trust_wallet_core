@@ -177,6 +177,14 @@ part 'ffi_impl/tw_transaction_compiler.dart';
 
 part 'ffi_impl/tw_tron_message_signer.dart';
 
+part 'ffi_impl/tw_web_authn.dart';
+
+part 'ffi_impl/tw_bitcoin_fee.dart';
+
+part 'ffi_impl/tw_asn_parser.dart';
+
+part 'ffi_impl/tw_barz.dart';
+
 
 late DynamicLibrary walletCoreLib;
 

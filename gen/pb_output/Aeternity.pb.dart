@@ -1,29 +1,21 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Aeternity.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:fixnum/fixnum.dart' as $fixnum;
 import 'package:protobuf/protobuf.dart' as $pb;
 
+/// Input data necessary to create a signed transaction.
 class SigningInput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Aeternity.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fee', $pb.PbFieldType.OY)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'payload')
-    ..a<$fixnum.Int64>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ttl', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$fixnum.Int64>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$core.List<$core.int>>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     $core.String? fromAddress,
     $core.String? toAddress,
@@ -34,35 +26,49 @@ class SigningInput extends $pb.GeneratedMessage {
     $fixnum.Int64? nonce,
     $core.List<$core.int>? privateKey,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (toAddress != null) {
-      _result.toAddress = toAddress;
+      $result.toAddress = toAddress;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (fee != null) {
-      _result.fee = fee;
+      $result.fee = fee;
     }
     if (payload != null) {
-      _result.payload = payload;
+      $result.payload = payload;
     }
     if (ttl != null) {
-      _result.ttl = ttl;
+      $result.ttl = ttl;
     }
     if (nonce != null) {
-      _result.nonce = nonce;
+      $result.nonce = nonce;
     }
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
-    return _result;
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Aeternity.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fromAddress')
+    ..aOS(2, _omitFieldNames ? '' : 'toAddress')
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'fee', $pb.PbFieldType.OY)
+    ..aOS(5, _omitFieldNames ? '' : 'payload')
+    ..a<$fixnum.Int64>(6, _omitFieldNames ? '' : 'ttl', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$fixnum.Int64>(7, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.List<$core.int>>(8, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -72,8 +78,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -82,6 +90,7 @@ class SigningInput extends $pb.GeneratedMessage {
   static SigningInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningInput>(create);
   static SigningInput? _defaultInstance;
 
+  /// Address of the sender with "ak_" prefix
   @$pb.TagNumber(1)
   $core.String get fromAddress => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -91,6 +100,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// Address of the recipient with "ak_" prefix
   @$pb.TagNumber(2)
   $core.String get toAddress => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -100,6 +110,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearToAddress() => clearField(2);
 
+  /// Amount (uint256, serialized little endian)
   @$pb.TagNumber(3)
   $core.List<$core.int> get amount => $_getN(2);
   @$pb.TagNumber(3)
@@ -109,6 +120,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAmount() => clearField(3);
 
+  /// Fee amount (uint256, serialized little endian)
   @$pb.TagNumber(4)
   $core.List<$core.int> get fee => $_getN(3);
   @$pb.TagNumber(4)
@@ -118,6 +130,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearFee() => clearField(4);
 
+  /// Message, optional
   @$pb.TagNumber(5)
   $core.String get payload => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -127,6 +140,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearPayload() => clearField(5);
 
+  /// Time to live until block height
   @$pb.TagNumber(6)
   $fixnum.Int64 get ttl => $_getI64(5);
   @$pb.TagNumber(6)
@@ -136,6 +150,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearTtl() => clearField(6);
 
+  /// Nonce (should be larger than in the last transaction of the account)
   @$pb.TagNumber(7)
   $fixnum.Int64 get nonce => $_getI64(6);
   @$pb.TagNumber(7)
@@ -145,6 +160,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearNonce() => clearField(7);
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(8)
   $core.List<$core.int> get privateKey => $_getN(7);
   @$pb.TagNumber(8)
@@ -155,29 +171,31 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPrivateKey() => clearField(8);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Aeternity.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature')
-    ..hasRequiredFields = false
-  ;
-
-  SigningOutput._() : super();
   factory SigningOutput({
     $core.String? encoded,
     $core.String? signature,
   }) {
-    final _result = create();
+    final $result = create();
     if (encoded != null) {
-      _result.encoded = encoded;
+      $result.encoded = encoded;
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
-    return _result;
+    return $result;
   }
+  SigningOutput._() : super();
   factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Aeternity.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'encoded')
+    ..aOS(2, _omitFieldNames ? '' : 'signature')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -187,8 +205,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -197,6 +217,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
+  /// Signed and encoded transaction bytes, Base64 with checksum
   @$pb.TagNumber(1)
   $core.String get encoded => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -206,6 +227,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
 
+  /// Signature, Base58 with checksum
   @$pb.TagNumber(2)
   $core.String get signature => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -216,3 +238,6 @@ class SigningOutput extends $pb.GeneratedMessage {
   void clearSignature() => clearField(2);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

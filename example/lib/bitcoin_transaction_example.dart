@@ -9,13 +9,16 @@ import 'package:fixnum/fixnum.dart' as $fixnum;
 class BitcoinTransactionExample extends BaseExample {
   final HDWallet wallet;
 
-  const BitcoinTransactionExample(this.wallet, {Key? key}) : super('Bitcoin Transaction', key: key);
+  const BitcoinTransactionExample(this.wallet, {Key? key})
+      : super('Bitcoin Transaction', key: key);
 
   @override
-  _BitcoinTransactionExampleState createState() => _BitcoinTransactionExampleState();
+  _BitcoinTransactionExampleState createState() =>
+      _BitcoinTransactionExampleState();
 }
 
-class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactionExample> {
+class _BitcoinTransactionExampleState
+    extends BaseExampleState<BitcoinTransactionExample> {
   @override
   void initState() {
     super.initState();
@@ -24,8 +27,12 @@ class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactio
     final toAddress = "tb1qpe908rcwfwgvaw4taey8gm5jefwzw5kvqhulah";
     final changeAddress = "tb1qghgse35j7d3hmu5j9eplhhdw9ts90747s50mfx";
     final secretPrivateKeyBtc = widget.wallet.getKeyForCoin(coin);
+    BitcoinScript script = BitcoinScript.lockScriptForAddress(addressBtc, coin);
+    print("2: ${script.isPayToScriptHash()}");
+    print("3: ${script.isPayToWitnessScriptHash()}");
+    print("4: ${script.isWitnessProgram()}");
     final signingInput = Bitcoin.SigningInput(
-      amount: $fixnum.Int64.parseInt('37000'),
+      amount: $fixnum.Int64.parseInt('38000'),
       hashType: BitcoinScript.hashTypeForCoin(coin),
       toAddress: toAddress,
       changeAddress: changeAddress,
@@ -33,33 +40,68 @@ class _BitcoinTransactionExampleState extends BaseExampleState<BitcoinTransactio
       coinType: coin,
       utxo: [
         Bitcoin.UnspentTransaction(
-          amount: $fixnum.Int64.parseInt('1625420'),
+          amount: $fixnum.Int64.parseInt('1868256'),
           outPoint: Bitcoin.OutPoint(
-            hash: hex.decode('0000000000002962091d1fed512cd5d51ae4b10e8261cdfa2abf004ce94fe9f1').reversed.toList(),
+            hash: hex
+                .decode(
+                'a35d7c65ce94fe66f50a2e4882c7a8f09179956675fd37fecd07315f2c8097a0')
+                .reversed
+                .toList(),
             index: 0,
-            sequence: 4294967295,
+            //sequence: 4294967295,
           ),
-          script: BitcoinScript.lockScriptForAddress(addressBtc, coin).data().toList(),
+          script: script.data()
+              .toList(),
         ),
         Bitcoin.UnspentTransaction(
-          amount: $fixnum.Int64.parseInt('1192500'),
+          amount: $fixnum.Int64.parseInt('1559792'),
           outPoint: Bitcoin.OutPoint(
-            hash: hex.decode('00000000000000798d0d5f4a96d6074b9b9550782c24cc4c2c25d37da2558908').reversed.toList(),
-            index: 0,
-            sequence: 4294967295,
+            hash: hex
+                .decode(
+                'f267993be8f88b031f41bf726b0dd414acd0727abc620ed688886e902073cffc')
+                .reversed
+                .toList(),
+            index: 1,
+            //sequence: 4294967295,
           ),
-          script: BitcoinScript.lockScriptForAddress(addressBtc, coin).data().toList(),
+          script: script.data()
+              .toList(),
+        ),
+        Bitcoin.UnspentTransaction(
+          amount: $fixnum.Int64.parseInt('1596091'),
+          outPoint: Bitcoin.OutPoint(
+            hash: hex
+                .decode(
+                'dc85cd4e0519cbcd136a19c277b3cd3364b6bd389e25d58a150956a570ad7627')
+                .reversed
+                .toList(),
+            index: 1,
+            //sequence: 4294967295,
+          ),
+          script: script.data()
+              .toList(),
         ),
       ],
       privateKey: [
         secretPrivateKeyBtc.data().toList(),
       ],
     );
-    final transactionPlan = Bitcoin.TransactionPlan.fromBuffer(AnySigner.signerPlan(signingInput.writeToBuffer(), coin).toList());
-    logger.d('availableAmount: ${transactionPlan.availableAmount} amount: ${transactionPlan.amount} fee: ${transactionPlan.fee} change: ${transactionPlan.change}');
-    print('availableAmount: ${transactionPlan.availableAmount} amount: ${transactionPlan.amount} fee: ${transactionPlan.fee} change: ${transactionPlan.change}');
+    final transactionPlan = Bitcoin.TransactionPlan.fromBuffer(
+        AnySigner.signerPlan(signingInput.writeToBuffer(), coin).toList());
+    logger.d(
+        'availableAmount: ${transactionPlan.availableAmount} amount: ${transactionPlan.amount} fee: ${transactionPlan.fee} change: ${transactionPlan.change}');
+    print(
+        'availableAmount: ${transactionPlan.availableAmount} amount: ${transactionPlan.amount} fee: ${transactionPlan.fee} change: ${transactionPlan.change}');
     signingInput.plan = transactionPlan;
     signingInput.amount = transactionPlan.amount;
+
+    String planJson = transactionPlan.writeToJson();
+    logger.d(planJson);
+    List<Bitcoin.UnspentTransaction> newUtxos = transactionPlan.utxos;
+    for(int i=0; i<newUtxos.length; i++){
+      logger.d(newUtxos[i]);
+    }
+
     final sign = AnySigner.sign(signingInput.writeToBuffer(), coin);
     final signingOutput = Bitcoin.SigningOutput.fromBuffer(sign);
     print(hex.encode(signingOutput.encoded));

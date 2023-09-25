@@ -1,377 +1,626 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Cosmos.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,deprecated_member_use_from_same_package,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
 
-import 'dart:core' as $core;
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
+
 import 'dart:convert' as $convert;
+import 'dart:core' as $core;
 import 'dart:typed_data' as $typed_data;
+
 @$core.Deprecated('Use broadcastModeDescriptor instead')
-const BroadcastMode$json = const {
+const BroadcastMode$json = {
   '1': 'BroadcastMode',
-  '2': const [
-    const {'1': 'BLOCK', '2': 0},
-    const {'1': 'SYNC', '2': 1},
-    const {'1': 'ASYNC', '2': 2},
+  '2': [
+    {'1': 'BLOCK', '2': 0},
+    {'1': 'SYNC', '2': 1},
+    {'1': 'ASYNC', '2': 2},
   ],
 };
 
 /// Descriptor for `BroadcastMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List broadcastModeDescriptor = $convert.base64Decode('Cg1Ccm9hZGNhc3RNb2RlEgkKBUJMT0NLEAASCAoEU1lOQxABEgkKBUFTWU5DEAI=');
+final $typed_data.Uint8List broadcastModeDescriptor = $convert.base64Decode(
+    'Cg1Ccm9hZGNhc3RNb2RlEgkKBUJMT0NLEAASCAoEU1lOQxABEgkKBUFTWU5DEAI=');
+
 @$core.Deprecated('Use signingModeDescriptor instead')
-const SigningMode$json = const {
+const SigningMode$json = {
   '1': 'SigningMode',
-  '2': const [
-    const {'1': 'JSON', '2': 0},
-    const {'1': 'Protobuf', '2': 1},
+  '2': [
+    {'1': 'JSON', '2': 0},
+    {'1': 'Protobuf', '2': 1},
   ],
 };
 
 /// Descriptor for `SigningMode`. Decode as a `google.protobuf.EnumDescriptorProto`.
-final $typed_data.Uint8List signingModeDescriptor = $convert.base64Decode('CgtTaWduaW5nTW9kZRIICgRKU09OEAASDAoIUHJvdG9idWYQAQ==');
+final $typed_data.Uint8List signingModeDescriptor = $convert.base64Decode(
+    'CgtTaWduaW5nTW9kZRIICgRKU09OEAASDAoIUHJvdG9idWYQAQ==');
+
 @$core.Deprecated('Use amountDescriptor instead')
-const Amount$json = const {
+const Amount$json = {
   '1': 'Amount',
-  '2': const [
-    const {'1': 'denom', '3': 1, '4': 1, '5': 9, '10': 'denom'},
-    const {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
+  '2': [
+    {'1': 'denom', '3': 1, '4': 1, '5': 9, '10': 'denom'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
   ],
 };
 
 /// Descriptor for `Amount`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List amountDescriptor = $convert.base64Decode('CgZBbW91bnQSFAoFZGVub20YASABKAlSBWRlbm9tEhYKBmFtb3VudBgCIAEoCVIGYW1vdW50');
+final $typed_data.Uint8List amountDescriptor = $convert.base64Decode(
+    'CgZBbW91bnQSFAoFZGVub20YASABKAlSBWRlbm9tEhYKBmFtb3VudBgCIAEoCVIGYW1vdW50');
+
 @$core.Deprecated('Use feeDescriptor instead')
-const Fee$json = const {
+const Fee$json = {
   '1': 'Fee',
-  '2': const [
-    const {'1': 'amounts', '3': 1, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
-    const {'1': 'gas', '3': 2, '4': 1, '5': 4, '10': 'gas'},
+  '2': [
+    {'1': 'amounts', '3': 1, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
+    {'1': 'gas', '3': 2, '4': 1, '5': 4, '10': 'gas'},
   ],
 };
 
 /// Descriptor for `Fee`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List feeDescriptor = $convert.base64Decode('CgNGZWUSMQoHYW1vdW50cxgBIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudHMSEAoDZ2FzGAIgASgEUgNnYXM=');
+final $typed_data.Uint8List feeDescriptor = $convert.base64Decode(
+    'CgNGZWUSMQoHYW1vdW50cxgBIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudH'
+    'MSEAoDZ2FzGAIgASgEUgNnYXM=');
+
 @$core.Deprecated('Use heightDescriptor instead')
-const Height$json = const {
+const Height$json = {
   '1': 'Height',
-  '2': const [
-    const {'1': 'revision_number', '3': 1, '4': 1, '5': 4, '10': 'revisionNumber'},
-    const {'1': 'revision_height', '3': 2, '4': 1, '5': 4, '10': 'revisionHeight'},
+  '2': [
+    {'1': 'revision_number', '3': 1, '4': 1, '5': 4, '10': 'revisionNumber'},
+    {'1': 'revision_height', '3': 2, '4': 1, '5': 4, '10': 'revisionHeight'},
   ],
 };
 
 /// Descriptor for `Height`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List heightDescriptor = $convert.base64Decode('CgZIZWlnaHQSJwoPcmV2aXNpb25fbnVtYmVyGAEgASgEUg5yZXZpc2lvbk51bWJlchInCg9yZXZpc2lvbl9oZWlnaHQYAiABKARSDnJldmlzaW9uSGVpZ2h0');
+final $typed_data.Uint8List heightDescriptor = $convert.base64Decode(
+    'CgZIZWlnaHQSJwoPcmV2aXNpb25fbnVtYmVyGAEgASgEUg5yZXZpc2lvbk51bWJlchInCg9yZX'
+    'Zpc2lvbl9oZWlnaHQYAiABKARSDnJldmlzaW9uSGVpZ2h0');
+
+@$core.Deprecated('Use tHORChainAssetDescriptor instead')
+const THORChainAsset$json = {
+  '1': 'THORChainAsset',
+  '2': [
+    {'1': 'chain', '3': 1, '4': 1, '5': 9, '10': 'chain'},
+    {'1': 'symbol', '3': 2, '4': 1, '5': 9, '10': 'symbol'},
+    {'1': 'ticker', '3': 3, '4': 1, '5': 9, '10': 'ticker'},
+    {'1': 'synth', '3': 4, '4': 1, '5': 8, '10': 'synth'},
+  ],
+};
+
+/// Descriptor for `THORChainAsset`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tHORChainAssetDescriptor = $convert.base64Decode(
+    'Cg5USE9SQ2hhaW5Bc3NldBIUCgVjaGFpbhgBIAEoCVIFY2hhaW4SFgoGc3ltYm9sGAIgASgJUg'
+    'ZzeW1ib2wSFgoGdGlja2VyGAMgASgJUgZ0aWNrZXISFAoFc3ludGgYBCABKAhSBXN5bnRo');
+
+@$core.Deprecated('Use tHORChainCoinDescriptor instead')
+const THORChainCoin$json = {
+  '1': 'THORChainCoin',
+  '2': [
+    {'1': 'asset', '3': 1, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.THORChainAsset', '10': 'asset'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
+    {'1': 'decimals', '3': 3, '4': 1, '5': 3, '10': 'decimals'},
+  ],
+};
+
+/// Descriptor for `THORChainCoin`. Decode as a `google.protobuf.DescriptorProto`.
+final $typed_data.Uint8List tHORChainCoinDescriptor = $convert.base64Decode(
+    'Cg1USE9SQ2hhaW5Db2luEjUKBWFzc2V0GAEgASgLMh8uVFcuQ29zbW9zLlByb3RvLlRIT1JDaG'
+    'FpbkFzc2V0UgVhc3NldBIWCgZhbW91bnQYAiABKAlSBmFtb3VudBIaCghkZWNpbWFscxgDIAEo'
+    'A1IIZGVjaW1hbHM=');
+
 @$core.Deprecated('Use messageDescriptor instead')
-const Message$json = const {
+const Message$json = {
   '1': 'Message',
-  '2': const [
-    const {'1': 'send_coins_message', '3': 1, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Send', '9': 0, '10': 'sendCoinsMessage'},
-    const {'1': 'transfer_tokens_message', '3': 2, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Transfer', '9': 0, '10': 'transferTokensMessage'},
-    const {'1': 'stake_message', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Delegate', '9': 0, '10': 'stakeMessage'},
-    const {'1': 'unstake_message', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Undelegate', '9': 0, '10': 'unstakeMessage'},
-    const {'1': 'restake_message', '3': 5, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.BeginRedelegate', '9': 0, '10': 'restakeMessage'},
-    const {'1': 'withdraw_stake_reward_message', '3': 6, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WithdrawDelegationReward', '9': 0, '10': 'withdrawStakeRewardMessage'},
-    const {'1': 'raw_json_message', '3': 7, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.RawJSON', '9': 0, '10': 'rawJsonMessage'},
-    const {'1': 'wasm_terra_execute_contract_transfer_message', '3': 8, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractTransfer', '9': 0, '10': 'wasmTerraExecuteContractTransferMessage'},
-    const {'1': 'wasm_terra_execute_contract_send_message', '3': 9, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractSend', '9': 0, '10': 'wasmTerraExecuteContractSendMessage'},
-    const {'1': 'thorchain_send_message', '3': 10, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.THORChainSend', '9': 0, '10': 'thorchainSendMessage'},
-    const {'1': 'wasm_terra_execute_contract_generic', '3': 11, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractGeneric', '9': 0, '10': 'wasmTerraExecuteContractGeneric'},
-    const {'1': 'wasm_execute_contract_transfer_message', '3': 12, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractTransfer', '9': 0, '10': 'wasmExecuteContractTransferMessage'},
-    const {'1': 'wasm_execute_contract_send_message', '3': 13, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractSend', '9': 0, '10': 'wasmExecuteContractSendMessage'},
-    const {'1': 'wasm_execute_contract_generic', '3': 14, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractGeneric', '9': 0, '10': 'wasmExecuteContractGeneric'},
-    const {'1': 'sign_direct_message', '3': 15, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.SignDirect', '9': 0, '10': 'signDirectMessage'},
-    const {'1': 'auth_grant', '3': 16, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.AuthGrant', '9': 0, '10': 'authGrant'},
-    const {'1': 'auth_revoke', '3': 17, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.AuthRevoke', '9': 0, '10': 'authRevoke'},
-    const {'1': 'msg_vote', '3': 18, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.MsgVote', '9': 0, '10': 'msgVote'},
+  '2': [
+    {'1': 'send_coins_message', '3': 1, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Send', '9': 0, '10': 'sendCoinsMessage'},
+    {'1': 'transfer_tokens_message', '3': 2, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Transfer', '9': 0, '10': 'transferTokensMessage'},
+    {'1': 'stake_message', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Delegate', '9': 0, '10': 'stakeMessage'},
+    {'1': 'unstake_message', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.Undelegate', '9': 0, '10': 'unstakeMessage'},
+    {'1': 'restake_message', '3': 5, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.BeginRedelegate', '9': 0, '10': 'restakeMessage'},
+    {'1': 'withdraw_stake_reward_message', '3': 6, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WithdrawDelegationReward', '9': 0, '10': 'withdrawStakeRewardMessage'},
+    {'1': 'raw_json_message', '3': 7, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.RawJSON', '9': 0, '10': 'rawJsonMessage'},
+    {'1': 'wasm_terra_execute_contract_transfer_message', '3': 8, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractTransfer', '9': 0, '10': 'wasmTerraExecuteContractTransferMessage'},
+    {'1': 'wasm_terra_execute_contract_send_message', '3': 9, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractSend', '9': 0, '10': 'wasmTerraExecuteContractSendMessage'},
+    {'1': 'thorchain_send_message', '3': 10, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.THORChainSend', '9': 0, '10': 'thorchainSendMessage'},
+    {'1': 'execute_contract_message', '3': 11, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.ExecuteContract', '9': 0, '10': 'executeContractMessage'},
+    {'1': 'wasm_terra_execute_contract_generic', '3': 12, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmTerraExecuteContractGeneric', '9': 0, '10': 'wasmTerraExecuteContractGeneric'},
+    {'1': 'wasm_execute_contract_transfer_message', '3': 13, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractTransfer', '9': 0, '10': 'wasmExecuteContractTransferMessage'},
+    {'1': 'wasm_execute_contract_send_message', '3': 14, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractSend', '9': 0, '10': 'wasmExecuteContractSendMessage'},
+    {'1': 'wasm_execute_contract_generic', '3': 15, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.WasmExecuteContractGeneric', '9': 0, '10': 'wasmExecuteContractGeneric'},
+    {'1': 'sign_direct_message', '3': 16, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.SignDirect', '9': 0, '10': 'signDirectMessage'},
+    {'1': 'auth_grant', '3': 17, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.AuthGrant', '9': 0, '10': 'authGrant'},
+    {'1': 'auth_revoke', '3': 18, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.AuthRevoke', '9': 0, '10': 'authRevoke'},
+    {'1': 'set_withdraw_address_message', '3': 19, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.SetWithdrawAddress', '9': 0, '10': 'setWithdrawAddressMessage'},
+    {'1': 'msg_vote', '3': 20, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.MsgVote', '9': 0, '10': 'msgVote'},
+    {'1': 'msg_stride_liquid_staking_stake', '3': 21, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.MsgStrideLiquidStakingStake', '9': 0, '10': 'msgStrideLiquidStakingStake'},
+    {'1': 'msg_stride_liquid_staking_redeem', '3': 22, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.MsgStrideLiquidStakingRedeem', '9': 0, '10': 'msgStrideLiquidStakingRedeem'},
+    {'1': 'thorchain_deposit_message', '3': 23, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.THORChainDeposit', '9': 0, '10': 'thorchainDepositMessage'},
   ],
-  '3': const [Message_Send$json, Message_Transfer$json, Message_Delegate$json, Message_Undelegate$json, Message_BeginRedelegate$json, Message_WithdrawDelegationReward$json, Message_WasmTerraExecuteContractTransfer$json, Message_WasmTerraExecuteContractSend$json, Message_THORChainSend$json, Message_WasmTerraExecuteContractGeneric$json, Message_WasmExecuteContractTransfer$json, Message_WasmExecuteContractSend$json, Message_WasmExecuteContractGeneric$json, Message_RawJSON$json, Message_SignDirect$json, Message_StakeAuthorization$json, Message_AuthGrant$json, Message_AuthRevoke$json, Message_MsgVote$json],
-  '4': const [Message_AuthorizationType$json, Message_VoteOption$json],
-  '8': const [
-    const {'1': 'message_oneof'},
+  '3': [Message_Send$json, Message_Transfer$json, Message_Delegate$json, Message_Undelegate$json, Message_BeginRedelegate$json, Message_SetWithdrawAddress$json, Message_WithdrawDelegationReward$json, Message_ExecuteContract$json, Message_WasmTerraExecuteContractTransfer$json, Message_WasmTerraExecuteContractSend$json, Message_THORChainSend$json, Message_THORChainDeposit$json, Message_WasmTerraExecuteContractGeneric$json, Message_WasmExecuteContractTransfer$json, Message_WasmExecuteContractSend$json, Message_WasmExecuteContractGeneric$json, Message_RawJSON$json, Message_SignDirect$json, Message_StakeAuthorization$json, Message_AuthGrant$json, Message_AuthRevoke$json, Message_MsgVote$json, Message_MsgStrideLiquidStakingStake$json, Message_MsgStrideLiquidStakingRedeem$json],
+  '4': [Message_AuthorizationType$json, Message_VoteOption$json],
+  '8': [
+    {'1': 'message_oneof'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_Send$json = const {
+const Message_Send$json = {
   '1': 'Send',
-  '2': const [
-    const {'1': 'from_address', '3': 1, '4': 1, '5': 9, '10': 'fromAddress'},
-    const {'1': 'to_address', '3': 2, '4': 1, '5': 9, '10': 'toAddress'},
-    const {'1': 'amounts', '3': 3, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
-    const {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
+  '2': [
+    {'1': 'from_address', '3': 1, '4': 1, '5': 9, '10': 'fromAddress'},
+    {'1': 'to_address', '3': 2, '4': 1, '5': 9, '10': 'toAddress'},
+    {'1': 'amounts', '3': 3, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
+    {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_Transfer$json = const {
+const Message_Transfer$json = {
   '1': 'Transfer',
-  '2': const [
-    const {'1': 'source_port', '3': 1, '4': 1, '5': 9, '10': 'sourcePort'},
-    const {'1': 'source_channel', '3': 2, '4': 1, '5': 9, '10': 'sourceChannel'},
-    const {'1': 'token', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'token'},
-    const {'1': 'sender', '3': 4, '4': 1, '5': 9, '10': 'sender'},
-    const {'1': 'receiver', '3': 5, '4': 1, '5': 9, '10': 'receiver'},
-    const {'1': 'timeout_height', '3': 6, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Height', '10': 'timeoutHeight'},
-    const {'1': 'timeout_timestamp', '3': 7, '4': 1, '5': 4, '10': 'timeoutTimestamp'},
+  '2': [
+    {'1': 'source_port', '3': 1, '4': 1, '5': 9, '10': 'sourcePort'},
+    {'1': 'source_channel', '3': 2, '4': 1, '5': 9, '10': 'sourceChannel'},
+    {'1': 'token', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'token'},
+    {'1': 'sender', '3': 4, '4': 1, '5': 9, '10': 'sender'},
+    {'1': 'receiver', '3': 5, '4': 1, '5': 9, '10': 'receiver'},
+    {'1': 'timeout_height', '3': 6, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Height', '10': 'timeoutHeight'},
+    {'1': 'timeout_timestamp', '3': 7, '4': 1, '5': 4, '10': 'timeoutTimestamp'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_Delegate$json = const {
+const Message_Delegate$json = {
   '1': 'Delegate',
-  '2': const [
-    const {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
-    const {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
-    const {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
+  '2': [
+    {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
+    {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
+    {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_Undelegate$json = const {
+const Message_Undelegate$json = {
   '1': 'Undelegate',
-  '2': const [
-    const {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
-    const {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
-    const {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
+  '2': [
+    {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
+    {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
+    {'1': 'type_prefix', '3': 4, '4': 1, '5': 9, '10': 'typePrefix'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_BeginRedelegate$json = const {
+const Message_BeginRedelegate$json = {
   '1': 'BeginRedelegate',
-  '2': const [
-    const {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
-    const {'1': 'validator_src_address', '3': 2, '4': 1, '5': 9, '10': 'validatorSrcAddress'},
-    const {'1': 'validator_dst_address', '3': 3, '4': 1, '5': 9, '10': 'validatorDstAddress'},
-    const {'1': 'amount', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
-    const {'1': 'type_prefix', '3': 5, '4': 1, '5': 9, '10': 'typePrefix'},
+  '2': [
+    {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
+    {'1': 'validator_src_address', '3': 2, '4': 1, '5': 9, '10': 'validatorSrcAddress'},
+    {'1': 'validator_dst_address', '3': 3, '4': 1, '5': 9, '10': 'validatorDstAddress'},
+    {'1': 'amount', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amount'},
+    {'1': 'type_prefix', '3': 5, '4': 1, '5': 9, '10': 'typePrefix'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WithdrawDelegationReward$json = const {
+const Message_SetWithdrawAddress$json = {
+  '1': 'SetWithdrawAddress',
+  '2': [
+    {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
+    {'1': 'withdraw_address', '3': 2, '4': 1, '5': 9, '10': 'withdrawAddress'},
+    {'1': 'type_prefix', '3': 3, '4': 1, '5': 9, '10': 'typePrefix'},
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_WithdrawDelegationReward$json = {
   '1': 'WithdrawDelegationReward',
-  '2': const [
-    const {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
-    const {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
-    const {'1': 'type_prefix', '3': 3, '4': 1, '5': 9, '10': 'typePrefix'},
+  '2': [
+    {'1': 'delegator_address', '3': 1, '4': 1, '5': 9, '10': 'delegatorAddress'},
+    {'1': 'validator_address', '3': 2, '4': 1, '5': 9, '10': 'validatorAddress'},
+    {'1': 'type_prefix', '3': 3, '4': 1, '5': 9, '10': 'typePrefix'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmTerraExecuteContractTransfer$json = const {
+const Message_ExecuteContract$json = {
+  '1': 'ExecuteContract',
+  '2': [
+    {'1': 'sender', '3': 1, '4': 1, '5': 9, '10': 'sender'},
+    {'1': 'contract', '3': 2, '4': 1, '5': 9, '10': 'contract'},
+    {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
+    {'1': 'coins', '3': 4, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'coins'},
+    {'1': 'type_prefix', '3': 5, '4': 1, '5': 9, '10': 'typePrefix'},
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_WasmTerraExecuteContractTransfer$json = {
   '1': 'WasmTerraExecuteContractTransfer',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
-    const {'1': 'recipient_address', '3': 4, '4': 1, '5': 9, '10': 'recipientAddress'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
+    {'1': 'recipient_address', '3': 4, '4': 1, '5': 9, '10': 'recipientAddress'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmTerraExecuteContractSend$json = const {
+const Message_WasmTerraExecuteContractSend$json = {
   '1': 'WasmTerraExecuteContractSend',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
-    const {'1': 'recipient_contract_address', '3': 4, '4': 1, '5': 9, '10': 'recipientContractAddress'},
-    const {'1': 'msg', '3': 5, '4': 1, '5': 9, '10': 'msg'},
-    const {'1': 'coin', '3': 6, '4': 3, '5': 9, '10': 'coin'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
+    {'1': 'recipient_contract_address', '3': 4, '4': 1, '5': 9, '10': 'recipientContractAddress'},
+    {'1': 'msg', '3': 5, '4': 1, '5': 9, '10': 'msg'},
+    {'1': 'coin', '3': 6, '4': 3, '5': 9, '10': 'coin'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_THORChainSend$json = const {
+const Message_THORChainSend$json = {
   '1': 'THORChainSend',
-  '2': const [
-    const {'1': 'from_address', '3': 1, '4': 1, '5': 12, '10': 'fromAddress'},
-    const {'1': 'to_address', '3': 2, '4': 1, '5': 12, '10': 'toAddress'},
-    const {'1': 'amounts', '3': 3, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
+  '2': [
+    {'1': 'from_address', '3': 1, '4': 1, '5': 12, '10': 'fromAddress'},
+    {'1': 'to_address', '3': 2, '4': 1, '5': 12, '10': 'toAddress'},
+    {'1': 'amounts', '3': 3, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'amounts'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmTerraExecuteContractGeneric$json = const {
+const Message_THORChainDeposit$json = {
+  '1': 'THORChainDeposit',
+  '2': [
+    {'1': 'coins', '3': 1, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.THORChainCoin', '10': 'coins'},
+    {'1': 'memo', '3': 2, '4': 1, '5': 9, '10': 'memo'},
+    {'1': 'signer', '3': 3, '4': 1, '5': 12, '10': 'signer'},
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_WasmTerraExecuteContractGeneric$json = {
   '1': 'WasmTerraExecuteContractGeneric',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
-    const {'1': 'coins', '3': 5, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'coins'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
+    {'1': 'coins', '3': 5, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'coins'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmExecuteContractTransfer$json = const {
+const Message_WasmExecuteContractTransfer$json = {
   '1': 'WasmExecuteContractTransfer',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
-    const {'1': 'recipient_address', '3': 4, '4': 1, '5': 9, '10': 'recipientAddress'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
+    {'1': 'recipient_address', '3': 4, '4': 1, '5': 9, '10': 'recipientAddress'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmExecuteContractSend$json = const {
+const Message_WasmExecuteContractSend$json = {
   '1': 'WasmExecuteContractSend',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
-    const {'1': 'recipient_contract_address', '3': 4, '4': 1, '5': 9, '10': 'recipientContractAddress'},
-    const {'1': 'msg', '3': 5, '4': 1, '5': 9, '10': 'msg'},
-    const {'1': 'coin', '3': 6, '4': 3, '5': 9, '10': 'coin'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'amount', '3': 3, '4': 1, '5': 12, '10': 'amount'},
+    {'1': 'recipient_contract_address', '3': 4, '4': 1, '5': 9, '10': 'recipientContractAddress'},
+    {'1': 'msg', '3': 5, '4': 1, '5': 9, '10': 'msg'},
+    {'1': 'coin', '3': 6, '4': 3, '5': 9, '10': 'coin'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_WasmExecuteContractGeneric$json = const {
+const Message_WasmExecuteContractGeneric$json = {
   '1': 'WasmExecuteContractGeneric',
-  '2': const [
-    const {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
-    const {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
-    const {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
-    const {'1': 'coins', '3': 5, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'coins'},
+  '2': [
+    {'1': 'sender_address', '3': 1, '4': 1, '5': 9, '10': 'senderAddress'},
+    {'1': 'contract_address', '3': 2, '4': 1, '5': 9, '10': 'contractAddress'},
+    {'1': 'execute_msg', '3': 3, '4': 1, '5': 9, '10': 'executeMsg'},
+    {'1': 'coins', '3': 5, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'coins'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_RawJSON$json = const {
+const Message_RawJSON$json = {
   '1': 'RawJSON',
-  '2': const [
-    const {'1': 'type', '3': 1, '4': 1, '5': 9, '10': 'type'},
-    const {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
+  '2': [
+    {'1': 'type', '3': 1, '4': 1, '5': 9, '10': 'type'},
+    {'1': 'value', '3': 2, '4': 1, '5': 9, '10': 'value'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_SignDirect$json = const {
+const Message_SignDirect$json = {
   '1': 'SignDirect',
-  '2': const [
-    const {'1': 'body_bytes', '3': 1, '4': 1, '5': 12, '10': 'bodyBytes'},
-    const {'1': 'auth_info_bytes', '3': 2, '4': 1, '5': 12, '10': 'authInfoBytes'},
+  '2': [
+    {'1': 'body_bytes', '3': 1, '4': 1, '5': 12, '10': 'bodyBytes'},
+    {'1': 'auth_info_bytes', '3': 2, '4': 1, '5': 12, '10': 'authInfoBytes'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_StakeAuthorization$json = const {
+const Message_StakeAuthorization$json = {
   '1': 'StakeAuthorization',
-  '2': const [
-    const {'1': 'max_tokens', '3': 1, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'maxTokens'},
-    const {'1': 'allow_list', '3': 2, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization.Validators', '9': 0, '10': 'allowList'},
-    const {'1': 'deny_list', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization.Validators', '9': 0, '10': 'denyList'},
-    const {'1': 'authorization_type', '3': 4, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.Message.AuthorizationType', '10': 'authorizationType'},
+  '2': [
+    {'1': 'max_tokens', '3': 1, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Amount', '10': 'maxTokens'},
+    {'1': 'allow_list', '3': 2, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization.Validators', '9': 0, '10': 'allowList'},
+    {'1': 'deny_list', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization.Validators', '9': 0, '10': 'denyList'},
+    {'1': 'authorization_type', '3': 4, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.Message.AuthorizationType', '10': 'authorizationType'},
   ],
-  '3': const [Message_StakeAuthorization_Validators$json],
-  '8': const [
-    const {'1': 'validators'},
+  '3': [Message_StakeAuthorization_Validators$json],
+  '8': [
+    {'1': 'validators'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_StakeAuthorization_Validators$json = const {
+const Message_StakeAuthorization_Validators$json = {
   '1': 'Validators',
-  '2': const [
-    const {'1': 'address', '3': 1, '4': 3, '5': 9, '10': 'address'},
+  '2': [
+    {'1': 'address', '3': 1, '4': 3, '5': 9, '10': 'address'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_AuthGrant$json = const {
+const Message_AuthGrant$json = {
   '1': 'AuthGrant',
-  '2': const [
-    const {'1': 'granter', '3': 1, '4': 1, '5': 9, '10': 'granter'},
-    const {'1': 'grantee', '3': 2, '4': 1, '5': 9, '10': 'grantee'},
-    const {'1': 'grant_stake', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization', '9': 0, '10': 'grantStake'},
-    const {'1': 'expiration', '3': 4, '4': 1, '5': 3, '10': 'expiration'},
+  '2': [
+    {'1': 'granter', '3': 1, '4': 1, '5': 9, '10': 'granter'},
+    {'1': 'grantee', '3': 2, '4': 1, '5': 9, '10': 'grantee'},
+    {'1': 'grant_stake', '3': 3, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Message.StakeAuthorization', '9': 0, '10': 'grantStake'},
+    {'1': 'expiration', '3': 4, '4': 1, '5': 3, '10': 'expiration'},
   ],
-  '8': const [
-    const {'1': 'grant_type'},
+  '8': [
+    {'1': 'grant_type'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_AuthRevoke$json = const {
+const Message_AuthRevoke$json = {
   '1': 'AuthRevoke',
-  '2': const [
-    const {'1': 'granter', '3': 1, '4': 1, '5': 9, '10': 'granter'},
-    const {'1': 'grantee', '3': 2, '4': 1, '5': 9, '10': 'grantee'},
-    const {'1': 'msg_type_url', '3': 3, '4': 1, '5': 9, '10': 'msgTypeUrl'},
+  '2': [
+    {'1': 'granter', '3': 1, '4': 1, '5': 9, '10': 'granter'},
+    {'1': 'grantee', '3': 2, '4': 1, '5': 9, '10': 'grantee'},
+    {'1': 'msg_type_url', '3': 3, '4': 1, '5': 9, '10': 'msgTypeUrl'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_MsgVote$json = const {
+const Message_MsgVote$json = {
   '1': 'MsgVote',
-  '2': const [
-    const {'1': 'proposal_id', '3': 1, '4': 1, '5': 4, '10': 'proposalId'},
-    const {'1': 'voter', '3': 2, '4': 1, '5': 9, '10': 'voter'},
-    const {'1': 'option', '3': 3, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.Message.VoteOption', '10': 'option'},
+  '2': [
+    {'1': 'proposal_id', '3': 1, '4': 1, '5': 4, '10': 'proposalId'},
+    {'1': 'voter', '3': 2, '4': 1, '5': 9, '10': 'voter'},
+    {'1': 'option', '3': 3, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.Message.VoteOption', '10': 'option'},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_AuthorizationType$json = const {
+const Message_MsgStrideLiquidStakingStake$json = {
+  '1': 'MsgStrideLiquidStakingStake',
+  '2': [
+    {'1': 'creator', '3': 1, '4': 1, '5': 9, '10': 'creator'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
+    {'1': 'host_denom', '3': 3, '4': 1, '5': 9, '10': 'hostDenom'},
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_MsgStrideLiquidStakingRedeem$json = {
+  '1': 'MsgStrideLiquidStakingRedeem',
+  '2': [
+    {'1': 'creator', '3': 1, '4': 1, '5': 9, '10': 'creator'},
+    {'1': 'amount', '3': 2, '4': 1, '5': 9, '10': 'amount'},
+    {'1': 'host_zone', '3': 3, '4': 1, '5': 9, '10': 'hostZone'},
+    {'1': 'receiver', '3': 4, '4': 1, '5': 9, '10': 'receiver'},
+  ],
+};
+
+@$core.Deprecated('Use messageDescriptor instead')
+const Message_AuthorizationType$json = {
   '1': 'AuthorizationType',
-  '2': const [
-    const {'1': 'UNSPECIFIED', '2': 0},
-    const {'1': 'DELEGATE', '2': 1},
-    const {'1': 'UNDELEGATE', '2': 2},
-    const {'1': 'REDELEGATE', '2': 3},
+  '2': [
+    {'1': 'UNSPECIFIED', '2': 0},
+    {'1': 'DELEGATE', '2': 1},
+    {'1': 'UNDELEGATE', '2': 2},
+    {'1': 'REDELEGATE', '2': 3},
   ],
 };
 
 @$core.Deprecated('Use messageDescriptor instead')
-const Message_VoteOption$json = const {
+const Message_VoteOption$json = {
   '1': 'VoteOption',
-  '2': const [
-    const {'1': '_UNSPECIFIED', '2': 0},
-    const {'1': 'YES', '2': 1},
-    const {'1': 'ABSTAIN', '2': 2},
-    const {'1': 'NO', '2': 3},
-    const {'1': 'NO_WITH_VETO', '2': 4},
+  '2': [
+    {'1': '_UNSPECIFIED', '2': 0},
+    {'1': 'YES', '2': 1},
+    {'1': 'ABSTAIN', '2': 2},
+    {'1': 'NO', '2': 3},
+    {'1': 'NO_WITH_VETO', '2': 4},
   ],
 };
 
 /// Descriptor for `Message`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List messageDescriptor = $convert.base64Decode('CgdNZXNzYWdlEk0KEnNlbmRfY29pbnNfbWVzc2FnZRgBIAEoCzIdLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlNlbmRIAFIQc2VuZENvaW5zTWVzc2FnZRJbChd0cmFuc2Zlcl90b2tlbnNfbWVzc2FnZRgCIAEoCzIhLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRyYW5zZmVySABSFXRyYW5zZmVyVG9rZW5zTWVzc2FnZRJICg1zdGFrZV9tZXNzYWdlGAMgASgLMiEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuRGVsZWdhdGVIAFIMc3Rha2VNZXNzYWdlEk4KD3Vuc3Rha2VfbWVzc2FnZRgEIAEoCzIjLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlVuZGVsZWdhdGVIAFIOdW5zdGFrZU1lc3NhZ2USUwoPcmVzdGFrZV9tZXNzYWdlGAUgASgLMiguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuQmVnaW5SZWRlbGVnYXRlSABSDnJlc3Rha2VNZXNzYWdlEnYKHXdpdGhkcmF3X3N0YWtlX3Jld2FyZF9tZXNzYWdlGAYgASgLMjEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2l0aGRyYXdEZWxlZ2F0aW9uUmV3YXJkSABSGndpdGhkcmF3U3Rha2VSZXdhcmRNZXNzYWdlEkwKEHJhd19qc29uX21lc3NhZ2UYByABKAsyIC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5SYXdKU09OSABSDnJhd0pzb25NZXNzYWdlEpoBCix3YXNtX3RlcnJhX2V4ZWN1dGVfY29udHJhY3RfdHJhbnNmZXJfbWVzc2FnZRgIIAEoCzI5LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVySABSJ3dhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVyTWVzc2FnZRKOAQood2FzbV90ZXJyYV9leGVjdXRlX2NvbnRyYWN0X3NlbmRfbWVzc2FnZRgJIAEoCzI1LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFNlbmRIAFIjd2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2USXgoWdGhvcmNoYWluX3NlbmRfbWVzc2FnZRgKIAEoCzImLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRIT1JDaGFpblNlbmRIAFIUdGhvcmNoYWluU2VuZE1lc3NhZ2USiAEKI3dhc21fdGVycmFfZXhlY3V0ZV9jb250cmFjdF9nZW5lcmljGAsgASgLMjguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0R2VuZXJpY0gAUh93YXNtVGVycmFFeGVjdXRlQ29udHJhY3RHZW5lcmljEooBCiZ3YXNtX2V4ZWN1dGVfY29udHJhY3RfdHJhbnNmZXJfbWVzc2FnZRgMIAEoCzI0LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21FeGVjdXRlQ29udHJhY3RUcmFuc2ZlckgAUiJ3YXNtRXhlY3V0ZUNvbnRyYWN0VHJhbnNmZXJNZXNzYWdlEn4KIndhc21fZXhlY3V0ZV9jb250cmFjdF9zZW5kX21lc3NhZ2UYDSABKAsyMC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5XYXNtRXhlY3V0ZUNvbnRyYWN0U2VuZEgAUh53YXNtRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2USeAodd2FzbV9leGVjdXRlX2NvbnRyYWN0X2dlbmVyaWMYDiABKAsyMy5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5XYXNtRXhlY3V0ZUNvbnRyYWN0R2VuZXJpY0gAUhp3YXNtRXhlY3V0ZUNvbnRyYWN0R2VuZXJpYxJVChNzaWduX2RpcmVjdF9tZXNzYWdlGA8gASgLMiMuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuU2lnbkRpcmVjdEgAUhFzaWduRGlyZWN0TWVzc2FnZRJDCgphdXRoX2dyYW50GBAgASgLMiIuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuQXV0aEdyYW50SABSCWF1dGhHcmFudBJGCgthdXRoX3Jldm9rZRgRIAEoCzIjLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLkF1dGhSZXZva2VIAFIKYXV0aFJldm9rZRI9Cghtc2dfdm90ZRgSIAEoCzIgLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLk1zZ1ZvdGVIAFIHbXNnVm90ZRqcAQoEU2VuZBIhCgxmcm9tX2FkZHJlc3MYASABKAlSC2Zyb21BZGRyZXNzEh0KCnRvX2FkZHJlc3MYAiABKAlSCXRvQWRkcmVzcxIxCgdhbW91bnRzGAMgAygLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIHYW1vdW50cxIfCgt0eXBlX3ByZWZpeBgEIAEoCVIKdHlwZVByZWZpeBqiAgoIVHJhbnNmZXISHwoLc291cmNlX3BvcnQYASABKAlSCnNvdXJjZVBvcnQSJQoOc291cmNlX2NoYW5uZWwYAiABKAlSDXNvdXJjZUNoYW5uZWwSLQoFdG9rZW4YAyABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgV0b2tlbhIWCgZzZW5kZXIYBCABKAlSBnNlbmRlchIaCghyZWNlaXZlchgFIAEoCVIIcmVjZWl2ZXISPgoOdGltZW91dF9oZWlnaHQYBiABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uSGVpZ2h0Ug10aW1lb3V0SGVpZ2h0EisKEXRpbWVvdXRfdGltZXN0YW1wGAcgASgEUhB0aW1lb3V0VGltZXN0YW1wGrYBCghEZWxlZ2F0ZRIrChFkZWxlZ2F0b3JfYWRkcmVzcxgBIAEoCVIQZGVsZWdhdG9yQWRkcmVzcxIrChF2YWxpZGF0b3JfYWRkcmVzcxgCIAEoCVIQdmFsaWRhdG9yQWRkcmVzcxIvCgZhbW91bnQYAyABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgZhbW91bnQSHwoLdHlwZV9wcmVmaXgYBCABKAlSCnR5cGVQcmVmaXgauAEKClVuZGVsZWdhdGUSKwoRZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSKwoRdmFsaWRhdG9yX2FkZHJlc3MYAiABKAlSEHZhbGlkYXRvckFkZHJlc3MSLwoGYW1vdW50GAMgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIGYW1vdW50Eh8KC3R5cGVfcHJlZml4GAQgASgJUgp0eXBlUHJlZml4GvgBCg9CZWdpblJlZGVsZWdhdGUSKwoRZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSMgoVdmFsaWRhdG9yX3NyY19hZGRyZXNzGAIgASgJUhN2YWxpZGF0b3JTcmNBZGRyZXNzEjIKFXZhbGlkYXRvcl9kc3RfYWRkcmVzcxgDIAEoCVITdmFsaWRhdG9yRHN0QWRkcmVzcxIvCgZhbW91bnQYBCABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgZhbW91bnQSHwoLdHlwZV9wcmVmaXgYBSABKAlSCnR5cGVQcmVmaXgalQEKGFdpdGhkcmF3RGVsZWdhdGlvblJld2FyZBIrChFkZWxlZ2F0b3JfYWRkcmVzcxgBIAEoCVIQZGVsZWdhdG9yQWRkcmVzcxIrChF2YWxpZGF0b3JfYWRkcmVzcxgCIAEoCVIQdmFsaWRhdG9yQWRkcmVzcxIfCgt0eXBlX3ByZWZpeBgDIAEoCVIKdHlwZVByZWZpeBq5AQogV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0VHJhbnNmZXISJQoOc2VuZGVyX2FkZHJlc3MYASABKAlSDXNlbmRlckFkZHJlc3MSKQoQY29udHJhY3RfYWRkcmVzcxgCIAEoCVIPY29udHJhY3RBZGRyZXNzEhYKBmFtb3VudBgDIAEoDFIGYW1vdW50EisKEXJlY2lwaWVudF9hZGRyZXNzGAQgASgJUhByZWNpcGllbnRBZGRyZXNzGuwBChxXYXNtVGVycmFFeGVjdXRlQ29udHJhY3RTZW5kEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5kZXJBZGRyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIWCgZhbW91bnQYAyABKAxSBmFtb3VudBI8ChpyZWNpcGllbnRfY29udHJhY3RfYWRkcmVzcxgEIAEoCVIYcmVjaXBpZW50Q29udHJhY3RBZGRyZXNzEhAKA21zZxgFIAEoCVIDbXNnEhIKBGNvaW4YBiADKAlSBGNvaW4ahAEKDVRIT1JDaGFpblNlbmQSIQoMZnJvbV9hZGRyZXNzGAEgASgMUgtmcm9tQWRkcmVzcxIdCgp0b19hZGRyZXNzGAIgASgMUgl0b0FkZHJlc3MSMQoHYW1vdW50cxgDIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudHMawwEKH1dhc21UZXJyYUV4ZWN1dGVDb250cmFjdEdlbmVyaWMSJQoOc2VuZGVyX2FkZHJlc3MYASABKAlSDXNlbmRlckFkZHJlc3MSKQoQY29udHJhY3RfYWRkcmVzcxgCIAEoCVIPY29udHJhY3RBZGRyZXNzEh8KC2V4ZWN1dGVfbXNnGAMgASgJUgpleGVjdXRlTXNnEi0KBWNvaW5zGAUgAygLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIFY29pbnMatAEKG1dhc21FeGVjdXRlQ29udHJhY3RUcmFuc2ZlchIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRkcmVzcxIpChBjb250cmFjdF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSFgoGYW1vdW50GAMgASgMUgZhbW91bnQSKwoRcmVjaXBpZW50X2FkZHJlc3MYBCABKAlSEHJlY2lwaWVudEFkZHJlc3Ma5wEKF1dhc21FeGVjdXRlQ29udHJhY3RTZW5kEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5kZXJBZGRyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIWCgZhbW91bnQYAyABKAxSBmFtb3VudBI8ChpyZWNpcGllbnRfY29udHJhY3RfYWRkcmVzcxgEIAEoCVIYcmVjaXBpZW50Q29udHJhY3RBZGRyZXNzEhAKA21zZxgFIAEoCVIDbXNnEhIKBGNvaW4YBiADKAlSBGNvaW4avgEKGldhc21FeGVjdXRlQ29udHJhY3RHZW5lcmljEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5kZXJBZGRyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIfCgtleGVjdXRlX21zZxgDIAEoCVIKZXhlY3V0ZU1zZxItCgVjb2lucxgFIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBWNvaW5zGjMKB1Jhd0pTT04SEgoEdHlwZRgBIAEoCVIEdHlwZRIUCgV2YWx1ZRgCIAEoCVIFdmFsdWUaUwoKU2lnbkRpcmVjdBIdCgpib2R5X2J5dGVzGAEgASgMUglib2R5Qnl0ZXMSJgoPYXV0aF9pbmZvX2J5dGVzGAIgASgMUg1hdXRoSW5mb0J5dGVzGo0DChJTdGFrZUF1dGhvcml6YXRpb24SNgoKbWF4X3Rva2VucxgBIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSCW1heFRva2VucxJXCgphbGxvd19saXN0GAIgASgLMjYuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuU3Rha2VBdXRob3JpemF0aW9uLlZhbGlkYXRvcnNIAFIJYWxsb3dMaXN0ElUKCWRlbnlfbGlzdBgDIAEoCzI2LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlN0YWtlQXV0aG9yaXphdGlvbi5WYWxpZGF0b3JzSABSCGRlbnlMaXN0ElkKEmF1dGhvcml6YXRpb25fdHlwZRgEIAEoDjIqLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLkF1dGhvcml6YXRpb25UeXBlUhFhdXRob3JpemF0aW9uVHlwZRomCgpWYWxpZGF0b3JzEhgKB2FkZHJlc3MYASADKAlSB2FkZHJlc3NCDAoKdmFsaWRhdG9ycxq9AQoJQXV0aEdyYW50EhgKB2dyYW50ZXIYASABKAlSB2dyYW50ZXISGAoHZ3JhbnRlZRgCIAEoCVIHZ3JhbnRlZRJOCgtncmFudF9zdGFrZRgDIAEoCzIrLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlN0YWtlQXV0aG9yaXphdGlvbkgAUgpncmFudFN0YWtlEh4KCmV4cGlyYXRpb24YBCABKANSCmV4cGlyYXRpb25CDAoKZ3JhbnRfdHlwZRpiCgpBdXRoUmV2b2tlEhgKB2dyYW50ZXIYASABKAlSB2dyYW50ZXISGAoHZ3JhbnRlZRgCIAEoCVIHZ3JhbnRlZRIgCgxtc2dfdHlwZV91cmwYAyABKAlSCm1zZ1R5cGVVcmwafQoHTXNnVm90ZRIfCgtwcm9wb3NhbF9pZBgBIAEoBFIKcHJvcG9zYWxJZBIUCgV2b3RlchgCIAEoCVIFdm90ZXISOwoGb3B0aW9uGAMgASgOMiMuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuVm90ZU9wdGlvblIGb3B0aW9uIlIKEUF1dGhvcml6YXRpb25UeXBlEg8KC1VOU1BFQ0lGSUVEEAASDAoIREVMRUdBVEUQARIOCgpVTkRFTEVHQVRFEAISDgoKUkVERUxFR0FURRADIk4KClZvdGVPcHRpb24SEAoMX1VOU1BFQ0lGSUVEEAASBwoDWUVTEAESCwoHQUJTVEFJThACEgYKAk5PEAMSEAoMTk9fV0lUSF9WRVRPEARCDwoNbWVzc2FnZV9vbmVvZg==');
+final $typed_data.Uint8List messageDescriptor = $convert.base64Decode(
+    'CgdNZXNzYWdlEk0KEnNlbmRfY29pbnNfbWVzc2FnZRgBIAEoCzIdLlRXLkNvc21vcy5Qcm90by'
+    '5NZXNzYWdlLlNlbmRIAFIQc2VuZENvaW5zTWVzc2FnZRJbChd0cmFuc2Zlcl90b2tlbnNfbWVz'
+    'c2FnZRgCIAEoCzIhLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRyYW5zZmVySABSFXRyYW5zZm'
+    'VyVG9rZW5zTWVzc2FnZRJICg1zdGFrZV9tZXNzYWdlGAMgASgLMiEuVFcuQ29zbW9zLlByb3Rv'
+    'Lk1lc3NhZ2UuRGVsZWdhdGVIAFIMc3Rha2VNZXNzYWdlEk4KD3Vuc3Rha2VfbWVzc2FnZRgEIA'
+    'EoCzIjLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlVuZGVsZWdhdGVIAFIOdW5zdGFrZU1lc3Nh'
+    'Z2USUwoPcmVzdGFrZV9tZXNzYWdlGAUgASgLMiguVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuQm'
+    'VnaW5SZWRlbGVnYXRlSABSDnJlc3Rha2VNZXNzYWdlEnYKHXdpdGhkcmF3X3N0YWtlX3Jld2Fy'
+    'ZF9tZXNzYWdlGAYgASgLMjEuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2l0aGRyYXdEZWxlZ2'
+    'F0aW9uUmV3YXJkSABSGndpdGhkcmF3U3Rha2VSZXdhcmRNZXNzYWdlEkwKEHJhd19qc29uX21l'
+    'c3NhZ2UYByABKAsyIC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5SYXdKU09OSABSDnJhd0pzb2'
+    '5NZXNzYWdlEpoBCix3YXNtX3RlcnJhX2V4ZWN1dGVfY29udHJhY3RfdHJhbnNmZXJfbWVzc2Fn'
+    'ZRgIIAEoCzI5LlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cm'
+    'FjdFRyYW5zZmVySABSJ3dhc21UZXJyYUV4ZWN1dGVDb250cmFjdFRyYW5zZmVyTWVzc2FnZRKO'
+    'AQood2FzbV90ZXJyYV9leGVjdXRlX2NvbnRyYWN0X3NlbmRfbWVzc2FnZRgJIAEoCzI1LlRXLk'
+    'Nvc21vcy5Qcm90by5NZXNzYWdlLldhc21UZXJyYUV4ZWN1dGVDb250cmFjdFNlbmRIAFIjd2Fz'
+    'bVRlcnJhRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2USXgoWdGhvcmNoYWluX3NlbmRfbWVzc2'
+    'FnZRgKIAEoCzImLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRIT1JDaGFpblNlbmRIAFIUdGhv'
+    'cmNoYWluU2VuZE1lc3NhZ2USZAoYZXhlY3V0ZV9jb250cmFjdF9tZXNzYWdlGAsgASgLMiguVF'
+    'cuQ29zbW9zLlByb3RvLk1lc3NhZ2UuRXhlY3V0ZUNvbnRyYWN0SABSFmV4ZWN1dGVDb250cmFj'
+    'dE1lc3NhZ2USiAEKI3dhc21fdGVycmFfZXhlY3V0ZV9jb250cmFjdF9nZW5lcmljGAwgASgLMj'
+    'guVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0R2VuZXJp'
+    'Y0gAUh93YXNtVGVycmFFeGVjdXRlQ29udHJhY3RHZW5lcmljEooBCiZ3YXNtX2V4ZWN1dGVfY2'
+    '9udHJhY3RfdHJhbnNmZXJfbWVzc2FnZRgNIAEoCzI0LlRXLkNvc21vcy5Qcm90by5NZXNzYWdl'
+    'Lldhc21FeGVjdXRlQ29udHJhY3RUcmFuc2ZlckgAUiJ3YXNtRXhlY3V0ZUNvbnRyYWN0VHJhbn'
+    'NmZXJNZXNzYWdlEn4KIndhc21fZXhlY3V0ZV9jb250cmFjdF9zZW5kX21lc3NhZ2UYDiABKAsy'
+    'MC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5XYXNtRXhlY3V0ZUNvbnRyYWN0U2VuZEgAUh53YX'
+    'NtRXhlY3V0ZUNvbnRyYWN0U2VuZE1lc3NhZ2USeAodd2FzbV9leGVjdXRlX2NvbnRyYWN0X2dl'
+    'bmVyaWMYDyABKAsyMy5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5XYXNtRXhlY3V0ZUNvbnRyYW'
+    'N0R2VuZXJpY0gAUhp3YXNtRXhlY3V0ZUNvbnRyYWN0R2VuZXJpYxJVChNzaWduX2RpcmVjdF9t'
+    'ZXNzYWdlGBAgASgLMiMuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuU2lnbkRpcmVjdEgAUhFzaW'
+    'duRGlyZWN0TWVzc2FnZRJDCgphdXRoX2dyYW50GBEgASgLMiIuVFcuQ29zbW9zLlByb3RvLk1l'
+    'c3NhZ2UuQXV0aEdyYW50SABSCWF1dGhHcmFudBJGCgthdXRoX3Jldm9rZRgSIAEoCzIjLlRXLk'
+    'Nvc21vcy5Qcm90by5NZXNzYWdlLkF1dGhSZXZva2VIAFIKYXV0aFJldm9rZRJuChxzZXRfd2l0'
+    'aGRyYXdfYWRkcmVzc19tZXNzYWdlGBMgASgLMisuVFcuQ29zbW9zLlByb3RvLk1lc3NhZ2UuU2'
+    'V0V2l0aGRyYXdBZGRyZXNzSABSGXNldFdpdGhkcmF3QWRkcmVzc01lc3NhZ2USPQoIbXNnX3Zv'
+    'dGUYFCABKAsyIC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5Nc2dWb3RlSABSB21zZ1ZvdGUSfA'
+    'ofbXNnX3N0cmlkZV9saXF1aWRfc3Rha2luZ19zdGFrZRgVIAEoCzI0LlRXLkNvc21vcy5Qcm90'
+    'by5NZXNzYWdlLk1zZ1N0cmlkZUxpcXVpZFN0YWtpbmdTdGFrZUgAUhttc2dTdHJpZGVMaXF1aW'
+    'RTdGFraW5nU3Rha2USfwogbXNnX3N0cmlkZV9saXF1aWRfc3Rha2luZ19yZWRlZW0YFiABKAsy'
+    'NS5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5Nc2dTdHJpZGVMaXF1aWRTdGFraW5nUmVkZWVtSA'
+    'BSHG1zZ1N0cmlkZUxpcXVpZFN0YWtpbmdSZWRlZW0SZwoZdGhvcmNoYWluX2RlcG9zaXRfbWVz'
+    'c2FnZRgXIAEoCzIpLlRXLkNvc21vcy5Qcm90by5NZXNzYWdlLlRIT1JDaGFpbkRlcG9zaXRIAF'
+    'IXdGhvcmNoYWluRGVwb3NpdE1lc3NhZ2UanAEKBFNlbmQSIQoMZnJvbV9hZGRyZXNzGAEgASgJ'
+    'Ugtmcm9tQWRkcmVzcxIdCgp0b19hZGRyZXNzGAIgASgJUgl0b0FkZHJlc3MSMQoHYW1vdW50cx'
+    'gDIAMoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudHMSHwoLdHlwZV9wcmVmaXgY'
+    'BCABKAlSCnR5cGVQcmVmaXgaogIKCFRyYW5zZmVyEh8KC3NvdXJjZV9wb3J0GAEgASgJUgpzb3'
+    'VyY2VQb3J0EiUKDnNvdXJjZV9jaGFubmVsGAIgASgJUg1zb3VyY2VDaGFubmVsEi0KBXRva2Vu'
+    'GAMgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFtb3VudFIFdG9rZW4SFgoGc2VuZGVyGAQgASgJUg'
+    'ZzZW5kZXISGgoIcmVjZWl2ZXIYBSABKAlSCHJlY2VpdmVyEj4KDnRpbWVvdXRfaGVpZ2h0GAYg'
+    'ASgLMhcuVFcuQ29zbW9zLlByb3RvLkhlaWdodFINdGltZW91dEhlaWdodBIrChF0aW1lb3V0X3'
+    'RpbWVzdGFtcBgHIAEoBFIQdGltZW91dFRpbWVzdGFtcBq2AQoIRGVsZWdhdGUSKwoRZGVsZWdh'
+    'dG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSKwoRdmFsaWRhdG9yX2FkZHJlc3'
+    'MYAiABKAlSEHZhbGlkYXRvckFkZHJlc3MSLwoGYW1vdW50GAMgASgLMhcuVFcuQ29zbW9zLlBy'
+    'b3RvLkFtb3VudFIGYW1vdW50Eh8KC3R5cGVfcHJlZml4GAQgASgJUgp0eXBlUHJlZml4GrgBCg'
+    'pVbmRlbGVnYXRlEisKEWRlbGVnYXRvcl9hZGRyZXNzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNz'
+    'EisKEXZhbGlkYXRvcl9hZGRyZXNzGAIgASgJUhB2YWxpZGF0b3JBZGRyZXNzEi8KBmFtb3VudB'
+    'gDIAEoCzIXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSBmFtb3VudBIfCgt0eXBlX3ByZWZpeBgE'
+    'IAEoCVIKdHlwZVByZWZpeBr4AQoPQmVnaW5SZWRlbGVnYXRlEisKEWRlbGVnYXRvcl9hZGRyZX'
+    'NzGAEgASgJUhBkZWxlZ2F0b3JBZGRyZXNzEjIKFXZhbGlkYXRvcl9zcmNfYWRkcmVzcxgCIAEo'
+    'CVITdmFsaWRhdG9yU3JjQWRkcmVzcxIyChV2YWxpZGF0b3JfZHN0X2FkZHJlc3MYAyABKAlSE3'
+    'ZhbGlkYXRvckRzdEFkZHJlc3MSLwoGYW1vdW50GAQgASgLMhcuVFcuQ29zbW9zLlByb3RvLkFt'
+    'b3VudFIGYW1vdW50Eh8KC3R5cGVfcHJlZml4GAUgASgJUgp0eXBlUHJlZml4Go0BChJTZXRXaX'
+    'RoZHJhd0FkZHJlc3MSKwoRZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJl'
+    'c3MSKQoQd2l0aGRyYXdfYWRkcmVzcxgCIAEoCVIPd2l0aGRyYXdBZGRyZXNzEh8KC3R5cGVfcH'
+    'JlZml4GAMgASgJUgp0eXBlUHJlZml4GpUBChhXaXRoZHJhd0RlbGVnYXRpb25SZXdhcmQSKwoR'
+    'ZGVsZWdhdG9yX2FkZHJlc3MYASABKAlSEGRlbGVnYXRvckFkZHJlc3MSKwoRdmFsaWRhdG9yX2'
+    'FkZHJlc3MYAiABKAlSEHZhbGlkYXRvckFkZHJlc3MSHwoLdHlwZV9wcmVmaXgYAyABKAlSCnR5'
+    'cGVQcmVmaXgatgEKD0V4ZWN1dGVDb250cmFjdBIWCgZzZW5kZXIYASABKAlSBnNlbmRlchIaCg'
+    'hjb250cmFjdBgCIAEoCVIIY29udHJhY3QSHwoLZXhlY3V0ZV9tc2cYAyABKAlSCmV4ZWN1dGVN'
+    'c2cSLQoFY29pbnMYBCADKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50UgVjb2lucxIfCgt0eX'
+    'BlX3ByZWZpeBgFIAEoCVIKdHlwZVByZWZpeBq5AQogV2FzbVRlcnJhRXhlY3V0ZUNvbnRyYWN0'
+    'VHJhbnNmZXISJQoOc2VuZGVyX2FkZHJlc3MYASABKAlSDXNlbmRlckFkZHJlc3MSKQoQY29udH'
+    'JhY3RfYWRkcmVzcxgCIAEoCVIPY29udHJhY3RBZGRyZXNzEhYKBmFtb3VudBgDIAEoDFIGYW1v'
+    'dW50EisKEXJlY2lwaWVudF9hZGRyZXNzGAQgASgJUhByZWNpcGllbnRBZGRyZXNzGuwBChxXYX'
+    'NtVGVycmFFeGVjdXRlQ29udHJhY3RTZW5kEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5k'
+    'ZXJBZGRyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIWCg'
+    'ZhbW91bnQYAyABKAxSBmFtb3VudBI8ChpyZWNpcGllbnRfY29udHJhY3RfYWRkcmVzcxgEIAEo'
+    'CVIYcmVjaXBpZW50Q29udHJhY3RBZGRyZXNzEhAKA21zZxgFIAEoCVIDbXNnEhIKBGNvaW4YBi'
+    'ADKAlSBGNvaW4ahAEKDVRIT1JDaGFpblNlbmQSIQoMZnJvbV9hZGRyZXNzGAEgASgMUgtmcm9t'
+    'QWRkcmVzcxIdCgp0b19hZGRyZXNzGAIgASgMUgl0b0FkZHJlc3MSMQoHYW1vdW50cxgDIAMoCz'
+    'IXLlRXLkNvc21vcy5Qcm90by5BbW91bnRSB2Ftb3VudHMadAoQVEhPUkNoYWluRGVwb3NpdBI0'
+    'CgVjb2lucxgBIAMoCzIeLlRXLkNvc21vcy5Qcm90by5USE9SQ2hhaW5Db2luUgVjb2lucxISCg'
+    'RtZW1vGAIgASgJUgRtZW1vEhYKBnNpZ25lchgDIAEoDFIGc2lnbmVyGsMBCh9XYXNtVGVycmFF'
+    'eGVjdXRlQ29udHJhY3RHZW5lcmljEiUKDnNlbmRlcl9hZGRyZXNzGAEgASgJUg1zZW5kZXJBZG'
+    'RyZXNzEikKEGNvbnRyYWN0X2FkZHJlc3MYAiABKAlSD2NvbnRyYWN0QWRkcmVzcxIfCgtleGVj'
+    'dXRlX21zZxgDIAEoCVIKZXhlY3V0ZU1zZxItCgVjb2lucxgFIAMoCzIXLlRXLkNvc21vcy5Qcm'
+    '90by5BbW91bnRSBWNvaW5zGrQBChtXYXNtRXhlY3V0ZUNvbnRyYWN0VHJhbnNmZXISJQoOc2Vu'
+    'ZGVyX2FkZHJlc3MYASABKAlSDXNlbmRlckFkZHJlc3MSKQoQY29udHJhY3RfYWRkcmVzcxgCIA'
+    'EoCVIPY29udHJhY3RBZGRyZXNzEhYKBmFtb3VudBgDIAEoDFIGYW1vdW50EisKEXJlY2lwaWVu'
+    'dF9hZGRyZXNzGAQgASgJUhByZWNpcGllbnRBZGRyZXNzGucBChdXYXNtRXhlY3V0ZUNvbnRyYW'
+    'N0U2VuZBIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRkcmVzcxIpChBjb250cmFj'
+    'dF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSFgoGYW1vdW50GAMgASgMUgZhbW91bn'
+    'QSPAoacmVjaXBpZW50X2NvbnRyYWN0X2FkZHJlc3MYBCABKAlSGHJlY2lwaWVudENvbnRyYWN0'
+    'QWRkcmVzcxIQCgNtc2cYBSABKAlSA21zZxISCgRjb2luGAYgAygJUgRjb2luGr4BChpXYXNtRX'
+    'hlY3V0ZUNvbnRyYWN0R2VuZXJpYxIlCg5zZW5kZXJfYWRkcmVzcxgBIAEoCVINc2VuZGVyQWRk'
+    'cmVzcxIpChBjb250cmFjdF9hZGRyZXNzGAIgASgJUg9jb250cmFjdEFkZHJlc3MSHwoLZXhlY3'
+    'V0ZV9tc2cYAyABKAlSCmV4ZWN1dGVNc2cSLQoFY29pbnMYBSADKAsyFy5UVy5Db3Ntb3MuUHJv'
+    'dG8uQW1vdW50UgVjb2lucxozCgdSYXdKU09OEhIKBHR5cGUYASABKAlSBHR5cGUSFAoFdmFsdW'
+    'UYAiABKAlSBXZhbHVlGlMKClNpZ25EaXJlY3QSHQoKYm9keV9ieXRlcxgBIAEoDFIJYm9keUJ5'
+    'dGVzEiYKD2F1dGhfaW5mb19ieXRlcxgCIAEoDFINYXV0aEluZm9CeXRlcxqNAwoSU3Rha2VBdX'
+    'Rob3JpemF0aW9uEjYKCm1heF90b2tlbnMYASABKAsyFy5UVy5Db3Ntb3MuUHJvdG8uQW1vdW50'
+    'UgltYXhUb2tlbnMSVwoKYWxsb3dfbGlzdBgCIAEoCzI2LlRXLkNvc21vcy5Qcm90by5NZXNzYW'
+    'dlLlN0YWtlQXV0aG9yaXphdGlvbi5WYWxpZGF0b3JzSABSCWFsbG93TGlzdBJVCglkZW55X2xp'
+    'c3QYAyABKAsyNi5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZS5TdGFrZUF1dGhvcml6YXRpb24uVm'
+    'FsaWRhdG9yc0gAUghkZW55TGlzdBJZChJhdXRob3JpemF0aW9uX3R5cGUYBCABKA4yKi5UVy5D'
+    'b3Ntb3MuUHJvdG8uTWVzc2FnZS5BdXRob3JpemF0aW9uVHlwZVIRYXV0aG9yaXphdGlvblR5cG'
+    'UaJgoKVmFsaWRhdG9ycxIYCgdhZGRyZXNzGAEgAygJUgdhZGRyZXNzQgwKCnZhbGlkYXRvcnMa'
+    'vQEKCUF1dGhHcmFudBIYCgdncmFudGVyGAEgASgJUgdncmFudGVyEhgKB2dyYW50ZWUYAiABKA'
+    'lSB2dyYW50ZWUSTgoLZ3JhbnRfc3Rha2UYAyABKAsyKy5UVy5Db3Ntb3MuUHJvdG8uTWVzc2Fn'
+    'ZS5TdGFrZUF1dGhvcml6YXRpb25IAFIKZ3JhbnRTdGFrZRIeCgpleHBpcmF0aW9uGAQgASgDUg'
+    'pleHBpcmF0aW9uQgwKCmdyYW50X3R5cGUaYgoKQXV0aFJldm9rZRIYCgdncmFudGVyGAEgASgJ'
+    'UgdncmFudGVyEhgKB2dyYW50ZWUYAiABKAlSB2dyYW50ZWUSIAoMbXNnX3R5cGVfdXJsGAMgAS'
+    'gJUgptc2dUeXBlVXJsGn0KB01zZ1ZvdGUSHwoLcHJvcG9zYWxfaWQYASABKARSCnByb3Bvc2Fs'
+    'SWQSFAoFdm90ZXIYAiABKAlSBXZvdGVyEjsKBm9wdGlvbhgDIAEoDjIjLlRXLkNvc21vcy5Qcm'
+    '90by5NZXNzYWdlLlZvdGVPcHRpb25SBm9wdGlvbhpuChtNc2dTdHJpZGVMaXF1aWRTdGFraW5n'
+    'U3Rha2USGAoHY3JlYXRvchgBIAEoCVIHY3JlYXRvchIWCgZhbW91bnQYAiABKAlSBmFtb3VudB'
+    'IdCgpob3N0X2Rlbm9tGAMgASgJUglob3N0RGVub20aiQEKHE1zZ1N0cmlkZUxpcXVpZFN0YWtp'
+    'bmdSZWRlZW0SGAoHY3JlYXRvchgBIAEoCVIHY3JlYXRvchIWCgZhbW91bnQYAiABKAlSBmFtb3'
+    'VudBIbCglob3N0X3pvbmUYAyABKAlSCGhvc3Rab25lEhoKCHJlY2VpdmVyGAQgASgJUghyZWNl'
+    'aXZlciJSChFBdXRob3JpemF0aW9uVHlwZRIPCgtVTlNQRUNJRklFRBAAEgwKCERFTEVHQVRFEA'
+    'ESDgoKVU5ERUxFR0FURRACEg4KClJFREVMRUdBVEUQAyJOCgpWb3RlT3B0aW9uEhAKDF9VTlNQ'
+    'RUNJRklFRBAAEgcKA1lFUxABEgsKB0FCU1RBSU4QAhIGCgJOTxADEhAKDE5PX1dJVEhfVkVUTx'
+    'AEQg8KDW1lc3NhZ2Vfb25lb2Y=');
+
 @$core.Deprecated('Use signingInputDescriptor instead')
-const SigningInput$json = const {
+const SigningInput$json = {
   '1': 'SigningInput',
-  '2': const [
-    const {'1': 'signing_mode', '3': 1, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.SigningMode', '10': 'signingMode'},
-    const {'1': 'account_number', '3': 2, '4': 1, '5': 4, '10': 'accountNumber'},
-    const {'1': 'chain_id', '3': 3, '4': 1, '5': 9, '10': 'chainId'},
-    const {'1': 'fee', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Fee', '10': 'fee'},
-    const {'1': 'memo', '3': 5, '4': 1, '5': 9, '10': 'memo'},
-    const {'1': 'sequence', '3': 6, '4': 1, '5': 4, '10': 'sequence'},
-    const {'1': 'private_key', '3': 7, '4': 1, '5': 12, '10': 'privateKey'},
-    const {'1': 'messages', '3': 8, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Message', '10': 'messages'},
-    const {'1': 'mode', '3': 9, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.BroadcastMode', '10': 'mode'},
+  '2': [
+    {'1': 'signing_mode', '3': 1, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.SigningMode', '10': 'signingMode'},
+    {'1': 'account_number', '3': 2, '4': 1, '5': 4, '10': 'accountNumber'},
+    {'1': 'chain_id', '3': 3, '4': 1, '5': 9, '10': 'chainId'},
+    {'1': 'fee', '3': 4, '4': 1, '5': 11, '6': '.TW.Cosmos.Proto.Fee', '10': 'fee'},
+    {'1': 'memo', '3': 5, '4': 1, '5': 9, '10': 'memo'},
+    {'1': 'sequence', '3': 6, '4': 1, '5': 4, '10': 'sequence'},
+    {'1': 'private_key', '3': 7, '4': 1, '5': 12, '10': 'privateKey'},
+    {'1': 'messages', '3': 8, '4': 3, '5': 11, '6': '.TW.Cosmos.Proto.Message', '10': 'messages'},
+    {'1': 'mode', '3': 9, '4': 1, '5': 14, '6': '.TW.Cosmos.Proto.BroadcastMode', '10': 'mode'},
+    {'1': 'public_key', '3': 10, '4': 1, '5': 12, '10': 'publicKey'},
   ],
 };
 
 /// Descriptor for `SigningInput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode('CgxTaWduaW5nSW5wdXQSPwoMc2lnbmluZ19tb2RlGAEgASgOMhwuVFcuQ29zbW9zLlByb3RvLlNpZ25pbmdNb2RlUgtzaWduaW5nTW9kZRIlCg5hY2NvdW50X251bWJlchgCIAEoBFINYWNjb3VudE51bWJlchIZCghjaGFpbl9pZBgDIAEoCVIHY2hhaW5JZBImCgNmZWUYBCABKAsyFC5UVy5Db3Ntb3MuUHJvdG8uRmVlUgNmZWUSEgoEbWVtbxgFIAEoCVIEbWVtbxIaCghzZXF1ZW5jZRgGIAEoBFIIc2VxdWVuY2USHwoLcHJpdmF0ZV9rZXkYByABKAxSCnByaXZhdGVLZXkSNAoIbWVzc2FnZXMYCCADKAsyGC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZVIIbWVzc2FnZXMSMgoEbW9kZRgJIAEoDjIeLlRXLkNvc21vcy5Qcm90by5Ccm9hZGNhc3RNb2RlUgRtb2Rl');
+final $typed_data.Uint8List signingInputDescriptor = $convert.base64Decode(
+    'CgxTaWduaW5nSW5wdXQSPwoMc2lnbmluZ19tb2RlGAEgASgOMhwuVFcuQ29zbW9zLlByb3RvLl'
+    'NpZ25pbmdNb2RlUgtzaWduaW5nTW9kZRIlCg5hY2NvdW50X251bWJlchgCIAEoBFINYWNjb3Vu'
+    'dE51bWJlchIZCghjaGFpbl9pZBgDIAEoCVIHY2hhaW5JZBImCgNmZWUYBCABKAsyFC5UVy5Db3'
+    'Ntb3MuUHJvdG8uRmVlUgNmZWUSEgoEbWVtbxgFIAEoCVIEbWVtbxIaCghzZXF1ZW5jZRgGIAEo'
+    'BFIIc2VxdWVuY2USHwoLcHJpdmF0ZV9rZXkYByABKAxSCnByaXZhdGVLZXkSNAoIbWVzc2FnZX'
+    'MYCCADKAsyGC5UVy5Db3Ntb3MuUHJvdG8uTWVzc2FnZVIIbWVzc2FnZXMSMgoEbW9kZRgJIAEo'
+    'DjIeLlRXLkNvc21vcy5Qcm90by5Ccm9hZGNhc3RNb2RlUgRtb2RlEh0KCnB1YmxpY19rZXkYCi'
+    'ABKAxSCXB1YmxpY0tleQ==');
+
 @$core.Deprecated('Use signingOutputDescriptor instead')
-const SigningOutput$json = const {
+const SigningOutput$json = {
   '1': 'SigningOutput',
-  '2': const [
-    const {'1': 'signature', '3': 1, '4': 1, '5': 12, '10': 'signature'},
-    const {'1': 'json', '3': 2, '4': 1, '5': 9, '10': 'json'},
-    const {'1': 'serialized', '3': 3, '4': 1, '5': 9, '10': 'serialized'},
-    const {'1': 'error', '3': 4, '4': 1, '5': 9, '10': 'error'},
-    const {'1': 'signature_json', '3': 5, '4': 1, '5': 9, '10': 'signatureJson'},
+  '2': [
+    {'1': 'signature', '3': 1, '4': 1, '5': 12, '10': 'signature'},
+    {'1': 'json', '3': 2, '4': 1, '5': 9, '10': 'json'},
+    {'1': 'serialized', '3': 3, '4': 1, '5': 9, '10': 'serialized'},
+    {'1': 'signature_json', '3': 4, '4': 1, '5': 9, '10': 'signatureJson'},
+    {'1': 'error_message', '3': 5, '4': 1, '5': 9, '10': 'errorMessage'},
+    {'1': 'error', '3': 6, '4': 1, '5': 14, '6': '.TW.Common.Proto.SigningError', '10': 'error'},
   ],
 };
 
 /// Descriptor for `SigningOutput`. Decode as a `google.protobuf.DescriptorProto`.
-final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode('Cg1TaWduaW5nT3V0cHV0EhwKCXNpZ25hdHVyZRgBIAEoDFIJc2lnbmF0dXJlEhIKBGpzb24YAiABKAlSBGpzb24SHgoKc2VyaWFsaXplZBgDIAEoCVIKc2VyaWFsaXplZBIUCgVlcnJvchgEIAEoCVIFZXJyb3ISJQoOc2lnbmF0dXJlX2pzb24YBSABKAlSDXNpZ25hdHVyZUpzb24=');
+final $typed_data.Uint8List signingOutputDescriptor = $convert.base64Decode(
+    'Cg1TaWduaW5nT3V0cHV0EhwKCXNpZ25hdHVyZRgBIAEoDFIJc2lnbmF0dXJlEhIKBGpzb24YAi'
+    'ABKAlSBGpzb24SHgoKc2VyaWFsaXplZBgDIAEoCVIKc2VyaWFsaXplZBIlCg5zaWduYXR1cmVf'
+    'anNvbhgEIAEoCVINc2lnbmF0dXJlSnNvbhIjCg1lcnJvcl9tZXNzYWdlGAUgASgJUgxlcnJvck'
+    '1lc3NhZ2USMwoFZXJyb3IYBiABKA4yHS5UVy5Db21tb24uUHJvdG8uU2lnbmluZ0Vycm9yUgVl'
+    'cnJvcg==');
+

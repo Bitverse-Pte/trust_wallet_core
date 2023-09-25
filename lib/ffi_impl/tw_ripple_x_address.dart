@@ -113,4 +113,23 @@ abstract class TWRippleXAddress {
 
   static late final _TWRippleXAddressTagPtr = _lookup<NativeFunction<Uint32 Function(Pointer<Void>)>>('TWRippleXAddressTag');
   static late final _TWRippleXAddressTag = _TWRippleXAddressTagPtr.asFunction<int Function(Pointer<Void>)>();
+
+  /// Builds a LiquidStaking transaction input.
+  ///
+  /// \param input The serialized data of LiquidStakingInput.
+  /// \return The serialized data of LiquidStakingOutput.
+  Pointer<Void> TWLiquidStakingBuildRequest(
+      Pointer<Void> input,
+      ) {
+    return _TWLiquidStakingBuildRequest(
+      input,
+    );
+  }
+
+  late final _TWLiquidStakingBuildRequestPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+              Pointer<Void>)>>('TWLiquidStakingBuildRequest');
+  late final _TWLiquidStakingBuildRequest = _TWLiquidStakingBuildRequestPtr
+      .asFunction<Pointer<Void> Function(Pointer<Void>)>();
 }

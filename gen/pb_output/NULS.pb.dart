@@ -1,26 +1,22 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: NULS.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
 import 'package:protobuf/protobuf.dart' as $pb;
 
-class TransactionCoinFrom extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransactionCoinFrom', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetsChainid', $pb.PbFieldType.OU3)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetsId', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idAmount', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OY)
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'locked', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
+import 'Common.pbenum.dart' as $0;
 
-  TransactionCoinFrom._() : super();
+/// Transaction from address
+class TransactionCoinFrom extends $pb.GeneratedMessage {
   factory TransactionCoinFrom({
     $core.String? fromAddress,
     $core.int? assetsChainid,
@@ -29,29 +25,41 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
     $core.List<$core.int>? nonce,
     $core.int? locked,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (assetsChainid != null) {
-      _result.assetsChainid = assetsChainid;
+      $result.assetsChainid = assetsChainid;
     }
     if (assetsId != null) {
-      _result.assetsId = assetsId;
+      $result.assetsId = assetsId;
     }
     if (idAmount != null) {
-      _result.idAmount = idAmount;
+      $result.idAmount = idAmount;
     }
     if (nonce != null) {
-      _result.nonce = nonce;
+      $result.nonce = nonce;
     }
     if (locked != null) {
-      _result.locked = locked;
+      $result.locked = locked;
     }
-    return _result;
+    return $result;
   }
+  TransactionCoinFrom._() : super();
   factory TransactionCoinFrom.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TransactionCoinFrom.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransactionCoinFrom', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'fromAddress')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'assetsChainid', $pb.PbFieldType.OU3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'assetsId', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'idAmount', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OY)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'locked', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -61,8 +69,10 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransactionCoinFrom copyWith(void Function(TransactionCoinFrom) updates) => super.copyWith((message) => updates(message as TransactionCoinFrom)) as TransactionCoinFrom; // ignore: deprecated_member_use
+  TransactionCoinFrom copyWith(void Function(TransactionCoinFrom) updates) => super.copyWith((message) => updates(message as TransactionCoinFrom)) as TransactionCoinFrom;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TransactionCoinFrom create() => TransactionCoinFrom._();
   TransactionCoinFrom createEmptyInstance() => create();
@@ -71,6 +81,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   static TransactionCoinFrom getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransactionCoinFrom>(create);
   static TransactionCoinFrom? _defaultInstance;
 
+  /// Source address
   @$pb.TagNumber(1)
   $core.String get fromAddress => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -80,6 +91,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// Chain ID
   @$pb.TagNumber(2)
   $core.int get assetsChainid => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -89,6 +101,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAssetsChainid() => clearField(2);
 
+  /// ID of the asset
   @$pb.TagNumber(3)
   $core.int get assetsId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -98,6 +111,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAssetsId() => clearField(3);
 
+  /// transaction out amount (256-bit number)
   @$pb.TagNumber(4)
   $core.List<$core.int> get idAmount => $_getN(3);
   @$pb.TagNumber(4)
@@ -107,6 +121,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearIdAmount() => clearField(4);
 
+  /// Nonce, 8 bytes
   @$pb.TagNumber(5)
   $core.List<$core.int> get nonce => $_getN(4);
   @$pb.TagNumber(5)
@@ -116,6 +131,7 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearNonce() => clearField(5);
 
+  /// lock status: 1 locked; 0 unlocked
   @$pb.TagNumber(6)
   $core.int get locked => $_getIZ(5);
   @$pb.TagNumber(6)
@@ -126,17 +142,8 @@ class TransactionCoinFrom extends $pb.GeneratedMessage {
   void clearLocked() => clearField(6);
 }
 
+/// Transaction to a destination
 class TransactionCoinTo extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransactionCoinTo', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'toAddress')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetsChainid', $pb.PbFieldType.OU3)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'assetsId', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idAmount', $pb.PbFieldType.OY)
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lockTime', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  TransactionCoinTo._() : super();
   factory TransactionCoinTo({
     $core.String? toAddress,
     $core.int? assetsChainid,
@@ -144,26 +151,37 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
     $core.List<$core.int>? idAmount,
     $core.int? lockTime,
   }) {
-    final _result = create();
+    final $result = create();
     if (toAddress != null) {
-      _result.toAddress = toAddress;
+      $result.toAddress = toAddress;
     }
     if (assetsChainid != null) {
-      _result.assetsChainid = assetsChainid;
+      $result.assetsChainid = assetsChainid;
     }
     if (assetsId != null) {
-      _result.assetsId = assetsId;
+      $result.assetsId = assetsId;
     }
     if (idAmount != null) {
-      _result.idAmount = idAmount;
+      $result.idAmount = idAmount;
     }
     if (lockTime != null) {
-      _result.lockTime = lockTime;
+      $result.lockTime = lockTime;
     }
-    return _result;
+    return $result;
   }
+  TransactionCoinTo._() : super();
   factory TransactionCoinTo.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TransactionCoinTo.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransactionCoinTo', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'toAddress')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'assetsChainid', $pb.PbFieldType.OU3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'assetsId', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'idAmount', $pb.PbFieldType.OY)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'lockTime', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -173,8 +191,10 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransactionCoinTo copyWith(void Function(TransactionCoinTo) updates) => super.copyWith((message) => updates(message as TransactionCoinTo)) as TransactionCoinTo; // ignore: deprecated_member_use
+  TransactionCoinTo copyWith(void Function(TransactionCoinTo) updates) => super.copyWith((message) => updates(message as TransactionCoinTo)) as TransactionCoinTo;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TransactionCoinTo create() => TransactionCoinTo._();
   TransactionCoinTo createEmptyInstance() => create();
@@ -183,6 +203,7 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   static TransactionCoinTo getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransactionCoinTo>(create);
   static TransactionCoinTo? _defaultInstance;
 
+  /// destination address
   @$pb.TagNumber(1)
   $core.String get toAddress => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -192,6 +213,7 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearToAddress() => clearField(1);
 
+  /// Chain ID
   @$pb.TagNumber(2)
   $core.int get assetsChainid => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -201,6 +223,7 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAssetsChainid() => clearField(2);
 
+  /// ID of the asset
   @$pb.TagNumber(3)
   $core.int get assetsId => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -210,6 +233,7 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAssetsId() => clearField(3);
 
+  /// transaction amount (uint256, serialized little endian)
   @$pb.TagNumber(4)
   $core.List<$core.int> get idAmount => $_getN(3);
   @$pb.TagNumber(4)
@@ -219,6 +243,7 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearIdAmount() => clearField(4);
 
+  /// lock time
   @$pb.TagNumber(5)
   $core.int get lockTime => $_getIZ(4);
   @$pb.TagNumber(5)
@@ -229,39 +254,41 @@ class TransactionCoinTo extends $pb.GeneratedMessage {
   void clearLockTime() => clearField(5);
 }
 
+/// A signature
 class Signature extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Signature', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pkeyLen', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'publicKey', $pb.PbFieldType.OY)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sigLen', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  Signature._() : super();
   factory Signature({
     $core.int? pkeyLen,
     $core.List<$core.int>? publicKey,
     $core.int? sigLen,
     $core.List<$core.int>? signature,
   }) {
-    final _result = create();
+    final $result = create();
     if (pkeyLen != null) {
-      _result.pkeyLen = pkeyLen;
+      $result.pkeyLen = pkeyLen;
     }
     if (publicKey != null) {
-      _result.publicKey = publicKey;
+      $result.publicKey = publicKey;
     }
     if (sigLen != null) {
-      _result.sigLen = sigLen;
+      $result.sigLen = sigLen;
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
-    return _result;
+    return $result;
   }
+  Signature._() : super();
   factory Signature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Signature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Signature', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'pkeyLen', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'publicKey', $pb.PbFieldType.OY)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'sigLen', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -271,8 +298,10 @@ class Signature extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature; // ignore: deprecated_member_use
+  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Signature create() => Signature._();
   Signature createEmptyInstance() => create();
@@ -281,6 +310,7 @@ class Signature extends $pb.GeneratedMessage {
   static Signature getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Signature>(create);
   static Signature? _defaultInstance;
 
+  /// Length of public key data
   @$pb.TagNumber(1)
   $core.int get pkeyLen => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -290,6 +320,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPkeyLen() => clearField(1);
 
+  /// The public key
   @$pb.TagNumber(2)
   $core.List<$core.int> get publicKey => $_getN(1);
   @$pb.TagNumber(2)
@@ -299,6 +330,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearPublicKey() => clearField(2);
 
+  /// The length of the signature
   @$pb.TagNumber(3)
   $core.int get sigLen => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -308,6 +340,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSigLen() => clearField(3);
 
+  /// The signature data
   @$pb.TagNumber(4)
   $core.List<$core.int> get signature => $_getN(3);
   @$pb.TagNumber(4)
@@ -318,59 +351,61 @@ class Signature extends $pb.GeneratedMessage {
   void clearSignature() => clearField(4);
 }
 
+/// A transaction
 class Transaction extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..a<$core.int>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'type', $pb.PbFieldType.OU3)
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp', $pb.PbFieldType.OU3)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'remark')
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'txData', $pb.PbFieldType.OY)
-    ..aOM<TransactionCoinFrom>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'input', subBuilder: TransactionCoinFrom.create)
-    ..aOM<TransactionCoinTo>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'output', subBuilder: TransactionCoinTo.create)
-    ..aOM<Signature>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'txSigs', subBuilder: Signature.create)
-    ..a<$core.int>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'hash', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  Transaction._() : super();
   factory Transaction({
     $core.int? type,
     $core.int? timestamp,
     $core.String? remark,
     $core.List<$core.int>? txData,
-    TransactionCoinFrom? input,
-    TransactionCoinTo? output,
+    $core.Iterable<TransactionCoinFrom>? input,
+    $core.Iterable<TransactionCoinTo>? output,
     Signature? txSigs,
     $core.int? hash,
   }) {
-    final _result = create();
+    final $result = create();
     if (type != null) {
-      _result.type = type;
+      $result.type = type;
     }
     if (timestamp != null) {
-      _result.timestamp = timestamp;
+      $result.timestamp = timestamp;
     }
     if (remark != null) {
-      _result.remark = remark;
+      $result.remark = remark;
     }
     if (txData != null) {
-      _result.txData = txData;
+      $result.txData = txData;
     }
     if (input != null) {
-      _result.input = input;
+      $result.input.addAll(input);
     }
     if (output != null) {
-      _result.output = output;
+      $result.output.addAll(output);
     }
     if (txSigs != null) {
-      _result.txSigs = txSigs;
+      $result.txSigs = txSigs;
     }
     if (hash != null) {
-      _result.hash = hash;
+      $result.hash = hash;
     }
-    return _result;
+    return $result;
   }
+  Transaction._() : super();
   factory Transaction.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Transaction.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Transaction', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..a<$core.int>(1, _omitFieldNames ? '' : 'type', $pb.PbFieldType.OU3)
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'timestamp', $pb.PbFieldType.OU3)
+    ..aOS(3, _omitFieldNames ? '' : 'remark')
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'txData', $pb.PbFieldType.OY)
+    ..pc<TransactionCoinFrom>(5, _omitFieldNames ? '' : 'input', $pb.PbFieldType.PM, subBuilder: TransactionCoinFrom.create)
+    ..pc<TransactionCoinTo>(6, _omitFieldNames ? '' : 'output', $pb.PbFieldType.PM, subBuilder: TransactionCoinTo.create)
+    ..aOM<Signature>(7, _omitFieldNames ? '' : 'txSigs', subBuilder: Signature.create)
+    ..a<$core.int>(8, _omitFieldNames ? '' : 'hash', $pb.PbFieldType.OU3)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -380,8 +415,10 @@ class Transaction extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Transaction copyWith(void Function(Transaction) updates) => super.copyWith((message) => updates(message as Transaction)) as Transaction; // ignore: deprecated_member_use
+  Transaction copyWith(void Function(Transaction) updates) => super.copyWith((message) => updates(message as Transaction)) as Transaction;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Transaction create() => Transaction._();
   Transaction createEmptyInstance() => create();
@@ -390,6 +427,7 @@ class Transaction extends $pb.GeneratedMessage {
   static Transaction getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Transaction>(create);
   static Transaction? _defaultInstance;
 
+  /// transaction type
   @$pb.TagNumber(1)
   $core.int get type => $_getIZ(0);
   @$pb.TagNumber(1)
@@ -399,6 +437,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearType() => clearField(1);
 
+  /// Timestamp of the transaction
   @$pb.TagNumber(2)
   $core.int get timestamp => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -408,6 +447,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearTimestamp() => clearField(2);
 
+  /// Optional string remark
   @$pb.TagNumber(3)
   $core.String get remark => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -417,6 +457,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearRemark() => clearField(3);
 
+  /// The raw data
   @$pb.TagNumber(4)
   $core.List<$core.int> get txData => $_getN(3);
   @$pb.TagNumber(4)
@@ -426,28 +467,15 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearTxData() => clearField(4);
 
+  /// CoinFrom
   @$pb.TagNumber(5)
-  TransactionCoinFrom get input => $_getN(4);
-  @$pb.TagNumber(5)
-  set input(TransactionCoinFrom v) { setField(5, v); }
-  @$pb.TagNumber(5)
-  $core.bool hasInput() => $_has(4);
-  @$pb.TagNumber(5)
-  void clearInput() => clearField(5);
-  @$pb.TagNumber(5)
-  TransactionCoinFrom ensureInput() => $_ensure(4);
+  $core.List<TransactionCoinFrom> get input => $_getList(4);
 
+  /// CoinTo
   @$pb.TagNumber(6)
-  TransactionCoinTo get output => $_getN(5);
-  @$pb.TagNumber(6)
-  set output(TransactionCoinTo v) { setField(6, v); }
-  @$pb.TagNumber(6)
-  $core.bool hasOutput() => $_has(5);
-  @$pb.TagNumber(6)
-  void clearOutput() => clearField(6);
-  @$pb.TagNumber(6)
-  TransactionCoinTo ensureOutput() => $_ensure(5);
+  $core.List<TransactionCoinTo> get output => $_getList(5);
 
+  /// Signature
   @$pb.TagNumber(7)
   Signature get txSigs => $_getN(6);
   @$pb.TagNumber(7)
@@ -459,6 +487,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   Signature ensureTxSigs() => $_ensure(6);
 
+  /// Tx hash
   @$pb.TagNumber(8)
   $core.int get hash => $_getIZ(7);
   @$pb.TagNumber(8)
@@ -469,22 +498,8 @@ class Transaction extends $pb.GeneratedMessage {
   void clearHash() => clearField(8);
 }
 
+/// Input data necessary to create a signed order.
 class SigningInput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to')
-    ..a<$core.List<$core.int>>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OY)
-    ..a<$core.int>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId', $pb.PbFieldType.OU3)
-    ..a<$core.int>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'idassetsId', $pb.PbFieldType.OU3)
-    ..a<$core.List<$core.int>>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nonce', $pb.PbFieldType.OY)
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'remark')
-    ..a<$core.List<$core.int>>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'balance', $pb.PbFieldType.OY)
-    ..a<$core.int>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp', $pb.PbFieldType.OU3)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     $core.List<$core.int>? privateKey,
     $core.String? from,
@@ -496,42 +511,78 @@ class SigningInput extends $pb.GeneratedMessage {
     $core.String? remark,
     $core.List<$core.int>? balance,
     $core.int? timestamp,
+    $core.String? feePayer,
+    $core.List<$core.int>? feePayerNonce,
+    $core.List<$core.int>? feePayerPrivateKey,
+    $core.List<$core.int>? feePayerBalance,
   }) {
-    final _result = create();
+    final $result = create();
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (to != null) {
-      _result.to = to;
+      $result.to = to;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
     if (idassetsId != null) {
-      _result.idassetsId = idassetsId;
+      $result.idassetsId = idassetsId;
     }
     if (nonce != null) {
-      _result.nonce = nonce;
+      $result.nonce = nonce;
     }
     if (remark != null) {
-      _result.remark = remark;
+      $result.remark = remark;
     }
     if (balance != null) {
-      _result.balance = balance;
+      $result.balance = balance;
     }
     if (timestamp != null) {
-      _result.timestamp = timestamp;
+      $result.timestamp = timestamp;
     }
-    return _result;
+    if (feePayer != null) {
+      $result.feePayer = feePayer;
+    }
+    if (feePayerNonce != null) {
+      $result.feePayerNonce = feePayerNonce;
+    }
+    if (feePayerPrivateKey != null) {
+      $result.feePayerPrivateKey = feePayerPrivateKey;
+    }
+    if (feePayerBalance != null) {
+      $result.feePayerBalance = feePayerBalance;
+    }
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'from')
+    ..aOS(3, _omitFieldNames ? '' : 'to')
+    ..a<$core.List<$core.int>>(4, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OY)
+    ..a<$core.int>(5, _omitFieldNames ? '' : 'chainId', $pb.PbFieldType.OU3)
+    ..a<$core.int>(6, _omitFieldNames ? '' : 'idassetsId', $pb.PbFieldType.OU3)
+    ..a<$core.List<$core.int>>(7, _omitFieldNames ? '' : 'nonce', $pb.PbFieldType.OY)
+    ..aOS(8, _omitFieldNames ? '' : 'remark')
+    ..a<$core.List<$core.int>>(9, _omitFieldNames ? '' : 'balance', $pb.PbFieldType.OY)
+    ..a<$core.int>(10, _omitFieldNames ? '' : 'timestamp', $pb.PbFieldType.OU3)
+    ..aOS(11, _omitFieldNames ? '' : 'feePayer')
+    ..a<$core.List<$core.int>>(12, _omitFieldNames ? '' : 'feePayerNonce', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(13, _omitFieldNames ? '' : 'feePayerPrivateKey', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(14, _omitFieldNames ? '' : 'feePayerBalance', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -541,8 +592,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -551,6 +604,7 @@ class SigningInput extends $pb.GeneratedMessage {
   static SigningInput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningInput>(create);
   static SigningInput? _defaultInstance;
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(1)
   $core.List<$core.int> get privateKey => $_getN(0);
   @$pb.TagNumber(1)
@@ -560,6 +614,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPrivateKey() => clearField(1);
 
+  /// Source address
   @$pb.TagNumber(2)
   $core.String get from => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -569,6 +624,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearFrom() => clearField(2);
 
+  /// Destination address
   @$pb.TagNumber(3)
   $core.String get to => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -578,6 +634,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearTo() => clearField(3);
 
+  /// Transfer amount (uint256, serialized little endian)
   @$pb.TagNumber(4)
   $core.List<$core.int> get amount => $_getN(3);
   @$pb.TagNumber(4)
@@ -587,6 +644,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearAmount() => clearField(4);
 
+  /// Chain ID
   @$pb.TagNumber(5)
   $core.int get chainId => $_getIZ(4);
   @$pb.TagNumber(5)
@@ -596,6 +654,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearChainId() => clearField(5);
 
+  /// Asset ID
   @$pb.TagNumber(6)
   $core.int get idassetsId => $_getIZ(5);
   @$pb.TagNumber(6)
@@ -605,6 +664,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearIdassetsId() => clearField(6);
 
+  /// The last 8 bytes of latest transaction hash
   @$pb.TagNumber(7)
   $core.List<$core.int> get nonce => $_getN(6);
   @$pb.TagNumber(7)
@@ -614,6 +674,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearNonce() => clearField(7);
 
+  /// Optional memo remark
   @$pb.TagNumber(8)
   $core.String get remark => $_getSZ(7);
   @$pb.TagNumber(8)
@@ -623,6 +684,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearRemark() => clearField(8);
 
+  /// Account balance
   @$pb.TagNumber(9)
   $core.List<$core.int> get balance => $_getN(8);
   @$pb.TagNumber(9)
@@ -632,6 +694,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearBalance() => clearField(9);
 
+  /// time, accurate to the second
   @$pb.TagNumber(10)
   $core.int get timestamp => $_getIZ(9);
   @$pb.TagNumber(10)
@@ -640,26 +703,78 @@ class SigningInput extends $pb.GeneratedMessage {
   $core.bool hasTimestamp() => $_has(9);
   @$pb.TagNumber(10)
   void clearTimestamp() => clearField(10);
+
+  /// external address paying fee, required for token transfer, optional for NULS transfer, depending on if an external fee payer is provided. If provided, it will be the fee paying address.
+  @$pb.TagNumber(11)
+  $core.String get feePayer => $_getSZ(10);
+  @$pb.TagNumber(11)
+  set feePayer($core.String v) { $_setString(10, v); }
+  @$pb.TagNumber(11)
+  $core.bool hasFeePayer() => $_has(10);
+  @$pb.TagNumber(11)
+  void clearFeePayer() => clearField(11);
+
+  /// fee payer address nonce, required for token transfer, optional for NULS transfer, depending on if fee_payer is provided.
+  @$pb.TagNumber(12)
+  $core.List<$core.int> get feePayerNonce => $_getN(11);
+  @$pb.TagNumber(12)
+  set feePayerNonce($core.List<$core.int> v) { $_setBytes(11, v); }
+  @$pb.TagNumber(12)
+  $core.bool hasFeePayerNonce() => $_has(11);
+  @$pb.TagNumber(12)
+  void clearFeePayerNonce() => clearField(12);
+
+  /// fee payer address private key, required for token transfer, optional for NULS transfer, depending on if fee_payer is provided.
+  @$pb.TagNumber(13)
+  $core.List<$core.int> get feePayerPrivateKey => $_getN(12);
+  @$pb.TagNumber(13)
+  set feePayerPrivateKey($core.List<$core.int> v) { $_setBytes(12, v); }
+  @$pb.TagNumber(13)
+  $core.bool hasFeePayerPrivateKey() => $_has(12);
+  @$pb.TagNumber(13)
+  void clearFeePayerPrivateKey() => clearField(13);
+
+  /// fee payer NULS balance, it is required for token transfer. optional for NULS transfer, depending on if fee_payer is provided.
+  @$pb.TagNumber(14)
+  $core.List<$core.int> get feePayerBalance => $_getN(13);
+  @$pb.TagNumber(14)
+  set feePayerBalance($core.List<$core.int> v) { $_setBytes(13, v); }
+  @$pb.TagNumber(14)
+  $core.bool hasFeePayerBalance() => $_has(13);
+  @$pb.TagNumber(14)
+  void clearFeePayerBalance() => clearField(14);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded', $pb.PbFieldType.OY)
+  factory SigningOutput({
+    $core.List<$core.int>? encoded,
+    $0.SigningError? error,
+    $core.String? errorMessage,
+  }) {
+    final $result = create();
+    if (encoded != null) {
+      $result.encoded = encoded;
+    }
+    if (error != null) {
+      $result.error = error;
+    }
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
+    return $result;
+  }
+  SigningOutput._() : super();
+  factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
+  factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.NULS.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'encoded', $pb.PbFieldType.OY)
+    ..e<$0.SigningError>(2, _omitFieldNames ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
+    ..aOS(3, _omitFieldNames ? '' : 'errorMessage')
     ..hasRequiredFields = false
   ;
 
-  SigningOutput._() : super();
-  factory SigningOutput({
-    $core.List<$core.int>? encoded,
-  }) {
-    final _result = create();
-    if (encoded != null) {
-      _result.encoded = encoded;
-    }
-    return _result;
-  }
-  factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
-  factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -669,8 +784,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -679,6 +796,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
+  /// Encoded transaction
   @$pb.TagNumber(1)
   $core.List<$core.int> get encoded => $_getN(0);
   @$pb.TagNumber(1)
@@ -687,5 +805,28 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasEncoded() => $_has(0);
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
+
+  /// error code, 0 is ok, other codes will be treated as errors
+  @$pb.TagNumber(2)
+  $0.SigningError get error => $_getN(1);
+  @$pb.TagNumber(2)
+  set error($0.SigningError v) { setField(2, v); }
+  @$pb.TagNumber(2)
+  $core.bool hasError() => $_has(1);
+  @$pb.TagNumber(2)
+  void clearError() => clearField(2);
+
+  /// error code description
+  @$pb.TagNumber(3)
+  $core.String get errorMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set errorMessage($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasErrorMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearErrorMessage() => clearField(3);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

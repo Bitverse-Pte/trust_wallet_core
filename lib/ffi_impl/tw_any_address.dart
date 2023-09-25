@@ -298,4 +298,24 @@ abstract class TWAnyAddress {
 
   static late final _TWAnyAddressDataPtr = _lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>)>>('TWAnyAddressData');
   static late final _TWAnyAddressData = _TWAnyAddressDataPtr.asFunction<Pointer<Void> Function(Pointer<Void>)>();
+  
+  /// Parses the given ECDSA signature from ASN.1 DER encoded bytes.
+  ///
+  /// \param encoded The ASN.1 DER encoded signature.
+  /// \return The ECDSA signature standard binary representation: RS, where R - 32 byte array, S - 32 byte array.
+  Pointer<Void> TWAsnParserEcdsaSignatureFromDer(
+      Pointer<Void> encoded,
+      ) {
+    return _TWAsnParserEcdsaSignatureFromDer(
+      encoded,
+    );
+  }
+
+  late final _TWAsnParserEcdsaSignatureFromDerPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+              Pointer<Void>)>>('TWAsnParserEcdsaSignatureFromDer');
+  late final _TWAsnParserEcdsaSignatureFromDer =
+  _TWAsnParserEcdsaSignatureFromDerPtr.asFunction<
+      Pointer<Void> Function(Pointer<Void>)>();
 }

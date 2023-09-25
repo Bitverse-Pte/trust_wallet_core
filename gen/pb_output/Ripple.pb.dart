@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Ripple.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,34 +16,36 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'Common.pbenum.dart' as $0;
 
+/// https://xrpl.org/currency-formats.html#token-amounts
 class CurrencyAmount extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CurrencyAmount', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currency')
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'value')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'issuer')
-    ..hasRequiredFields = false
-  ;
-
-  CurrencyAmount._() : super();
   factory CurrencyAmount({
     $core.String? currency,
     $core.String? value,
     $core.String? issuer,
   }) {
-    final _result = create();
+    final $result = create();
     if (currency != null) {
-      _result.currency = currency;
+      $result.currency = currency;
     }
     if (value != null) {
-      _result.value = value;
+      $result.value = value;
     }
     if (issuer != null) {
-      _result.issuer = issuer;
+      $result.issuer = issuer;
     }
-    return _result;
+    return $result;
   }
+  CurrencyAmount._() : super();
   factory CurrencyAmount.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CurrencyAmount.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CurrencyAmount', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'currency')
+    ..aOS(2, _omitFieldNames ? '' : 'value')
+    ..aOS(3, _omitFieldNames ? '' : 'issuer')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -49,8 +55,10 @@ class CurrencyAmount extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CurrencyAmount copyWith(void Function(CurrencyAmount) updates) => super.copyWith((message) => updates(message as CurrencyAmount)) as CurrencyAmount; // ignore: deprecated_member_use
+  CurrencyAmount copyWith(void Function(CurrencyAmount) updates) => super.copyWith((message) => updates(message as CurrencyAmount)) as CurrencyAmount;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CurrencyAmount create() => CurrencyAmount._();
   CurrencyAmount createEmptyInstance() => create();
@@ -59,6 +67,8 @@ class CurrencyAmount extends $pb.GeneratedMessage {
   static CurrencyAmount getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CurrencyAmount>(create);
   static CurrencyAmount? _defaultInstance;
 
+  /// Currency code
+  /// https://xrpl.org/currency-formats.html#currency-codes
   @$pb.TagNumber(1)
   $core.String get currency => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -68,6 +78,8 @@ class CurrencyAmount extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearCurrency() => clearField(1);
 
+  /// String number
+  /// https://xrpl.org/currency-formats.html#string-numbers
   @$pb.TagNumber(2)
   $core.String get value => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -77,6 +89,8 @@ class CurrencyAmount extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearValue() => clearField(2);
 
+  /// Account
+  /// https://xrpl.org/accounts.html
   @$pb.TagNumber(3)
   $core.String get issuer => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -87,24 +101,26 @@ class CurrencyAmount extends $pb.GeneratedMessage {
   void clearIssuer() => clearField(3);
 }
 
+/// https://xrpl.org/trustset.html
 class OperationTrustSet extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationTrustSet', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..aOM<CurrencyAmount>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'limitAmount', subBuilder: CurrencyAmount.create)
-    ..hasRequiredFields = false
-  ;
-
-  OperationTrustSet._() : super();
   factory OperationTrustSet({
     CurrencyAmount? limitAmount,
   }) {
-    final _result = create();
+    final $result = create();
     if (limitAmount != null) {
-      _result.limitAmount = limitAmount;
+      $result.limitAmount = limitAmount;
     }
-    return _result;
+    return $result;
   }
+  OperationTrustSet._() : super();
   factory OperationTrustSet.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationTrustSet.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationTrustSet', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..aOM<CurrencyAmount>(1, _omitFieldNames ? '' : 'limitAmount', subBuilder: CurrencyAmount.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -114,8 +130,10 @@ class OperationTrustSet extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationTrustSet copyWith(void Function(OperationTrustSet) updates) => super.copyWith((message) => updates(message as OperationTrustSet)) as OperationTrustSet; // ignore: deprecated_member_use
+  OperationTrustSet copyWith(void Function(OperationTrustSet) updates) => super.copyWith((message) => updates(message as OperationTrustSet)) as OperationTrustSet;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationTrustSet create() => OperationTrustSet._();
   OperationTrustSet createEmptyInstance() => create();
@@ -142,45 +160,47 @@ enum OperationPayment_AmountOneof {
   notSet
 }
 
+/// https://xrpl.org/payment.html
 class OperationPayment extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, OperationPayment_AmountOneof> _OperationPayment_AmountOneofByTag = {
-    1 : OperationPayment_AmountOneof.amount,
-    2 : OperationPayment_AmountOneof.currencyAmount,
-    0 : OperationPayment_AmountOneof.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationPayment', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..oo(0, [1, 2])
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..aOM<CurrencyAmount>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'currencyAmount', subBuilder: CurrencyAmount.create)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destinationTag')
-    ..hasRequiredFields = false
-  ;
-
-  OperationPayment._() : super();
   factory OperationPayment({
     $fixnum.Int64? amount,
     CurrencyAmount? currencyAmount,
     $core.String? destination,
     $fixnum.Int64? destinationTag,
   }) {
-    final _result = create();
+    final $result = create();
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (currencyAmount != null) {
-      _result.currencyAmount = currencyAmount;
+      $result.currencyAmount = currencyAmount;
     }
     if (destination != null) {
-      _result.destination = destination;
+      $result.destination = destination;
     }
     if (destinationTag != null) {
-      _result.destinationTag = destinationTag;
+      $result.destinationTag = destinationTag;
     }
-    return _result;
+    return $result;
   }
+  OperationPayment._() : super();
   factory OperationPayment.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationPayment.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, OperationPayment_AmountOneof> _OperationPayment_AmountOneofByTag = {
+    1 : OperationPayment_AmountOneof.amount,
+    2 : OperationPayment_AmountOneof.currencyAmount,
+    0 : OperationPayment_AmountOneof.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationPayment', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..oo(0, [1, 2])
+    ..aInt64(1, _omitFieldNames ? '' : 'amount')
+    ..aOM<CurrencyAmount>(2, _omitFieldNames ? '' : 'currencyAmount', subBuilder: CurrencyAmount.create)
+    ..aOS(3, _omitFieldNames ? '' : 'destination')
+    ..aInt64(4, _omitFieldNames ? '' : 'destinationTag')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -190,8 +210,10 @@ class OperationPayment extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationPayment copyWith(void Function(OperationPayment) updates) => super.copyWith((message) => updates(message as OperationPayment)) as OperationPayment; // ignore: deprecated_member_use
+  OperationPayment copyWith(void Function(OperationPayment) updates) => super.copyWith((message) => updates(message as OperationPayment)) as OperationPayment;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationPayment create() => OperationPayment._();
   OperationPayment createEmptyInstance() => create();
@@ -223,6 +245,7 @@ class OperationPayment extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   CurrencyAmount ensureCurrencyAmount() => $_ensure(1);
 
+  /// Target account
   @$pb.TagNumber(3)
   $core.String get destination => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -232,6 +255,7 @@ class OperationPayment extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDestination() => clearField(3);
 
+  /// A Destination Tag
   @$pb.TagNumber(4)
   $fixnum.Int64 get destinationTag => $_getI64(3);
   @$pb.TagNumber(4)
@@ -242,24 +266,26 @@ class OperationPayment extends $pb.GeneratedMessage {
   void clearDestinationTag() => clearField(4);
 }
 
+/// https://xrpl.org/nftokenburn.html
 class OperationNFTokenBurn extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationNFTokenBurn', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nftokenId', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  OperationNFTokenBurn._() : super();
   factory OperationNFTokenBurn({
     $core.List<$core.int>? nftokenId,
   }) {
-    final _result = create();
+    final $result = create();
     if (nftokenId != null) {
-      _result.nftokenId = nftokenId;
+      $result.nftokenId = nftokenId;
     }
-    return _result;
+    return $result;
   }
+  OperationNFTokenBurn._() : super();
   factory OperationNFTokenBurn.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationNFTokenBurn.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationNFTokenBurn', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'nftokenId', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -269,8 +295,10 @@ class OperationNFTokenBurn extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationNFTokenBurn copyWith(void Function(OperationNFTokenBurn) updates) => super.copyWith((message) => updates(message as OperationNFTokenBurn)) as OperationNFTokenBurn; // ignore: deprecated_member_use
+  OperationNFTokenBurn copyWith(void Function(OperationNFTokenBurn) updates) => super.copyWith((message) => updates(message as OperationNFTokenBurn)) as OperationNFTokenBurn;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationNFTokenBurn create() => OperationNFTokenBurn._();
   OperationNFTokenBurn createEmptyInstance() => create();
@@ -279,6 +307,7 @@ class OperationNFTokenBurn extends $pb.GeneratedMessage {
   static OperationNFTokenBurn getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationNFTokenBurn>(create);
   static OperationNFTokenBurn? _defaultInstance;
 
+  /// Hash256 NFTokenId
   @$pb.TagNumber(1)
   $core.List<$core.int> get nftokenId => $_getN(0);
   @$pb.TagNumber(1)
@@ -289,29 +318,31 @@ class OperationNFTokenBurn extends $pb.GeneratedMessage {
   void clearNftokenId() => clearField(1);
 }
 
+/// https://xrpl.org/nftokencreateoffer.html
 class OperationNFTokenCreateOffer extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationNFTokenCreateOffer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'nftokenId', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'destination')
-    ..hasRequiredFields = false
-  ;
-
-  OperationNFTokenCreateOffer._() : super();
   factory OperationNFTokenCreateOffer({
     $core.List<$core.int>? nftokenId,
     $core.String? destination,
   }) {
-    final _result = create();
+    final $result = create();
     if (nftokenId != null) {
-      _result.nftokenId = nftokenId;
+      $result.nftokenId = nftokenId;
     }
     if (destination != null) {
-      _result.destination = destination;
+      $result.destination = destination;
     }
-    return _result;
+    return $result;
   }
+  OperationNFTokenCreateOffer._() : super();
   factory OperationNFTokenCreateOffer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationNFTokenCreateOffer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationNFTokenCreateOffer', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'nftokenId', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'destination')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -321,8 +352,10 @@ class OperationNFTokenCreateOffer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationNFTokenCreateOffer copyWith(void Function(OperationNFTokenCreateOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenCreateOffer)) as OperationNFTokenCreateOffer; // ignore: deprecated_member_use
+  OperationNFTokenCreateOffer copyWith(void Function(OperationNFTokenCreateOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenCreateOffer)) as OperationNFTokenCreateOffer;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationNFTokenCreateOffer create() => OperationNFTokenCreateOffer._();
   OperationNFTokenCreateOffer createEmptyInstance() => create();
@@ -331,6 +364,7 @@ class OperationNFTokenCreateOffer extends $pb.GeneratedMessage {
   static OperationNFTokenCreateOffer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationNFTokenCreateOffer>(create);
   static OperationNFTokenCreateOffer? _defaultInstance;
 
+  /// Hash256 NFTokenId
   @$pb.TagNumber(1)
   $core.List<$core.int> get nftokenId => $_getN(0);
   @$pb.TagNumber(1)
@@ -340,6 +374,7 @@ class OperationNFTokenCreateOffer extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearNftokenId() => clearField(1);
 
+  /// Destination account
   @$pb.TagNumber(2)
   $core.String get destination => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -350,24 +385,26 @@ class OperationNFTokenCreateOffer extends $pb.GeneratedMessage {
   void clearDestination() => clearField(2);
 }
 
+/// https://xrpl.org/nftokenacceptoffer.html
 class OperationNFTokenAcceptOffer extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationNFTokenAcceptOffer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sellOffer', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  OperationNFTokenAcceptOffer._() : super();
   factory OperationNFTokenAcceptOffer({
     $core.List<$core.int>? sellOffer,
   }) {
-    final _result = create();
+    final $result = create();
     if (sellOffer != null) {
-      _result.sellOffer = sellOffer;
+      $result.sellOffer = sellOffer;
     }
-    return _result;
+    return $result;
   }
+  OperationNFTokenAcceptOffer._() : super();
   factory OperationNFTokenAcceptOffer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationNFTokenAcceptOffer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationNFTokenAcceptOffer', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'sellOffer', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -377,8 +414,10 @@ class OperationNFTokenAcceptOffer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationNFTokenAcceptOffer copyWith(void Function(OperationNFTokenAcceptOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenAcceptOffer)) as OperationNFTokenAcceptOffer; // ignore: deprecated_member_use
+  OperationNFTokenAcceptOffer copyWith(void Function(OperationNFTokenAcceptOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenAcceptOffer)) as OperationNFTokenAcceptOffer;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationNFTokenAcceptOffer create() => OperationNFTokenAcceptOffer._();
   OperationNFTokenAcceptOffer createEmptyInstance() => create();
@@ -387,6 +426,7 @@ class OperationNFTokenAcceptOffer extends $pb.GeneratedMessage {
   static OperationNFTokenAcceptOffer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationNFTokenAcceptOffer>(create);
   static OperationNFTokenAcceptOffer? _defaultInstance;
 
+  /// Hash256 NFTokenOffer
   @$pb.TagNumber(1)
   $core.List<$core.int> get sellOffer => $_getN(0);
   @$pb.TagNumber(1)
@@ -397,24 +437,26 @@ class OperationNFTokenAcceptOffer extends $pb.GeneratedMessage {
   void clearSellOffer() => clearField(1);
 }
 
+/// https://xrpl.org/nftokencanceloffer.html
 class OperationNFTokenCancelOffer extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'OperationNFTokenCancelOffer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..p<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tokenOffers', $pb.PbFieldType.PY)
-    ..hasRequiredFields = false
-  ;
-
-  OperationNFTokenCancelOffer._() : super();
   factory OperationNFTokenCancelOffer({
     $core.Iterable<$core.List<$core.int>>? tokenOffers,
   }) {
-    final _result = create();
+    final $result = create();
     if (tokenOffers != null) {
-      _result.tokenOffers.addAll(tokenOffers);
+      $result.tokenOffers.addAll(tokenOffers);
     }
-    return _result;
+    return $result;
   }
+  OperationNFTokenCancelOffer._() : super();
   factory OperationNFTokenCancelOffer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory OperationNFTokenCancelOffer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'OperationNFTokenCancelOffer', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..p<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'tokenOffers', $pb.PbFieldType.PY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -424,8 +466,10 @@ class OperationNFTokenCancelOffer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  OperationNFTokenCancelOffer copyWith(void Function(OperationNFTokenCancelOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenCancelOffer)) as OperationNFTokenCancelOffer; // ignore: deprecated_member_use
+  OperationNFTokenCancelOffer copyWith(void Function(OperationNFTokenCancelOffer) updates) => super.copyWith((message) => updates(message as OperationNFTokenCancelOffer)) as OperationNFTokenCancelOffer;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static OperationNFTokenCancelOffer create() => OperationNFTokenCancelOffer._();
   OperationNFTokenCancelOffer createEmptyInstance() => create();
@@ -434,6 +478,7 @@ class OperationNFTokenCancelOffer extends $pb.GeneratedMessage {
   static OperationNFTokenCancelOffer getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<OperationNFTokenCancelOffer>(create);
   static OperationNFTokenCancelOffer? _defaultInstance;
 
+  /// Vector256 NFTokenOffers
   @$pb.TagNumber(1)
   $core.List<$core.List<$core.int>> get tokenOffers => $_getList(0);
 }
@@ -448,34 +493,8 @@ enum SigningInput_OperationOneof {
   notSet
 }
 
+/// Input data necessary to create a signed transaction.
 class SigningInput extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, SigningInput_OperationOneof> _SigningInput_OperationOneofByTag = {
-    7 : SigningInput_OperationOneof.opTrustSet,
-    8 : SigningInput_OperationOneof.opPayment,
-    9 : SigningInput_OperationOneof.opNftokenBurn,
-    10 : SigningInput_OperationOneof.opNftokenCreateOffer,
-    11 : SigningInput_OperationOneof.opNftokenAcceptOffer,
-    12 : SigningInput_OperationOneof.opNftokenCancelOffer,
-    0 : SigningInput_OperationOneof.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..oo(0, [7, 8, 9, 10, 11, 12])
-    ..aInt64(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fee')
-    ..a<$core.int>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sequence', $pb.PbFieldType.O3)
-    ..a<$core.int>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lastLedgerSequence', $pb.PbFieldType.O3)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'account')
-    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'flags')
-    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..aOM<OperationTrustSet>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opTrustSet', subBuilder: OperationTrustSet.create)
-    ..aOM<OperationPayment>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opPayment', subBuilder: OperationPayment.create)
-    ..aOM<OperationNFTokenBurn>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opNftokenBurn', subBuilder: OperationNFTokenBurn.create)
-    ..aOM<OperationNFTokenCreateOffer>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opNftokenCreateOffer', subBuilder: OperationNFTokenCreateOffer.create)
-    ..aOM<OperationNFTokenAcceptOffer>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opNftokenAcceptOffer', subBuilder: OperationNFTokenAcceptOffer.create)
-    ..aOM<OperationNFTokenCancelOffer>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'opNftokenCancelOffer', subBuilder: OperationNFTokenCancelOffer.create)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     $fixnum.Int64? fee,
     $core.int? sequence,
@@ -489,48 +508,81 @@ class SigningInput extends $pb.GeneratedMessage {
     OperationNFTokenCreateOffer? opNftokenCreateOffer,
     OperationNFTokenAcceptOffer? opNftokenAcceptOffer,
     OperationNFTokenCancelOffer? opNftokenCancelOffer,
+    $core.List<$core.int>? publicKey,
   }) {
-    final _result = create();
+    final $result = create();
     if (fee != null) {
-      _result.fee = fee;
+      $result.fee = fee;
     }
     if (sequence != null) {
-      _result.sequence = sequence;
+      $result.sequence = sequence;
     }
     if (lastLedgerSequence != null) {
-      _result.lastLedgerSequence = lastLedgerSequence;
+      $result.lastLedgerSequence = lastLedgerSequence;
     }
     if (account != null) {
-      _result.account = account;
+      $result.account = account;
     }
     if (flags != null) {
-      _result.flags = flags;
+      $result.flags = flags;
     }
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
     if (opTrustSet != null) {
-      _result.opTrustSet = opTrustSet;
+      $result.opTrustSet = opTrustSet;
     }
     if (opPayment != null) {
-      _result.opPayment = opPayment;
+      $result.opPayment = opPayment;
     }
     if (opNftokenBurn != null) {
-      _result.opNftokenBurn = opNftokenBurn;
+      $result.opNftokenBurn = opNftokenBurn;
     }
     if (opNftokenCreateOffer != null) {
-      _result.opNftokenCreateOffer = opNftokenCreateOffer;
+      $result.opNftokenCreateOffer = opNftokenCreateOffer;
     }
     if (opNftokenAcceptOffer != null) {
-      _result.opNftokenAcceptOffer = opNftokenAcceptOffer;
+      $result.opNftokenAcceptOffer = opNftokenAcceptOffer;
     }
     if (opNftokenCancelOffer != null) {
-      _result.opNftokenCancelOffer = opNftokenCancelOffer;
+      $result.opNftokenCancelOffer = opNftokenCancelOffer;
     }
-    return _result;
+    if (publicKey != null) {
+      $result.publicKey = publicKey;
+    }
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, SigningInput_OperationOneof> _SigningInput_OperationOneofByTag = {
+    7 : SigningInput_OperationOneof.opTrustSet,
+    8 : SigningInput_OperationOneof.opPayment,
+    9 : SigningInput_OperationOneof.opNftokenBurn,
+    10 : SigningInput_OperationOneof.opNftokenCreateOffer,
+    11 : SigningInput_OperationOneof.opNftokenAcceptOffer,
+    12 : SigningInput_OperationOneof.opNftokenCancelOffer,
+    0 : SigningInput_OperationOneof.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..oo(0, [7, 8, 9, 10, 11, 12])
+    ..aInt64(1, _omitFieldNames ? '' : 'fee')
+    ..a<$core.int>(2, _omitFieldNames ? '' : 'sequence', $pb.PbFieldType.O3)
+    ..a<$core.int>(3, _omitFieldNames ? '' : 'lastLedgerSequence', $pb.PbFieldType.O3)
+    ..aOS(4, _omitFieldNames ? '' : 'account')
+    ..aInt64(5, _omitFieldNames ? '' : 'flags')
+    ..a<$core.List<$core.int>>(6, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..aOM<OperationTrustSet>(7, _omitFieldNames ? '' : 'opTrustSet', subBuilder: OperationTrustSet.create)
+    ..aOM<OperationPayment>(8, _omitFieldNames ? '' : 'opPayment', subBuilder: OperationPayment.create)
+    ..aOM<OperationNFTokenBurn>(9, _omitFieldNames ? '' : 'opNftokenBurn', subBuilder: OperationNFTokenBurn.create)
+    ..aOM<OperationNFTokenCreateOffer>(10, _omitFieldNames ? '' : 'opNftokenCreateOffer', subBuilder: OperationNFTokenCreateOffer.create)
+    ..aOM<OperationNFTokenAcceptOffer>(11, _omitFieldNames ? '' : 'opNftokenAcceptOffer', subBuilder: OperationNFTokenAcceptOffer.create)
+    ..aOM<OperationNFTokenCancelOffer>(12, _omitFieldNames ? '' : 'opNftokenCancelOffer', subBuilder: OperationNFTokenCancelOffer.create)
+    ..a<$core.List<$core.int>>(15, _omitFieldNames ? '' : 'publicKey', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -540,8 +592,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -553,6 +607,7 @@ class SigningInput extends $pb.GeneratedMessage {
   SigningInput_OperationOneof whichOperationOneof() => _SigningInput_OperationOneofByTag[$_whichOneof(0)]!;
   void clearOperationOneof() => clearField($_whichOneof(0));
 
+  /// Transfer fee
   @$pb.TagNumber(1)
   $fixnum.Int64 get fee => $_getI64(0);
   @$pb.TagNumber(1)
@@ -562,6 +617,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFee() => clearField(1);
 
+  /// Account sequence number
   @$pb.TagNumber(2)
   $core.int get sequence => $_getIZ(1);
   @$pb.TagNumber(2)
@@ -571,6 +627,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSequence() => clearField(2);
 
+  /// Ledger sequence number
   @$pb.TagNumber(3)
   $core.int get lastLedgerSequence => $_getIZ(2);
   @$pb.TagNumber(3)
@@ -580,6 +637,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearLastLedgerSequence() => clearField(3);
 
+  /// Source account
   @$pb.TagNumber(4)
   $core.String get account => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -589,6 +647,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearAccount() => clearField(4);
 
+  /// Transaction flags, optional
   @$pb.TagNumber(5)
   $fixnum.Int64 get flags => $_getI64(4);
   @$pb.TagNumber(5)
@@ -598,6 +657,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearFlags() => clearField(5);
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(6)
   $core.List<$core.int> get privateKey => $_getN(5);
   @$pb.TagNumber(6)
@@ -672,31 +732,48 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearOpNftokenCancelOffer() => clearField(12);
   @$pb.TagNumber(12)
   OperationNFTokenCancelOffer ensureOpNftokenCancelOffer() => $_ensure(11);
+
+  /// Only used by tss chain-integration.
+  @$pb.TagNumber(15)
+  $core.List<$core.int> get publicKey => $_getN(12);
+  @$pb.TagNumber(15)
+  set publicKey($core.List<$core.int> v) { $_setBytes(12, v); }
+  @$pb.TagNumber(15)
+  $core.bool hasPublicKey() => $_has(12);
+  @$pb.TagNumber(15)
+  void clearPublicKey() => clearField(15);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded', $pb.PbFieldType.OY)
-    ..e<$0.SigningError>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
-    ..hasRequiredFields = false
-  ;
-
-  SigningOutput._() : super();
   factory SigningOutput({
     $core.List<$core.int>? encoded,
     $0.SigningError? error,
+    $core.String? errorMessage,
   }) {
-    final _result = create();
+    final $result = create();
     if (encoded != null) {
-      _result.encoded = encoded;
+      $result.encoded = encoded;
     }
     if (error != null) {
-      _result.error = error;
+      $result.error = error;
     }
-    return _result;
+    if (errorMessage != null) {
+      $result.errorMessage = errorMessage;
+    }
+    return $result;
   }
+  SigningOutput._() : super();
   factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Ripple.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'encoded', $pb.PbFieldType.OY)
+    ..e<$0.SigningError>(2, _omitFieldNames ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
+    ..aOS(3, _omitFieldNames ? '' : 'errorMessage')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -706,8 +783,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -716,6 +795,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
+  /// Encoded transaction
   @$pb.TagNumber(1)
   $core.List<$core.int> get encoded => $_getN(0);
   @$pb.TagNumber(1)
@@ -725,6 +805,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
 
+  /// Optional error
   @$pb.TagNumber(2)
   $0.SigningError get error => $_getN(1);
   @$pb.TagNumber(2)
@@ -733,5 +814,18 @@ class SigningOutput extends $pb.GeneratedMessage {
   $core.bool hasError() => $_has(1);
   @$pb.TagNumber(2)
   void clearError() => clearField(2);
+
+  /// error code description
+  @$pb.TagNumber(3)
+  $core.String get errorMessage => $_getSZ(2);
+  @$pb.TagNumber(3)
+  set errorMessage($core.String v) { $_setString(2, v); }
+  @$pb.TagNumber(3)
+  $core.bool hasErrorMessage() => $_has(2);
+  @$pb.TagNumber(3)
+  void clearErrorMessage() => clearField(3);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

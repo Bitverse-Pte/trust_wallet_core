@@ -2063,1047 +2063,6 @@ class TrustWalletCore {
 
   set suboptarg(ffi.Pointer<ffi.Char> value) => _suboptarg.value = value;
 
-  /// Determine if the HD Version is public
-  ///
-  /// \param version HD version
-  /// \return true if the version is public, false otherwise
-  bool TWHDVersionIsPublic(
-    int version,
-  ) {
-    return _TWHDVersionIsPublic(
-      version,
-    );
-  }
-
-  late final _TWHDVersionIsPublicPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
-          'TWHDVersionIsPublic');
-  late final _TWHDVersionIsPublic =
-      _TWHDVersionIsPublicPtr.asFunction<bool Function(int)>();
-
-  /// Determine if the HD Version is private
-  ///
-  /// \param version HD version
-  /// \return true if the version is private, false otherwise
-  bool TWHDVersionIsPrivate(
-    int version,
-  ) {
-    return _TWHDVersionIsPrivate(
-      version,
-    );
-  }
-
-  late final _TWHDVersionIsPrivatePtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
-          'TWHDVersionIsPrivate');
-  late final _TWHDVersionIsPrivate =
-      _TWHDVersionIsPrivatePtr.asFunction<bool Function(int)>();
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOIN');
-
-  ffi.Pointer<ffi.Char> get HRP_BITCOIN => _HRP_BITCOIN.value;
-
-  set HRP_BITCOIN(ffi.Pointer<ffi.Char> value) => _HRP_BITCOIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINTESTNET =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINTESTNET');
-
-  ffi.Pointer<ffi.Char> get HRP_BITCOINTESTNET => _HRP_BITCOINTESTNET.value;
-
-  set HRP_BITCOINTESTNET(ffi.Pointer<ffi.Char> value) =>
-      _HRP_BITCOINTESTNET.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_LITECOIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_LITECOIN');
-
-  ffi.Pointer<ffi.Char> get HRP_LITECOIN => _HRP_LITECOIN.value;
-
-  set HRP_LITECOIN(ffi.Pointer<ffi.Char> value) => _HRP_LITECOIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_VIACOIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_VIACOIN');
-
-  ffi.Pointer<ffi.Char> get HRP_VIACOIN => _HRP_VIACOIN.value;
-
-  set HRP_VIACOIN(ffi.Pointer<ffi.Char> value) => _HRP_VIACOIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_GROESTLCOIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_GROESTLCOIN');
-
-  ffi.Pointer<ffi.Char> get HRP_GROESTLCOIN => _HRP_GROESTLCOIN.value;
-
-  set HRP_GROESTLCOIN(ffi.Pointer<ffi.Char> value) =>
-      _HRP_GROESTLCOIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_DIGIBYTE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_DIGIBYTE');
-
-  ffi.Pointer<ffi.Char> get HRP_DIGIBYTE => _HRP_DIGIBYTE.value;
-
-  set HRP_DIGIBYTE(ffi.Pointer<ffi.Char> value) => _HRP_DIGIBYTE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_MONACOIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_MONACOIN');
-
-  ffi.Pointer<ffi.Char> get HRP_MONACOIN => _HRP_MONACOIN.value;
-
-  set HRP_MONACOIN(ffi.Pointer<ffi.Char> value) => _HRP_MONACOIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COSMOS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_COSMOS');
-
-  ffi.Pointer<ffi.Char> get HRP_COSMOS => _HRP_COSMOS.value;
-
-  set HRP_COSMOS(ffi.Pointer<ffi.Char> value) => _HRP_COSMOS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINCASH =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINCASH');
-
-  ffi.Pointer<ffi.Char> get HRP_BITCOINCASH => _HRP_BITCOINCASH.value;
-
-  set HRP_BITCOINCASH(ffi.Pointer<ffi.Char> value) =>
-      _HRP_BITCOINCASH.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINGOLD =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINGOLD');
-
-  ffi.Pointer<ffi.Char> get HRP_BITCOINGOLD => _HRP_BITCOINGOLD.value;
-
-  set HRP_BITCOINGOLD(ffi.Pointer<ffi.Char> value) =>
-      _HRP_BITCOINGOLD.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_IOTEX =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_IOTEX');
-
-  ffi.Pointer<ffi.Char> get HRP_IOTEX => _HRP_IOTEX.value;
-
-  set HRP_IOTEX(ffi.Pointer<ffi.Char> value) => _HRP_IOTEX.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NERVOS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NERVOS');
-
-  ffi.Pointer<ffi.Char> get HRP_NERVOS => _HRP_NERVOS.value;
-
-  set HRP_NERVOS(ffi.Pointer<ffi.Char> value) => _HRP_NERVOS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ZILLIQA =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_ZILLIQA');
-
-  ffi.Pointer<ffi.Char> get HRP_ZILLIQA => _HRP_ZILLIQA.value;
-
-  set HRP_ZILLIQA(ffi.Pointer<ffi.Char> value) => _HRP_ZILLIQA.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_TERRA =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_TERRA');
-
-  ffi.Pointer<ffi.Char> get HRP_TERRA => _HRP_TERRA.value;
-
-  set HRP_TERRA(ffi.Pointer<ffi.Char> value) => _HRP_TERRA.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CRYPTOORG =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_CRYPTOORG');
-
-  ffi.Pointer<ffi.Char> get HRP_CRYPTOORG => _HRP_CRYPTOORG.value;
-
-  set HRP_CRYPTOORG(ffi.Pointer<ffi.Char> value) =>
-      _HRP_CRYPTOORG.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_KAVA =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_KAVA');
-
-  ffi.Pointer<ffi.Char> get HRP_KAVA => _HRP_KAVA.value;
-
-  set HRP_KAVA(ffi.Pointer<ffi.Char> value) => _HRP_KAVA.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_OASIS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_OASIS');
-
-  ffi.Pointer<ffi.Char> get HRP_OASIS => _HRP_OASIS.value;
-
-  set HRP_OASIS(ffi.Pointer<ffi.Char> value) => _HRP_OASIS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BLUZELLE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BLUZELLE');
-
-  ffi.Pointer<ffi.Char> get HRP_BLUZELLE => _HRP_BLUZELLE.value;
-
-  set HRP_BLUZELLE(ffi.Pointer<ffi.Char> value) => _HRP_BLUZELLE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BAND =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BAND');
-
-  ffi.Pointer<ffi.Char> get HRP_BAND => _HRP_BAND.value;
-
-  set HRP_BAND(ffi.Pointer<ffi.Char> value) => _HRP_BAND.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ELROND =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_ELROND');
-
-  ffi.Pointer<ffi.Char> get HRP_ELROND => _HRP_ELROND.value;
-
-  set HRP_ELROND(ffi.Pointer<ffi.Char> value) => _HRP_ELROND.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SECRET =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_SECRET');
-
-  ffi.Pointer<ffi.Char> get HRP_SECRET => _HRP_SECRET.value;
-
-  set HRP_SECRET(ffi.Pointer<ffi.Char> value) => _HRP_SECRET.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AGORIC =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_AGORIC');
-
-  ffi.Pointer<ffi.Char> get HRP_AGORIC => _HRP_AGORIC.value;
-
-  set HRP_AGORIC(ffi.Pointer<ffi.Char> value) => _HRP_AGORIC.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BINANCE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_BINANCE');
-
-  ffi.Pointer<ffi.Char> get HRP_BINANCE => _HRP_BINANCE.value;
-
-  set HRP_BINANCE(ffi.Pointer<ffi.Char> value) => _HRP_BINANCE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ECASH =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_ECASH');
-
-  ffi.Pointer<ffi.Char> get HRP_ECASH => _HRP_ECASH.value;
-
-  set HRP_ECASH(ffi.Pointer<ffi.Char> value) => _HRP_ECASH.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_THORCHAIN =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_THORCHAIN');
-
-  ffi.Pointer<ffi.Char> get HRP_THORCHAIN => _HRP_THORCHAIN.value;
-
-  set HRP_THORCHAIN(ffi.Pointer<ffi.Char> value) =>
-      _HRP_THORCHAIN.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_HARMONY =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_HARMONY');
-
-  ffi.Pointer<ffi.Char> get HRP_HARMONY => _HRP_HARMONY.value;
-
-  set HRP_HARMONY(ffi.Pointer<ffi.Char> value) => _HRP_HARMONY.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CARDANO =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_CARDANO');
-
-  ffi.Pointer<ffi.Char> get HRP_CARDANO => _HRP_CARDANO.value;
-
-  set HRP_CARDANO(ffi.Pointer<ffi.Char> value) => _HRP_CARDANO.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_QTUM =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_QTUM');
-
-  ffi.Pointer<ffi.Char> get HRP_QTUM => _HRP_QTUM.value;
-
-  set HRP_QTUM(ffi.Pointer<ffi.Char> value) => _HRP_QTUM.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVEINJECTIVE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVEINJECTIVE');
-
-  ffi.Pointer<ffi.Char> get HRP_NATIVEINJECTIVE => _HRP_NATIVEINJECTIVE.value;
-
-  set HRP_NATIVEINJECTIVE(ffi.Pointer<ffi.Char> value) =>
-      _HRP_NATIVEINJECTIVE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_OSMOSIS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_OSMOSIS');
-
-  ffi.Pointer<ffi.Char> get HRP_OSMOSIS => _HRP_OSMOSIS.value;
-
-  set HRP_OSMOSIS(ffi.Pointer<ffi.Char> value) => _HRP_OSMOSIS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_TERRAV2 =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_TERRAV2');
-
-  ffi.Pointer<ffi.Char> get HRP_TERRAV2 => _HRP_TERRAV2.value;
-
-  set HRP_TERRAV2(ffi.Pointer<ffi.Char> value) => _HRP_TERRAV2.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COREUM =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_COREUM');
-
-  ffi.Pointer<ffi.Char> get HRP_COREUM => _HRP_COREUM.value;
-
-  set HRP_COREUM(ffi.Pointer<ffi.Char> value) => _HRP_COREUM.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVECANTO =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVECANTO');
-
-  ffi.Pointer<ffi.Char> get HRP_NATIVECANTO => _HRP_NATIVECANTO.value;
-
-  set HRP_NATIVECANTO(ffi.Pointer<ffi.Char> value) =>
-      _HRP_NATIVECANTO.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SOMMELIER =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_SOMMELIER');
-
-  ffi.Pointer<ffi.Char> get HRP_SOMMELIER => _HRP_SOMMELIER.value;
-
-  set HRP_SOMMELIER(ffi.Pointer<ffi.Char> value) =>
-      _HRP_SOMMELIER.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_FETCHAI =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_FETCHAI');
-
-  ffi.Pointer<ffi.Char> get HRP_FETCHAI => _HRP_FETCHAI.value;
-
-  set HRP_FETCHAI(ffi.Pointer<ffi.Char> value) => _HRP_FETCHAI.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_MARS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_MARS');
-
-  ffi.Pointer<ffi.Char> get HRP_MARS => _HRP_MARS.value;
-
-  set HRP_MARS(ffi.Pointer<ffi.Char> value) => _HRP_MARS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_UMEE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_UMEE');
-
-  ffi.Pointer<ffi.Char> get HRP_UMEE => _HRP_UMEE.value;
-
-  set HRP_UMEE(ffi.Pointer<ffi.Char> value) => _HRP_UMEE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_QUASAR =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_QUASAR');
-
-  ffi.Pointer<ffi.Char> get HRP_QUASAR => _HRP_QUASAR.value;
-
-  set HRP_QUASAR(ffi.Pointer<ffi.Char> value) => _HRP_QUASAR.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_PERSISTENCE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_PERSISTENCE');
-
-  ffi.Pointer<ffi.Char> get HRP_PERSISTENCE => _HRP_PERSISTENCE.value;
-
-  set HRP_PERSISTENCE(ffi.Pointer<ffi.Char> value) =>
-      _HRP_PERSISTENCE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AKASH =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_AKASH');
-
-  ffi.Pointer<ffi.Char> get HRP_AKASH => _HRP_AKASH.value;
-
-  set HRP_AKASH(ffi.Pointer<ffi.Char> value) => _HRP_AKASH.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NOBLE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NOBLE');
-
-  ffi.Pointer<ffi.Char> get HRP_NOBLE => _HRP_NOBLE.value;
-
-  set HRP_NOBLE(ffi.Pointer<ffi.Char> value) => _HRP_NOBLE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_STARGAZE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_STARGAZE');
-
-  ffi.Pointer<ffi.Char> get HRP_STARGAZE => _HRP_STARGAZE.value;
-
-  set HRP_STARGAZE(ffi.Pointer<ffi.Char> value) => _HRP_STARGAZE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVEEVMOS =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVEEVMOS');
-
-  ffi.Pointer<ffi.Char> get HRP_NATIVEEVMOS => _HRP_NATIVEEVMOS.value;
-
-  set HRP_NATIVEEVMOS(ffi.Pointer<ffi.Char> value) =>
-      _HRP_NATIVEEVMOS.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_JUNO =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_JUNO');
-
-  ffi.Pointer<ffi.Char> get HRP_JUNO => _HRP_JUNO.value;
-
-  set HRP_JUNO(ffi.Pointer<ffi.Char> value) => _HRP_JUNO.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_STRIDE =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_STRIDE');
-
-  ffi.Pointer<ffi.Char> get HRP_STRIDE => _HRP_STRIDE.value;
-
-  set HRP_STRIDE(ffi.Pointer<ffi.Char> value) => _HRP_STRIDE.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AXELAR =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_AXELAR');
-
-  ffi.Pointer<ffi.Char> get HRP_AXELAR => _HRP_AXELAR.value;
-
-  set HRP_AXELAR(ffi.Pointer<ffi.Char> value) => _HRP_AXELAR.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CRESCENT =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_CRESCENT');
-
-  ffi.Pointer<ffi.Char> get HRP_CRESCENT => _HRP_CRESCENT.value;
-
-  set HRP_CRESCENT(ffi.Pointer<ffi.Char> value) => _HRP_CRESCENT.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_KUJIRA =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_KUJIRA');
-
-  ffi.Pointer<ffi.Char> get HRP_KUJIRA => _HRP_KUJIRA.value;
-
-  set HRP_KUJIRA(ffi.Pointer<ffi.Char> value) => _HRP_KUJIRA.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COMDEX =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_COMDEX');
-
-  ffi.Pointer<ffi.Char> get HRP_COMDEX => _HRP_COMDEX.value;
-
-  set HRP_COMDEX(ffi.Pointer<ffi.Char> value) => _HRP_COMDEX.value = value;
-
-  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NEUTRON =
-      _lookup<ffi.Pointer<ffi.Char>>('HRP_NEUTRON');
-
-  ffi.Pointer<ffi.Char> get HRP_NEUTRON => _HRP_NEUTRON.value;
-
-  set HRP_NEUTRON(ffi.Pointer<ffi.Char> value) => _HRP_NEUTRON.value = value;
-
-  ffi.Pointer<ffi.Char> stringForHRP(
-    int hrp,
-  ) {
-    return _stringForHRP(
-      hrp,
-    );
-  }
-
-  late final _stringForHRPPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
-          'stringForHRP');
-  late final _stringForHRP =
-      _stringForHRPPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
-
-  int hrpForString(
-    ffi.Pointer<ffi.Char> string,
-  ) {
-    return _hrpForString(
-      string,
-    );
-  }
-
-  late final _hrpForStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
-          'hrpForString');
-  late final _hrpForString =
-      _hrpForStringPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
-
-  /// Creates a TWString from a null-terminated UTF8 byte array. It must be deleted at the end.
-  ///
-  /// \param bytes a null-terminated UTF8 byte array.
-  ffi.Pointer<TWString> TWStringCreateWithUTF8Bytes(
-    ffi.Pointer<ffi.Char> bytes,
-  ) {
-    return _TWStringCreateWithUTF8Bytes(
-      bytes,
-    );
-  }
-
-  late final _TWStringCreateWithUTF8BytesPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<ffi.Char>)>>('TWStringCreateWithUTF8Bytes');
-  late final _TWStringCreateWithUTF8Bytes = _TWStringCreateWithUTF8BytesPtr
-      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<ffi.Char>)>();
-
-  /// Creates a string from a raw byte array and size. It must be deleted at the end.
-  ///
-  /// \param bytes a raw byte array.
-  /// \param size the size of the byte array.
-  ffi.Pointer<TWString> TWStringCreateWithRawBytes(
-    ffi.Pointer<ffi.Uint8> bytes,
-    int size,
-  ) {
-    return _TWStringCreateWithRawBytes(
-      bytes,
-      size,
-    );
-  }
-
-  late final _TWStringCreateWithRawBytesPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<ffi.Uint8>, ffi.Size)>>('TWStringCreateWithRawBytes');
-  late final _TWStringCreateWithRawBytes =
-      _TWStringCreateWithRawBytesPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<ffi.Uint8>, int)>();
-
-  /// Creates a hexadecimal string from a block of data. It must be deleted at the end.
-  ///
-  /// \param data a block of data.
-  ffi.Pointer<TWString> TWStringCreateWithHexData(
-    ffi.Pointer<TWData> data,
-  ) {
-    return _TWStringCreateWithHexData(
-      data,
-    );
-  }
-
-  late final _TWStringCreateWithHexDataPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWData>)>>('TWStringCreateWithHexData');
-  late final _TWStringCreateWithHexData = _TWStringCreateWithHexDataPtr
-      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
-
-  /// Returns the string size in bytes.
-  ///
-  /// \param string a TWString pointer.
-  int TWStringSize(
-    ffi.Pointer<TWString> string,
-  ) {
-    return _TWStringSize(
-      string,
-    );
-  }
-
-  late final _TWStringSizePtr =
-      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<TWString>)>>(
-          'TWStringSize');
-  late final _TWStringSize =
-      _TWStringSizePtr.asFunction<int Function(ffi.Pointer<TWString>)>();
-
-  /// Returns the byte at the provided index.
-  ///
-  /// \param string a TWString pointer.
-  /// \param index the index of the byte.
-  int TWStringGet(
-    ffi.Pointer<TWString> string,
-    int index,
-  ) {
-    return _TWStringGet(
-      string,
-      index,
-    );
-  }
-
-  late final _TWStringGetPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Char Function(ffi.Pointer<TWString>, ffi.Size)>>('TWStringGet');
-  late final _TWStringGet =
-      _TWStringGetPtr.asFunction<int Function(ffi.Pointer<TWString>, int)>();
-
-  /// Returns the raw pointer to the string's UTF8 bytes (null-terminated).
-  ///
-  /// \param string a TWString pointer.
-  ffi.Pointer<ffi.Char> TWStringUTF8Bytes(
-    ffi.Pointer<TWString> string,
-  ) {
-    return _TWStringUTF8Bytes(
-      string,
-    );
-  }
-
-  late final _TWStringUTF8BytesPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<ffi.Char> Function(
-              ffi.Pointer<TWString>)>>('TWStringUTF8Bytes');
-  late final _TWStringUTF8Bytes = _TWStringUTF8BytesPtr.asFunction<
-      ffi.Pointer<ffi.Char> Function(ffi.Pointer<TWString>)>();
-
-  /// Deletes a string created with a `TWStringCreate*` method and frees the memory.
-  ///
-  /// \param string a TWString pointer.
-  void TWStringDelete(
-    ffi.Pointer<TWString> string,
-  ) {
-    return _TWStringDelete(
-      string,
-    );
-  }
-
-  late final _TWStringDeletePtr =
-      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<TWString>)>>(
-          'TWStringDelete');
-  late final _TWStringDelete =
-      _TWStringDeletePtr.asFunction<void Function(ffi.Pointer<TWString>)>();
-
-  /// Determines whether two string blocks are equal.
-  ///
-  /// \param lhs a TWString pointer.
-  /// \param rhs another TWString pointer.
-  bool TWStringEqual(
-    ffi.Pointer<TWString> lhs,
-    ffi.Pointer<TWString> rhs,
-  ) {
-    return _TWStringEqual(
-      lhs,
-      rhs,
-    );
-  }
-
-  late final _TWStringEqualPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Bool Function(
-              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>>('TWStringEqual');
-  late final _TWStringEqual = _TWStringEqualPtr.asFunction<
-      bool Function(ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
-
-  /// Returns the blockchain for a coin type.
-  ///
-  /// \param coin A coin type
-  /// \return blockchain associated to the given coin type
-  int TWCoinTypeBlockchain(
-    int coin,
-  ) {
-    return _TWCoinTypeBlockchain(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeBlockchainPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypeBlockchain');
-  late final _TWCoinTypeBlockchain =
-      _TWCoinTypeBlockchainPtr.asFunction<int Function(int)>();
-
-  /// Returns the purpose for a coin type.
-  ///
-  /// \param coin A coin type
-  /// \return purpose associated to the given coin type
-  int TWCoinTypePurpose(
-    int coin,
-  ) {
-    return _TWCoinTypePurpose(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypePurposePtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypePurpose');
-  late final _TWCoinTypePurpose =
-      _TWCoinTypePurposePtr.asFunction<int Function(int)>();
-
-  /// Returns the curve that should be used for a coin type.
-  ///
-  /// \param coin A coin type
-  /// \return curve that should be used for the given coin type
-  int TWCoinTypeCurve(
-    int coin,
-  ) {
-    return _TWCoinTypeCurve(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeCurvePtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypeCurve');
-  late final _TWCoinTypeCurve =
-      _TWCoinTypeCurvePtr.asFunction<int Function(int)>();
-
-  /// Returns the xpub HD version that should be used for a coin type.
-  ///
-  /// \param coin A coin type
-  /// \return xpub HD version that should be used for the given coin type
-  int TWCoinTypeXpubVersion(
-    int coin,
-  ) {
-    return _TWCoinTypeXpubVersion(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeXpubVersionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypeXpubVersion');
-  late final _TWCoinTypeXpubVersion =
-      _TWCoinTypeXpubVersionPtr.asFunction<int Function(int)>();
-
-  /// Returns the xprv HD version that should be used for a coin type.
-  ///
-  /// \param coin A coin type
-  /// \return the xprv HD version that should be used for the given coin type.
-  int TWCoinTypeXprvVersion(
-    int coin,
-  ) {
-    return _TWCoinTypeXprvVersion(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeXprvVersionPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypeXprvVersion');
-  late final _TWCoinTypeXprvVersion =
-      _TWCoinTypeXprvVersionPtr.asFunction<int Function(int)>();
-
-  /// Validates an address string.
-  ///
-  /// \param coin A coin type
-  /// \param address A public address
-  /// \return true if the address is a valid public address of the given coin, false otherwise.
-  bool TWCoinTypeValidate(
-    int coin,
-    ffi.Pointer<TWString> address,
-  ) {
-    return _TWCoinTypeValidate(
-      coin,
-      address,
-    );
-  }
-
-  late final _TWCoinTypeValidatePtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Bool Function(
-              ffi.Int32, ffi.Pointer<TWString>)>>('TWCoinTypeValidate');
-  late final _TWCoinTypeValidate = _TWCoinTypeValidatePtr.asFunction<
-      bool Function(int, ffi.Pointer<TWString>)>();
-
-  /// Returns the default derivation path for a particular coin.
-  ///
-  /// \param coin A coin type
-  /// \return the default derivation path for the given coin type.
-  ffi.Pointer<TWString> TWCoinTypeDerivationPath(
-    int coin,
-  ) {
-    return _TWCoinTypeDerivationPath(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeDerivationPathPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWString> Function(ffi.Int32)>>(
-          'TWCoinTypeDerivationPath');
-  late final _TWCoinTypeDerivationPath = _TWCoinTypeDerivationPathPtr
-      .asFunction<ffi.Pointer<TWString> Function(int)>();
-
-  /// Returns the derivation path for a particular coin with the explicit given derivation.
-  ///
-  /// \param coin A coin type
-  /// \param derivation A derivation type
-  /// \return the derivation path for the given coin with the explicit given derivation
-  ffi.Pointer<TWString> TWCoinTypeDerivationPathWithDerivation(
-    int coin,
-    int derivation,
-  ) {
-    return _TWCoinTypeDerivationPathWithDerivation(
-      coin,
-      derivation,
-    );
-  }
-
-  late final _TWCoinTypeDerivationPathWithDerivationPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Int32, ffi.Int32)>>('TWCoinTypeDerivationPathWithDerivation');
-  late final _TWCoinTypeDerivationPathWithDerivation =
-      _TWCoinTypeDerivationPathWithDerivationPtr.asFunction<
-          ffi.Pointer<TWString> Function(int, int)>();
-
-  /// Derives the address for a particular coin from the private key.
-  ///
-  /// \param coin A coin type
-  /// \param privateKey A valid private key
-  /// \return Derived address for the given coin from the private key.
-  ffi.Pointer<TWString> TWCoinTypeDeriveAddress(
-    int coin,
-    ffi.Pointer<TWPrivateKey> privateKey,
-  ) {
-    return _TWCoinTypeDeriveAddress(
-      coin,
-      privateKey,
-    );
-  }
-
-  late final _TWCoinTypeDeriveAddressPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Int32,
-              ffi.Pointer<TWPrivateKey>)>>('TWCoinTypeDeriveAddress');
-  late final _TWCoinTypeDeriveAddress = _TWCoinTypeDeriveAddressPtr.asFunction<
-      ffi.Pointer<TWString> Function(int, ffi.Pointer<TWPrivateKey>)>();
-
-  /// Derives the address for a particular coin from the public key.
-  ///
-  /// \param coin A coin type
-  /// \param publicKey A valid public key
-  /// \return Derived address for the given coin from the public key.
-  ffi.Pointer<TWString> TWCoinTypeDeriveAddressFromPublicKey(
-    int coin,
-    ffi.Pointer<TWPublicKey> publicKey,
-  ) {
-    return _TWCoinTypeDeriveAddressFromPublicKey(
-      coin,
-      publicKey,
-    );
-  }
-
-  late final _TWCoinTypeDeriveAddressFromPublicKeyPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Pointer<TWString> Function(
-                  ffi.Int32, ffi.Pointer<TWPublicKey>)>>(
-      'TWCoinTypeDeriveAddressFromPublicKey');
-  late final _TWCoinTypeDeriveAddressFromPublicKey =
-      _TWCoinTypeDeriveAddressFromPublicKeyPtr.asFunction<
-          ffi.Pointer<TWString> Function(int, ffi.Pointer<TWPublicKey>)>();
-
-  /// HRP for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return HRP of the given coin type.
-  int TWCoinTypeHRP(
-    int coin,
-  ) {
-    return _TWCoinTypeHRP(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeHRPPtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypeHRP');
-  late final _TWCoinTypeHRP = _TWCoinTypeHRPPtr.asFunction<int Function(int)>();
-
-  /// P2PKH prefix for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return P2PKH prefix for the given coin type
-  int TWCoinTypeP2pkhPrefix(
-    int coin,
-  ) {
-    return _TWCoinTypeP2pkhPrefix(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeP2pkhPrefixPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
-          'TWCoinTypeP2pkhPrefix');
-  late final _TWCoinTypeP2pkhPrefix =
-      _TWCoinTypeP2pkhPrefixPtr.asFunction<int Function(int)>();
-
-  /// P2SH prefix for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return P2SH prefix for the given coin type
-  int TWCoinTypeP2shPrefix(
-    int coin,
-  ) {
-    return _TWCoinTypeP2shPrefix(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeP2shPrefixPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
-          'TWCoinTypeP2shPrefix');
-  late final _TWCoinTypeP2shPrefix =
-      _TWCoinTypeP2shPrefixPtr.asFunction<int Function(int)>();
-
-  /// Static prefix for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return Static prefix for the given coin type
-  int TWCoinTypeStaticPrefix(
-    int coin,
-  ) {
-    return _TWCoinTypeStaticPrefix(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeStaticPrefixPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
-          'TWCoinTypeStaticPrefix');
-  late final _TWCoinTypeStaticPrefix =
-      _TWCoinTypeStaticPrefixPtr.asFunction<int Function(int)>();
-
-  /// ChainID for this coin type.
-  ///
-  /// \param coin A coin type
-  /// \return ChainID for the given coin type.
-  /// \note Caller must free returned object.
-  ffi.Pointer<TWString> TWCoinTypeChainId(
-    int coin,
-  ) {
-    return _TWCoinTypeChainId(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeChainIdPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWString> Function(ffi.Int32)>>(
-          'TWCoinTypeChainId');
-  late final _TWCoinTypeChainId =
-      _TWCoinTypeChainIdPtr.asFunction<ffi.Pointer<TWString> Function(int)>();
-
-  /// SLIP-0044 id for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return SLIP-0044 id for the given coin type
-  int TWCoinTypeSlip44Id(
-    int coin,
-  ) {
-    return _TWCoinTypeSlip44Id(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeSlip44IdPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
-          'TWCoinTypeSlip44Id');
-  late final _TWCoinTypeSlip44Id =
-      _TWCoinTypeSlip44IdPtr.asFunction<int Function(int)>();
-
-  /// SS58Prefix for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return SS58Prefix for the given coin type
-  int TWCoinTypeSS58Prefix(
-    int coin,
-  ) {
-    return _TWCoinTypeSS58Prefix(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypeSS58PrefixPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
-          'TWCoinTypeSS58Prefix');
-  late final _TWCoinTypeSS58Prefix =
-      _TWCoinTypeSS58PrefixPtr.asFunction<int Function(int)>();
-
-  /// public key type for this coin type
-  ///
-  /// \param coin A coin type
-  /// \return public key type for the given coin type
-  int TWCoinTypePublicKeyType(
-    int coin,
-  ) {
-    return _TWCoinTypePublicKeyType(
-      coin,
-    );
-  }
-
-  late final _TWCoinTypePublicKeyTypePtr =
-      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
-          'TWCoinTypePublicKeyType');
-  late final _TWCoinTypePublicKeyType =
-      _TWCoinTypePublicKeyTypePtr.asFunction<int Function(int)>();
-
-  /// Returns stock symbol of coin
-  ///
-  /// \param type A coin type
-  /// \return A non-null TWString stock symbol of coin
-  /// \note Caller must free returned object
-  ffi.Pointer<TWString> TWCoinTypeConfigurationGetSymbol(
-    int type,
-  ) {
-    return _TWCoinTypeConfigurationGetSymbol(
-      type,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetSymbolPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWString> Function(ffi.Int32)>>(
-          'TWCoinTypeConfigurationGetSymbol');
-  late final _TWCoinTypeConfigurationGetSymbol =
-      _TWCoinTypeConfigurationGetSymbolPtr.asFunction<
-          ffi.Pointer<TWString> Function(int)>();
-
-  /// Returns max count decimal places for minimal coin unit
-  ///
-  /// \param type A coin type
-  /// \return Returns max count decimal places for minimal coin unit
-  int TWCoinTypeConfigurationGetDecimals(
-    int type,
-  ) {
-    return _TWCoinTypeConfigurationGetDecimals(
-      type,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetDecimalsPtr =
-      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32)>>(
-          'TWCoinTypeConfigurationGetDecimals');
-  late final _TWCoinTypeConfigurationGetDecimals =
-      _TWCoinTypeConfigurationGetDecimalsPtr.asFunction<int Function(int)>();
-
-  /// Returns transaction url in blockchain explorer
-  ///
-  /// \param type A coin type
-  /// \param transactionID A transaction identifier
-  /// \return Returns a non-null TWString transaction url in blockchain explorer
-  ffi.Pointer<TWString> TWCoinTypeConfigurationGetTransactionURL(
-    int type,
-    ffi.Pointer<TWString> transactionID,
-  ) {
-    return _TWCoinTypeConfigurationGetTransactionURL(
-      type,
-      transactionID,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetTransactionURLPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Pointer<TWString> Function(
-                  ffi.Int32, ffi.Pointer<TWString>)>>(
-      'TWCoinTypeConfigurationGetTransactionURL');
-  late final _TWCoinTypeConfigurationGetTransactionURL =
-      _TWCoinTypeConfigurationGetTransactionURLPtr.asFunction<
-          ffi.Pointer<TWString> Function(int, ffi.Pointer<TWString>)>();
-
-  /// Returns account url in blockchain explorer
-  ///
-  /// \param type A coin type
-  /// \param accountID an Account identifier
-  /// \return Returns a non-null TWString account url in blockchain explorer
-  ffi.Pointer<TWString> TWCoinTypeConfigurationGetAccountURL(
-    int type,
-    ffi.Pointer<TWString> accountID,
-  ) {
-    return _TWCoinTypeConfigurationGetAccountURL(
-      type,
-      accountID,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetAccountURLPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWCoinTypeConfigurationGetAccountURL');
-  late final _TWCoinTypeConfigurationGetAccountURL =
-      _TWCoinTypeConfigurationGetAccountURLPtr.asFunction<
-          ffi.Pointer<TWString> Function(int, ffi.Pointer<TWString>)>();
-
-  /// Returns full name of coin in lower case
-  ///
-  /// \param type A coin type
-  /// \return Returns a non-null TWString, full name of coin in lower case
-  ffi.Pointer<TWString> TWCoinTypeConfigurationGetID(
-    int type,
-  ) {
-    return _TWCoinTypeConfigurationGetID(
-      type,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetIDPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWString> Function(ffi.Int32)>>(
-          'TWCoinTypeConfigurationGetID');
-  late final _TWCoinTypeConfigurationGetID = _TWCoinTypeConfigurationGetIDPtr
-      .asFunction<ffi.Pointer<TWString> Function(int)>();
-
-  /// Returns full name of coin
-  ///
-  /// \param type A coin type
-  /// \return Returns a non-null TWString, full name of coin
-  ffi.Pointer<TWString> TWCoinTypeConfigurationGetName(
-    int type,
-  ) {
-    return _TWCoinTypeConfigurationGetName(
-      type,
-    );
-  }
-
-  late final _TWCoinTypeConfigurationGetNamePtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWString> Function(ffi.Int32)>>(
-          'TWCoinTypeConfigurationGetName');
-  late final _TWCoinTypeConfigurationGetName =
-      _TWCoinTypeConfigurationGetNamePtr.asFunction<
-          ffi.Pointer<TWString> Function(int)>();
-
   /// Creates a block of data from a byte array.
   ///
   /// \param bytes Non-null raw bytes buffer
@@ -3456,6 +2415,1112 @@ class TrustWalletCore {
   late final _TWDataEqual = _TWDataEqualPtr.asFunction<
       bool Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>)>();
 
+  /// Determine if the HD Version is public
+  ///
+  /// \param version HD version
+  /// \return true if the version is public, false otherwise
+  bool TWHDVersionIsPublic(
+    int version,
+  ) {
+    return _TWHDVersionIsPublic(
+      version,
+    );
+  }
+
+  late final _TWHDVersionIsPublicPtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
+          'TWHDVersionIsPublic');
+  late final _TWHDVersionIsPublic =
+      _TWHDVersionIsPublicPtr.asFunction<bool Function(int)>();
+
+  /// Determine if the HD Version is private
+  ///
+  /// \param version HD version
+  /// \return true if the version is private, false otherwise
+  bool TWHDVersionIsPrivate(
+    int version,
+  ) {
+    return _TWHDVersionIsPrivate(
+      version,
+    );
+  }
+
+  late final _TWHDVersionIsPrivatePtr =
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Int32)>>(
+          'TWHDVersionIsPrivate');
+  late final _TWHDVersionIsPrivate =
+      _TWHDVersionIsPrivatePtr.asFunction<bool Function(int)>();
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_BITCOIN => _HRP_BITCOIN.value;
+
+  set HRP_BITCOIN(ffi.Pointer<ffi.Char> value) => _HRP_BITCOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_LITECOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_LITECOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_LITECOIN => _HRP_LITECOIN.value;
+
+  set HRP_LITECOIN(ffi.Pointer<ffi.Char> value) => _HRP_LITECOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_VIACOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_VIACOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_VIACOIN => _HRP_VIACOIN.value;
+
+  set HRP_VIACOIN(ffi.Pointer<ffi.Char> value) => _HRP_VIACOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_GROESTLCOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_GROESTLCOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_GROESTLCOIN => _HRP_GROESTLCOIN.value;
+
+  set HRP_GROESTLCOIN(ffi.Pointer<ffi.Char> value) =>
+      _HRP_GROESTLCOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_DIGIBYTE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_DIGIBYTE');
+
+  ffi.Pointer<ffi.Char> get HRP_DIGIBYTE => _HRP_DIGIBYTE.value;
+
+  set HRP_DIGIBYTE(ffi.Pointer<ffi.Char> value) => _HRP_DIGIBYTE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_MONACOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_MONACOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_MONACOIN => _HRP_MONACOIN.value;
+
+  set HRP_MONACOIN(ffi.Pointer<ffi.Char> value) => _HRP_MONACOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SYSCOIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_SYSCOIN');
+
+  ffi.Pointer<ffi.Char> get HRP_SYSCOIN => _HRP_SYSCOIN.value;
+
+  set HRP_SYSCOIN(ffi.Pointer<ffi.Char> value) => _HRP_SYSCOIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_VERGE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_VERGE');
+
+  ffi.Pointer<ffi.Char> get HRP_VERGE => _HRP_VERGE.value;
+
+  set HRP_VERGE(ffi.Pointer<ffi.Char> value) => _HRP_VERGE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COSMOS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_COSMOS');
+
+  ffi.Pointer<ffi.Char> get HRP_COSMOS => _HRP_COSMOS.value;
+
+  set HRP_COSMOS(ffi.Pointer<ffi.Char> value) => _HRP_COSMOS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINCASH =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINCASH');
+
+  ffi.Pointer<ffi.Char> get HRP_BITCOINCASH => _HRP_BITCOINCASH.value;
+
+  set HRP_BITCOINCASH(ffi.Pointer<ffi.Char> value) =>
+      _HRP_BITCOINCASH.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINGOLD =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINGOLD');
+
+  ffi.Pointer<ffi.Char> get HRP_BITCOINGOLD => _HRP_BITCOINGOLD.value;
+
+  set HRP_BITCOINGOLD(ffi.Pointer<ffi.Char> value) =>
+      _HRP_BITCOINGOLD.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_IOTEX =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_IOTEX');
+
+  ffi.Pointer<ffi.Char> get HRP_IOTEX => _HRP_IOTEX.value;
+
+  set HRP_IOTEX(ffi.Pointer<ffi.Char> value) => _HRP_IOTEX.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NERVOS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NERVOS');
+
+  ffi.Pointer<ffi.Char> get HRP_NERVOS => _HRP_NERVOS.value;
+
+  set HRP_NERVOS(ffi.Pointer<ffi.Char> value) => _HRP_NERVOS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ZILLIQA =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_ZILLIQA');
+
+  ffi.Pointer<ffi.Char> get HRP_ZILLIQA => _HRP_ZILLIQA.value;
+
+  set HRP_ZILLIQA(ffi.Pointer<ffi.Char> value) => _HRP_ZILLIQA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_TERRA =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_TERRA');
+
+  ffi.Pointer<ffi.Char> get HRP_TERRA => _HRP_TERRA.value;
+
+  set HRP_TERRA(ffi.Pointer<ffi.Char> value) => _HRP_TERRA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CRYPTOORG =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_CRYPTOORG');
+
+  ffi.Pointer<ffi.Char> get HRP_CRYPTOORG => _HRP_CRYPTOORG.value;
+
+  set HRP_CRYPTOORG(ffi.Pointer<ffi.Char> value) =>
+      _HRP_CRYPTOORG.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_KAVA =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_KAVA');
+
+  ffi.Pointer<ffi.Char> get HRP_KAVA => _HRP_KAVA.value;
+
+  set HRP_KAVA(ffi.Pointer<ffi.Char> value) => _HRP_KAVA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_OASIS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_OASIS');
+
+  ffi.Pointer<ffi.Char> get HRP_OASIS => _HRP_OASIS.value;
+
+  set HRP_OASIS(ffi.Pointer<ffi.Char> value) => _HRP_OASIS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BLUZELLE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BLUZELLE');
+
+  ffi.Pointer<ffi.Char> get HRP_BLUZELLE => _HRP_BLUZELLE.value;
+
+  set HRP_BLUZELLE(ffi.Pointer<ffi.Char> value) => _HRP_BLUZELLE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BAND =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BAND');
+
+  ffi.Pointer<ffi.Char> get HRP_BAND => _HRP_BAND.value;
+
+  set HRP_BAND(ffi.Pointer<ffi.Char> value) => _HRP_BAND.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ELROND =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_ELROND');
+
+  ffi.Pointer<ffi.Char> get HRP_ELROND => _HRP_ELROND.value;
+
+  set HRP_ELROND(ffi.Pointer<ffi.Char> value) => _HRP_ELROND.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SECRET =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_SECRET');
+
+  ffi.Pointer<ffi.Char> get HRP_SECRET => _HRP_SECRET.value;
+
+  set HRP_SECRET(ffi.Pointer<ffi.Char> value) => _HRP_SECRET.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AGORIC =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_AGORIC');
+
+  ffi.Pointer<ffi.Char> get HRP_AGORIC => _HRP_AGORIC.value;
+
+  set HRP_AGORIC(ffi.Pointer<ffi.Char> value) => _HRP_AGORIC.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BINANCE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BINANCE');
+
+  ffi.Pointer<ffi.Char> get HRP_BINANCE => _HRP_BINANCE.value;
+
+  set HRP_BINANCE(ffi.Pointer<ffi.Char> value) => _HRP_BINANCE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_ECASH =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_ECASH');
+
+  ffi.Pointer<ffi.Char> get HRP_ECASH => _HRP_ECASH.value;
+
+  set HRP_ECASH(ffi.Pointer<ffi.Char> value) => _HRP_ECASH.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_THORCHAIN =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_THORCHAIN');
+
+  ffi.Pointer<ffi.Char> get HRP_THORCHAIN => _HRP_THORCHAIN.value;
+
+  set HRP_THORCHAIN(ffi.Pointer<ffi.Char> value) =>
+      _HRP_THORCHAIN.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINDIAMOND =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINDIAMOND');
+
+  ffi.Pointer<ffi.Char> get HRP_BITCOINDIAMOND => _HRP_BITCOINDIAMOND.value;
+
+  set HRP_BITCOINDIAMOND(ffi.Pointer<ffi.Char> value) =>
+      _HRP_BITCOINDIAMOND.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_HARMONY =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_HARMONY');
+
+  ffi.Pointer<ffi.Char> get HRP_HARMONY => _HRP_HARMONY.value;
+
+  set HRP_HARMONY(ffi.Pointer<ffi.Char> value) => _HRP_HARMONY.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CARDANO =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_CARDANO');
+
+  ffi.Pointer<ffi.Char> get HRP_CARDANO => _HRP_CARDANO.value;
+
+  set HRP_CARDANO(ffi.Pointer<ffi.Char> value) => _HRP_CARDANO.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_QTUM =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_QTUM');
+
+  ffi.Pointer<ffi.Char> get HRP_QTUM => _HRP_QTUM.value;
+
+  set HRP_QTUM(ffi.Pointer<ffi.Char> value) => _HRP_QTUM.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_STRATIS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_STRATIS');
+
+  ffi.Pointer<ffi.Char> get HRP_STRATIS => _HRP_STRATIS.value;
+
+  set HRP_STRATIS(ffi.Pointer<ffi.Char> value) => _HRP_STRATIS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVEINJECTIVE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVEINJECTIVE');
+
+  ffi.Pointer<ffi.Char> get HRP_NATIVEINJECTIVE => _HRP_NATIVEINJECTIVE.value;
+
+  set HRP_NATIVEINJECTIVE(ffi.Pointer<ffi.Char> value) =>
+      _HRP_NATIVEINJECTIVE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_OSMOSIS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_OSMOSIS');
+
+  ffi.Pointer<ffi.Char> get HRP_OSMOSIS => _HRP_OSMOSIS.value;
+
+  set HRP_OSMOSIS(ffi.Pointer<ffi.Char> value) => _HRP_OSMOSIS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_TERRAV2 =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_TERRAV2');
+
+  ffi.Pointer<ffi.Char> get HRP_TERRAV2 => _HRP_TERRAV2.value;
+
+  set HRP_TERRAV2(ffi.Pointer<ffi.Char> value) => _HRP_TERRAV2.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COREUM =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_COREUM');
+
+  ffi.Pointer<ffi.Char> get HRP_COREUM => _HRP_COREUM.value;
+
+  set HRP_COREUM(ffi.Pointer<ffi.Char> value) => _HRP_COREUM.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVECANTO =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVECANTO');
+
+  ffi.Pointer<ffi.Char> get HRP_NATIVECANTO => _HRP_NATIVECANTO.value;
+
+  set HRP_NATIVECANTO(ffi.Pointer<ffi.Char> value) =>
+      _HRP_NATIVECANTO.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SOMMELIER =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_SOMMELIER');
+
+  ffi.Pointer<ffi.Char> get HRP_SOMMELIER => _HRP_SOMMELIER.value;
+
+  set HRP_SOMMELIER(ffi.Pointer<ffi.Char> value) =>
+      _HRP_SOMMELIER.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_FETCHAI =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_FETCHAI');
+
+  ffi.Pointer<ffi.Char> get HRP_FETCHAI => _HRP_FETCHAI.value;
+
+  set HRP_FETCHAI(ffi.Pointer<ffi.Char> value) => _HRP_FETCHAI.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_MARS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_MARS');
+
+  ffi.Pointer<ffi.Char> get HRP_MARS => _HRP_MARS.value;
+
+  set HRP_MARS(ffi.Pointer<ffi.Char> value) => _HRP_MARS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_UMEE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_UMEE');
+
+  ffi.Pointer<ffi.Char> get HRP_UMEE => _HRP_UMEE.value;
+
+  set HRP_UMEE(ffi.Pointer<ffi.Char> value) => _HRP_UMEE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_QUASAR =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_QUASAR');
+
+  ffi.Pointer<ffi.Char> get HRP_QUASAR => _HRP_QUASAR.value;
+
+  set HRP_QUASAR(ffi.Pointer<ffi.Char> value) => _HRP_QUASAR.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_PERSISTENCE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_PERSISTENCE');
+
+  ffi.Pointer<ffi.Char> get HRP_PERSISTENCE => _HRP_PERSISTENCE.value;
+
+  set HRP_PERSISTENCE(ffi.Pointer<ffi.Char> value) =>
+      _HRP_PERSISTENCE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AKASH =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_AKASH');
+
+  ffi.Pointer<ffi.Char> get HRP_AKASH => _HRP_AKASH.value;
+
+  set HRP_AKASH(ffi.Pointer<ffi.Char> value) => _HRP_AKASH.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NOBLE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NOBLE');
+
+  ffi.Pointer<ffi.Char> get HRP_NOBLE => _HRP_NOBLE.value;
+
+  set HRP_NOBLE(ffi.Pointer<ffi.Char> value) => _HRP_NOBLE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_SEI =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_SEI');
+
+  ffi.Pointer<ffi.Char> get HRP_SEI => _HRP_SEI.value;
+
+  set HRP_SEI(ffi.Pointer<ffi.Char> value) => _HRP_SEI.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_BITCOINTESTNET =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_BITCOINTESTNET');
+
+  ffi.Pointer<ffi.Char> get HRP_BITCOINTESTNET => _HRP_BITCOINTESTNET.value;
+
+  set HRP_BITCOINTESTNET(ffi.Pointer<ffi.Char> value) =>
+      _HRP_BITCOINTESTNET.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_STARGAZE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_STARGAZE');
+
+  ffi.Pointer<ffi.Char> get HRP_STARGAZE => _HRP_STARGAZE.value;
+
+  set HRP_STARGAZE(ffi.Pointer<ffi.Char> value) => _HRP_STARGAZE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NATIVEEVMOS =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NATIVEEVMOS');
+
+  ffi.Pointer<ffi.Char> get HRP_NATIVEEVMOS => _HRP_NATIVEEVMOS.value;
+
+  set HRP_NATIVEEVMOS(ffi.Pointer<ffi.Char> value) =>
+      _HRP_NATIVEEVMOS.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_JUNO =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_JUNO');
+
+  ffi.Pointer<ffi.Char> get HRP_JUNO => _HRP_JUNO.value;
+
+  set HRP_JUNO(ffi.Pointer<ffi.Char> value) => _HRP_JUNO.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_TBINANCE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_TBINANCE');
+
+  ffi.Pointer<ffi.Char> get HRP_TBINANCE => _HRP_TBINANCE.value;
+
+  set HRP_TBINANCE(ffi.Pointer<ffi.Char> value) => _HRP_TBINANCE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_STRIDE =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_STRIDE');
+
+  ffi.Pointer<ffi.Char> get HRP_STRIDE => _HRP_STRIDE.value;
+
+  set HRP_STRIDE(ffi.Pointer<ffi.Char> value) => _HRP_STRIDE.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_AXELAR =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_AXELAR');
+
+  ffi.Pointer<ffi.Char> get HRP_AXELAR => _HRP_AXELAR.value;
+
+  set HRP_AXELAR(ffi.Pointer<ffi.Char> value) => _HRP_AXELAR.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_CRESCENT =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_CRESCENT');
+
+  ffi.Pointer<ffi.Char> get HRP_CRESCENT => _HRP_CRESCENT.value;
+
+  set HRP_CRESCENT(ffi.Pointer<ffi.Char> value) => _HRP_CRESCENT.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_KUJIRA =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_KUJIRA');
+
+  ffi.Pointer<ffi.Char> get HRP_KUJIRA => _HRP_KUJIRA.value;
+
+  set HRP_KUJIRA(ffi.Pointer<ffi.Char> value) => _HRP_KUJIRA.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_COMDEX =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_COMDEX');
+
+  ffi.Pointer<ffi.Char> get HRP_COMDEX => _HRP_COMDEX.value;
+
+  set HRP_COMDEX(ffi.Pointer<ffi.Char> value) => _HRP_COMDEX.value = value;
+
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_NEUTRON =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_NEUTRON');
+
+  ffi.Pointer<ffi.Char> get HRP_NEUTRON => _HRP_NEUTRON.value;
+
+  set HRP_NEUTRON(ffi.Pointer<ffi.Char> value) => _HRP_NEUTRON.value = value;
+
+  ffi.Pointer<ffi.Char> stringForHRP(
+    int hrp,
+  ) {
+    return _stringForHRP(
+      hrp,
+    );
+  }
+
+  late final _stringForHRPPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<ffi.Char> Function(ffi.Int32)>>(
+          'stringForHRP');
+  late final _stringForHRP =
+      _stringForHRPPtr.asFunction<ffi.Pointer<ffi.Char> Function(int)>();
+
+  int hrpForString(
+    ffi.Pointer<ffi.Char> string,
+  ) {
+    return _hrpForString(
+      string,
+    );
+  }
+
+  late final _hrpForStringPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ffi.Char>)>>(
+          'hrpForString');
+  late final _hrpForString =
+      _hrpForStringPtr.asFunction<int Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Creates a TWString from a null-terminated UTF8 byte array. It must be deleted at the end.
+  ///
+  /// \param bytes a null-terminated UTF8 byte array.
+  ffi.Pointer<TWString1> TWStringCreateWithUTF8Bytes(
+    ffi.Pointer<ffi.Char> bytes,
+  ) {
+    return _TWStringCreateWithUTF8Bytes(
+      bytes,
+    );
+  }
+
+  late final _TWStringCreateWithUTF8BytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<ffi.Char>)>>('TWStringCreateWithUTF8Bytes');
+  late final _TWStringCreateWithUTF8Bytes = _TWStringCreateWithUTF8BytesPtr
+      .asFunction<ffi.Pointer<TWString1> Function(ffi.Pointer<ffi.Char>)>();
+
+  /// Creates a string from a raw byte array and size. It must be deleted at the end.
+  ///
+  /// \param bytes a raw byte array.
+  /// \param size the size of the byte array.
+  ffi.Pointer<TWString1> TWStringCreateWithRawBytes(
+    ffi.Pointer<ffi.Uint8> bytes,
+    int size,
+  ) {
+    return _TWStringCreateWithRawBytes(
+      bytes,
+      size,
+    );
+  }
+
+  late final _TWStringCreateWithRawBytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<ffi.Uint8>, ffi.Size)>>('TWStringCreateWithRawBytes');
+  late final _TWStringCreateWithRawBytes =
+      _TWStringCreateWithRawBytesPtr.asFunction<
+          ffi.Pointer<TWString1> Function(ffi.Pointer<ffi.Uint8>, int)>();
+
+  /// Creates a hexadecimal string from a block of data. It must be deleted at the end.
+  ///
+  /// \param data a block of data.
+  ffi.Pointer<TWString1> TWStringCreateWithHexData(
+    ffi.Pointer<TWData1> data,
+  ) {
+    return _TWStringCreateWithHexData(
+      data,
+    );
+  }
+
+  late final _TWStringCreateWithHexDataPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWData1>)>>('TWStringCreateWithHexData');
+  late final _TWStringCreateWithHexData = _TWStringCreateWithHexDataPtr
+      .asFunction<ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+
+  /// Returns the string size in bytes.
+  ///
+  /// \param string a TWString pointer.
+  int TWStringSize(
+    ffi.Pointer<TWString1> string,
+  ) {
+    return _TWStringSize(
+      string,
+    );
+  }
+
+  late final _TWStringSizePtr =
+      _lookup<ffi.NativeFunction<ffi.Size Function(ffi.Pointer<TWString1>)>>(
+          'TWStringSize');
+  late final _TWStringSize =
+      _TWStringSizePtr.asFunction<int Function(ffi.Pointer<TWString1>)>();
+
+  /// Returns the byte at the provided index.
+  ///
+  /// \param string a TWString pointer.
+  /// \param index the index of the byte.
+  int TWStringGet(
+    ffi.Pointer<TWString1> string,
+    int index,
+  ) {
+    return _TWStringGet(
+      string,
+      index,
+    );
+  }
+
+  late final _TWStringGetPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Char Function(ffi.Pointer<TWString1>, ffi.Size)>>('TWStringGet');
+  late final _TWStringGet =
+      _TWStringGetPtr.asFunction<int Function(ffi.Pointer<TWString1>, int)>();
+
+  /// Returns the raw pointer to the string's UTF8 bytes (null-terminated).
+  ///
+  /// \param string a TWString pointer.
+  ffi.Pointer<ffi.Char> TWStringUTF8Bytes(
+    ffi.Pointer<TWString1> string,
+  ) {
+    return _TWStringUTF8Bytes(
+      string,
+    );
+  }
+
+  late final _TWStringUTF8BytesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<ffi.Char> Function(
+              ffi.Pointer<TWString1>)>>('TWStringUTF8Bytes');
+  late final _TWStringUTF8Bytes = _TWStringUTF8BytesPtr.asFunction<
+      ffi.Pointer<ffi.Char> Function(ffi.Pointer<TWString1>)>();
+
+  /// Deletes a string created with a `TWStringCreate*` method and frees the memory.
+  ///
+  /// \param string a TWString pointer.
+  void TWStringDelete(
+    ffi.Pointer<TWString1> string,
+  ) {
+    return _TWStringDelete(
+      string,
+    );
+  }
+
+  late final _TWStringDeletePtr =
+      _lookup<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<TWString1>)>>(
+          'TWStringDelete');
+  late final _TWStringDelete =
+      _TWStringDeletePtr.asFunction<void Function(ffi.Pointer<TWString1>)>();
+
+  /// Determines whether two string blocks are equal.
+  ///
+  /// \param lhs a TWString pointer.
+  /// \param rhs another TWString pointer.
+  bool TWStringEqual(
+    ffi.Pointer<TWString1> lhs,
+    ffi.Pointer<TWString1> rhs,
+  ) {
+    return _TWStringEqual(
+      lhs,
+      rhs,
+    );
+  }
+
+  late final _TWStringEqualPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWStringEqual');
+  late final _TWStringEqual = _TWStringEqualPtr.asFunction<
+      bool Function(ffi.Pointer<TWString1>, ffi.Pointer<TWString1>)>();
+
+  /// Returns the blockchain for a coin type.
+  ///
+  /// \param coin A coin type
+  /// \return blockchain associated to the given coin type
+  int TWCoinTypeBlockchain(
+    int coin,
+  ) {
+    return _TWCoinTypeBlockchain(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeBlockchainPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypeBlockchain');
+  late final _TWCoinTypeBlockchain =
+      _TWCoinTypeBlockchainPtr.asFunction<int Function(int)>();
+
+  /// Returns the purpose for a coin type.
+  ///
+  /// \param coin A coin type
+  /// \return purpose associated to the given coin type
+  int TWCoinTypePurpose(
+    int coin,
+  ) {
+    return _TWCoinTypePurpose(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypePurposePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypePurpose');
+  late final _TWCoinTypePurpose =
+      _TWCoinTypePurposePtr.asFunction<int Function(int)>();
+
+  /// Returns the curve that should be used for a coin type.
+  ///
+  /// \param coin A coin type
+  /// \return curve that should be used for the given coin type
+  int TWCoinTypeCurve(
+    int coin,
+  ) {
+    return _TWCoinTypeCurve(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeCurvePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypeCurve');
+  late final _TWCoinTypeCurve =
+      _TWCoinTypeCurvePtr.asFunction<int Function(int)>();
+
+  /// Returns the xpub HD version that should be used for a coin type.
+  ///
+  /// \param coin A coin type
+  /// \return xpub HD version that should be used for the given coin type
+  int TWCoinTypeXpubVersion(
+    int coin,
+  ) {
+    return _TWCoinTypeXpubVersion(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeXpubVersionPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypeXpubVersion');
+  late final _TWCoinTypeXpubVersion =
+      _TWCoinTypeXpubVersionPtr.asFunction<int Function(int)>();
+
+  /// Returns the xprv HD version that should be used for a coin type.
+  ///
+  /// \param coin A coin type
+  /// \return the xprv HD version that should be used for the given coin type.
+  int TWCoinTypeXprvVersion(
+    int coin,
+  ) {
+    return _TWCoinTypeXprvVersion(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeXprvVersionPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypeXprvVersion');
+  late final _TWCoinTypeXprvVersion =
+      _TWCoinTypeXprvVersionPtr.asFunction<int Function(int)>();
+
+  /// Validates an address string.
+  ///
+  /// \param coin A coin type
+  /// \param address A public address
+  /// \return true if the address is a valid public address of the given coin, false otherwise.
+  bool TWCoinTypeValidate(
+    int coin,
+    ffi.Pointer<TWString1> address,
+  ) {
+    return _TWCoinTypeValidate(
+      coin,
+      address,
+    );
+  }
+
+  late final _TWCoinTypeValidatePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Bool Function(
+              ffi.Int32, ffi.Pointer<TWString1>)>>('TWCoinTypeValidate');
+  late final _TWCoinTypeValidate = _TWCoinTypeValidatePtr.asFunction<
+      bool Function(int, ffi.Pointer<TWString1>)>();
+
+  /// Returns the default derivation path for a particular coin.
+  ///
+  /// \param coin A coin type
+  /// \return the default derivation path for the given coin type.
+  ffi.Pointer<TWString1> TWCoinTypeDerivationPath(
+    int coin,
+  ) {
+    return _TWCoinTypeDerivationPath(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeDerivationPathPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWString1> Function(ffi.Int32)>>(
+          'TWCoinTypeDerivationPath');
+  late final _TWCoinTypeDerivationPath = _TWCoinTypeDerivationPathPtr
+      .asFunction<ffi.Pointer<TWString1> Function(int)>();
+
+  /// Returns the derivation path for a particular coin with the explicit given derivation.
+  ///
+  /// \param coin A coin type
+  /// \param derivation A derivation type
+  /// \return the derivation path for the given coin with the explicit given derivation
+  ffi.Pointer<TWString1> TWCoinTypeDerivationPathWithDerivation(
+    int coin,
+    int derivation,
+  ) {
+    return _TWCoinTypeDerivationPathWithDerivation(
+      coin,
+      derivation,
+    );
+  }
+
+  late final _TWCoinTypeDerivationPathWithDerivationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(
+              ffi.Int32, ffi.Int32)>>('TWCoinTypeDerivationPathWithDerivation');
+  late final _TWCoinTypeDerivationPathWithDerivation =
+      _TWCoinTypeDerivationPathWithDerivationPtr.asFunction<
+          ffi.Pointer<TWString1> Function(int, int)>();
+
+  /// Derives the address for a particular coin from the private key.
+  ///
+  /// \param coin A coin type
+  /// \param privateKey A valid private key
+  /// \return Derived address for the given coin from the private key.
+  ffi.Pointer<TWString1> TWCoinTypeDeriveAddress(
+    int coin,
+    ffi.Pointer<TWPrivateKey> privateKey,
+  ) {
+    return _TWCoinTypeDeriveAddress(
+      coin,
+      privateKey,
+    );
+  }
+
+  late final _TWCoinTypeDeriveAddressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(ffi.Int32,
+              ffi.Pointer<TWPrivateKey>)>>('TWCoinTypeDeriveAddress');
+  late final _TWCoinTypeDeriveAddress = _TWCoinTypeDeriveAddressPtr.asFunction<
+      ffi.Pointer<TWString1> Function(int, ffi.Pointer<TWPrivateKey>)>();
+
+  /// Derives the address for a particular coin from the public key.
+  ///
+  /// \param coin A coin type
+  /// \param publicKey A valid public key
+  /// \return Derived address for the given coin from the public key.
+  ffi.Pointer<TWString1> TWCoinTypeDeriveAddressFromPublicKey(
+    int coin,
+    ffi.Pointer<TWPublicKey> publicKey,
+  ) {
+    return _TWCoinTypeDeriveAddressFromPublicKey(
+      coin,
+      publicKey,
+    );
+  }
+
+  late final _TWCoinTypeDeriveAddressFromPublicKeyPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<TWString1> Function(
+                  ffi.Int32, ffi.Pointer<TWPublicKey>)>>(
+      'TWCoinTypeDeriveAddressFromPublicKey');
+  late final _TWCoinTypeDeriveAddressFromPublicKey =
+      _TWCoinTypeDeriveAddressFromPublicKeyPtr.asFunction<
+          ffi.Pointer<TWString1> Function(int, ffi.Pointer<TWPublicKey>)>();
+
+  /// Derives the address for a particular coin from the public key with the derivation.
+  ffi.Pointer<TWString1> TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(
+    int coin,
+    ffi.Pointer<TWPublicKey> publicKey,
+    int derivation,
+  ) {
+    return _TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(
+      coin,
+      publicKey,
+      derivation,
+    );
+  }
+
+  late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivationPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(ffi.Int32, ffi.Pointer<TWPublicKey>,
+              ffi.Int32)>>('TWCoinTypeDeriveAddressFromPublicKeyAndDerivation');
+  late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivation =
+      _TWCoinTypeDeriveAddressFromPublicKeyAndDerivationPtr.asFunction<
+          ffi.Pointer<TWString1> Function(
+              int, ffi.Pointer<TWPublicKey>, int)>();
+
+  /// HRP for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return HRP of the given coin type.
+  int TWCoinTypeHRP(
+    int coin,
+  ) {
+    return _TWCoinTypeHRP(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeHRPPtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypeHRP');
+  late final _TWCoinTypeHRP = _TWCoinTypeHRPPtr.asFunction<int Function(int)>();
+
+  /// P2PKH prefix for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return P2PKH prefix for the given coin type
+  int TWCoinTypeP2pkhPrefix(
+    int coin,
+  ) {
+    return _TWCoinTypeP2pkhPrefix(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeP2pkhPrefixPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
+          'TWCoinTypeP2pkhPrefix');
+  late final _TWCoinTypeP2pkhPrefix =
+      _TWCoinTypeP2pkhPrefixPtr.asFunction<int Function(int)>();
+
+  /// P2SH prefix for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return P2SH prefix for the given coin type
+  int TWCoinTypeP2shPrefix(
+    int coin,
+  ) {
+    return _TWCoinTypeP2shPrefix(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeP2shPrefixPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
+          'TWCoinTypeP2shPrefix');
+  late final _TWCoinTypeP2shPrefix =
+      _TWCoinTypeP2shPrefixPtr.asFunction<int Function(int)>();
+
+  /// Static prefix for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return Static prefix for the given coin type
+  int TWCoinTypeStaticPrefix(
+    int coin,
+  ) {
+    return _TWCoinTypeStaticPrefix(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeStaticPrefixPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint8 Function(ffi.Int32)>>(
+          'TWCoinTypeStaticPrefix');
+  late final _TWCoinTypeStaticPrefix =
+      _TWCoinTypeStaticPrefixPtr.asFunction<int Function(int)>();
+
+  /// ChainID for this coin type.
+  ///
+  /// \param coin A coin type
+  /// \return ChainID for the given coin type.
+  /// \note Caller must free returned object.
+  ffi.Pointer<TWString1> TWCoinTypeChainId(
+    int coin,
+  ) {
+    return _TWCoinTypeChainId(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeChainIdPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWString1> Function(ffi.Int32)>>(
+          'TWCoinTypeChainId');
+  late final _TWCoinTypeChainId =
+      _TWCoinTypeChainIdPtr.asFunction<ffi.Pointer<TWString1> Function(int)>();
+
+  /// SLIP-0044 id for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return SLIP-0044 id for the given coin type
+  int TWCoinTypeSlip44Id(
+    int coin,
+  ) {
+    return _TWCoinTypeSlip44Id(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeSlip44IdPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
+          'TWCoinTypeSlip44Id');
+  late final _TWCoinTypeSlip44Id =
+      _TWCoinTypeSlip44IdPtr.asFunction<int Function(int)>();
+
+  /// SS58Prefix for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return SS58Prefix for the given coin type
+  int TWCoinTypeSS58Prefix(
+    int coin,
+  ) {
+    return _TWCoinTypeSS58Prefix(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypeSS58PrefixPtr =
+      _lookup<ffi.NativeFunction<ffi.Uint32 Function(ffi.Int32)>>(
+          'TWCoinTypeSS58Prefix');
+  late final _TWCoinTypeSS58Prefix =
+      _TWCoinTypeSS58PrefixPtr.asFunction<int Function(int)>();
+
+  /// public key type for this coin type
+  ///
+  /// \param coin A coin type
+  /// \return public key type for the given coin type
+  int TWCoinTypePublicKeyType(
+    int coin,
+  ) {
+    return _TWCoinTypePublicKeyType(
+      coin,
+    );
+  }
+
+  late final _TWCoinTypePublicKeyTypePtr =
+      _lookup<ffi.NativeFunction<ffi.Int32 Function(ffi.Int32)>>(
+          'TWCoinTypePublicKeyType');
+  late final _TWCoinTypePublicKeyType =
+      _TWCoinTypePublicKeyTypePtr.asFunction<int Function(int)>();
+
+  /// Returns stock symbol of coin
+  ///
+  /// \param type A coin type
+  /// \return A non-null TWString stock symbol of coin
+  /// \note Caller must free returned object
+  ffi.Pointer<TWString1> TWCoinTypeConfigurationGetSymbol(
+    int type,
+  ) {
+    return _TWCoinTypeConfigurationGetSymbol(
+      type,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetSymbolPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWString1> Function(ffi.Int32)>>(
+          'TWCoinTypeConfigurationGetSymbol');
+  late final _TWCoinTypeConfigurationGetSymbol =
+      _TWCoinTypeConfigurationGetSymbolPtr.asFunction<
+          ffi.Pointer<TWString1> Function(int)>();
+
+  /// Returns max count decimal places for minimal coin unit
+  ///
+  /// \param type A coin type
+  /// \return Returns max count decimal places for minimal coin unit
+  int TWCoinTypeConfigurationGetDecimals(
+    int type,
+  ) {
+    return _TWCoinTypeConfigurationGetDecimals(
+      type,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetDecimalsPtr =
+      _lookup<ffi.NativeFunction<ffi.Int Function(ffi.Int32)>>(
+          'TWCoinTypeConfigurationGetDecimals');
+  late final _TWCoinTypeConfigurationGetDecimals =
+      _TWCoinTypeConfigurationGetDecimalsPtr.asFunction<int Function(int)>();
+
+  /// Returns transaction url in blockchain explorer
+  ///
+  /// \param type A coin type
+  /// \param transactionID A transaction identifier
+  /// \return Returns a non-null TWString transaction url in blockchain explorer
+  ffi.Pointer<TWString1> TWCoinTypeConfigurationGetTransactionURL(
+    int type,
+    ffi.Pointer<TWString1> transactionID,
+  ) {
+    return _TWCoinTypeConfigurationGetTransactionURL(
+      type,
+      transactionID,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetTransactionURLPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<TWString1> Function(
+                  ffi.Int32, ffi.Pointer<TWString1>)>>(
+      'TWCoinTypeConfigurationGetTransactionURL');
+  late final _TWCoinTypeConfigurationGetTransactionURL =
+      _TWCoinTypeConfigurationGetTransactionURLPtr.asFunction<
+          ffi.Pointer<TWString1> Function(int, ffi.Pointer<TWString1>)>();
+
+  /// Returns account url in blockchain explorer
+  ///
+  /// \param type A coin type
+  /// \param accountID an Account identifier
+  /// \return Returns a non-null TWString account url in blockchain explorer
+  ffi.Pointer<TWString1> TWCoinTypeConfigurationGetAccountURL(
+    int type,
+    ffi.Pointer<TWString1> accountID,
+  ) {
+    return _TWCoinTypeConfigurationGetAccountURL(
+      type,
+      accountID,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetAccountURLPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString1> Function(ffi.Int32,
+              ffi.Pointer<TWString1>)>>('TWCoinTypeConfigurationGetAccountURL');
+  late final _TWCoinTypeConfigurationGetAccountURL =
+      _TWCoinTypeConfigurationGetAccountURLPtr.asFunction<
+          ffi.Pointer<TWString1> Function(int, ffi.Pointer<TWString1>)>();
+
+  /// Returns full name of coin in lower case
+  ///
+  /// \param type A coin type
+  /// \return Returns a non-null TWString, full name of coin in lower case
+  ffi.Pointer<TWString1> TWCoinTypeConfigurationGetID(
+    int type,
+  ) {
+    return _TWCoinTypeConfigurationGetID(
+      type,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetIDPtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWString1> Function(ffi.Int32)>>(
+          'TWCoinTypeConfigurationGetID');
+  late final _TWCoinTypeConfigurationGetID = _TWCoinTypeConfigurationGetIDPtr
+      .asFunction<ffi.Pointer<TWString1> Function(int)>();
+
+  /// Returns full name of coin
+  ///
+  /// \param type A coin type
+  /// \return Returns a non-null TWString, full name of coin
+  ffi.Pointer<TWString1> TWCoinTypeConfigurationGetName(
+    int type,
+  ) {
+    return _TWCoinTypeConfigurationGetName(
+      type,
+    );
+  }
+
+  late final _TWCoinTypeConfigurationGetNamePtr =
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWString1> Function(ffi.Int32)>>(
+          'TWCoinTypeConfigurationGetName');
+  late final _TWCoinTypeConfigurationGetName =
+      _TWCoinTypeConfigurationGetNamePtr.asFunction<
+          ffi.Pointer<TWString1> Function(int)>();
+
   /// Creates a new DerivationPath with a purpose, coin, account, change and address.
   /// Must be deleted with TWDerivationPathDelete after use.
   ///
@@ -3493,7 +3558,7 @@ class TrustWalletCore {
   /// \param string The string of the Path.
   /// \return A new DerivationPath or null if string is invalid.
   ffi.Pointer<TWDerivationPath> TWDerivationPathCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWDerivationPathCreateWithString(
       string,
@@ -3503,10 +3568,10 @@ class TrustWalletCore {
   late final _TWDerivationPathCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWDerivationPath> Function(
-              ffi.Pointer<TWString>)>>('TWDerivationPathCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWDerivationPathCreateWithString');
   late final _TWDerivationPathCreateWithString =
       _TWDerivationPathCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWDerivationPath> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWDerivationPath> Function(ffi.Pointer<TWString1>)>();
 
   /// Deletes a DerivationPath.
   ///
@@ -3667,7 +3732,7 @@ class TrustWalletCore {
   ///
   /// \param path DerivationPath to get the address of.
   /// \return The string description of the derivation path.
-  ffi.Pointer<TWString> TWDerivationPathDescription(
+  ffi.Pointer<TWString1> TWDerivationPathDescription(
     ffi.Pointer<TWDerivationPath> path,
   ) {
     return _TWDerivationPathDescription(
@@ -3677,11 +3742,11 @@ class TrustWalletCore {
 
   late final _TWDerivationPathDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWDerivationPath>)>>('TWDerivationPathDescription');
   late final _TWDerivationPathDescription =
       _TWDerivationPathDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWDerivationPath>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWDerivationPath>)>();
 
   late final ffi.Pointer<ffi.Size> _TWPublicKeyCompressedSize =
       _lookup<ffi.Size>('TWPublicKeyCompressedSize');
@@ -3706,7 +3771,7 @@ class TrustWalletCore {
   /// \note Should be deleted with \TWPublicKeyDelete
   /// \return Nullable pointer to the public key
   ffi.Pointer<TWPublicKey> TWPublicKeyCreateWithData(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
     int type,
   ) {
     return _TWPublicKeyCreateWithData(
@@ -3718,10 +3783,10 @@ class TrustWalletCore {
   late final _TWPublicKeyCreateWithDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPublicKey> Function(
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWPublicKeyCreateWithData');
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWPublicKeyCreateWithData');
   late final _TWPublicKeyCreateWithData =
       _TWPublicKeyCreateWithDataPtr.asFunction<
-          ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWData>, int)>();
+          ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWData1>, int)>();
 
   /// Delete the given public key
   ///
@@ -3746,7 +3811,7 @@ class TrustWalletCore {
   /// \param type type of the public key
   /// \return true if the block of data is a valid public key, false otherwise
   bool TWPublicKeyIsValid(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
     int type,
   ) {
     return _TWPublicKeyIsValid(
@@ -3758,9 +3823,9 @@ class TrustWalletCore {
   late final _TWPublicKeyIsValidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWPublicKeyIsValid');
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWPublicKeyIsValid');
   late final _TWPublicKeyIsValid = _TWPublicKeyIsValidPtr.asFunction<
-      bool Function(ffi.Pointer<TWData>, int)>();
+      bool Function(ffi.Pointer<TWData1>, int)>();
 
   /// Determines if the given public key is compressed or not
   ///
@@ -3822,7 +3887,7 @@ class TrustWalletCore {
   ///
   /// \param pk Non-null pointer to a public key
   /// \return Non-null pointer to the raw block of data of the given public key
-  ffi.Pointer<TWData> TWPublicKeyData(
+  ffi.Pointer<TWData1> TWPublicKeyData(
     ffi.Pointer<TWPublicKey> pk,
   ) {
     return _TWPublicKeyData(
@@ -3832,10 +3897,10 @@ class TrustWalletCore {
 
   late final _TWPublicKeyDataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWPublicKey>)>>('TWPublicKeyData');
   late final _TWPublicKeyData = _TWPublicKeyDataPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWPublicKey>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWPublicKey>)>();
 
   /// Verify the validity of a signature and a message using the given public key
   ///
@@ -3845,8 +3910,8 @@ class TrustWalletCore {
   /// \return true if the signature and the message belongs to the given public key, false otherwise
   bool TWPublicKeyVerify(
     ffi.Pointer<TWPublicKey> pk,
-    ffi.Pointer<TWData> signature,
-    ffi.Pointer<TWData> message,
+    ffi.Pointer<TWData1> signature,
+    ffi.Pointer<TWData1> message,
   ) {
     return _TWPublicKeyVerify(
       pk,
@@ -3857,11 +3922,11 @@ class TrustWalletCore {
 
   late final _TWPublicKeyVerifyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-              ffi.Pointer<TWData>)>>('TWPublicKeyVerify');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData1>)>>('TWPublicKeyVerify');
   late final _TWPublicKeyVerify = _TWPublicKeyVerifyPtr.asFunction<
-      bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-          ffi.Pointer<TWData>)>();
+      bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+          ffi.Pointer<TWData1>)>();
 
   /// Verify the validity as DER of a signature and a message using the given public key
   ///
@@ -3871,8 +3936,8 @@ class TrustWalletCore {
   /// \return true if the signature and the message belongs to the given public key, false otherwise
   bool TWPublicKeyVerifyAsDER(
     ffi.Pointer<TWPublicKey> pk,
-    ffi.Pointer<TWData> signature,
-    ffi.Pointer<TWData> message,
+    ffi.Pointer<TWData1> signature,
+    ffi.Pointer<TWData1> message,
   ) {
     return _TWPublicKeyVerifyAsDER(
       pk,
@@ -3883,11 +3948,11 @@ class TrustWalletCore {
 
   late final _TWPublicKeyVerifyAsDERPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-              ffi.Pointer<TWData>)>>('TWPublicKeyVerifyAsDER');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData1>)>>('TWPublicKeyVerifyAsDER');
   late final _TWPublicKeyVerifyAsDER = _TWPublicKeyVerifyAsDERPtr.asFunction<
-      bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-          ffi.Pointer<TWData>)>();
+      bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+          ffi.Pointer<TWData1>)>();
 
   /// Verify a Zilliqa schnorr signature with a signature and message.
   ///
@@ -3897,8 +3962,8 @@ class TrustWalletCore {
   /// \return true if the signature and the message belongs to the given public key, false otherwise
   bool TWPublicKeyVerifyZilliqaSchnorr(
     ffi.Pointer<TWPublicKey> pk,
-    ffi.Pointer<TWData> signature,
-    ffi.Pointer<TWData> message,
+    ffi.Pointer<TWData1> signature,
+    ffi.Pointer<TWData1> message,
   ) {
     return _TWPublicKeyVerifyZilliqaSchnorr(
       pk,
@@ -3909,12 +3974,12 @@ class TrustWalletCore {
 
   late final _TWPublicKeyVerifyZilliqaSchnorrPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-              ffi.Pointer<TWData>)>>('TWPublicKeyVerifyZilliqaSchnorr');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData1>)>>('TWPublicKeyVerifyZilliqaSchnorr');
   late final _TWPublicKeyVerifyZilliqaSchnorr =
       _TWPublicKeyVerifyZilliqaSchnorrPtr.asFunction<
-          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData>,
-              ffi.Pointer<TWData>)>();
+          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData1>)>();
 
   /// Give the public key type (eliptic) of a given public key
   ///
@@ -3938,7 +4003,7 @@ class TrustWalletCore {
   ///
   /// \param publicKey Non-null pointer to a public key
   /// \return Non-null pointer to a string representing the description of the public key
-  ffi.Pointer<TWString> TWPublicKeyDescription(
+  ffi.Pointer<TWString1> TWPublicKeyDescription(
     ffi.Pointer<TWPublicKey> publicKey,
   ) {
     return _TWPublicKeyDescription(
@@ -3948,10 +4013,10 @@ class TrustWalletCore {
 
   late final _TWPublicKeyDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWPublicKey>)>>('TWPublicKeyDescription');
   late final _TWPublicKeyDescription = _TWPublicKeyDescriptionPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWPublicKey>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWPublicKey>)>();
 
   /// Try to get a public key from a given signature and a message
   ///
@@ -3960,8 +4025,8 @@ class TrustWalletCore {
   /// \return Null pointer if the public key can't be recover from the given signature and message,
   /// pointer to the public key otherwise
   ffi.Pointer<TWPublicKey> TWPublicKeyRecover(
-    ffi.Pointer<TWData> signature,
-    ffi.Pointer<TWData> message,
+    ffi.Pointer<TWData1> signature,
+    ffi.Pointer<TWData1> message,
   ) {
     return _TWPublicKeyRecover(
       signature,
@@ -3971,11 +4036,11 @@ class TrustWalletCore {
 
   late final _TWPublicKeyRecoverPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWPublicKey> Function(
-              ffi.Pointer<TWData>, ffi.Pointer<TWData>)>>('TWPublicKeyRecover');
+          ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData1>)>>('TWPublicKeyRecover');
   late final _TWPublicKeyRecover = _TWPublicKeyRecoverPtr.asFunction<
       ffi.Pointer<TWPublicKey> Function(
-          ffi.Pointer<TWData>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>();
 
   late final ffi.Pointer<ffi.Size> _TWPrivateKeySize =
       _lookup<ffi.Size>('TWPrivateKeySize');
@@ -4004,7 +4069,7 @@ class TrustWalletCore {
   /// \note Should be deleted with \TWPrivateKeyDelete
   /// \return Nullable pointer to Private Key
   ffi.Pointer<TWPrivateKey> TWPrivateKeyCreateWithData(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
   ) {
     return _TWPrivateKeyCreateWithData(
       data,
@@ -4014,9 +4079,9 @@ class TrustWalletCore {
   late final _TWPrivateKeyCreateWithDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPrivateKey> Function(
-              ffi.Pointer<TWData>)>>('TWPrivateKeyCreateWithData');
+              ffi.Pointer<TWData1>)>>('TWPrivateKeyCreateWithData');
   late final _TWPrivateKeyCreateWithData = _TWPrivateKeyCreateWithDataPtr
-      .asFunction<ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWData>)>();
+      .asFunction<ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWData1>)>();
 
   /// Deep copy a given private key
   ///
@@ -4061,7 +4126,7 @@ class TrustWalletCore {
   /// \param curve Eliptic curve of the private key
   /// \return true if the private key is valid, false otherwise
   bool TWPrivateKeyIsValid(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
     int curve,
   ) {
     return _TWPrivateKeyIsValid(
@@ -4073,15 +4138,15 @@ class TrustWalletCore {
   late final _TWPrivateKeyIsValidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWPrivateKeyIsValid');
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWPrivateKeyIsValid');
   late final _TWPrivateKeyIsValid = _TWPrivateKeyIsValidPtr.asFunction<
-      bool Function(ffi.Pointer<TWData>, int)>();
+      bool Function(ffi.Pointer<TWData1>, int)>();
 
   /// Convert the given private key to raw-bytes block of data
   ///
   /// \param pk Non-null pointer to the private key
   /// \return Non-null block of data (raw bytes) of the given private key
-  ffi.Pointer<TWData> TWPrivateKeyData(
+  ffi.Pointer<TWData1> TWPrivateKeyData(
     ffi.Pointer<TWPrivateKey> pk,
   ) {
     return _TWPrivateKeyData(
@@ -4091,10 +4156,10 @@ class TrustWalletCore {
 
   late final _TWPrivateKeyDataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWPrivateKey>)>>('TWPrivateKeyData');
   late final _TWPrivateKeyData = _TWPrivateKeyDataPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWPrivateKey>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWPrivateKey>)>();
 
   /// Returns the public key associated with the given coinType and privateKey
   ///
@@ -4272,7 +4337,7 @@ class TrustWalletCore {
   /// \param publicKey Non-null pointer to the corresponding public key
   /// \param curve Eliptic curve
   /// \return The corresponding shared key as a non-null block of data
-  ffi.Pointer<TWData> TWPrivateKeyGetSharedKey(
+  ffi.Pointer<TWData1> TWPrivateKeyGetSharedKey(
     ffi.Pointer<TWPrivateKey> pk,
     ffi.Pointer<TWPublicKey> publicKey,
     int curve,
@@ -4286,13 +4351,13 @@ class TrustWalletCore {
 
   late final _TWPrivateKeyGetSharedKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWPrivateKey>,
               ffi.Pointer<TWPublicKey>,
               ffi.Int32)>>('TWPrivateKeyGetSharedKey');
   late final _TWPrivateKeyGetSharedKey =
       _TWPrivateKeyGetSharedKeyPtr.asFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWPublicKey>, int)>();
 
   /// Signs a digest using ECDSA and given curve.
@@ -4301,9 +4366,9 @@ class TrustWalletCore {
   /// \param digest Non-null digest block of data
   /// \param curve Eliptic curve
   /// \return Signature as a Non-null block of data
-  ffi.Pointer<TWData> TWPrivateKeySign(
+  ffi.Pointer<TWData1> TWPrivateKeySign(
     ffi.Pointer<TWPrivateKey> pk,
-    ffi.Pointer<TWData> digest,
+    ffi.Pointer<TWData1> digest,
     int curve,
   ) {
     return _TWPrivateKeySign(
@@ -4315,20 +4380,20 @@ class TrustWalletCore {
 
   late final _TWPrivateKeySignPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWPrivateKeySign');
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWPrivateKeySign');
   late final _TWPrivateKeySign = _TWPrivateKeySignPtr.asFunction<
-      ffi.Pointer<TWData> Function(
-          ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData>, int)>();
+      ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData1>, int)>();
 
   /// Signs a digest using ECDSA. The result is encoded with DER.
   ///
   /// \param pk  Non-null pointer to a Private key
   /// \param digest Non-null digest block of data
   /// \return Signature as a Non-null block of data
-  ffi.Pointer<TWData> TWPrivateKeySignAsDER(
+  ffi.Pointer<TWData1> TWPrivateKeySignAsDER(
     ffi.Pointer<TWPrivateKey> pk,
-    ffi.Pointer<TWData> digest,
+    ffi.Pointer<TWData1> digest,
   ) {
     return _TWPrivateKeySignAsDER(
       pk,
@@ -4338,20 +4403,20 @@ class TrustWalletCore {
 
   late final _TWPrivateKeySignAsDERPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWData>)>>('TWPrivateKeySignAsDER');
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWData1>)>>('TWPrivateKeySignAsDER');
   late final _TWPrivateKeySignAsDER = _TWPrivateKeySignAsDERPtr.asFunction<
-      ffi.Pointer<TWData> Function(
-          ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData>)>();
+      ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData1>)>();
 
   /// Signs a digest using ECDSA and Zilliqa schnorr signature scheme.
   ///
   /// \param pk Non-null pointer to a Private key
   /// \param message Non-null message
   /// \return Signature as a Non-null block of data
-  ffi.Pointer<TWData> TWPrivateKeySignZilliqaSchnorr(
+  ffi.Pointer<TWData1> TWPrivateKeySignZilliqaSchnorr(
     ffi.Pointer<TWPrivateKey> pk,
-    ffi.Pointer<TWData> message,
+    ffi.Pointer<TWData1> message,
   ) {
     return _TWPrivateKeySignZilliqaSchnorr(
       pk,
@@ -4361,12 +4426,12 @@ class TrustWalletCore {
 
   late final _TWPrivateKeySignZilliqaSchnorrPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWData>)>>('TWPrivateKeySignZilliqaSchnorr');
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWData1>)>>('TWPrivateKeySignZilliqaSchnorr');
   late final _TWPrivateKeySignZilliqaSchnorr =
       _TWPrivateKeySignZilliqaSchnorrPtr.asFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWData1>)>();
 
   /// Creates a new HDWallet with a new random mnemonic with the provided strength in bits.
   ///
@@ -4377,7 +4442,7 @@ class TrustWalletCore {
   /// \return Nullable TWHDWallet
   ffi.Pointer<TWHDWallet> TWHDWalletCreate(
     int strength,
-    ffi.Pointer<TWString> passphrase,
+    ffi.Pointer<TWString1> passphrase,
   ) {
     return _TWHDWalletCreate(
       strength,
@@ -4388,9 +4453,9 @@ class TrustWalletCore {
   late final _TWHDWalletCreatePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWHDWallet> Function(
-              ffi.Int, ffi.Pointer<TWString>)>>('TWHDWalletCreate');
+              ffi.Int, ffi.Pointer<TWString1>)>>('TWHDWalletCreate');
   late final _TWHDWalletCreate = _TWHDWalletCreatePtr.asFunction<
-      ffi.Pointer<TWHDWallet> Function(int, ffi.Pointer<TWString>)>();
+      ffi.Pointer<TWHDWallet> Function(int, ffi.Pointer<TWString1>)>();
 
   /// Creates an HDWallet from a valid BIP39 English mnemonic and a passphrase.
   ///
@@ -4400,8 +4465,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWHDWalletDelete
   /// \return Nullable TWHDWallet
   ffi.Pointer<TWHDWallet> TWHDWalletCreateWithMnemonic(
-    ffi.Pointer<TWString> mnemonic,
-    ffi.Pointer<TWString> passphrase,
+    ffi.Pointer<TWString1> mnemonic,
+    ffi.Pointer<TWString1> passphrase,
   ) {
     return _TWHDWalletCreateWithMnemonic(
       mnemonic,
@@ -4411,12 +4476,12 @@ class TrustWalletCore {
 
   late final _TWHDWalletCreateWithMnemonicPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWHDWallet> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWHDWalletCreateWithMnemonic');
+          ffi.Pointer<TWHDWallet> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWHDWalletCreateWithMnemonic');
   late final _TWHDWalletCreateWithMnemonic =
       _TWHDWalletCreateWithMnemonicPtr.asFunction<
           ffi.Pointer<TWHDWallet> Function(
-              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>, ffi.Pointer<TWString1>)>();
 
   /// Creates an HDWallet from a BIP39 mnemonic, a passphrase and validation flag.
   ///
@@ -4427,8 +4492,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWHDWalletDelete
   /// \return Nullable TWHDWallet
   ffi.Pointer<TWHDWallet> TWHDWalletCreateWithMnemonicCheck(
-    ffi.Pointer<TWString> mnemonic,
-    ffi.Pointer<TWString> passphrase,
+    ffi.Pointer<TWString1> mnemonic,
+    ffi.Pointer<TWString1> passphrase,
     bool check,
   ) {
     return _TWHDWalletCreateWithMnemonicCheck(
@@ -4441,13 +4506,13 @@ class TrustWalletCore {
   late final _TWHDWalletCreateWithMnemonicCheckPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWHDWallet> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
               ffi.Bool)>>('TWHDWalletCreateWithMnemonicCheck');
   late final _TWHDWalletCreateWithMnemonicCheck =
       _TWHDWalletCreateWithMnemonicCheckPtr.asFunction<
           ffi.Pointer<TWHDWallet> Function(
-              ffi.Pointer<TWString>, ffi.Pointer<TWString>, bool)>();
+              ffi.Pointer<TWString1>, ffi.Pointer<TWString1>, bool)>();
 
   /// Creates an HDWallet from entropy (corresponding to a mnemonic).
   ///
@@ -4457,8 +4522,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWHDWalletDelete
   /// \return Nullable TWHDWallet
   ffi.Pointer<TWHDWallet> TWHDWalletCreateWithEntropy(
-    ffi.Pointer<TWData> entropy,
-    ffi.Pointer<TWString> passphrase,
+    ffi.Pointer<TWData1> entropy,
+    ffi.Pointer<TWString1> passphrase,
   ) {
     return _TWHDWalletCreateWithEntropy(
       entropy,
@@ -4468,12 +4533,12 @@ class TrustWalletCore {
 
   late final _TWHDWalletCreateWithEntropyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWHDWallet> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>)>>('TWHDWalletCreateWithEntropy');
+          ffi.Pointer<TWHDWallet> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>)>>('TWHDWalletCreateWithEntropy');
   late final _TWHDWalletCreateWithEntropy =
       _TWHDWalletCreateWithEntropyPtr.asFunction<
           ffi.Pointer<TWHDWallet> Function(
-              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWData1>, ffi.Pointer<TWString1>)>();
 
   /// Deletes a wallet.
   ///
@@ -4496,7 +4561,7 @@ class TrustWalletCore {
   ///
   /// \param wallet non-null TWHDWallet
   /// \return The wallet seed as a Non-null block of data.
-  ffi.Pointer<TWData> TWHDWalletSeed(
+  ffi.Pointer<TWData1> TWHDWalletSeed(
     ffi.Pointer<TWHDWallet> wallet,
   ) {
     return _TWHDWalletSeed(
@@ -4506,16 +4571,16 @@ class TrustWalletCore {
 
   late final _TWHDWalletSeedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWHDWallet>)>>('TWHDWalletSeed');
   late final _TWHDWalletSeed = _TWHDWalletSeedPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWHDWallet>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWHDWallet>)>();
 
   /// Wallet Mnemonic
   ///
   /// \param wallet non-null TWHDWallet
   /// \return The wallet mnemonic as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletMnemonic(
+  ffi.Pointer<TWString1> TWHDWalletMnemonic(
     ffi.Pointer<TWHDWallet> wallet,
   ) {
     return _TWHDWalletMnemonic(
@@ -4525,16 +4590,16 @@ class TrustWalletCore {
 
   late final _TWHDWalletMnemonicPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>)>>('TWHDWalletMnemonic');
   late final _TWHDWalletMnemonic = _TWHDWalletMnemonicPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>)>();
 
   /// Wallet entropy
   ///
   /// \param wallet non-null TWHDWallet
   /// \return The wallet entropy as a non-null block of data.
-  ffi.Pointer<TWData> TWHDWalletEntropy(
+  ffi.Pointer<TWData1> TWHDWalletEntropy(
     ffi.Pointer<TWHDWallet> wallet,
   ) {
     return _TWHDWalletEntropy(
@@ -4544,10 +4609,10 @@ class TrustWalletCore {
 
   late final _TWHDWalletEntropyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWHDWallet>)>>('TWHDWalletEntropy');
   late final _TWHDWalletEntropy = _TWHDWalletEntropyPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWHDWallet>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWHDWallet>)>();
 
   /// Returns master key.
   ///
@@ -4603,7 +4668,7 @@ class TrustWalletCore {
   /// \param wallet non-null TWHDWallet
   /// \param coin  a coin type
   /// \return return the default address for the specified coin as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetAddressForCoin(
+  ffi.Pointer<TWString1> TWHDWalletGetAddressForCoin(
     ffi.Pointer<TWHDWallet> wallet,
     int coin,
   ) {
@@ -4615,11 +4680,11 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetAddressForCoinPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>,
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>,
               ffi.Int32)>>('TWHDWalletGetAddressForCoin');
   late final _TWHDWalletGetAddressForCoin =
       _TWHDWalletGetAddressForCoinPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>, int)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>, int)>();
 
   /// Generates the default address for the specified coin and derivation (without exposing intermediary private key).
   ///
@@ -4628,7 +4693,7 @@ class TrustWalletCore {
   /// \param coin  a coin type
   /// \param derivation  a (custom) derivation to use
   /// \return return the default address for the specified coin as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetAddressDerivation(
+  ffi.Pointer<TWString1> TWHDWalletGetAddressDerivation(
     ffi.Pointer<TWHDWallet> wallet,
     int coin,
     int derivation,
@@ -4642,11 +4707,11 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetAddressDerivationPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
               ffi.Int32)>>('TWHDWalletGetAddressDerivation');
   late final _TWHDWalletGetAddressDerivation =
       _TWHDWalletGetAddressDerivationPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>, int, int)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>, int, int)>();
 
   /// Generates the private key for the specified derivation path.
   ///
@@ -4660,7 +4725,7 @@ class TrustWalletCore {
   ffi.Pointer<TWPrivateKey> TWHDWalletGetKey(
     ffi.Pointer<TWHDWallet> wallet,
     int coin,
-    ffi.Pointer<TWString> derivationPath,
+    ffi.Pointer<TWString1> derivationPath,
   ) {
     return _TWHDWalletGetKey(
       wallet,
@@ -4672,10 +4737,10 @@ class TrustWalletCore {
   late final _TWHDWalletGetKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWHDWalletGetKey');
+              ffi.Pointer<TWString1>)>>('TWHDWalletGetKey');
   late final _TWHDWalletGetKey = _TWHDWalletGetKeyPtr.asFunction<
       ffi.Pointer<TWPrivateKey> Function(
-          ffi.Pointer<TWHDWallet>, int, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWHDWallet>, int, ffi.Pointer<TWString1>)>();
 
   /// Generates the private key for the specified derivation.
   ///
@@ -4717,7 +4782,7 @@ class TrustWalletCore {
   ffi.Pointer<TWPrivateKey> TWHDWalletGetKeyByCurve(
     ffi.Pointer<TWHDWallet> wallet,
     int curve,
-    ffi.Pointer<TWString> derivationPath,
+    ffi.Pointer<TWString1> derivationPath,
   ) {
     return _TWHDWalletGetKeyByCurve(
       wallet,
@@ -4729,10 +4794,10 @@ class TrustWalletCore {
   late final _TWHDWalletGetKeyByCurvePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWHDWalletGetKeyByCurve');
+              ffi.Pointer<TWString1>)>>('TWHDWalletGetKeyByCurve');
   late final _TWHDWalletGetKeyByCurve = _TWHDWalletGetKeyByCurvePtr.asFunction<
       ffi.Pointer<TWPrivateKey> Function(
-          ffi.Pointer<TWHDWallet>, int, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWHDWallet>, int, ffi.Pointer<TWString1>)>();
 
   /// Shortcut method to generate private key with the specified account/change/address (bip44 standard).
   ///
@@ -4777,7 +4842,7 @@ class TrustWalletCore {
   /// \param version hd version
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return  Extended private key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPrivateKey(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPrivateKey(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4793,11 +4858,11 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPrivateKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
               ffi.Int32, ffi.Int32)>>('TWHDWalletGetExtendedPrivateKey');
   late final _TWHDWalletGetExtendedPrivateKey =
       _TWHDWalletGetExtendedPrivateKeyPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int)>();
 
   /// Returns the extended public key (for default 0 account).
@@ -4808,7 +4873,7 @@ class TrustWalletCore {
   /// \param version hd version
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return  Extended public key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPublicKey(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPublicKey(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4824,11 +4889,11 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPublicKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWHDWallet>, ffi.Int32,
               ffi.Int32, ffi.Int32)>>('TWHDWalletGetExtendedPublicKey');
   late final _TWHDWalletGetExtendedPublicKey =
       _TWHDWalletGetExtendedPublicKeyPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int)>();
 
   /// Returns the extended private key, for custom account.
@@ -4841,7 +4906,7 @@ class TrustWalletCore {
   /// \param account valid bip44 account
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return  Extended private key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPrivateKeyAccount(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPrivateKeyAccount(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4861,7 +4926,7 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPrivateKeyAccountPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>,
               ffi.Int32,
               ffi.Int32,
@@ -4870,7 +4935,7 @@ class TrustWalletCore {
               ffi.Uint32)>>('TWHDWalletGetExtendedPrivateKeyAccount');
   late final _TWHDWalletGetExtendedPrivateKeyAccount =
       _TWHDWalletGetExtendedPrivateKeyAccountPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int, int, int)>();
 
   /// Returns the extended public key, for custom account.
@@ -4883,7 +4948,7 @@ class TrustWalletCore {
   /// \param account valid bip44 account
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return Extended public key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPublicKeyAccount(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPublicKeyAccount(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4903,7 +4968,7 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPublicKeyAccountPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>,
               ffi.Int32,
               ffi.Int32,
@@ -4912,7 +4977,7 @@ class TrustWalletCore {
               ffi.Uint32)>>('TWHDWalletGetExtendedPublicKeyAccount');
   late final _TWHDWalletGetExtendedPublicKeyAccount =
       _TWHDWalletGetExtendedPublicKeyAccountPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int, int, int)>();
 
   /// Returns the extended private key (for default 0 account with derivation).
@@ -4924,7 +4989,7 @@ class TrustWalletCore {
   /// \param version an hd version
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return  Extended private key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPrivateKeyDerivation(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPrivateKeyDerivation(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4942,7 +5007,7 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPrivateKeyDerivationPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>,
               ffi.Int32,
               ffi.Int32,
@@ -4950,7 +5015,7 @@ class TrustWalletCore {
               ffi.Int32)>>('TWHDWalletGetExtendedPrivateKeyDerivation');
   late final _TWHDWalletGetExtendedPrivateKeyDerivation =
       _TWHDWalletGetExtendedPrivateKeyDerivationPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int, int)>();
 
   /// Returns the extended public key (for default 0 account with derivation).
@@ -4962,7 +5027,7 @@ class TrustWalletCore {
   /// \param version an hd version
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return  Extended public key as a non-null TWString
-  ffi.Pointer<TWString> TWHDWalletGetExtendedPublicKeyDerivation(
+  ffi.Pointer<TWString1> TWHDWalletGetExtendedPublicKeyDerivation(
     ffi.Pointer<TWHDWallet> wallet,
     int purpose,
     int coin,
@@ -4980,7 +5045,7 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetExtendedPublicKeyDerivationPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>,
               ffi.Int32,
               ffi.Int32,
@@ -4988,7 +5053,7 @@ class TrustWalletCore {
               ffi.Int32)>>('TWHDWalletGetExtendedPublicKeyDerivation');
   late final _TWHDWalletGetExtendedPublicKeyDerivation =
       _TWHDWalletGetExtendedPublicKeyDerivationPtr.asFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWHDWallet>, int, int, int, int)>();
 
   /// Computes the public key from an extended public key representation.
@@ -4999,9 +5064,9 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWPublicKeyDelete
   /// \return Nullable TWPublic key
   ffi.Pointer<TWPublicKey> TWHDWalletGetPublicKeyFromExtended(
-    ffi.Pointer<TWString> extended,
+    ffi.Pointer<TWString1> extended,
     int coin,
-    ffi.Pointer<TWString> derivationPath,
+    ffi.Pointer<TWString1> derivationPath,
   ) {
     return _TWHDWalletGetPublicKeyFromExtended(
       extended,
@@ -5012,12 +5077,12 @@ class TrustWalletCore {
 
   late final _TWHDWalletGetPublicKeyFromExtendedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWString>, ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWHDWalletGetPublicKeyFromExtended');
+          ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWString1>, ffi.Int32,
+              ffi.Pointer<TWString1>)>>('TWHDWalletGetPublicKeyFromExtended');
   late final _TWHDWalletGetPublicKeyFromExtended =
       _TWHDWalletGetPublicKeyFromExtendedPtr.asFunction<
           ffi.Pointer<TWPublicKey> Function(
-              ffi.Pointer<TWString>, int, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>, int, ffi.Pointer<TWString1>)>();
 
   /// Creates a Vector of Data.
   ///
@@ -5038,7 +5103,7 @@ class TrustWalletCore {
   /// \param data A non-null valid block of data
   /// \return A Vector of data with a single given element
   ffi.Pointer<TWDataVector> TWDataVectorCreateWithData(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
   ) {
     return _TWDataVectorCreateWithData(
       data,
@@ -5048,9 +5113,9 @@ class TrustWalletCore {
   late final _TWDataVectorCreateWithDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWDataVector> Function(
-              ffi.Pointer<TWData>)>>('TWDataVectorCreateWithData');
+              ffi.Pointer<TWData1>)>>('TWDataVectorCreateWithData');
   late final _TWDataVectorCreateWithData = _TWDataVectorCreateWithDataPtr
-      .asFunction<ffi.Pointer<TWDataVector> Function(ffi.Pointer<TWData>)>();
+      .asFunction<ffi.Pointer<TWDataVector> Function(ffi.Pointer<TWData1>)>();
 
   /// Delete/Deallocate a Vector of Data
   ///
@@ -5076,7 +5141,7 @@ class TrustWalletCore {
   /// \note data input parameter must be deleted on its own
   void TWDataVectorAdd(
     ffi.Pointer<TWDataVector> dataVector,
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
   ) {
     return _TWDataVectorAdd(
       dataVector,
@@ -5087,9 +5152,9 @@ class TrustWalletCore {
   late final _TWDataVectorAddPtr = _lookup<
       ffi.NativeFunction<
           ffi.Void Function(ffi.Pointer<TWDataVector>,
-              ffi.Pointer<TWData>)>>('TWDataVectorAdd');
+              ffi.Pointer<TWData1>)>>('TWDataVectorAdd');
   late final _TWDataVectorAdd = _TWDataVectorAddPtr.asFunction<
-      void Function(ffi.Pointer<TWDataVector>, ffi.Pointer<TWData>)>();
+      void Function(ffi.Pointer<TWDataVector>, ffi.Pointer<TWData1>)>();
 
   /// Retrieve the number of elements
   ///
@@ -5115,7 +5180,7 @@ class TrustWalletCore {
   /// \param index index element of the vector to be retrieved, need to be < TWDataVectorSize
   /// \note Returned element must be freed with \TWDataDelete
   /// \return A non-null block of data
-  ffi.Pointer<TWData> TWDataVectorGet(
+  ffi.Pointer<TWData1> TWDataVectorGet(
     ffi.Pointer<TWDataVector> dataVector,
     int index,
   ) {
@@ -5127,10 +5192,10 @@ class TrustWalletCore {
 
   late final _TWDataVectorGetPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWDataVector>, ffi.Size)>>('TWDataVectorGet');
   late final _TWDataVectorGet = _TWDataVectorGetPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWDataVector>, int)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWDataVector>, int)>();
 
   /// Builds a coin-specific SigningInput (proto object) from a simple transaction.
   ///
@@ -5142,14 +5207,14 @@ class TrustWalletCore {
   /// \param memo optional memo
   /// \param chainId optional chainId to override default
   /// \return serialized data of the SigningInput proto object.
-  ffi.Pointer<TWData> TWTransactionCompilerBuildInput(
+  ffi.Pointer<TWData1> TWTransactionCompilerBuildInput(
     int coinType,
-    ffi.Pointer<TWString> from,
-    ffi.Pointer<TWString> to,
-    ffi.Pointer<TWString> amount,
-    ffi.Pointer<TWString> asset,
-    ffi.Pointer<TWString> memo,
-    ffi.Pointer<TWString> chainId,
+    ffi.Pointer<TWString1> from,
+    ffi.Pointer<TWString1> to,
+    ffi.Pointer<TWString1> amount,
+    ffi.Pointer<TWString1> asset,
+    ffi.Pointer<TWString1> memo,
+    ffi.Pointer<TWString1> chainId,
   ) {
     return _TWTransactionCompilerBuildInput(
       coinType,
@@ -5164,24 +5229,24 @@ class TrustWalletCore {
 
   late final _TWTransactionCompilerBuildInputPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Int32,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWTransactionCompilerBuildInput');
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWTransactionCompilerBuildInput');
   late final _TWTransactionCompilerBuildInput =
       _TWTransactionCompilerBuildInputPtr.asFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               int,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>();
 
   /// Obtains pre-signing hashes of a transaction.
   ///
@@ -5190,9 +5255,9 @@ class TrustWalletCore {
   /// \param coin coin type.
   /// \param txInputData The serialized data of a signing input
   /// \return serialized data of a proto object `PreSigningOutput` includes hash.
-  ffi.Pointer<TWData> TWTransactionCompilerPreImageHashes(
+  ffi.Pointer<TWData1> TWTransactionCompilerPreImageHashes(
     int coinType,
-    ffi.Pointer<TWData> txInputData,
+    ffi.Pointer<TWData1> txInputData,
   ) {
     return _TWTransactionCompilerPreImageHashes(
       coinType,
@@ -5202,11 +5267,11 @@ class TrustWalletCore {
 
   late final _TWTransactionCompilerPreImageHashesPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(ffi.Int32,
-              ffi.Pointer<TWData>)>>('TWTransactionCompilerPreImageHashes');
+          ffi.Pointer<TWData1> Function(ffi.Int32,
+              ffi.Pointer<TWData1>)>>('TWTransactionCompilerPreImageHashes');
   late final _TWTransactionCompilerPreImageHashes =
       _TWTransactionCompilerPreImageHashesPtr.asFunction<
-          ffi.Pointer<TWData> Function(int, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(int, ffi.Pointer<TWData1>)>();
 
   /// Compiles a complete transation with one or more external signatures.
   ///
@@ -5218,9 +5283,9 @@ class TrustWalletCore {
   /// \param signatures signatures to compile, using TWDataVector.
   /// \param publicKeys public keys for signers to match private keys, using TWDataVector.
   /// \return serialized data of a proto object `SigningOutput`.
-  ffi.Pointer<TWData> TWTransactionCompilerCompileWithSignatures(
+  ffi.Pointer<TWData1> TWTransactionCompilerCompileWithSignatures(
     int coinType,
-    ffi.Pointer<TWData> txInputData,
+    ffi.Pointer<TWData1> txInputData,
     ffi.Pointer<TWDataVector> signatures,
     ffi.Pointer<TWDataVector> publicKeys,
   ) {
@@ -5234,13 +5299,44 @@ class TrustWalletCore {
 
   late final _TWTransactionCompilerCompileWithSignaturesPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Int32, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData1> Function(ffi.Int32, ffi.Pointer<TWData1>,
                   ffi.Pointer<TWDataVector>, ffi.Pointer<TWDataVector>)>>(
       'TWTransactionCompilerCompileWithSignatures');
   late final _TWTransactionCompilerCompileWithSignatures =
       _TWTransactionCompilerCompileWithSignaturesPtr.asFunction<
-          ffi.Pointer<TWData> Function(int, ffi.Pointer<TWData>,
+          ffi.Pointer<TWData1> Function(int, ffi.Pointer<TWData1>,
               ffi.Pointer<TWDataVector>, ffi.Pointer<TWDataVector>)>();
+
+  ffi.Pointer<TWData1> TWTransactionCompilerCompileWithSignaturesAndPubKeyType(
+    int coinType,
+    ffi.Pointer<TWData1> txInputData,
+    ffi.Pointer<TWDataVector> signatures,
+    ffi.Pointer<TWDataVector> publicKeys,
+    int pubKeyType,
+  ) {
+    return _TWTransactionCompilerCompileWithSignaturesAndPubKeyType(
+      coinType,
+      txInputData,
+      signatures,
+      publicKeys,
+      pubKeyType,
+    );
+  }
+
+  late final _TWTransactionCompilerCompileWithSignaturesAndPubKeyTypePtr =
+      _lookup<
+              ffi.NativeFunction<
+                  ffi.Pointer<TWData1> Function(
+                      ffi.Int32,
+                      ffi.Pointer<TWData1>,
+                      ffi.Pointer<TWDataVector>,
+                      ffi.Pointer<TWDataVector>,
+                      ffi.Int32)>>(
+          'TWTransactionCompilerCompileWithSignaturesAndPubKeyType');
+  late final _TWTransactionCompilerCompileWithSignaturesAndPubKeyType =
+      _TWTransactionCompilerCompileWithSignaturesAndPubKeyTypePtr.asFunction<
+          ffi.Pointer<TWData1> Function(int, ffi.Pointer<TWData1>,
+              ffi.Pointer<TWDataVector>, ffi.Pointer<TWDataVector>, int)>();
 
   /// Generates the private stark key at the given derivation path from a valid eth signature
   ///
@@ -5249,7 +5345,7 @@ class TrustWalletCore {
   /// \return  The private key for the specified derivation path/signature
   ffi.Pointer<TWPrivateKey> TWStarkWareGetStarkKeyFromSignature(
     ffi.Pointer<TWDerivationPath> derivationPath,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWStarkWareGetStarkKeyFromSignature(
       derivationPath,
@@ -5260,11 +5356,11 @@ class TrustWalletCore {
   late final _TWStarkWareGetStarkKeyFromSignaturePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWDerivationPath>,
-              ffi.Pointer<TWString1>)>>('TWStarkWareGetStarkKeyFromSignature');
+              ffi.Pointer<TWString>)>>('TWStarkWareGetStarkKeyFromSignature');
   late final _TWStarkWareGetStarkKeyFromSignature =
       _TWStarkWareGetStarkKeyFromSignaturePtr.asFunction<
           ffi.Pointer<TWPrivateKey> Function(
-              ffi.Pointer<TWDerivationPath>, ffi.Pointer<TWString1>)>();
+              ffi.Pointer<TWDerivationPath>, ffi.Pointer<TWString>)>();
 
   /// Determines if the given sig hash is single
   ///
@@ -5306,7 +5402,7 @@ class TrustWalletCore {
   ///
   /// \param value a boolean value
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeBool(
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeBool(
     bool value,
   ) {
     return _TWEthereumAbiValueEncodeBool(
@@ -5315,16 +5411,16 @@ class TrustWalletCore {
   }
 
   late final _TWEthereumAbiValueEncodeBoolPtr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWData> Function(ffi.Bool)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWData1> Function(ffi.Bool)>>(
           'TWEthereumAbiValueEncodeBool');
   late final _TWEthereumAbiValueEncodeBool = _TWEthereumAbiValueEncodeBoolPtr
-      .asFunction<ffi.Pointer<TWData> Function(bool)>();
+      .asFunction<ffi.Pointer<TWData1> Function(bool)>();
 
   /// Encode a int32 according to Ethereum ABI, into 32 bytes. Values are padded by 0 on the left, unless specified otherwise
   ///
   /// \param value a int32 value
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeInt32(
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeInt32(
     int value,
   ) {
     return _TWEthereumAbiValueEncodeInt32(
@@ -5333,16 +5429,16 @@ class TrustWalletCore {
   }
 
   late final _TWEthereumAbiValueEncodeInt32Ptr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWData> Function(ffi.Int32)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWData1> Function(ffi.Int32)>>(
           'TWEthereumAbiValueEncodeInt32');
   late final _TWEthereumAbiValueEncodeInt32 = _TWEthereumAbiValueEncodeInt32Ptr
-      .asFunction<ffi.Pointer<TWData> Function(int)>();
+      .asFunction<ffi.Pointer<TWData1> Function(int)>();
 
   /// Encode a uint32 according to Ethereum ABI, into 32 bytes.  Values are padded by 0 on the left, unless specified otherwise
   ///
   /// \param value a uint32 value
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeUInt32(
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeUInt32(
     int value,
   ) {
     return _TWEthereumAbiValueEncodeUInt32(
@@ -5351,18 +5447,18 @@ class TrustWalletCore {
   }
 
   late final _TWEthereumAbiValueEncodeUInt32Ptr =
-      _lookup<ffi.NativeFunction<ffi.Pointer<TWData> Function(ffi.Uint32)>>(
+      _lookup<ffi.NativeFunction<ffi.Pointer<TWData1> Function(ffi.Uint32)>>(
           'TWEthereumAbiValueEncodeUInt32');
   late final _TWEthereumAbiValueEncodeUInt32 =
       _TWEthereumAbiValueEncodeUInt32Ptr.asFunction<
-          ffi.Pointer<TWData> Function(int)>();
+          ffi.Pointer<TWData1> Function(int)>();
 
   /// Encode a int256 according to Ethereum ABI, into 32 bytes.  Values are padded by 0 on the left, unless specified otherwise
   ///
   /// \param value a int256 value stored in a block of data
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeInt256(
-    ffi.Pointer<TWData> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeInt256(
+    ffi.Pointer<TWData1> value,
   ) {
     return _TWEthereumAbiValueEncodeInt256(
       value,
@@ -5371,18 +5467,18 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeInt256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueEncodeInt256');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueEncodeInt256');
   late final _TWEthereumAbiValueEncodeInt256 =
       _TWEthereumAbiValueEncodeInt256Ptr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
 
   /// Encode an int256 according to Ethereum ABI, into 32 bytes.  Values are padded by 0 on the left, unless specified otherwise
   ///
   /// \param value a int256 value stored in a block of data
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeUInt256(
-    ffi.Pointer<TWData> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeUInt256(
+    ffi.Pointer<TWData1> value,
   ) {
     return _TWEthereumAbiValueEncodeUInt256(
       value,
@@ -5391,18 +5487,18 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeUInt256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueEncodeUInt256');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueEncodeUInt256');
   late final _TWEthereumAbiValueEncodeUInt256 =
       _TWEthereumAbiValueEncodeUInt256Ptr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
 
   /// Encode an address according to Ethereum ABI, 20 bytes of the address.
   ///
   /// \param value an address value stored in a block of data
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeAddress(
-    ffi.Pointer<TWData> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeAddress(
+    ffi.Pointer<TWData1> value,
   ) {
     return _TWEthereumAbiValueEncodeAddress(
       value,
@@ -5411,18 +5507,18 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueEncodeAddress');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueEncodeAddress');
   late final _TWEthereumAbiValueEncodeAddress =
       _TWEthereumAbiValueEncodeAddressPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
 
   /// Encode a string according to Ethereum ABI by encoding its hash.
   ///
   /// \param value a string value
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeString(
-    ffi.Pointer<TWString> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeString(
+    ffi.Pointer<TWString1> value,
   ) {
     return _TWEthereumAbiValueEncodeString(
       value,
@@ -5431,18 +5527,18 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeStringPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWString>)>>('TWEthereumAbiValueEncodeString');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWString1>)>>('TWEthereumAbiValueEncodeString');
   late final _TWEthereumAbiValueEncodeString =
       _TWEthereumAbiValueEncodeStringPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
 
   /// Encode a number of bytes, up to 32 bytes, padded on the right.  Longer arrays are truncated.
   ///
   /// \param value bunch of bytes
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeBytes(
-    ffi.Pointer<TWData> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeBytes(
+    ffi.Pointer<TWData1> value,
   ) {
     return _TWEthereumAbiValueEncodeBytes(
       value,
@@ -5451,17 +5547,17 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeBytesPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueEncodeBytes');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueEncodeBytes');
   late final _TWEthereumAbiValueEncodeBytes = _TWEthereumAbiValueEncodeBytesPtr
-      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+      .asFunction<ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
 
   /// Encode a dynamic number of bytes by encoding its hash
   ///
   /// \param value bunch of bytes
   /// \return Encoded value stored in a block of data
-  ffi.Pointer<TWData> TWEthereumAbiValueEncodeBytesDyn(
-    ffi.Pointer<TWData> value,
+  ffi.Pointer<TWData1> TWEthereumAbiValueEncodeBytesDyn(
+    ffi.Pointer<TWData1> value,
   ) {
     return _TWEthereumAbiValueEncodeBytesDyn(
       value,
@@ -5470,18 +5566,18 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueEncodeBytesDynPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueEncodeBytesDyn');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueEncodeBytesDyn');
   late final _TWEthereumAbiValueEncodeBytesDyn =
       _TWEthereumAbiValueEncodeBytesDynPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
 
   /// Decodes input data (bytes longer than 32 will be truncated) as uint256
   ///
   /// \param input Data to be decoded
   /// \return Non-null decoded string value
-  ffi.Pointer<TWString> TWEthereumAbiValueDecodeUInt256(
-    ffi.Pointer<TWData> input,
+  ffi.Pointer<TWString1> TWEthereumAbiValueDecodeUInt256(
+    ffi.Pointer<TWData1> input,
   ) {
     return _TWEthereumAbiValueDecodeUInt256(
       input,
@@ -5490,20 +5586,20 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueDecodeUInt256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWData>)>>('TWEthereumAbiValueDecodeUInt256');
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiValueDecodeUInt256');
   late final _TWEthereumAbiValueDecodeUInt256 =
       _TWEthereumAbiValueDecodeUInt256Ptr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
 
   /// Decode an arbitrary type, return value as string
   ///
   /// \param input Data to be decoded
   /// \param type the underlying type that need to be decoded
   /// \return Non-null decoded string value
-  ffi.Pointer<TWString> TWEthereumAbiValueDecodeValue(
-    ffi.Pointer<TWData> input,
-    ffi.Pointer<TWString> type,
+  ffi.Pointer<TWString1> TWEthereumAbiValueDecodeValue(
+    ffi.Pointer<TWData1> input,
+    ffi.Pointer<TWString1> type,
   ) {
     return _TWEthereumAbiValueDecodeValue(
       input,
@@ -5513,21 +5609,21 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueDecodeValuePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>)>>('TWEthereumAbiValueDecodeValue');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>)>>('TWEthereumAbiValueDecodeValue');
   late final _TWEthereumAbiValueDecodeValue =
       _TWEthereumAbiValueDecodeValuePtr.asFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWData1>, ffi.Pointer<TWString1>)>();
 
   /// Decode an array of given simple types.  Return a '\n'-separated string of elements
   ///
   /// \param input Data to be decoded
   /// \param type the underlying type that need to be decoded
   /// \return Non-null decoded string value
-  ffi.Pointer<TWString> TWEthereumAbiValueDecodeArray(
-    ffi.Pointer<TWData> input,
-    ffi.Pointer<TWString> type,
+  ffi.Pointer<TWString1> TWEthereumAbiValueDecodeArray(
+    ffi.Pointer<TWData1> input,
+    ffi.Pointer<TWString1> type,
   ) {
     return _TWEthereumAbiValueDecodeArray(
       input,
@@ -5537,20 +5633,20 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiValueDecodeArrayPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>)>>('TWEthereumAbiValueDecodeArray');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>)>>('TWEthereumAbiValueDecodeArray');
   late final _TWEthereumAbiValueDecodeArray =
       _TWEthereumAbiValueDecodeArrayPtr.asFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWData1>, ffi.Pointer<TWString1>)>();
 
   /// Signs a transaction specified by the signing input and coin type.
   ///
   /// \param input The serialized data of a signing input (e.g. TW.Bitcoin.Proto.SigningInput).
   /// \param coin The given coin type to sign the transaction for.
   /// \return The serialized data of a `SigningOutput` proto object. (e.g. TW.Bitcoin.Proto.SigningOutput).
-  ffi.Pointer<TWData> TWAnySignerSign(
-    ffi.Pointer<TWData> input,
+  ffi.Pointer<TWData1> TWAnySignerSign(
+    ffi.Pointer<TWData1> input,
     int coin,
   ) {
     return _TWAnySignerSign(
@@ -5561,10 +5657,10 @@ class TrustWalletCore {
 
   late final _TWAnySignerSignPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWAnySignerSign');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWAnySignerSign');
   late final _TWAnySignerSign = _TWAnySignerSignPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, int)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>, int)>();
 
   /// Signs a transaction specified by the JSON representation of signing input, coin type and a private key, returning the JSON representation of the signing output.
   ///
@@ -5572,9 +5668,9 @@ class TrustWalletCore {
   /// \param key The private key to sign with.
   /// \param coin The given coin type to sign the transaction for.
   /// \return The JSON representation of a `SigningOutput` proto object.
-  ffi.Pointer<TWString> TWAnySignerSignJSON(
-    ffi.Pointer<TWString> json,
-    ffi.Pointer<TWData> key,
+  ffi.Pointer<TWString1> TWAnySignerSignJSON(
+    ffi.Pointer<TWString1> json,
+    ffi.Pointer<TWData1> key,
     int coin,
   ) {
     return _TWAnySignerSignJSON(
@@ -5586,11 +5682,11 @@ class TrustWalletCore {
 
   late final _TWAnySignerSignJSONPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWAnySignerSignJSON');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWAnySignerSignJSON');
   late final _TWAnySignerSignJSON = _TWAnySignerSignJSONPtr.asFunction<
-      ffi.Pointer<TWString> Function(
-          ffi.Pointer<TWString>, ffi.Pointer<TWData>, int)>();
+      ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
 
   /// Check if AnySigner supports signing JSON representation of signing input.
   ///
@@ -5615,8 +5711,8 @@ class TrustWalletCore {
   /// \param input The serialized data of a signing input
   /// \param coin The given coin type to plan the transaction for.
   /// \return The serialized data of a `TransactionPlan` proto object.
-  ffi.Pointer<TWData> TWAnySignerPlan(
-    ffi.Pointer<TWData> input,
+  ffi.Pointer<TWData1> TWAnySignerPlan(
+    ffi.Pointer<TWData1> input,
     int coin,
   ) {
     return _TWAnySignerPlan(
@@ -5627,10 +5723,10 @@ class TrustWalletCore {
 
   late final _TWAnySignerPlanPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWAnySignerPlan');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWAnySignerPlan');
   late final _TWAnySignerPlan = _TWAnySignerPlanPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, int)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>, int)>();
 
   /// Compares two addresses for equality.
   ///
@@ -5660,7 +5756,7 @@ class TrustWalletCore {
   /// \param string string to validate.
   /// \return bool indicating if the address is valid.
   bool TWNervosAddressIsValidString(
-    ffi.Pointer<TWString1> string,
+    ffi.Pointer<TWString> string,
   ) {
     return _TWNervosAddressIsValidString(
       string,
@@ -5668,17 +5764,17 @@ class TrustWalletCore {
   }
 
   late final _TWNervosAddressIsValidStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
           'TWNervosAddressIsValidString');
   late final _TWNervosAddressIsValidString = _TWNervosAddressIsValidStringPtr
-      .asFunction<bool Function(ffi.Pointer<TWString1>)>();
+      .asFunction<bool Function(ffi.Pointer<TWString>)>();
 
   /// Initializes an address from a sring representaion.
   ///
   /// \param string Bech32 string to initialize the address from.
   /// \return TWNervosAddress pointer or nullptr if string is invalid.
   ffi.Pointer<TWNervosAddress> TWNervosAddressCreateWithString(
-    ffi.Pointer<TWString1> string,
+    ffi.Pointer<TWString> string,
   ) {
     return _TWNervosAddressCreateWithString(
       string,
@@ -5688,10 +5784,10 @@ class TrustWalletCore {
   late final _TWNervosAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWNervosAddress> Function(
-              ffi.Pointer<TWString1>)>>('TWNervosAddressCreateWithString');
+              ffi.Pointer<TWString>)>>('TWNervosAddressCreateWithString');
   late final _TWNervosAddressCreateWithString =
       _TWNervosAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWNervosAddress> Function(ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWNervosAddress> Function(ffi.Pointer<TWString>)>();
 
   /// Deletes a Nervos address.
   ///
@@ -5713,7 +5809,7 @@ class TrustWalletCore {
   /// Returns the address string representation.
   ///
   /// \param address Address to get the string representation of.
-  ffi.Pointer<TWString1> TWNervosAddressDescription(
+  ffi.Pointer<TWString> TWNervosAddressDescription(
     ffi.Pointer<TWNervosAddress> address,
   ) {
     return _TWNervosAddressDescription(
@@ -5723,16 +5819,16 @@ class TrustWalletCore {
 
   late final _TWNervosAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWNervosAddress>)>>('TWNervosAddressDescription');
   late final _TWNervosAddressDescription =
       _TWNervosAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWNervosAddress>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWNervosAddress>)>();
 
   /// Returns the Code hash
   ///
   /// \param address Address to get the keyhash data of.
-  ffi.Pointer<TWData1> TWNervosAddressCodeHash(
+  ffi.Pointer<TWData> TWNervosAddressCodeHash(
     ffi.Pointer<TWNervosAddress> address,
   ) {
     return _TWNervosAddressCodeHash(
@@ -5742,15 +5838,15 @@ class TrustWalletCore {
 
   late final _TWNervosAddressCodeHashPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWData> Function(
               ffi.Pointer<TWNervosAddress>)>>('TWNervosAddressCodeHash');
   late final _TWNervosAddressCodeHash = _TWNervosAddressCodeHashPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWNervosAddress>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWNervosAddress>)>();
 
   /// Returns the address hash type
   ///
   /// \param address Address to get the hash type of.
-  ffi.Pointer<TWString1> TWNervosAddressHashType(
+  ffi.Pointer<TWString> TWNervosAddressHashType(
     ffi.Pointer<TWNervosAddress> address,
   ) {
     return _TWNervosAddressHashType(
@@ -5760,15 +5856,15 @@ class TrustWalletCore {
 
   late final _TWNervosAddressHashTypePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWNervosAddress>)>>('TWNervosAddressHashType');
   late final _TWNervosAddressHashType = _TWNervosAddressHashTypePtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWNervosAddress>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWNervosAddress>)>();
 
   /// Returns the address args data.
   ///
   /// \param address Address to get the args data of.
-  ffi.Pointer<TWData1> TWNervosAddressArgs(
+  ffi.Pointer<TWData> TWNervosAddressArgs(
     ffi.Pointer<TWNervosAddress> address,
   ) {
     return _TWNervosAddressArgs(
@@ -5778,17 +5874,17 @@ class TrustWalletCore {
 
   late final _TWNervosAddressArgsPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWData> Function(
               ffi.Pointer<TWNervosAddress>)>>('TWNervosAddressArgs');
   late final _TWNervosAddressArgs = _TWNervosAddressArgsPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWNervosAddress>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWNervosAddress>)>();
 
   /// Decode a Base64 input with the default alphabet (RFC4648 with '+', '/')
   ///
   /// \param string Encoded input to be decoded
   /// \return The decoded data, empty if decoding failed.
-  ffi.Pointer<TWData1> TWBase64Decode(
-    ffi.Pointer<TWString1> string,
+  ffi.Pointer<TWData> TWBase64Decode(
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBase64Decode(
       string,
@@ -5797,17 +5893,17 @@ class TrustWalletCore {
 
   late final _TWBase64DecodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>)>>('TWBase64Decode');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>)>>('TWBase64Decode');
   late final _TWBase64Decode = _TWBase64DecodePtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
 
   /// Decode a Base64 input with the alphabet safe for URL-s and filenames (RFC4648 with '-', '_')
   ///
   /// \param string Encoded base64 input to be decoded
   /// \return The decoded data, empty if decoding failed.
-  ffi.Pointer<TWData1> TWBase64DecodeUrl(
-    ffi.Pointer<TWString1> string,
+  ffi.Pointer<TWData> TWBase64DecodeUrl(
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBase64DecodeUrl(
       string,
@@ -5816,17 +5912,17 @@ class TrustWalletCore {
 
   late final _TWBase64DecodeUrlPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>)>>('TWBase64DecodeUrl');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>)>>('TWBase64DecodeUrl');
   late final _TWBase64DecodeUrl = _TWBase64DecodeUrlPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
 
   /// Encode an input to Base64 with the default alphabet (RFC4648 with '+', '/')
   ///
   /// \param data Data to be encoded (raw bytes)
   /// \return The encoded data
-  ffi.Pointer<TWString1> TWBase64Encode(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWString> TWBase64Encode(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBase64Encode(
       data,
@@ -5835,17 +5931,17 @@ class TrustWalletCore {
 
   late final _TWBase64EncodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>)>>('TWBase64Encode');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBase64Encode');
   late final _TWBase64Encode = _TWBase64EncodePtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
 
   /// Encode an input to Base64 with the alphabet safe for URL-s and filenames (RFC4648 with '-', '_')
   ///
   /// \param data Data to be encoded (raw bytes)
   /// \return The encoded data
-  ffi.Pointer<TWString1> TWBase64EncodeUrl(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWString> TWBase64EncodeUrl(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBase64EncodeUrl(
       data,
@@ -5854,10 +5950,10 @@ class TrustWalletCore {
 
   late final _TWBase64EncodeUrlPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>)>>('TWBase64EncodeUrl');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBase64EncodeUrl');
   late final _TWBase64EncodeUrl = _TWBase64EncodeUrlPtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
 
   /// Compares two addresses for equality.
   ///
@@ -5887,7 +5983,7 @@ class TrustWalletCore {
   /// \param string Non-null pointer to a Bech32 address as a string
   /// \return true if the string is a valid Bech32 address, false otherwise.
   bool TWSegwitAddressIsValidString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWSegwitAddressIsValidString(
       string,
@@ -5895,10 +5991,10 @@ class TrustWalletCore {
   }
 
   late final _TWSegwitAddressIsValidStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
           'TWSegwitAddressIsValidString');
   late final _TWSegwitAddressIsValidString = _TWSegwitAddressIsValidStringPtr
-      .asFunction<bool Function(ffi.Pointer<TWString>)>();
+      .asFunction<bool Function(ffi.Pointer<TWString1>)>();
 
   /// Creates an address from a string representation.
   ///
@@ -5906,7 +6002,7 @@ class TrustWalletCore {
   /// \note should be deleted with \TWSegwitAddressDelete
   /// \return Pointer to a Bech32 address if the string is a valid Bech32 address, null pointer otherwise
   ffi.Pointer<TWSegwitAddress> TWSegwitAddressCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWSegwitAddressCreateWithString(
       string,
@@ -5916,10 +6012,10 @@ class TrustWalletCore {
   late final _TWSegwitAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWSegwitAddress> Function(
-              ffi.Pointer<TWString>)>>('TWSegwitAddressCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWSegwitAddressCreateWithString');
   late final _TWSegwitAddressCreateWithString =
       _TWSegwitAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWSegwitAddress> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWSegwitAddress> Function(ffi.Pointer<TWString1>)>();
 
   /// Creates a segwit-version-0 address from a public key and HRP prefix.
   /// Taproot (v>=1) is not supported by this method.
@@ -5968,7 +6064,7 @@ class TrustWalletCore {
   ///
   /// \param address Non-null pointer to a Segwit Address
   /// \return Non-null pointer to the segwit address string representation
-  ffi.Pointer<TWString> TWSegwitAddressDescription(
+  ffi.Pointer<TWString1> TWSegwitAddressDescription(
     ffi.Pointer<TWSegwitAddress> address,
   ) {
     return _TWSegwitAddressDescription(
@@ -5978,11 +6074,11 @@ class TrustWalletCore {
 
   late final _TWSegwitAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWSegwitAddress>)>>('TWSegwitAddressDescription');
   late final _TWSegwitAddressDescription =
       _TWSegwitAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWSegwitAddress>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWSegwitAddress>)>();
 
   /// Returns the human-readable part.
   ///
@@ -6024,7 +6120,7 @@ class TrustWalletCore {
   ///
   /// \param address Non-null pointer to a Segwit Address
   /// \return returns the witness data of the given segwit address as a non-null pointer block of data
-  ffi.Pointer<TWData> TWSegwitAddressWitnessProgram(
+  ffi.Pointer<TWData1> TWSegwitAddressWitnessProgram(
     ffi.Pointer<TWSegwitAddress> address,
   ) {
     return _TWSegwitAddressWitnessProgram(
@@ -6034,19 +6130,20 @@ class TrustWalletCore {
 
   late final _TWSegwitAddressWitnessProgramPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWSegwitAddress>)>>('TWSegwitAddressWitnessProgram');
-  late final _TWSegwitAddressWitnessProgram = _TWSegwitAddressWitnessProgramPtr
-      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWSegwitAddress>)>();
+  late final _TWSegwitAddressWitnessProgram =
+      _TWSegwitAddressWitnessProgramPtr.asFunction<
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWSegwitAddress>)>();
 
   /// Sign a typed message EIP-712 V4.
   ///
   /// \param privateKey: the private key used for signing
   /// \param messageJson: A custom typed data message in json
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWEthereumMessageSignerSignTypedMessage(
+  ffi.Pointer<TWString> TWEthereumMessageSignerSignTypedMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> messageJson,
+    ffi.Pointer<TWString> messageJson,
   ) {
     return _TWEthereumMessageSignerSignTypedMessage(
       privateKey,
@@ -6056,13 +6153,13 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerSignTypedMessagePtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString1> Function(
-                  ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>>(
+              ffi.Pointer<TWString> Function(
+                  ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>>(
       'TWEthereumMessageSignerSignTypedMessage');
   late final _TWEthereumMessageSignerSignTypedMessage =
       _TWEthereumMessageSignerSignTypedMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Sign a typed message EIP-712 V4 with EIP-155 replay attack protection.
   ///
@@ -6070,9 +6167,9 @@ class TrustWalletCore {
   /// \param messageJson: A custom typed data message in json
   /// \param chainId: chainId for eip-155 protection
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned or invalid chainId error message. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWEthereumMessageSignerSignTypedMessageEip155(
+  ffi.Pointer<TWString> TWEthereumMessageSignerSignTypedMessageEip155(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> messageJson,
+    ffi.Pointer<TWString> messageJson,
     int chainId,
   ) {
     return _TWEthereumMessageSignerSignTypedMessageEip155(
@@ -6084,23 +6181,23 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerSignTypedMessageEip155Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString>,
               ffi.Int)>>('TWEthereumMessageSignerSignTypedMessageEip155');
   late final _TWEthereumMessageSignerSignTypedMessageEip155 =
       _TWEthereumMessageSignerSignTypedMessageEip155Ptr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>, int)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>, int)>();
 
   /// Sign a message.
   ///
   /// \param privateKey: the private key used for signing
   /// \param message: A custom message which is input to the signing.
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWEthereumMessageSignerSignMessage(
+  ffi.Pointer<TWString> TWEthereumMessageSignerSignMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWEthereumMessageSignerSignMessage(
       privateKey,
@@ -6110,21 +6207,21 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerSignMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>)>>('TWEthereumMessageSignerSignMessage');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWString>)>>('TWEthereumMessageSignerSignMessage');
   late final _TWEthereumMessageSignerSignMessage =
       _TWEthereumMessageSignerSignMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Sign a message with Immutable X msg type.
   ///
   /// \param privateKey: the private key used for signing
   /// \param message: A custom message which is input to the signing.
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWEthereumMessageSignerSignMessageImmutableX(
+  ffi.Pointer<TWString> TWEthereumMessageSignerSignMessageImmutableX(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWEthereumMessageSignerSignMessageImmutableX(
       privateKey,
@@ -6134,13 +6231,13 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerSignMessageImmutableXPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString1> Function(
-                  ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>>(
+              ffi.Pointer<TWString> Function(
+                  ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>>(
       'TWEthereumMessageSignerSignMessageImmutableX');
   late final _TWEthereumMessageSignerSignMessageImmutableX =
       _TWEthereumMessageSignerSignMessageImmutableXPtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Sign a message with Eip-155 msg type.
   ///
@@ -6148,9 +6245,9 @@ class TrustWalletCore {
   /// \param message: A custom message which is input to the signing.
   /// \param chainId: chainId for eip-155 protection
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWEthereumMessageSignerSignMessageEip155(
+  ffi.Pointer<TWString> TWEthereumMessageSignerSignMessageEip155(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
     int chainId,
   ) {
     return _TWEthereumMessageSignerSignMessageEip155(
@@ -6162,14 +6259,14 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerSignMessageEip155Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString>,
               ffi.Int)>>('TWEthereumMessageSignerSignMessageEip155');
   late final _TWEthereumMessageSignerSignMessageEip155 =
       _TWEthereumMessageSignerSignMessageEip155Ptr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>, int)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>, int)>();
 
   /// Verify signature for a message.
   ///
@@ -6179,8 +6276,8 @@ class TrustWalletCore {
   /// \returns false on any invalid input (does not throw), true if the message can be recovered from the signature
   bool TWEthereumMessageSignerVerifyMessage(
     ffi.Pointer<TWPublicKey> pubKey,
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWEthereumMessageSignerVerifyMessage(
       pubKey,
@@ -6191,12 +6288,12 @@ class TrustWalletCore {
 
   late final _TWEthereumMessageSignerVerifyMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWEthereumMessageSignerVerifyMessage');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWEthereumMessageSignerVerifyMessage');
   late final _TWEthereumMessageSignerVerifyMessage =
       _TWEthereumMessageSignerVerifyMessagePtr.asFunction<
-          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>();
+          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>();
 
   /// Compares two addresses for equality.
   ///
@@ -6226,7 +6323,7 @@ class TrustWalletCore {
   /// \param data data to validate.
   /// \return bool indicating if the address data is valid.
   bool TWBitcoinAddressIsValid(
-    ffi.Pointer<TWData1> data,
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBitcoinAddressIsValid(
       data,
@@ -6234,17 +6331,17 @@ class TrustWalletCore {
   }
 
   late final _TWBitcoinAddressIsValidPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWData1>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWData>)>>(
           'TWBitcoinAddressIsValid');
   late final _TWBitcoinAddressIsValid = _TWBitcoinAddressIsValidPtr.asFunction<
-      bool Function(ffi.Pointer<TWData1>)>();
+      bool Function(ffi.Pointer<TWData>)>();
 
   /// Determines if the string is a valid Bitcoin address.
   ///
   /// \param string string to validate.
   /// \return bool indicating if the address string is valid.
   bool TWBitcoinAddressIsValidString(
-    ffi.Pointer<TWString1> string,
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBitcoinAddressIsValidString(
       string,
@@ -6252,17 +6349,17 @@ class TrustWalletCore {
   }
 
   late final _TWBitcoinAddressIsValidStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
           'TWBitcoinAddressIsValidString');
   late final _TWBitcoinAddressIsValidString = _TWBitcoinAddressIsValidStringPtr
-      .asFunction<bool Function(ffi.Pointer<TWString1>)>();
+      .asFunction<bool Function(ffi.Pointer<TWString>)>();
 
   /// Initializes an address from a Base58 sring. Must be deleted with TWBitcoinAddressDelete after use.
   ///
   /// \param string Base58 string to initialize the address from.
   /// \return TWBitcoinAddress pointer or nullptr if string is invalid.
   ffi.Pointer<TWBitcoinAddress> TWBitcoinAddressCreateWithString(
-    ffi.Pointer<TWString1> string,
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBitcoinAddressCreateWithString(
       string,
@@ -6272,17 +6369,17 @@ class TrustWalletCore {
   late final _TWBitcoinAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinAddress> Function(
-              ffi.Pointer<TWString1>)>>('TWBitcoinAddressCreateWithString');
+              ffi.Pointer<TWString>)>>('TWBitcoinAddressCreateWithString');
   late final _TWBitcoinAddressCreateWithString =
       _TWBitcoinAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWBitcoinAddress> Function(ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWBitcoinAddress> Function(ffi.Pointer<TWString>)>();
 
   /// Initializes an address from raw data.
   ///
   /// \param data Raw data to initialize the address from. Must be deleted with TWBitcoinAddressDelete after use.
   /// \return TWBitcoinAddress pointer or nullptr if data is invalid.
   ffi.Pointer<TWBitcoinAddress> TWBitcoinAddressCreateWithData(
-    ffi.Pointer<TWData1> data,
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBitcoinAddressCreateWithData(
       data,
@@ -6292,10 +6389,10 @@ class TrustWalletCore {
   late final _TWBitcoinAddressCreateWithDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinAddress> Function(
-              ffi.Pointer<TWData1>)>>('TWBitcoinAddressCreateWithData');
+              ffi.Pointer<TWData>)>>('TWBitcoinAddressCreateWithData');
   late final _TWBitcoinAddressCreateWithData =
       _TWBitcoinAddressCreateWithDataPtr.asFunction<
-          ffi.Pointer<TWBitcoinAddress> Function(ffi.Pointer<TWData1>)>();
+          ffi.Pointer<TWBitcoinAddress> Function(ffi.Pointer<TWData>)>();
 
   /// Initializes an address from a public key and a prefix byte.
   ///
@@ -6341,7 +6438,7 @@ class TrustWalletCore {
   /// Returns the address in Base58 string representation.
   ///
   /// \param address Address to get the string representation of.
-  ffi.Pointer<TWString1> TWBitcoinAddressDescription(
+  ffi.Pointer<TWString> TWBitcoinAddressDescription(
     ffi.Pointer<TWBitcoinAddress> address,
   ) {
     return _TWBitcoinAddressDescription(
@@ -6351,11 +6448,11 @@ class TrustWalletCore {
 
   late final _TWBitcoinAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWBitcoinAddress>)>>('TWBitcoinAddressDescription');
   late final _TWBitcoinAddressDescription =
       _TWBitcoinAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWBitcoinAddress>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWBitcoinAddress>)>();
 
   /// Returns the address prefix.
   ///
@@ -6378,7 +6475,7 @@ class TrustWalletCore {
   /// Returns the key hash data.
   ///
   /// \param address Address to get the keyhash data of.
-  ffi.Pointer<TWData1> TWBitcoinAddressKeyhash(
+  ffi.Pointer<TWData> TWBitcoinAddressKeyhash(
     ffi.Pointer<TWBitcoinAddress> address,
   ) {
     return _TWBitcoinAddressKeyhash(
@@ -6388,10 +6485,10 @@ class TrustWalletCore {
 
   late final _TWBitcoinAddressKeyhashPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWData> Function(
               ffi.Pointer<TWBitcoinAddress>)>>('TWBitcoinAddressKeyhash');
   late final _TWBitcoinAddressKeyhash = _TWBitcoinAddressKeyhashPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinAddress>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinAddress>)>();
 
   /// Compares two addresses for equality.
   ///
@@ -6421,7 +6518,7 @@ class TrustWalletCore {
   /// \param coin coin type of the address.
   /// \return bool indicating if the address is valid.
   bool TWAnyAddressIsValid(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
   ) {
     return _TWAnyAddressIsValid(
@@ -6433,9 +6530,9 @@ class TrustWalletCore {
   late final _TWAnyAddressIsValidPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(
-              ffi.Pointer<TWString>, ffi.Int32)>>('TWAnyAddressIsValid');
+              ffi.Pointer<TWString1>, ffi.Int32)>>('TWAnyAddressIsValid');
   late final _TWAnyAddressIsValid = _TWAnyAddressIsValidPtr.asFunction<
-      bool Function(ffi.Pointer<TWString>, int)>();
+      bool Function(ffi.Pointer<TWString1>, int)>();
 
   /// Determines if the string is a valid Any address with the given hrp.
   ///
@@ -6444,9 +6541,9 @@ class TrustWalletCore {
   /// \param hrp explicit given hrp of the given address.
   /// \return bool indicating if the address is valid.
   bool TWAnyAddressIsValidBech32(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
-    ffi.Pointer<TWString> hrp,
+    ffi.Pointer<TWString1> hrp,
   ) {
     return _TWAnyAddressIsValidBech32(
       string,
@@ -6457,11 +6554,11 @@ class TrustWalletCore {
 
   late final _TWAnyAddressIsValidBech32Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWString>, ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWAnyAddressIsValidBech32');
+          ffi.Bool Function(ffi.Pointer<TWString1>, ffi.Int32,
+              ffi.Pointer<TWString1>)>>('TWAnyAddressIsValidBech32');
   late final _TWAnyAddressIsValidBech32 =
       _TWAnyAddressIsValidBech32Ptr.asFunction<
-          bool Function(ffi.Pointer<TWString>, int, ffi.Pointer<TWString>)>();
+          bool Function(ffi.Pointer<TWString1>, int, ffi.Pointer<TWString1>)>();
 
   /// Determines if the string is a valid Any address with the given SS58 network prefix.
   ///
@@ -6470,7 +6567,7 @@ class TrustWalletCore {
   /// \param ss58Prefix ss58Prefix of the given address.
   /// \return bool indicating if the address is valid.
   bool TWAnyAddressIsValidSS58(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
     int ss58Prefix,
   ) {
@@ -6483,10 +6580,10 @@ class TrustWalletCore {
 
   late final _TWAnyAddressIsValidSS58Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWString>, ffi.Int32,
+          ffi.Bool Function(ffi.Pointer<TWString1>, ffi.Int32,
               ffi.Uint32)>>('TWAnyAddressIsValidSS58');
   late final _TWAnyAddressIsValidSS58 = _TWAnyAddressIsValidSS58Ptr.asFunction<
-      bool Function(ffi.Pointer<TWString>, int, int)>();
+      bool Function(ffi.Pointer<TWString1>, int, int)>();
 
   /// Creates an address from a string representation and a coin type. Must be deleted with TWAnyAddressDelete after use.
   ///
@@ -6494,7 +6591,7 @@ class TrustWalletCore {
   /// \param coin coin type of the address.
   /// \return TWAnyAddress pointer or nullptr if address and coin are invalid.
   ffi.Pointer<TWAnyAddress> TWAnyAddressCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
   ) {
     return _TWAnyAddressCreateWithString(
@@ -6505,11 +6602,11 @@ class TrustWalletCore {
 
   late final _TWAnyAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString>,
+          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString1>,
               ffi.Int32)>>('TWAnyAddressCreateWithString');
   late final _TWAnyAddressCreateWithString =
       _TWAnyAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString>, int)>();
+          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString1>, int)>();
 
   /// Creates an bech32 address from a string representation, a coin type and the given hrp. Must be deleted with TWAnyAddressDelete after use.
   ///
@@ -6518,9 +6615,9 @@ class TrustWalletCore {
   /// \param hrp hrp of the address.
   /// \return TWAnyAddress pointer or nullptr if address and coin are invalid.
   ffi.Pointer<TWAnyAddress> TWAnyAddressCreateBech32(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
-    ffi.Pointer<TWString> hrp,
+    ffi.Pointer<TWString1> hrp,
   ) {
     return _TWAnyAddressCreateBech32(
       string,
@@ -6531,12 +6628,12 @@ class TrustWalletCore {
 
   late final _TWAnyAddressCreateBech32Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString>, ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWAnyAddressCreateBech32');
+          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString1>, ffi.Int32,
+              ffi.Pointer<TWString1>)>>('TWAnyAddressCreateBech32');
   late final _TWAnyAddressCreateBech32 =
       _TWAnyAddressCreateBech32Ptr.asFunction<
           ffi.Pointer<TWAnyAddress> Function(
-              ffi.Pointer<TWString>, int, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>, int, ffi.Pointer<TWString1>)>();
 
   /// Creates an SS58 address from a string representation, a coin type and the given ss58Prefix. Must be deleted with TWAnyAddressDelete after use.
   ///
@@ -6545,7 +6642,7 @@ class TrustWalletCore {
   /// \param ss58Prefix ss58Prefix of the SS58 address.
   /// \return TWAnyAddress pointer or nullptr if address and coin are invalid.
   ffi.Pointer<TWAnyAddress> TWAnyAddressCreateSS58(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
     int coin,
     int ss58Prefix,
   ) {
@@ -6558,10 +6655,10 @@ class TrustWalletCore {
 
   late final _TWAnyAddressCreateSS58Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString>, ffi.Int32,
+          ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString1>, ffi.Int32,
               ffi.Uint32)>>('TWAnyAddressCreateSS58');
   late final _TWAnyAddressCreateSS58 = _TWAnyAddressCreateSS58Ptr.asFunction<
-      ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString>, int, int)>();
+      ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWString1>, int, int)>();
 
   /// Creates an address from a public key.
   ///
@@ -6624,7 +6721,7 @@ class TrustWalletCore {
   ffi.Pointer<TWAnyAddress> TWAnyAddressCreateBech32WithPublicKey(
     ffi.Pointer<TWPublicKey> publicKey,
     int coin,
-    ffi.Pointer<TWString> hrp,
+    ffi.Pointer<TWString1> hrp,
   ) {
     return _TWAnyAddressCreateBech32WithPublicKey(
       publicKey,
@@ -6634,15 +6731,14 @@ class TrustWalletCore {
   }
 
   late final _TWAnyAddressCreateBech32WithPublicKeyPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWAnyAddress> Function(
-              ffi.Pointer<TWPublicKey>,
-              ffi.Int32,
-              ffi.Pointer<TWString>)>>('TWAnyAddressCreateBech32WithPublicKey');
+          ffi.NativeFunction<
+              ffi.Pointer<TWAnyAddress> Function(ffi.Pointer<TWPublicKey>,
+                  ffi.Int32, ffi.Pointer<TWString1>)>>(
+      'TWAnyAddressCreateBech32WithPublicKey');
   late final _TWAnyAddressCreateBech32WithPublicKey =
       _TWAnyAddressCreateBech32WithPublicKeyPtr.asFunction<
           ffi.Pointer<TWAnyAddress> Function(
-              ffi.Pointer<TWPublicKey>, int, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWPublicKey>, int, ffi.Pointer<TWString1>)>();
 
   /// Creates an SS58 address from a public key and a given ss58Prefix.
   ///
@@ -6715,7 +6811,7 @@ class TrustWalletCore {
   /// Returns the address string representation.
   ///
   /// \param address address to get the string representation of.
-  ffi.Pointer<TWString> TWAnyAddressDescription(
+  ffi.Pointer<TWString1> TWAnyAddressDescription(
     ffi.Pointer<TWAnyAddress> address,
   ) {
     return _TWAnyAddressDescription(
@@ -6725,10 +6821,10 @@ class TrustWalletCore {
 
   late final _TWAnyAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWAnyAddress>)>>('TWAnyAddressDescription');
   late final _TWAnyAddressDescription = _TWAnyAddressDescriptionPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWAnyAddress>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWAnyAddress>)>();
 
   /// Returns coin type of address.
   ///
@@ -6750,7 +6846,7 @@ class TrustWalletCore {
   /// Returns underlaying data (public key or key hash)
   ///
   /// \param address address to get the data of.
-  ffi.Pointer<TWData> TWAnyAddressData(
+  ffi.Pointer<TWData1> TWAnyAddressData(
     ffi.Pointer<TWAnyAddress> address,
   ) {
     return _TWAnyAddressData(
@@ -6760,17 +6856,37 @@ class TrustWalletCore {
 
   late final _TWAnyAddressDataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWAnyAddress>)>>('TWAnyAddressData');
   late final _TWAnyAddressData = _TWAnyAddressDataPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWAnyAddress>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWAnyAddress>)>();
+
+  /// Parses the given ECDSA signature from ASN.1 DER encoded bytes.
+  ///
+  /// \param encoded The ASN.1 DER encoded signature.
+  /// \return The ECDSA signature standard binary representation: RS, where R - 32 byte array, S - 32 byte array.
+  ffi.Pointer<TWData> TWAsnParserEcdsaSignatureFromDer(
+    ffi.Pointer<TWData> encoded,
+  ) {
+    return _TWAsnParserEcdsaSignatureFromDer(
+      encoded,
+    );
+  }
+
+  late final _TWAsnParserEcdsaSignatureFromDerPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWAsnParserEcdsaSignatureFromDer');
+  late final _TWAsnParserEcdsaSignatureFromDer =
+      _TWAsnParserEcdsaSignatureFromDerPtr.asFunction<
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Builds a THORChainSwap transaction input.
   ///
   /// \param input The serialized data of SwapInput.
   /// \return The serialized data of SwapOutput.
-  ffi.Pointer<TWData1> TWTHORChainSwapBuildSwap(
-    ffi.Pointer<TWData1> input,
+  ffi.Pointer<TWData> TWTHORChainSwapBuildSwap(
+    ffi.Pointer<TWData> input,
   ) {
     return _TWTHORChainSwapBuildSwap(
       input,
@@ -6779,17 +6895,17 @@ class TrustWalletCore {
 
   late final _TWTHORChainSwapBuildSwapPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWTHORChainSwapBuildSwap');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWTHORChainSwapBuildSwap');
   late final _TWTHORChainSwapBuildSwap = _TWTHORChainSwapBuildSwapPtr
-      .asFunction<ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Encodes data as a Base58 string, including the checksum.
   ///
   /// \param data The data to encode.
   /// \return the encoded Base58 string with checksum.
-  ffi.Pointer<TWString1> TWBase58Encode(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWString> TWBase58Encode(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBase58Encode(
       data,
@@ -6798,17 +6914,17 @@ class TrustWalletCore {
 
   late final _TWBase58EncodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>)>>('TWBase58Encode');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBase58Encode');
   late final _TWBase58Encode = _TWBase58EncodePtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
 
   /// Encodes data as a Base58 string, not including the checksum.
   ///
   /// \param data The data to encode.
   /// \return then encoded Base58 string without checksum.
-  ffi.Pointer<TWString1> TWBase58EncodeNoCheck(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWString> TWBase58EncodeNoCheck(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBase58EncodeNoCheck(
       data,
@@ -6817,17 +6933,17 @@ class TrustWalletCore {
 
   late final _TWBase58EncodeNoCheckPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>)>>('TWBase58EncodeNoCheck');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBase58EncodeNoCheck');
   late final _TWBase58EncodeNoCheck = _TWBase58EncodeNoCheckPtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
 
   /// Decodes a Base58 string, checking the checksum. Returns null if the string is not a valid Base58 string.
   ///
   /// \param string The Base58 string to decode.
   /// \return the decoded data, empty if the string is not a valid Base58 string with checksum.
-  ffi.Pointer<TWData1> TWBase58Decode(
-    ffi.Pointer<TWString1> string,
+  ffi.Pointer<TWData> TWBase58Decode(
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBase58Decode(
       string,
@@ -6836,17 +6952,17 @@ class TrustWalletCore {
 
   late final _TWBase58DecodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>)>>('TWBase58Decode');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>)>>('TWBase58Decode');
   late final _TWBase58Decode = _TWBase58DecodePtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
 
   /// Decodes a Base58 string, w/o checking the checksum. Returns null if the string is not a valid Base58 string.
   ///
   /// \param string The Base58 string to decode.
   /// \return the decoded data, empty if the string is not a valid Base58 string without checksum.
-  ffi.Pointer<TWData1> TWBase58DecodeNoCheck(
-    ffi.Pointer<TWString1> string,
+  ffi.Pointer<TWData> TWBase58DecodeNoCheck(
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBase58DecodeNoCheck(
       string,
@@ -6855,10 +6971,10 @@ class TrustWalletCore {
 
   late final _TWBase58DecodeNoCheckPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>)>>('TWBase58DecodeNoCheck');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>)>>('TWBase58DecodeNoCheck');
   late final _TWBase58DecodeNoCheck = _TWBase58DecodeNoCheckPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
 
   /// Calculates the minimum ADA amount needed for a UTXO.
   ///
@@ -6867,7 +6983,7 @@ class TrustWalletCore {
   /// \param tokenBundle serialized data of TW.Cardano.Proto.TokenBundle.
   /// \return the minimum ADA amount.
   int TWCardanoMinAdaAmount(
-    ffi.Pointer<TWData1> tokenBundle,
+    ffi.Pointer<TWData> tokenBundle,
   ) {
     return _TWCardanoMinAdaAmount(
       tokenBundle,
@@ -6875,22 +6991,22 @@ class TrustWalletCore {
   }
 
   late final _TWCardanoMinAdaAmountPtr =
-      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<TWData1>)>>(
+      _lookup<ffi.NativeFunction<ffi.Uint64 Function(ffi.Pointer<TWData>)>>(
           'TWCardanoMinAdaAmount');
-  late final _TWCardanoMinAdaAmount = _TWCardanoMinAdaAmountPtr.asFunction<
-      int Function(ffi.Pointer<TWData1>)>();
+  late final _TWCardanoMinAdaAmount =
+      _TWCardanoMinAdaAmountPtr.asFunction<int Function(ffi.Pointer<TWData>)>();
 
   /// Calculates the minimum ADA amount needed for an output.
   ///
   /// \see reference https://docs.cardano.org/native-tokens/minimum-ada-value-requirement
   /// \param toAddress valid destination address, as string.
   /// \param tokenBundle serialized data of TW.Cardano.Proto.TokenBundle.
-  /// \param coinsPerUtxoByte cost per one byte of a serialized UTXO.
-  /// \return the minimum ADA amount.
-  int TWCardanoOutputMinAdaAmount(
-    ffi.Pointer<TWString1> toAddress,
-    ffi.Pointer<TWData1> tokenBundle,
-    int coinsPerUtxoByte,
+  /// \param coinsPerUtxoByte cost per one byte of a serialized UTXO (Base-10 decimal string).
+  /// \return the minimum ADA amount (Base-10 decimal string).
+  ffi.Pointer<TWString> TWCardanoOutputMinAdaAmount(
+    ffi.Pointer<TWString> toAddress,
+    ffi.Pointer<TWData> tokenBundle,
+    ffi.Pointer<TWString> coinsPerUtxoByte,
   ) {
     return _TWCardanoOutputMinAdaAmount(
       toAddress,
@@ -6901,18 +7017,21 @@ class TrustWalletCore {
 
   late final _TWCardanoOutputMinAdaAmountPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Uint64 Function(ffi.Pointer<TWString1>, ffi.Pointer<TWData1>,
-              ffi.Uint64)>>('TWCardanoOutputMinAdaAmount');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString>,
+              ffi.Pointer<TWData>,
+              ffi.Pointer<TWString>)>>('TWCardanoOutputMinAdaAmount');
   late final _TWCardanoOutputMinAdaAmount =
       _TWCardanoOutputMinAdaAmountPtr.asFunction<
-          int Function(ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>,
+              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
 
   /// Return the staking address associated to (contained in) this address. Must be a Base address.
   /// Empty string is returned on error. Result must be freed.
   /// \param baseAddress A valid base address, as string.
   /// \return the associated staking (reward) address, as string, or empty string on error.
-  ffi.Pointer<TWString1> TWCardanoGetStakingAddress(
-    ffi.Pointer<TWString1> baseAddress,
+  ffi.Pointer<TWString> TWCardanoGetStakingAddress(
+    ffi.Pointer<TWString> baseAddress,
   ) {
     return _TWCardanoGetStakingAddress(
       baseAddress,
@@ -6921,10 +7040,28 @@ class TrustWalletCore {
 
   late final _TWCardanoGetStakingAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWString1>)>>('TWCardanoGetStakingAddress');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString>)>>('TWCardanoGetStakingAddress');
   late final _TWCardanoGetStakingAddress = _TWCardanoGetStakingAddressPtr
-      .asFunction<ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>();
+      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>();
+
+  /// Return the legacy(byron) address.
+  /// \param publicKey A valid public key with TWPublicKeyTypeED25519Cardano type.
+  /// \return the legacy(byron) address, as string, or empty string on error.
+  ffi.Pointer<TWString> TWCardanoGetByronAddress(
+    ffi.Pointer<TWPublicKey1> publicKey,
+  ) {
+    return _TWCardanoGetByronAddress(
+      publicKey,
+    );
+  }
+
+  late final _TWCardanoGetByronAddressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPublicKey1>)>>('TWCardanoGetByronAddress');
+  late final _TWCardanoGetByronAddress = _TWCardanoGetByronAddressPtr
+      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<TWPublicKey1>)>();
 
   /// Creates a new Index with a value and hardened flag.
   /// Must be deleted with TWDerivationPathIndexDelete after use.
@@ -7008,7 +7145,7 @@ class TrustWalletCore {
   ///
   /// \param path Index to get the address of.
   /// \return The string description of the derivation path index.
-  ffi.Pointer<TWString> TWDerivationPathIndexDescription(
+  ffi.Pointer<TWString1> TWDerivationPathIndexDescription(
     ffi.Pointer<TWDerivationPathIndex> index,
   ) {
     return _TWDerivationPathIndexDescription(
@@ -7018,12 +7155,13 @@ class TrustWalletCore {
 
   late final _TWDerivationPathIndexDescriptionPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString1> Function(
                   ffi.Pointer<TWDerivationPathIndex>)>>(
       'TWDerivationPathIndexDescription');
   late final _TWDerivationPathIndexDescription =
       _TWDerivationPathIndexDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWDerivationPathIndex>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWDerivationPathIndex>)>();
 
   /// Compares two addresses for equality.
   ///
@@ -7053,7 +7191,7 @@ class TrustWalletCore {
   /// \param string Non-null pointer to a string that represent the Ripple Address to be checked
   /// \return true if the given address is a valid Ripple address, false otherwise
   bool TWRippleXAddressIsValidString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWRippleXAddressIsValidString(
       string,
@@ -7061,10 +7199,10 @@ class TrustWalletCore {
   }
 
   late final _TWRippleXAddressIsValidStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
           'TWRippleXAddressIsValidString');
   late final _TWRippleXAddressIsValidString = _TWRippleXAddressIsValidStringPtr
-      .asFunction<bool Function(ffi.Pointer<TWString>)>();
+      .asFunction<bool Function(ffi.Pointer<TWString1>)>();
 
   /// Creates an address from a string representation.
   ///
@@ -7072,7 +7210,7 @@ class TrustWalletCore {
   /// \note Should be deleted with \TWRippleXAddressDelete
   /// \return Null pointer if the given string is an invalid ripple address, pointer to a Ripple address otherwise
   ffi.Pointer<TWRippleXAddress> TWRippleXAddressCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWRippleXAddressCreateWithString(
       string,
@@ -7082,10 +7220,10 @@ class TrustWalletCore {
   late final _TWRippleXAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWRippleXAddress> Function(
-              ffi.Pointer<TWString>)>>('TWRippleXAddressCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWRippleXAddressCreateWithString');
   late final _TWRippleXAddressCreateWithString =
       _TWRippleXAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWRippleXAddress> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWRippleXAddress> Function(ffi.Pointer<TWString1>)>();
 
   /// Creates an address from a public key and destination tag.
   ///
@@ -7133,7 +7271,7 @@ class TrustWalletCore {
   ///
   /// \param address Non-null pointer to a Ripple Address
   /// \return Non-null pointer to the ripple address string representation
-  ffi.Pointer<TWString> TWRippleXAddressDescription(
+  ffi.Pointer<TWString1> TWRippleXAddressDescription(
     ffi.Pointer<TWRippleXAddress> address,
   ) {
     return _TWRippleXAddressDescription(
@@ -7143,11 +7281,11 @@ class TrustWalletCore {
 
   late final _TWRippleXAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWRippleXAddress>)>>('TWRippleXAddressDescription');
   late final _TWRippleXAddressDescription =
       _TWRippleXAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWRippleXAddress>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWRippleXAddress>)>();
 
   /// Returns the destination tag.
   ///
@@ -7168,14 +7306,33 @@ class TrustWalletCore {
   late final _TWRippleXAddressTag = _TWRippleXAddressTagPtr.asFunction<
       int Function(ffi.Pointer<TWRippleXAddress>)>();
 
+  /// Builds a LiquidStaking transaction input.
+  ///
+  /// \param input The serialized data of LiquidStakingInput.
+  /// \return The serialized data of LiquidStakingOutput.
+  ffi.Pointer<TWData> TWLiquidStakingBuildRequest(
+    ffi.Pointer<TWData> input,
+  ) {
+    return _TWLiquidStakingBuildRequest(
+      input,
+    );
+  }
+
+  late final _TWLiquidStakingBuildRequestPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWLiquidStakingBuildRequest');
+  late final _TWLiquidStakingBuildRequest = _TWLiquidStakingBuildRequestPtr
+      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+
   /// Sign a message.
   ///
   /// \param privateKey: the private key used for signing
   /// \param message: A custom message which is input to the signing.
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWTronMessageSignerSignMessage(
+  ffi.Pointer<TWString> TWTronMessageSignerSignMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWTronMessageSignerSignMessage(
       privateKey,
@@ -7185,12 +7342,12 @@ class TrustWalletCore {
 
   late final _TWTronMessageSignerSignMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>)>>('TWTronMessageSignerSignMessage');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWString>)>>('TWTronMessageSignerSignMessage');
   late final _TWTronMessageSignerSignMessage =
       _TWTronMessageSignerSignMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Verify signature for a message.
   ///
@@ -7200,8 +7357,8 @@ class TrustWalletCore {
   /// \returns false on any invalid input (does not throw), true if the message can be recovered from the signature
   bool TWTronMessageSignerVerifyMessage(
     ffi.Pointer<TWPublicKey> pubKey,
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWTronMessageSignerVerifyMessage(
       pubKey,
@@ -7212,12 +7369,74 @@ class TrustWalletCore {
 
   late final _TWTronMessageSignerVerifyMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWTronMessageSignerVerifyMessage');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWTronMessageSignerVerifyMessage');
   late final _TWTronMessageSignerVerifyMessage =
       _TWTronMessageSignerVerifyMessagePtr.asFunction<
-          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>();
+          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>();
+
+  /// Converts attestation object to the public key on P256 curve
+  ///
+  /// \param attestationObject Attestation object retrieved from webuthn.get method
+  /// \return Public key.
+  ffi.Pointer<TWPublicKey> TWWebAuthnGetPublicKey(
+    ffi.Pointer<TWData> attestationObject,
+  ) {
+    return _TWWebAuthnGetPublicKey(
+      attestationObject,
+    );
+  }
+
+  late final _TWWebAuthnGetPublicKeyPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWPublicKey> Function(
+              ffi.Pointer<TWData>)>>('TWWebAuthnGetPublicKey');
+  late final _TWWebAuthnGetPublicKey = _TWWebAuthnGetPublicKeyPtr.asFunction<
+      ffi.Pointer<TWPublicKey> Function(ffi.Pointer<TWData>)>();
+
+  /// Uses ASN parser to extract r and s values from a webauthn signature
+  ///
+  /// \param signature ASN encoded webauthn signature: https://www.w3.org/TR/webauthn-2/#sctn-signature-attestation-types
+  /// \return Concatenated r and s values.
+  ffi.Pointer<TWData> TWWebAuthnGetRSValues(
+    ffi.Pointer<TWData> signature,
+  ) {
+    return _TWWebAuthnGetRSValues(
+      signature,
+    );
+  }
+
+  late final _TWWebAuthnGetRSValuesPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWWebAuthnGetRSValues');
+  late final _TWWebAuthnGetRSValues = _TWWebAuthnGetRSValuesPtr.asFunction<
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
+
+  /// Reconstructs the original message that was signed via P256 curve. Can be used for signature validation.
+  ///
+  /// \param authenticatorData Authenticator Data: https://www.w3.org/TR/webauthn-2/#authenticator-data
+  /// \param clientDataJSON clientDataJSON: https://www.w3.org/TR/webauthn-2/#dom-authenticatorresponse-clientdatajson
+  /// \return original messages.
+  ffi.Pointer<TWData> TWWebAuthnReconstructOriginalMessage(
+    ffi.Pointer<TWData> authenticatorData,
+    ffi.Pointer<TWData> clientDataJSON,
+  ) {
+    return _TWWebAuthnReconstructOriginalMessage(
+      authenticatorData,
+      clientDataJSON,
+    );
+  }
+
+  late final _TWWebAuthnReconstructOriginalMessagePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>)>>('TWWebAuthnReconstructOriginalMessage');
+  late final _TWWebAuthnReconstructOriginalMessage =
+      _TWWebAuthnReconstructOriginalMessagePtr.asFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>, ffi.Pointer<TWData>)>();
 
   /// Derives a key from a password and a salt using PBKDF2 + Sha256.
   ///
@@ -7226,9 +7445,9 @@ class TrustWalletCore {
   /// \param iterations is the number of iterations desired
   /// \param dkLen is the desired bit-length of the derived key
   /// \return the derived key data.
-  ffi.Pointer<TWData1> TWPBKDF2HmacSha256(
-    ffi.Pointer<TWData1> password,
-    ffi.Pointer<TWData1> salt,
+  ffi.Pointer<TWData> TWPBKDF2HmacSha256(
+    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData> salt,
     int iterations,
     int dkLen,
   ) {
@@ -7242,14 +7461,11 @@ class TrustWalletCore {
 
   late final _TWPBKDF2HmacSha256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Uint32,
-              ffi.Uint32)>>('TWPBKDF2HmacSha256');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Uint32, ffi.Uint32)>>('TWPBKDF2HmacSha256');
   late final _TWPBKDF2HmacSha256 = _TWPBKDF2HmacSha256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(
-          ffi.Pointer<TWData1>, ffi.Pointer<TWData1>, int, int)>();
+      ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData>, ffi.Pointer<TWData>, int, int)>();
 
   /// Derives a key from a password and a salt using PBKDF2 + Sha512.
   ///
@@ -7258,9 +7474,9 @@ class TrustWalletCore {
   /// \param iterations is the number of iterations desired
   /// \param dkLen is the desired bit-length of the derived key
   /// \return the derived key data.
-  ffi.Pointer<TWData1> TWPBKDF2HmacSha512(
-    ffi.Pointer<TWData1> password,
-    ffi.Pointer<TWData1> salt,
+  ffi.Pointer<TWData> TWPBKDF2HmacSha512(
+    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData> salt,
     int iterations,
     int dkLen,
   ) {
@@ -7274,21 +7490,42 @@ class TrustWalletCore {
 
   late final _TWPBKDF2HmacSha512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Uint32,
-              ffi.Uint32)>>('TWPBKDF2HmacSha512');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Uint32, ffi.Uint32)>>('TWPBKDF2HmacSha512');
   late final _TWPBKDF2HmacSha512 = _TWPBKDF2HmacSha512Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(
-          ffi.Pointer<TWData1>, ffi.Pointer<TWData1>, int, int)>();
+      ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData>, ffi.Pointer<TWData>, int, int)>();
+
+  /// Calculates the fee of any Bitcoin transaction.
+  ///
+  /// \param data: the signed transaction in its final form.
+  /// \param satVb: the satoshis per vbyte amount. The passed on string is interpreted as a unit64_t.
+  /// \returns the fee denominated in satoshis or nullptr if the transaction failed to be decoded.
+  ffi.Pointer<TWString> TWBitcoinFeeCalculateFee(
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWString> satVb,
+  ) {
+    return _TWBitcoinFeeCalculateFee(
+      data,
+      satVb,
+    );
+  }
+
+  late final _TWBitcoinFeeCalculateFeePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>,
+              ffi.Pointer<TWString>)>>('TWBitcoinFeeCalculateFee');
+  late final _TWBitcoinFeeCalculateFee =
+      _TWBitcoinFeeCalculateFeePtr.asFunction<
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
 
   /// Converts a Filecoin address to Ethereum.
   ///
   /// \param filecoinAddress: a Filecoin address.
   /// \returns the Ethereum address. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWFilecoinAddressConverterConvertToEthereum(
-    ffi.Pointer<TWString1> filecoinAddress,
+  ffi.Pointer<TWString> TWFilecoinAddressConverterConvertToEthereum(
+    ffi.Pointer<TWString> filecoinAddress,
   ) {
     return _TWFilecoinAddressConverterConvertToEthereum(
       filecoinAddress,
@@ -7297,18 +7534,18 @@ class TrustWalletCore {
 
   late final _TWFilecoinAddressConverterConvertToEthereumPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>>(
+              ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>>(
       'TWFilecoinAddressConverterConvertToEthereum');
   late final _TWFilecoinAddressConverterConvertToEthereum =
       _TWFilecoinAddressConverterConvertToEthereumPtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>();
 
   /// Converts an Ethereum address to Filecoin.
   ///
   /// \param ethAddress: an Ethereum address.
   /// \returns the Filecoin address. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWFilecoinAddressConverterConvertFromEthereum(
-    ffi.Pointer<TWString1> ethAddress,
+  ffi.Pointer<TWString> TWFilecoinAddressConverterConvertFromEthereum(
+    ffi.Pointer<TWString> ethAddress,
   ) {
     return _TWFilecoinAddressConverterConvertFromEthereum(
       ethAddress,
@@ -7317,11 +7554,11 @@ class TrustWalletCore {
 
   late final _TWFilecoinAddressConverterConvertFromEthereumPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>>(
+              ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>>(
       'TWFilecoinAddressConverterConvertFromEthereum');
   late final _TWFilecoinAddressConverterConvertFromEthereum =
       _TWFilecoinAddressConverterConvertFromEthereumPtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>();
 
   /// Decode a Base32 input with the given alphabet
   ///
@@ -7329,9 +7566,9 @@ class TrustWalletCore {
   /// \param alphabet Decode with the given alphabet, if nullptr ALPHABET_RFC4648 is used by default
   /// \return The decoded data, can be null.
   /// \note ALPHABET_RFC4648 doesn't support padding in the default alphabet
-  ffi.Pointer<TWData1> TWBase32DecodeWithAlphabet(
-    ffi.Pointer<TWString1> string,
-    ffi.Pointer<TWString1> alphabet,
+  ffi.Pointer<TWData> TWBase32DecodeWithAlphabet(
+    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString> alphabet,
   ) {
     return _TWBase32DecodeWithAlphabet(
       string,
@@ -7341,20 +7578,20 @@ class TrustWalletCore {
 
   late final _TWBase32DecodeWithAlphabetPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWBase32DecodeWithAlphabet');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWBase32DecodeWithAlphabet');
   late final _TWBase32DecodeWithAlphabet =
       _TWBase32DecodeWithAlphabetPtr.asFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
 
   /// Decode a Base32 input with the default alphabet (ALPHABET_RFC4648)
   ///
   /// \param string Encoded input to be decoded
   /// \return The decoded data
   /// \note Call TWBase32DecodeWithAlphabet with nullptr.
-  ffi.Pointer<TWData1> TWBase32Decode(
-    ffi.Pointer<TWString1> string,
+  ffi.Pointer<TWData> TWBase32Decode(
+    ffi.Pointer<TWString> string,
   ) {
     return _TWBase32Decode(
       string,
@@ -7363,10 +7600,10 @@ class TrustWalletCore {
 
   late final _TWBase32DecodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWString1>)>>('TWBase32Decode');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>)>>('TWBase32Decode');
   late final _TWBase32Decode = _TWBase32DecodePtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
 
   /// Encode an input to Base32 with the given alphabet
   ///
@@ -7374,9 +7611,9 @@ class TrustWalletCore {
   /// \param alphabet Encode with the given alphabet, if nullptr ALPHABET_RFC4648 is used by default
   /// \return The encoded data
   /// \note ALPHABET_RFC4648 doesn't support padding in the default alphabet
-  ffi.Pointer<TWString1> TWBase32EncodeWithAlphabet(
-    ffi.Pointer<TWData1> data,
-    ffi.Pointer<TWString1> alphabet,
+  ffi.Pointer<TWString> TWBase32EncodeWithAlphabet(
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWString> alphabet,
   ) {
     return _TWBase32EncodeWithAlphabet(
       data,
@@ -7386,20 +7623,20 @@ class TrustWalletCore {
 
   late final _TWBase32EncodeWithAlphabetPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>,
-              ffi.Pointer<TWString1>)>>('TWBase32EncodeWithAlphabet');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>,
+              ffi.Pointer<TWString>)>>('TWBase32EncodeWithAlphabet');
   late final _TWBase32EncodeWithAlphabet =
       _TWBase32EncodeWithAlphabetPtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
 
   /// Encode an input to Base32 with the default alphabet (ALPHABET_RFC4648)
   ///
   /// \param data Data to be encoded (raw bytes)
   /// \return The encoded data
   /// \note Call TWBase32EncodeWithAlphabet with nullptr.
-  ffi.Pointer<TWString1> TWBase32Encode(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWString> TWBase32Encode(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWBase32Encode(
       data,
@@ -7408,16 +7645,16 @@ class TrustWalletCore {
 
   late final _TWBase32EncodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWData1>)>>('TWBase32Encode');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBase32Encode');
   late final _TWBase32Encode = _TWBase32EncodePtr.asFunction<
-      ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
 
   /// Encode function to Eth ABI binary
   ///
   /// \param fn Non-null Eth abi function
   /// \return Non-null encoded block of data
-  ffi.Pointer<TWData> TWEthereumAbiEncode(
+  ffi.Pointer<TWData1> TWEthereumAbiEncode(
     ffi.Pointer<TWEthereumAbiFunction> fn,
   ) {
     return _TWEthereumAbiEncode(
@@ -7427,10 +7664,10 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiEncodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWEthereumAbiFunction>)>>('TWEthereumAbiEncode');
   late final _TWEthereumAbiEncode = _TWEthereumAbiEncodePtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWEthereumAbiFunction>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWEthereumAbiFunction>)>();
 
   /// Decode function output from Eth ABI binary, fill output parameters
   ///
@@ -7439,7 +7676,7 @@ class TrustWalletCore {
   /// \return true if encoded have been filled correctly, false otherwise
   bool TWEthereumAbiDecodeOutput(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWData> encoded,
+    ffi.Pointer<TWData1> encoded,
   ) {
     return _TWEthereumAbiDecodeOutput(
       fn,
@@ -7450,20 +7687,20 @@ class TrustWalletCore {
   late final _TWEthereumAbiDecodeOutputPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWData>)>>('TWEthereumAbiDecodeOutput');
+              ffi.Pointer<TWData1>)>>('TWEthereumAbiDecodeOutput');
   late final _TWEthereumAbiDecodeOutput =
       _TWEthereumAbiDecodeOutputPtr.asFunction<
           bool Function(
-              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData>)>();
+              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData1>)>();
 
   /// Decode function call data to human readable json format, according to input abi json
   ///
   /// \param data Non-null block of data
   /// \param abi Non-null string
   /// \return Non-null json string function call data
-  ffi.Pointer<TWString> TWEthereumAbiDecodeCall(
-    ffi.Pointer<TWData> data,
-    ffi.Pointer<TWString> abi,
+  ffi.Pointer<TWString1> TWEthereumAbiDecodeCall(
+    ffi.Pointer<TWData1> data,
+    ffi.Pointer<TWString1> abi,
   ) {
     return _TWEthereumAbiDecodeCall(
       data,
@@ -7473,11 +7710,11 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiDecodeCallPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>)>>('TWEthereumAbiDecodeCall');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>)>>('TWEthereumAbiDecodeCall');
   late final _TWEthereumAbiDecodeCall = _TWEthereumAbiDecodeCallPtr.asFunction<
-      ffi.Pointer<TWString> Function(
-          ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
+      ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWData1>, ffi.Pointer<TWString1>)>();
 
   /// Compute the hash of a struct, used for signing, according to EIP712 ("v4").
   /// Input is a Json object (as string), with following fields:
@@ -7517,8 +7754,8 @@ class TrustWalletCore {
   ///
   /// \param messageJson Non-null json abi input
   /// \return Non-null block of data, encoded abi input
-  ffi.Pointer<TWData> TWEthereumAbiEncodeTyped(
-    ffi.Pointer<TWString> messageJson,
+  ffi.Pointer<TWData1> TWEthereumAbiEncodeTyped(
+    ffi.Pointer<TWString1> messageJson,
   ) {
     return _TWEthereumAbiEncodeTyped(
       messageJson,
@@ -7527,19 +7764,19 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiEncodeTypedPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWString>)>>('TWEthereumAbiEncodeTyped');
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWString1>)>>('TWEthereumAbiEncodeTyped');
   late final _TWEthereumAbiEncodeTyped = _TWEthereumAbiEncodeTypedPtr
-      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWString>)>();
+      .asFunction<ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>)>();
 
   /// Implement format input as described in https://tezostaquito.io/docs/signing/
   ///
   /// \param message message to format e.g: Hello, World
   /// \param dAppUrl the app url, e.g: testUrl
   /// \returns the formatted message as a string
-  ffi.Pointer<TWString1> TWTezosMessageSignerFormatMessage(
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> url,
+  ffi.Pointer<TWString> TWTezosMessageSignerFormatMessage(
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> url,
   ) {
     return _TWTezosMessageSignerFormatMessage(
       message,
@@ -7549,19 +7786,19 @@ class TrustWalletCore {
 
   late final _TWTezosMessageSignerFormatMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWTezosMessageSignerFormatMessage');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWTezosMessageSignerFormatMessage');
   late final _TWTezosMessageSignerFormatMessage =
       _TWTezosMessageSignerFormatMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWString1>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
 
   /// Implement input to payload as described in: https://tezostaquito.io/docs/signing/
   ///
   /// \param message formatted message to be turned into an hex payload
   /// \return the hexpayload of the formated message as a hex string
-  ffi.Pointer<TWString1> TWTezosMessageSignerInputToPayload(
-    ffi.Pointer<TWString1> message,
+  ffi.Pointer<TWString> TWTezosMessageSignerInputToPayload(
+    ffi.Pointer<TWString> message,
   ) {
     return _TWTezosMessageSignerInputToPayload(
       message,
@@ -7570,20 +7807,20 @@ class TrustWalletCore {
 
   late final _TWTezosMessageSignerInputToPayloadPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWString1>)>>('TWTezosMessageSignerInputToPayload');
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString>)>>('TWTezosMessageSignerInputToPayload');
   late final _TWTezosMessageSignerInputToPayload =
       _TWTezosMessageSignerInputToPayloadPtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>();
 
   /// Sign a message as described in https://tezostaquito.io/docs/signing/
   ///
   /// \param privateKey: the private key used for signing
   /// \param message: A custom message payload (hex) which is input to the signing.
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWTezosMessageSignerSignMessage(
+  ffi.Pointer<TWString> TWTezosMessageSignerSignMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWTezosMessageSignerSignMessage(
       privateKey,
@@ -7593,12 +7830,12 @@ class TrustWalletCore {
 
   late final _TWTezosMessageSignerSignMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>)>>('TWTezosMessageSignerSignMessage');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWString>)>>('TWTezosMessageSignerSignMessage');
   late final _TWTezosMessageSignerSignMessage =
       _TWTezosMessageSignerSignMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Verify signature for a message as described in https://tezostaquito.io/docs/signing/
   ///
@@ -7608,8 +7845,8 @@ class TrustWalletCore {
   /// \returns false on any invalid input (does not throw), true if the message can be verified from the signature
   bool TWTezosMessageSignerVerifyMessage(
     ffi.Pointer<TWPublicKey> pubKey,
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWTezosMessageSignerVerifyMessage(
       pubKey,
@@ -7620,12 +7857,12 @@ class TrustWalletCore {
 
   late final _TWTezosMessageSignerVerifyMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWTezosMessageSignerVerifyMessage');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWTezosMessageSignerVerifyMessage');
   late final _TWTezosMessageSignerVerifyMessage =
       _TWTezosMessageSignerVerifyMessagePtr.asFunction<
-          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>();
+          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>();
 
   late final ffi.Pointer<ffi.Pointer<ffi.Char>> _TWStellarPassphrase_Stellar =
       _lookup<ffi.Pointer<ffi.Char>>('TWStellarPassphrase_Stellar');
@@ -7677,8 +7914,8 @@ class TrustWalletCore {
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA1 block of data
-  ffi.Pointer<TWData1> TWHashSHA1(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA1(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA1(
       data,
@@ -7687,16 +7924,16 @@ class TrustWalletCore {
 
   late final _TWHashSHA1Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>>('TWHashSHA1');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashSHA1');
   late final _TWHashSHA1 = _TWHashSHA1Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA256 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA256 block of data
-  ffi.Pointer<TWData1> TWHashSHA256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA256(
       data,
@@ -7705,16 +7942,16 @@ class TrustWalletCore {
 
   late final _TWHashSHA256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>>('TWHashSHA256');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashSHA256');
   late final _TWHashSHA256 = _TWHashSHA256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA512 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA512 block of data
-  ffi.Pointer<TWData1> TWHashSHA512(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA512(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA512(
       data,
@@ -7723,16 +7960,16 @@ class TrustWalletCore {
 
   late final _TWHashSHA512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>>('TWHashSHA512');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashSHA512');
   late final _TWHashSHA512 = _TWHashSHA512Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA512_256 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA512_256 block of data
-  ffi.Pointer<TWData1> TWHashSHA512_256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA512_256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA512_256(
       data,
@@ -7741,17 +7978,17 @@ class TrustWalletCore {
 
   late final _TWHashSHA512_256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA512_256');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashSHA512_256');
   late final _TWHashSHA512_256 = _TWHashSHA512_256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Keccak256 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Keccak256 block of data
-  ffi.Pointer<TWData1> TWHashKeccak256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashKeccak256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashKeccak256(
       data,
@@ -7760,17 +7997,17 @@ class TrustWalletCore {
 
   late final _TWHashKeccak256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashKeccak256');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashKeccak256');
   late final _TWHashKeccak256 = _TWHashKeccak256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Keccak512 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Keccak512 block of data
-  ffi.Pointer<TWData1> TWHashKeccak512(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashKeccak512(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashKeccak512(
       data,
@@ -7779,17 +8016,17 @@ class TrustWalletCore {
 
   late final _TWHashKeccak512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashKeccak512');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashKeccak512');
   late final _TWHashKeccak512 = _TWHashKeccak512Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA3_256 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA3_256 block of data
-  ffi.Pointer<TWData1> TWHashSHA3_256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA3_256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA3_256(
       data,
@@ -7798,17 +8035,16 @@ class TrustWalletCore {
 
   late final _TWHashSHA3_256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA3_256');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashSHA3_256');
   late final _TWHashSHA3_256 = _TWHashSHA3_256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA3_512 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA3_512 block of data
-  ffi.Pointer<TWData1> TWHashSHA3_512(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA3_512(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA3_512(
       data,
@@ -7817,17 +8053,16 @@ class TrustWalletCore {
 
   late final _TWHashSHA3_512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA3_512');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashSHA3_512');
   late final _TWHashSHA3_512 = _TWHashSHA3_512Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the RIPEMD of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed RIPEMD block of data
-  ffi.Pointer<TWData1> TWHashRIPEMD(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashRIPEMD(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashRIPEMD(
       data,
@@ -7836,16 +8071,16 @@ class TrustWalletCore {
 
   late final _TWHashRIPEMDPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>>('TWHashRIPEMD');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashRIPEMD');
   late final _TWHashRIPEMD = _TWHashRIPEMDPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Blake256 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Blake256 block of data
-  ffi.Pointer<TWData1> TWHashBlake256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashBlake256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashBlake256(
       data,
@@ -7854,17 +8089,16 @@ class TrustWalletCore {
 
   late final _TWHashBlake256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashBlake256');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>>('TWHashBlake256');
   late final _TWHashBlake256 = _TWHashBlake256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Blake2b of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Blake2b block of data
-  ffi.Pointer<TWData1> TWHashBlake2b(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashBlake2b(
+    ffi.Pointer<TWData> data,
     int size,
   ) {
     return _TWHashBlake2b(
@@ -7875,17 +8109,37 @@ class TrustWalletCore {
 
   late final _TWHashBlake2bPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>, ffi.Size)>>('TWHashBlake2b');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>, ffi.Size)>>('TWHashBlake2b');
   late final _TWHashBlake2b = _TWHashBlake2bPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>, int)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, int)>();
 
   /// Computes the Groestl512 of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Groestl512 block of data
-  ffi.Pointer<TWData1> TWHashGroestl512(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashBlake2bPersonal(
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData> personal,
+    int outlen,
+  ) {
+    return _TWHashBlake2bPersonal(
+      data,
+      personal,
+      outlen,
+    );
+  }
+
+  late final _TWHashBlake2bPersonalPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Size)>>('TWHashBlake2bPersonal');
+  late final _TWHashBlake2bPersonal = _TWHashBlake2bPersonalPtr.asFunction<
+      ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData>, ffi.Pointer<TWData>, int)>();
+
+  ffi.Pointer<TWData> TWHashGroestl512(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashGroestl512(
       data,
@@ -7894,17 +8148,17 @@ class TrustWalletCore {
 
   late final _TWHashGroestl512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashGroestl512');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashGroestl512');
   late final _TWHashGroestl512 = _TWHashGroestl512Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA256D of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA256D block of data
-  ffi.Pointer<TWData1> TWHashSHA256SHA256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA256SHA256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA256SHA256(
       data,
@@ -7913,17 +8167,17 @@ class TrustWalletCore {
 
   late final _TWHashSHA256SHA256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA256SHA256');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashSHA256SHA256');
   late final _TWHashSHA256SHA256 = _TWHashSHA256SHA256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA256RIPEMD of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA256RIPEMD block of data
-  ffi.Pointer<TWData1> TWHashSHA256RIPEMD(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA256RIPEMD(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA256RIPEMD(
       data,
@@ -7932,17 +8186,17 @@ class TrustWalletCore {
 
   late final _TWHashSHA256RIPEMDPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA256RIPEMD');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashSHA256RIPEMD');
   late final _TWHashSHA256RIPEMD = _TWHashSHA256RIPEMDPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the SHA3_256RIPEMD of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed SHA3_256RIPEMD block of data
-  ffi.Pointer<TWData1> TWHashSHA3_256RIPEMD(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashSHA3_256RIPEMD(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashSHA3_256RIPEMD(
       data,
@@ -7951,17 +8205,17 @@ class TrustWalletCore {
 
   late final _TWHashSHA3_256RIPEMDPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashSHA3_256RIPEMD');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashSHA3_256RIPEMD');
   late final _TWHashSHA3_256RIPEMD = _TWHashSHA3_256RIPEMDPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Blake256D of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Blake256D block of data
-  ffi.Pointer<TWData1> TWHashBlake256Blake256(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashBlake256Blake256(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashBlake256Blake256(
       data,
@@ -7970,17 +8224,17 @@ class TrustWalletCore {
 
   late final _TWHashBlake256Blake256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashBlake256Blake256');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashBlake256Blake256');
   late final _TWHashBlake256Blake256 = _TWHashBlake256Blake256Ptr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Blake256RIPEMD of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Blake256RIPEMD block of data
-  ffi.Pointer<TWData1> TWHashBlake256RIPEMD(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashBlake256RIPEMD(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashBlake256RIPEMD(
       data,
@@ -7989,17 +8243,17 @@ class TrustWalletCore {
 
   late final _TWHashBlake256RIPEMDPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashBlake256RIPEMD');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashBlake256RIPEMD');
   late final _TWHashBlake256RIPEMD = _TWHashBlake256RIPEMDPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Computes the Groestl512D of a block of data.
   ///
   /// \param data Non-null block of data
   /// \return Non-null computed Groestl512D block of data
-  ffi.Pointer<TWData1> TWHashGroestl512Groestl512(
-    ffi.Pointer<TWData1> data,
+  ffi.Pointer<TWData> TWHashGroestl512Groestl512(
+    ffi.Pointer<TWData> data,
   ) {
     return _TWHashGroestl512Groestl512(
       data,
@@ -8008,10 +8262,10 @@ class TrustWalletCore {
 
   late final _TWHashGroestl512Groestl512Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>)>>('TWHashGroestl512Groestl512');
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>)>>('TWHashGroestl512Groestl512');
   late final _TWHashGroestl512Groestl512 = _TWHashGroestl512Groestl512Ptr
-      .asFunction<ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>)>();
+      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWData>)>();
 
   /// Loads a key from a file.
   ///
@@ -8019,7 +8273,7 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be load, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyLoad(
-    ffi.Pointer<TWString> path,
+    ffi.Pointer<TWString1> path,
   ) {
     return _TWStoredKeyLoad(
       path,
@@ -8029,9 +8283,9 @@ class TrustWalletCore {
   late final _TWStoredKeyLoadPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>)>>('TWStoredKeyLoad');
+              ffi.Pointer<TWString1>)>>('TWStoredKeyLoad');
   late final _TWStoredKeyLoad = _TWStoredKeyLoadPtr.asFunction<
-      ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>)>();
+      ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>)>();
 
   /// Imports a private key.
   ///
@@ -8042,9 +8296,9 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be imported, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyImportPrivateKey(
-    ffi.Pointer<TWData> privateKey,
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> privateKey,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int coin,
   ) {
     return _TWStoredKeyImportPrivateKey(
@@ -8058,14 +8312,14 @@ class TrustWalletCore {
   late final _TWStoredKeyImportPrivateKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>,
+              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>,
               ffi.Int32)>>('TWStoredKeyImportPrivateKey');
   late final _TWStoredKeyImportPrivateKey =
       _TWStoredKeyImportPrivateKeyPtr.asFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int)>();
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
 
   /// Imports a private key.
   ///
@@ -8077,9 +8331,9 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be imported, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyImportPrivateKeyWithEncryption(
-    ffi.Pointer<TWData> privateKey,
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> privateKey,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int coin,
     int encryption,
   ) {
@@ -8095,15 +8349,15 @@ class TrustWalletCore {
   late final _TWStoredKeyImportPrivateKeyWithEncryptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>,
+              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>,
               ffi.Int32,
               ffi.Int32)>>('TWStoredKeyImportPrivateKeyWithEncryption');
   late final _TWStoredKeyImportPrivateKeyWithEncryption =
       _TWStoredKeyImportPrivateKeyWithEncryptionPtr.asFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData>,
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int, int)>();
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData1>,
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int, int)>();
 
   /// Imports an HD wallet.
   ///
@@ -8114,9 +8368,9 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be imported, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyImportHDWallet(
-    ffi.Pointer<TWString> mnemonic,
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> mnemonic,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int coin,
   ) {
     return _TWStoredKeyImportHDWallet(
@@ -8130,14 +8384,14 @@ class TrustWalletCore {
   late final _TWStoredKeyImportHDWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>,
               ffi.Int32)>>('TWStoredKeyImportHDWallet');
   late final _TWStoredKeyImportHDWallet =
       _TWStoredKeyImportHDWalletPtr.asFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int)>();
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
 
   /// Imports an HD wallet.
   ///
@@ -8149,9 +8403,9 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be imported, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyImportHDWalletWithEncryption(
-    ffi.Pointer<TWString> mnemonic,
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> mnemonic,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int coin,
     int encryption,
   ) {
@@ -8167,15 +8421,15 @@ class TrustWalletCore {
   late final _TWStoredKeyImportHDWalletWithEncryptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>,
               ffi.Int32,
               ffi.Int32)>>('TWStoredKeyImportHDWalletWithEncryption');
   late final _TWStoredKeyImportHDWalletWithEncryption =
       _TWStoredKeyImportHDWalletWithEncryptionPtr.asFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int, int)>();
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int, int)>();
 
   /// Imports a key from JSON.
   ///
@@ -8183,7 +8437,7 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return Nullptr if the key can't be imported, the stored key otherwise
   ffi.Pointer<TWStoredKey> TWStoredKeyImportJSON(
-    ffi.Pointer<TWData> json,
+    ffi.Pointer<TWData1> json,
   ) {
     return _TWStoredKeyImportJSON(
       json,
@@ -8193,9 +8447,9 @@ class TrustWalletCore {
   late final _TWStoredKeyImportJSONPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWData>)>>('TWStoredKeyImportJSON');
+              ffi.Pointer<TWData1>)>>('TWStoredKeyImportJSON');
   late final _TWStoredKeyImportJSON = _TWStoredKeyImportJSONPtr.asFunction<
-      ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData>)>();
+      ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWData1>)>();
 
   /// Creates a new key, with given encryption strength level. Returned object needs to be deleted.
   ///
@@ -8205,8 +8459,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return The stored key as a non-null pointer
   ffi.Pointer<TWStoredKey> TWStoredKeyCreateLevel(
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int encryptionLevel,
   ) {
     return _TWStoredKeyCreateLevel(
@@ -8218,11 +8472,11 @@ class TrustWalletCore {
 
   late final _TWStoredKeyCreateLevelPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWStoredKeyCreateLevel');
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWStoredKeyCreateLevel');
   late final _TWStoredKeyCreateLevel = _TWStoredKeyCreateLevelPtr.asFunction<
       ffi.Pointer<TWStoredKey> Function(
-          ffi.Pointer<TWString>, ffi.Pointer<TWData>, int)>();
+          ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
 
   /// Creates a new key, with given encryption strength level.  Returned object needs to be deleted.
   ///
@@ -8233,8 +8487,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return The stored key as a non-null pointer
   ffi.Pointer<TWStoredKey> TWStoredKeyCreateLevelAndEncryption(
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int encryptionLevel,
     int encryption,
   ) {
@@ -8249,14 +8503,14 @@ class TrustWalletCore {
   late final _TWStoredKeyCreateLevelAndEncryptionPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>,
               ffi.Int32,
               ffi.Int32)>>('TWStoredKeyCreateLevelAndEncryption');
   late final _TWStoredKeyCreateLevelAndEncryption =
       _TWStoredKeyCreateLevelAndEncryptionPtr.asFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int, int)>();
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int, int)>();
 
   /// Creates a new key.
   ///
@@ -8266,8 +8520,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return The stored key as a non-null pointer
   ffi.Pointer<TWStoredKey> TWStoredKeyCreate(
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyCreate(
       name,
@@ -8277,11 +8531,11 @@ class TrustWalletCore {
 
   late final _TWStoredKeyCreatePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>)>>('TWStoredKeyCreate');
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>)>>('TWStoredKeyCreate');
   late final _TWStoredKeyCreate = _TWStoredKeyCreatePtr.asFunction<
       ffi.Pointer<TWStoredKey> Function(
-          ffi.Pointer<TWString>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWString1>, ffi.Pointer<TWData1>)>();
 
   /// Creates a new key.
   ///
@@ -8292,8 +8546,8 @@ class TrustWalletCore {
   /// \note Returned object needs to be deleted with \TWStoredKeyDelete
   /// \return The stored key as a non-null pointer
   ffi.Pointer<TWStoredKey> TWStoredKeyCreateEncryption(
-    ffi.Pointer<TWString> name,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWData1> password,
     int encryption,
   ) {
     return _TWStoredKeyCreateEncryption(
@@ -8305,12 +8559,12 @@ class TrustWalletCore {
 
   late final _TWStoredKeyCreateEncryptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWData>, ffi.Int32)>>('TWStoredKeyCreateEncryption');
+          ffi.Pointer<TWStoredKey> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>, ffi.Int32)>>('TWStoredKeyCreateEncryption');
   late final _TWStoredKeyCreateEncryption =
       _TWStoredKeyCreateEncryptionPtr.asFunction<
           ffi.Pointer<TWStoredKey> Function(
-              ffi.Pointer<TWString>, ffi.Pointer<TWData>, int)>();
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>, int)>();
 
   /// Delete a stored key
   ///
@@ -8334,7 +8588,7 @@ class TrustWalletCore {
   /// \param key Non-null pointer to a stored key
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return The stored key unique identifier if it's found, null pointer otherwise.
-  ffi.Pointer<TWString> TWStoredKeyIdentifier(
+  ffi.Pointer<TWString1> TWStoredKeyIdentifier(
     ffi.Pointer<TWStoredKey> key,
   ) {
     return _TWStoredKeyIdentifier(
@@ -8344,17 +8598,17 @@ class TrustWalletCore {
 
   late final _TWStoredKeyIdentifierPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWStoredKey>)>>('TWStoredKeyIdentifier');
   late final _TWStoredKeyIdentifier = _TWStoredKeyIdentifierPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWStoredKey>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWStoredKey>)>();
 
   /// Stored key namer.
   ///
   /// \param key Non-null pointer to a stored key
   /// \note Returned object needs to be deleted with \TWStringDelete
   /// \return The stored key name as a non-null string pointer.
-  ffi.Pointer<TWString> TWStoredKeyName(
+  ffi.Pointer<TWString1> TWStoredKeyName(
     ffi.Pointer<TWStoredKey> key,
   ) {
     return _TWStoredKeyName(
@@ -8364,10 +8618,10 @@ class TrustWalletCore {
 
   late final _TWStoredKeyNamePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWStoredKey>)>>('TWStoredKeyName');
   late final _TWStoredKeyName = _TWStoredKeyNamePtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWStoredKey>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWStoredKey>)>();
 
   /// Whether this key is a mnemonic phrase for a HD wallet.
   ///
@@ -8502,12 +8756,12 @@ class TrustWalletCore {
   /// \param extendedPublicKey Non-null extended public key of the given coin/address
   void TWStoredKeyAddAccountDerivation(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString1> address,
     int coin,
     int derivation,
-    ffi.Pointer<TWString> derivationPath,
-    ffi.Pointer<TWString> publicKey,
-    ffi.Pointer<TWString> extendedPublicKey,
+    ffi.Pointer<TWString1> derivationPath,
+    ffi.Pointer<TWString1> publicKey,
+    ffi.Pointer<TWString1> extendedPublicKey,
   ) {
     return _TWStoredKeyAddAccountDerivation(
       key,
@@ -8524,22 +8778,22 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString1>,
               ffi.Int32,
               ffi.Int32,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWStoredKeyAddAccountDerivation');
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWStoredKeyAddAccountDerivation');
   late final _TWStoredKeyAddAccountDerivation =
       _TWStoredKeyAddAccountDerivationPtr.asFunction<
           void Function(
               ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString1>,
               int,
               int,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>();
 
   /// Adds a new account, using given derivation path.
   ///
@@ -8552,11 +8806,11 @@ class TrustWalletCore {
   /// \param extendedPublicKey Non-null extended public key of the given coin/address
   void TWStoredKeyAddAccount(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString1> address,
     int coin,
-    ffi.Pointer<TWString> derivationPath,
-    ffi.Pointer<TWString> publicKey,
-    ffi.Pointer<TWString> extendedPublicKey,
+    ffi.Pointer<TWString1> derivationPath,
+    ffi.Pointer<TWString1> publicKey,
+    ffi.Pointer<TWString1> extendedPublicKey,
   ) {
     return _TWStoredKeyAddAccount(
       key,
@@ -8572,19 +8826,19 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Void Function(
               ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString1>,
               ffi.Int32,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWStoredKeyAddAccount');
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWStoredKeyAddAccount');
   late final _TWStoredKeyAddAccount = _TWStoredKeyAddAccountPtr.asFunction<
       void Function(
           ffi.Pointer<TWStoredKey>,
-          ffi.Pointer<TWString>,
+          ffi.Pointer<TWString1>,
           int,
-          ffi.Pointer<TWString>,
-          ffi.Pointer<TWString>,
-          ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1>,
+          ffi.Pointer<TWString1>,
+          ffi.Pointer<TWString1>)>();
 
   /// Remove the account for a specific coin
   ///
@@ -8641,7 +8895,7 @@ class TrustWalletCore {
   void TWStoredKeyRemoveAccountForCoinDerivationPath(
     ffi.Pointer<TWStoredKey> key,
     int coin,
-    ffi.Pointer<TWString> derivationPath,
+    ffi.Pointer<TWString1> derivationPath,
   ) {
     return _TWStoredKeyRemoveAccountForCoinDerivationPath(
       key,
@@ -8652,13 +8906,13 @@ class TrustWalletCore {
 
   late final _TWStoredKeyRemoveAccountForCoinDerivationPathPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Void Function(
-                  ffi.Pointer<TWStoredKey>, ffi.Int32, ffi.Pointer<TWString>)>>(
+              ffi.Void Function(ffi.Pointer<TWStoredKey>, ffi.Int32,
+                  ffi.Pointer<TWString1>)>>(
       'TWStoredKeyRemoveAccountForCoinDerivationPath');
   late final _TWStoredKeyRemoveAccountForCoinDerivationPath =
       _TWStoredKeyRemoveAccountForCoinDerivationPathPtr.asFunction<
           void Function(
-              ffi.Pointer<TWStoredKey>, int, ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWStoredKey>, int, ffi.Pointer<TWString1>)>();
 
   /// Saves the key to a file.
   ///
@@ -8667,7 +8921,7 @@ class TrustWalletCore {
   /// \return true if the key was successfully stored in the given filepath file, false otherwise
   bool TWStoredKeyStore(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWString> path,
+    ffi.Pointer<TWString1> path,
   ) {
     return _TWStoredKeyStore(
       key,
@@ -8678,18 +8932,18 @@ class TrustWalletCore {
   late final _TWStoredKeyStorePtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWString>)>>('TWStoredKeyStore');
+              ffi.Pointer<TWString1>)>>('TWStoredKeyStore');
   late final _TWStoredKeyStore = _TWStoredKeyStorePtr.asFunction<
-      bool Function(ffi.Pointer<TWStoredKey>, ffi.Pointer<TWString>)>();
+      bool Function(ffi.Pointer<TWStoredKey>, ffi.Pointer<TWString1>)>();
 
   /// Decrypts the private key.
   ///
   /// \param key Non-null pointer to a stored key
   /// \param password Non-null block of data, password of the stored key
   /// \return Decrypted private key as a block of data if success, null pointer otherwise
-  ffi.Pointer<TWData> TWStoredKeyDecryptPrivateKey(
+  ffi.Pointer<TWData1> TWStoredKeyDecryptPrivateKey(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyDecryptPrivateKey(
       key,
@@ -8699,21 +8953,21 @@ class TrustWalletCore {
 
   late final _TWStoredKeyDecryptPrivateKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWData>)>>('TWStoredKeyDecryptPrivateKey');
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWStoredKey>,
+              ffi.Pointer<TWData1>)>>('TWStoredKeyDecryptPrivateKey');
   late final _TWStoredKeyDecryptPrivateKey =
       _TWStoredKeyDecryptPrivateKeyPtr.asFunction<
-          ffi.Pointer<TWData> Function(
-              ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWData1> Function(
+              ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData1>)>();
 
   /// Decrypts the mnemonic phrase.
   ///
   /// \param key Non-null pointer to a stored key
   /// \param password Non-null block of data, password of the stored key
   /// \return Bip39 decrypted mnemonic if success, null pointer otherwise
-  ffi.Pointer<TWString> TWStoredKeyDecryptMnemonic(
+  ffi.Pointer<TWString1> TWStoredKeyDecryptMnemonic(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyDecryptMnemonic(
       key,
@@ -8723,12 +8977,12 @@ class TrustWalletCore {
 
   late final _TWStoredKeyDecryptMnemonicPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWData>)>>('TWStoredKeyDecryptMnemonic');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWStoredKey>,
+              ffi.Pointer<TWData1>)>>('TWStoredKeyDecryptMnemonic');
   late final _TWStoredKeyDecryptMnemonic =
       _TWStoredKeyDecryptMnemonicPtr.asFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData1>)>();
 
   /// Returns the private key for a specific coin.  Returned object needs to be deleted.
   ///
@@ -8739,7 +8993,7 @@ class TrustWalletCore {
   ffi.Pointer<TWPrivateKey> TWStoredKeyPrivateKey(
     ffi.Pointer<TWStoredKey> key,
     int coin,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyPrivateKey(
       key,
@@ -8751,10 +9005,10 @@ class TrustWalletCore {
   late final _TWStoredKeyPrivateKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWPrivateKey> Function(ffi.Pointer<TWStoredKey>,
-              ffi.Int32, ffi.Pointer<TWData>)>>('TWStoredKeyPrivateKey');
+              ffi.Int32, ffi.Pointer<TWData1>)>>('TWStoredKeyPrivateKey');
   late final _TWStoredKeyPrivateKey = _TWStoredKeyPrivateKeyPtr.asFunction<
       ffi.Pointer<TWPrivateKey> Function(
-          ffi.Pointer<TWStoredKey>, int, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWStoredKey>, int, ffi.Pointer<TWData1>)>();
 
   /// Decrypts and returns the HD Wallet for mnemonic phrase keys.  Returned object needs to be deleted.
   ///
@@ -8764,7 +9018,7 @@ class TrustWalletCore {
   /// \return Null pointer on failure, pointer to the HDWallet otherwise
   ffi.Pointer<TWHDWallet> TWStoredKeyWallet(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyWallet(
       key,
@@ -8775,16 +9029,16 @@ class TrustWalletCore {
   late final _TWStoredKeyWalletPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWHDWallet> Function(ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWData>)>>('TWStoredKeyWallet');
+              ffi.Pointer<TWData1>)>>('TWStoredKeyWallet');
   late final _TWStoredKeyWallet = _TWStoredKeyWalletPtr.asFunction<
       ffi.Pointer<TWHDWallet> Function(
-          ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData1>)>();
 
   /// Exports the key as JSON
   ///
   /// \param key Non-null pointer to a stored key
   /// \return Null pointer on failure, pointer to a block of data containing the json otherwise
-  ffi.Pointer<TWData> TWStoredKeyExportJSON(
+  ffi.Pointer<TWData1> TWStoredKeyExportJSON(
     ffi.Pointer<TWStoredKey> key,
   ) {
     return _TWStoredKeyExportJSON(
@@ -8794,10 +9048,10 @@ class TrustWalletCore {
 
   late final _TWStoredKeyExportJSONPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWStoredKey>)>>('TWStoredKeyExportJSON');
   late final _TWStoredKeyExportJSON = _TWStoredKeyExportJSONPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWStoredKey>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWStoredKey>)>();
 
   /// Fills in empty and invalid addresses.
   /// This method needs the encryption password to re-derive addresses from private keys.
@@ -8807,7 +9061,7 @@ class TrustWalletCore {
   /// \return `false` if the password is incorrect, true otherwise.
   bool TWStoredKeyFixAddresses(
     ffi.Pointer<TWStoredKey> key,
-    ffi.Pointer<TWData> password,
+    ffi.Pointer<TWData1> password,
   ) {
     return _TWStoredKeyFixAddresses(
       key,
@@ -8818,15 +9072,15 @@ class TrustWalletCore {
   late final _TWStoredKeyFixAddressesPtr = _lookup<
       ffi.NativeFunction<
           ffi.Bool Function(ffi.Pointer<TWStoredKey>,
-              ffi.Pointer<TWData>)>>('TWStoredKeyFixAddresses');
+              ffi.Pointer<TWData1>)>>('TWStoredKeyFixAddresses');
   late final _TWStoredKeyFixAddresses = _TWStoredKeyFixAddressesPtr.asFunction<
-      bool Function(ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData>)>();
+      bool Function(ffi.Pointer<TWStoredKey>, ffi.Pointer<TWData1>)>();
 
   /// Retrieve stored key encoding parameters, as JSON string.
   ///
   /// \param key Non-null pointer to a stored key
   /// \return Null pointer on failure, encoding parameter as a json string otherwise.
-  ffi.Pointer<TWString> TWStoredKeyEncryptionParameters(
+  ffi.Pointer<TWString1> TWStoredKeyEncryptionParameters(
     ffi.Pointer<TWStoredKey> key,
   ) {
     return _TWStoredKeyEncryptionParameters(
@@ -8836,11 +9090,11 @@ class TrustWalletCore {
 
   late final _TWStoredKeyEncryptionParametersPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWStoredKey>)>>('TWStoredKeyEncryptionParameters');
   late final _TWStoredKeyEncryptionParameters =
       _TWStoredKeyEncryptionParametersPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWStoredKey>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWStoredKey>)>();
 
   /// Creates an empty script.
   ///
@@ -8861,7 +9115,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptCreateWithData(
-    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData1> data,
   ) {
     return _TWBitcoinScriptCreateWithData(
       data,
@@ -8871,9 +9125,10 @@ class TrustWalletCore {
   late final _TWBitcoinScriptCreateWithDataPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinScript> Function(
-              ffi.Pointer<TWData>)>>('TWBitcoinScriptCreateWithData');
-  late final _TWBitcoinScriptCreateWithData = _TWBitcoinScriptCreateWithDataPtr
-      .asFunction<ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+              ffi.Pointer<TWData1>)>>('TWBitcoinScriptCreateWithData');
+  late final _TWBitcoinScriptCreateWithData =
+      _TWBitcoinScriptCreateWithDataPtr.asFunction<
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
 
   /// Creates a script from a raw bytes and size.
   ///
@@ -8960,7 +9215,7 @@ class TrustWalletCore {
   ///
   /// \param script Non-null pointer to a script
   /// \return data of the given script
-  ffi.Pointer<TWData> TWBitcoinScriptData(
+  ffi.Pointer<TWData1> TWBitcoinScriptData(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptData(
@@ -8970,16 +9225,16 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptDataPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWBitcoinScript>)>>('TWBitcoinScriptData');
   late final _TWBitcoinScriptData = _TWBitcoinScriptDataPtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Return script hash of a script
   ///
   /// \param script Non-null pointer to a script
   /// \return script hash of the given script
-  ffi.Pointer<TWData> TWBitcoinScriptScriptHash(
+  ffi.Pointer<TWData1> TWBitcoinScriptScriptHash(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptScriptHash(
@@ -8989,10 +9244,11 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptScriptHashPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWBitcoinScript>)>>('TWBitcoinScriptScriptHash');
-  late final _TWBitcoinScriptScriptHash = _TWBitcoinScriptScriptHashPtr
-      .asFunction<ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+  late final _TWBitcoinScriptScriptHash =
+      _TWBitcoinScriptScriptHashPtr.asFunction<
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Determines whether this is a pay-to-script-hash (P2SH) script.
   ///
@@ -9097,7 +9353,7 @@ class TrustWalletCore {
   ///
   /// \param script Non-null pointer to a script
   /// \return The public key.
-  ffi.Pointer<TWData> TWBitcoinScriptMatchPayToPubkey(
+  ffi.Pointer<TWData1> TWBitcoinScriptMatchPayToPubkey(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptMatchPayToPubkey(
@@ -9107,17 +9363,17 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptMatchPayToPubkeyPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>>(
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>>(
       'TWBitcoinScriptMatchPayToPubkey');
   late final _TWBitcoinScriptMatchPayToPubkey =
       _TWBitcoinScriptMatchPayToPubkeyPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Matches the script to a pay-to-public-key-hash (P2PKH).
   ///
   /// \param script Non-null pointer to a script
   /// \return the key hash.
-  ffi.Pointer<TWData> TWBitcoinScriptMatchPayToPubkeyHash(
+  ffi.Pointer<TWData1> TWBitcoinScriptMatchPayToPubkeyHash(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptMatchPayToPubkeyHash(
@@ -9127,17 +9383,17 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptMatchPayToPubkeyHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>>(
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>>(
       'TWBitcoinScriptMatchPayToPubkeyHash');
   late final _TWBitcoinScriptMatchPayToPubkeyHash =
       _TWBitcoinScriptMatchPayToPubkeyHashPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Matches the script to a pay-to-script-hash (P2SH).
   ///
   /// \param script Non-null pointer to a script
   /// \return the script hash.
-  ffi.Pointer<TWData> TWBitcoinScriptMatchPayToScriptHash(
+  ffi.Pointer<TWData1> TWBitcoinScriptMatchPayToScriptHash(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptMatchPayToScriptHash(
@@ -9147,17 +9403,17 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptMatchPayToScriptHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>>(
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>>(
       'TWBitcoinScriptMatchPayToScriptHash');
   late final _TWBitcoinScriptMatchPayToScriptHash =
       _TWBitcoinScriptMatchPayToScriptHashPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Matches the script to a pay-to-witness-public-key-hash (P2WPKH).
   ///
   /// \param script Non-null pointer to a script
   /// \return the key hash.
-  ffi.Pointer<TWData> TWBitcoinScriptMatchPayToWitnessPublicKeyHash(
+  ffi.Pointer<TWData1> TWBitcoinScriptMatchPayToWitnessPublicKeyHash(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptMatchPayToWitnessPublicKeyHash(
@@ -9167,17 +9423,17 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptMatchPayToWitnessPublicKeyHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>>(
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>>(
       'TWBitcoinScriptMatchPayToWitnessPublicKeyHash');
   late final _TWBitcoinScriptMatchPayToWitnessPublicKeyHash =
       _TWBitcoinScriptMatchPayToWitnessPublicKeyHashPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Matches the script to a pay-to-witness-script-hash (P2WSH).
   ///
   /// \param script Non-null pointer to a script
   /// \return the script hash, a SHA256 of the witness script..
-  ffi.Pointer<TWData> TWBitcoinScriptMatchPayToWitnessScriptHash(
+  ffi.Pointer<TWData1> TWBitcoinScriptMatchPayToWitnessScriptHash(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptMatchPayToWitnessScriptHash(
@@ -9187,17 +9443,17 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptMatchPayToWitnessScriptHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>>(
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>>(
       'TWBitcoinScriptMatchPayToWitnessScriptHash');
   late final _TWBitcoinScriptMatchPayToWitnessScriptHash =
       _TWBitcoinScriptMatchPayToWitnessScriptHashPtr.asFunction<
-          ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Encodes the script.
   ///
   /// \param script Non-null pointer to a script
   /// \return The encoded script
-  ffi.Pointer<TWData> TWBitcoinScriptEncode(
+  ffi.Pointer<TWData1> TWBitcoinScriptEncode(
     ffi.Pointer<TWBitcoinScript> script,
   ) {
     return _TWBitcoinScriptEncode(
@@ -9207,10 +9463,10 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptEncodePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData1> Function(
               ffi.Pointer<TWBitcoinScript>)>>('TWBitcoinScriptEncode');
   late final _TWBitcoinScriptEncode = _TWBitcoinScriptEncodePtr.asFunction<
-      ffi.Pointer<TWData> Function(ffi.Pointer<TWBitcoinScript>)>();
+      ffi.Pointer<TWData1> Function(ffi.Pointer<TWBitcoinScript>)>();
 
   /// Builds a standard 'pay to public key' script.
   ///
@@ -9218,7 +9474,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptBuildPayToPublicKey(
-    ffi.Pointer<TWData> pubkey,
+    ffi.Pointer<TWData1> pubkey,
   ) {
     return _TWBitcoinScriptBuildPayToPublicKey(
       pubkey,
@@ -9228,10 +9484,10 @@ class TrustWalletCore {
   late final _TWBitcoinScriptBuildPayToPublicKeyPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinScript> Function(
-              ffi.Pointer<TWData>)>>('TWBitcoinScriptBuildPayToPublicKey');
+              ffi.Pointer<TWData1>)>>('TWBitcoinScriptBuildPayToPublicKey');
   late final _TWBitcoinScriptBuildPayToPublicKey =
       _TWBitcoinScriptBuildPayToPublicKeyPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
 
   /// Builds a standard 'pay to public key hash' script.
   ///
@@ -9239,7 +9495,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptBuildPayToPublicKeyHash(
-    ffi.Pointer<TWData> hash,
+    ffi.Pointer<TWData1> hash,
   ) {
     return _TWBitcoinScriptBuildPayToPublicKeyHash(
       hash,
@@ -9249,10 +9505,10 @@ class TrustWalletCore {
   late final _TWBitcoinScriptBuildPayToPublicKeyHashPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinScript> Function(
-              ffi.Pointer<TWData>)>>('TWBitcoinScriptBuildPayToPublicKeyHash');
+              ffi.Pointer<TWData1>)>>('TWBitcoinScriptBuildPayToPublicKeyHash');
   late final _TWBitcoinScriptBuildPayToPublicKeyHash =
       _TWBitcoinScriptBuildPayToPublicKeyHashPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
 
   /// Builds a standard 'pay to script hash' script.
   ///
@@ -9260,7 +9516,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptBuildPayToScriptHash(
-    ffi.Pointer<TWData> scriptHash,
+    ffi.Pointer<TWData1> scriptHash,
   ) {
     return _TWBitcoinScriptBuildPayToScriptHash(
       scriptHash,
@@ -9270,10 +9526,10 @@ class TrustWalletCore {
   late final _TWBitcoinScriptBuildPayToScriptHashPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWBitcoinScript> Function(
-              ffi.Pointer<TWData>)>>('TWBitcoinScriptBuildPayToScriptHash');
+              ffi.Pointer<TWData1>)>>('TWBitcoinScriptBuildPayToScriptHash');
   late final _TWBitcoinScriptBuildPayToScriptHash =
       _TWBitcoinScriptBuildPayToScriptHashPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
 
   /// Builds a pay-to-witness-public-key-hash (P2WPKH) script..
   ///
@@ -9281,7 +9537,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptBuildPayToWitnessPubkeyHash(
-    ffi.Pointer<TWData> hash,
+    ffi.Pointer<TWData1> hash,
   ) {
     return _TWBitcoinScriptBuildPayToWitnessPubkeyHash(
       hash,
@@ -9290,11 +9546,11 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptBuildPayToWitnessPubkeyHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>>(
+              ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>>(
       'TWBitcoinScriptBuildPayToWitnessPubkeyHash');
   late final _TWBitcoinScriptBuildPayToWitnessPubkeyHash =
       _TWBitcoinScriptBuildPayToWitnessPubkeyHashPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
 
   /// Builds a pay-to-witness-script-hash (P2WSH) script.
   ///
@@ -9302,7 +9558,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptBuildPayToWitnessScriptHash(
-    ffi.Pointer<TWData> scriptHash,
+    ffi.Pointer<TWData1> scriptHash,
   ) {
     return _TWBitcoinScriptBuildPayToWitnessScriptHash(
       scriptHash,
@@ -9311,11 +9567,69 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptBuildPayToWitnessScriptHashPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>>(
+              ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>>(
       'TWBitcoinScriptBuildPayToWitnessScriptHash');
   late final _TWBitcoinScriptBuildPayToWitnessScriptHash =
       _TWBitcoinScriptBuildPayToWitnessScriptHashPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData>)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWData1>)>();
+
+  /// Builds the Ordinals inscripton for BRC20 transfer.
+  ///
+  /// \param ticker ticker of the brc20
+  /// \param amount uint64 transfer amount
+  /// \param pubkey Non-null pointer to a pubkey
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
+  ffi.Pointer<TWData1> TWBitcoinScriptBuildBRC20InscribeTransfer(
+    ffi.Pointer<TWString1> ticker,
+    ffi.Pointer<TWString1> amount,
+    ffi.Pointer<TWData1> pubkey,
+  ) {
+    return _TWBitcoinScriptBuildBRC20InscribeTransfer(
+      ticker,
+      amount,
+      pubkey,
+    );
+  }
+
+  late final _TWBitcoinScriptBuildBRC20InscribeTransferPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>,
+                  ffi.Pointer<TWString1>, ffi.Pointer<TWData1>)>>(
+      'TWBitcoinScriptBuildBRC20InscribeTransfer');
+  late final _TWBitcoinScriptBuildBRC20InscribeTransfer =
+      _TWBitcoinScriptBuildBRC20InscribeTransferPtr.asFunction<
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>, ffi.Pointer<TWData1>)>();
+
+  /// Builds the Ordinals inscripton for NFT construction.
+  ///
+  /// \param mimeType the MIME type of the payload
+  /// \param payload the payload to inscribe
+  /// \param pubkey Non-null pointer to a pubkey
+  /// \note Must be deleted with \TWBitcoinScriptDelete
+  /// \return A pointer to the built script
+  ffi.Pointer<TWData1> TWBitcoinScriptBuildOrdinalNftInscription(
+    ffi.Pointer<TWString1> mimeType,
+    ffi.Pointer<TWData1> payload,
+    ffi.Pointer<TWData1> pubkey,
+  ) {
+    return _TWBitcoinScriptBuildOrdinalNftInscription(
+      mimeType,
+      payload,
+      pubkey,
+    );
+  }
+
+  late final _TWBitcoinScriptBuildOrdinalNftInscriptionPtr = _lookup<
+          ffi.NativeFunction<
+              ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>,
+                  ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>>(
+      'TWBitcoinScriptBuildOrdinalNftInscription');
+  late final _TWBitcoinScriptBuildOrdinalNftInscription =
+      _TWBitcoinScriptBuildOrdinalNftInscriptionPtr.asFunction<
+          ffi.Pointer<TWData1> Function(ffi.Pointer<TWString1>,
+              ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>();
 
   /// Builds a appropriate lock script for the given address..
   ///
@@ -9324,7 +9638,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
   ffi.Pointer<TWBitcoinScript> TWBitcoinScriptLockScriptForAddress(
-    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString1> address,
     int coin,
   ) {
     return _TWBitcoinScriptLockScriptForAddress(
@@ -9335,11 +9649,38 @@ class TrustWalletCore {
 
   late final _TWBitcoinScriptLockScriptForAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWString>,
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWString1>,
               ffi.Int32)>>('TWBitcoinScriptLockScriptForAddress');
   late final _TWBitcoinScriptLockScriptForAddress =
       _TWBitcoinScriptLockScriptForAddressPtr.asFunction<
-          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWString>, int)>();
+          ffi.Pointer<TWBitcoinScript> Function(ffi.Pointer<TWString1>, int)>();
+
+  /// Builds a appropriate lock script for the given address with replay.
+  ffi.Pointer<TWBitcoinScript> TWBitcoinScriptLockScriptForAddressReplay(
+    ffi.Pointer<TWString1> address,
+    int coin,
+    ffi.Pointer<TWData1> blockHash,
+    int blockHeight,
+  ) {
+    return _TWBitcoinScriptLockScriptForAddressReplay(
+      address,
+      coin,
+      blockHash,
+      blockHeight,
+    );
+  }
+
+  late final _TWBitcoinScriptLockScriptForAddressReplayPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWBitcoinScript> Function(
+              ffi.Pointer<TWString1>,
+              ffi.Int32,
+              ffi.Pointer<TWData1>,
+              ffi.Int64)>>('TWBitcoinScriptLockScriptForAddressReplay');
+  late final _TWBitcoinScriptLockScriptForAddressReplay =
+      _TWBitcoinScriptLockScriptForAddressReplayPtr.asFunction<
+          ffi.Pointer<TWBitcoinScript> Function(
+              ffi.Pointer<TWString1>, int, ffi.Pointer<TWData1>, int)>();
 
   /// Return the default HashType for the given coin, such as TWBitcoinSigHashTypeAll.
   ///
@@ -9365,7 +9706,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWFIOAccountDelete
   /// \return Pointer to a nullable FIO Account
   ffi.Pointer<TWFIOAccount> TWFIOAccountCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWFIOAccountCreateWithString(
       string,
@@ -9375,9 +9716,9 @@ class TrustWalletCore {
   late final _TWFIOAccountCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWFIOAccount> Function(
-              ffi.Pointer<TWString>)>>('TWFIOAccountCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWFIOAccountCreateWithString');
   late final _TWFIOAccountCreateWithString = _TWFIOAccountCreateWithStringPtr
-      .asFunction<ffi.Pointer<TWFIOAccount> Function(ffi.Pointer<TWString>)>();
+      .asFunction<ffi.Pointer<TWFIOAccount> Function(ffi.Pointer<TWString1>)>();
 
   /// Delete a FIO Account
   ///
@@ -9400,7 +9741,7 @@ class TrustWalletCore {
   ///
   /// \param account Pointer to a non-null FIO Account
   /// \return Account non-null string representation
-  ffi.Pointer<TWString> TWFIOAccountDescription(
+  ffi.Pointer<TWString1> TWFIOAccountDescription(
     ffi.Pointer<TWFIOAccount> account,
   ) {
     return _TWFIOAccountDescription(
@@ -9410,10 +9751,10 @@ class TrustWalletCore {
 
   late final _TWFIOAccountDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWFIOAccount>)>>('TWFIOAccountDescription');
   late final _TWFIOAccountDescription = _TWFIOAccountDescriptionPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWFIOAccount>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWFIOAccount>)>();
 
   /// Compares two addresses for equality.
   ///
@@ -9444,7 +9785,7 @@ class TrustWalletCore {
   /// \param string Non-null string.
   /// \return true if it's a valid address, false otherwise
   bool TWGroestlcoinAddressIsValidString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWGroestlcoinAddressIsValidString(
       string,
@@ -9452,11 +9793,11 @@ class TrustWalletCore {
   }
 
   late final _TWGroestlcoinAddressIsValidStringPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
           'TWGroestlcoinAddressIsValidString');
   late final _TWGroestlcoinAddressIsValidString =
       _TWGroestlcoinAddressIsValidStringPtr.asFunction<
-          bool Function(ffi.Pointer<TWString>)>();
+          bool Function(ffi.Pointer<TWString1>)>();
 
   /// Create an address from a base58 string representation.
   ///
@@ -9464,7 +9805,7 @@ class TrustWalletCore {
   /// \note Must be deleted with \TWGroestlcoinAddressDelete
   /// \return Non-null GroestlcoinAddress
   ffi.Pointer<TWGroestlcoinAddress> TWGroestlcoinAddressCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWGroestlcoinAddressCreateWithString(
       string,
@@ -9474,10 +9815,10 @@ class TrustWalletCore {
   late final _TWGroestlcoinAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWGroestlcoinAddress> Function(
-              ffi.Pointer<TWString>)>>('TWGroestlcoinAddressCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWGroestlcoinAddressCreateWithString');
   late final _TWGroestlcoinAddressCreateWithString =
       _TWGroestlcoinAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWGroestlcoinAddress> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWGroestlcoinAddress> Function(ffi.Pointer<TWString1>)>();
 
   /// Create an address from a public key and a prefix byte.
   ///
@@ -9526,7 +9867,7 @@ class TrustWalletCore {
   ///
   /// \param address Non-null GroestlcoinAddress
   /// \return Address description as a non-null string
-  ffi.Pointer<TWString> TWGroestlcoinAddressDescription(
+  ffi.Pointer<TWString1> TWGroestlcoinAddressDescription(
     ffi.Pointer<TWGroestlcoinAddress> address,
   ) {
     return _TWGroestlcoinAddressDescription(
@@ -9536,19 +9877,19 @@ class TrustWalletCore {
 
   late final _TWGroestlcoinAddressDescriptionPtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWString1> Function(
                   ffi.Pointer<TWGroestlcoinAddress>)>>(
       'TWGroestlcoinAddressDescription');
   late final _TWGroestlcoinAddressDescription =
       _TWGroestlcoinAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWGroestlcoinAddress>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWGroestlcoinAddress>)>();
 
   /// Determines whether a BIP39 English mnemonic phrase is valid.
   ///
   /// \param mnemonic Non-null BIP39 english mnemonic
   /// \return true if the mnemonic is valid, false otherwise
   bool TWMnemonicIsValid(
-    ffi.Pointer<TWString> mnemonic,
+    ffi.Pointer<TWString1> mnemonic,
   ) {
     return _TWMnemonicIsValid(
       mnemonic,
@@ -9556,17 +9897,17 @@ class TrustWalletCore {
   }
 
   late final _TWMnemonicIsValidPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
           'TWMnemonicIsValid');
   late final _TWMnemonicIsValid =
-      _TWMnemonicIsValidPtr.asFunction<bool Function(ffi.Pointer<TWString>)>();
+      _TWMnemonicIsValidPtr.asFunction<bool Function(ffi.Pointer<TWString1>)>();
 
   /// Determines whether word is a valid BIP39 English mnemonic word.
   ///
   /// \param word Non-null BIP39 English mnemonic word
   /// \return true if the word is a valid BIP39 English mnemonic word, false otherwise
   bool TWMnemonicIsValidWord(
-    ffi.Pointer<TWString> word,
+    ffi.Pointer<TWString1> word,
   ) {
     return _TWMnemonicIsValidWord(
       word,
@@ -9574,17 +9915,17 @@ class TrustWalletCore {
   }
 
   late final _TWMnemonicIsValidWordPtr =
-      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString>)>>(
+      _lookup<ffi.NativeFunction<ffi.Bool Function(ffi.Pointer<TWString1>)>>(
           'TWMnemonicIsValidWord');
   late final _TWMnemonicIsValidWord = _TWMnemonicIsValidWordPtr.asFunction<
-      bool Function(ffi.Pointer<TWString>)>();
+      bool Function(ffi.Pointer<TWString1>)>();
 
   /// Return BIP39 English words that match the given prefix. A single string is returned, with space-separated list of words.
   ///
   /// \param prefix Non-null string prefix
   /// \return Single non-null string, space-separated list of words containing BIP39 words that match the given prefix.
-  ffi.Pointer<TWString> TWMnemonicSuggest(
-    ffi.Pointer<TWString> prefix,
+  ffi.Pointer<TWString1> TWMnemonicSuggest(
+    ffi.Pointer<TWString1> prefix,
   ) {
     return _TWMnemonicSuggest(
       prefix,
@@ -9593,17 +9934,17 @@ class TrustWalletCore {
 
   late final _TWMnemonicSuggestPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWString>)>>('TWMnemonicSuggest');
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWString1>)>>('TWMnemonicSuggest');
   late final _TWMnemonicSuggest = _TWMnemonicSuggestPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWString>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWString1>)>();
 
   /// Creates a function object, with the given name and empty parameter list.  It must be deleted at the end.
   ///
   /// \param name function name
   /// \return Non-null Ethereum abi function
   ffi.Pointer<TWEthereumAbiFunction> TWEthereumAbiFunctionCreateWithString(
-    ffi.Pointer<TWString1> name,
+    ffi.Pointer<TWString> name,
   ) {
     return _TWEthereumAbiFunctionCreateWithString(
       name,
@@ -9611,14 +9952,12 @@ class TrustWalletCore {
   }
 
   late final _TWEthereumAbiFunctionCreateWithStringPtr = _lookup<
-          ffi.NativeFunction<
-              ffi.Pointer<TWEthereumAbiFunction> Function(
-                  ffi.Pointer<TWString1>)>>(
-      'TWEthereumAbiFunctionCreateWithString');
+      ffi.NativeFunction<
+          ffi.Pointer<TWEthereumAbiFunction> Function(
+              ffi.Pointer<TWString>)>>('TWEthereumAbiFunctionCreateWithString');
   late final _TWEthereumAbiFunctionCreateWithString =
       _TWEthereumAbiFunctionCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWEthereumAbiFunction> Function(
-              ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWEthereumAbiFunction> Function(ffi.Pointer<TWString>)>();
 
   /// Deletes a function object created with a 'TWEthereumAbiFunctionCreateWithString' method.
   ///
@@ -9642,7 +9981,7 @@ class TrustWalletCore {
   ///
   /// \param fn A Non-null eth abi function
   /// \return function type signature as a Non-null string.
-  ffi.Pointer<TWString1> TWEthereumAbiFunctionGetType(
+  ffi.Pointer<TWString> TWEthereumAbiFunctionGetType(
     ffi.Pointer<TWEthereumAbiFunction> fn,
   ) {
     return _TWEthereumAbiFunctionGetType(
@@ -9652,13 +9991,12 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiFunctionGetTypePtr = _lookup<
           ffi.NativeFunction<
-              ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWString> Function(
                   ffi.Pointer<TWEthereumAbiFunction>)>>(
       'TWEthereumAbiFunctionGetType');
   late final _TWEthereumAbiFunctionGetType =
       _TWEthereumAbiFunctionGetTypePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWEthereumAbiFunction>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWEthereumAbiFunction>)>();
 
   /// Add a uint8 type parameter
   ///
@@ -9772,7 +10110,7 @@ class TrustWalletCore {
   /// \return the index of the parameter (0-based).
   int TWEthereumAbiFunctionAddParamUInt256(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamUInt256(
@@ -9786,12 +10124,12 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamUInt256');
   late final _TWEthereumAbiFunctionAddParamUInt256 =
       _TWEthereumAbiFunctionAddParamUInt256Ptr.asFunction<
-          int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData1>,
-              bool)>();
+          int Function(
+              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData>, bool)>();
 
   /// Add a uint(bits) type parameter
   ///
@@ -9802,7 +10140,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddParamUIntN(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int bits,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamUIntN(
@@ -9818,12 +10156,12 @@ class TrustWalletCore {
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Int,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamUIntN');
   late final _TWEthereumAbiFunctionAddParamUIntN =
       _TWEthereumAbiFunctionAddParamUIntNPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int,
-              ffi.Pointer<TWData1>, bool)>();
+              ffi.Pointer<TWData>, bool)>();
 
   /// Add a int8 type parameter
   ///
@@ -9937,7 +10275,7 @@ class TrustWalletCore {
   /// \return the index of the parameter (0-based).
   int TWEthereumAbiFunctionAddParamInt256(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamInt256(
@@ -9951,12 +10289,12 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamInt256');
   late final _TWEthereumAbiFunctionAddParamInt256 =
       _TWEthereumAbiFunctionAddParamInt256Ptr.asFunction<
-          int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData1>,
-              bool)>();
+          int Function(
+              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData>, bool)>();
 
   /// Add a int(bits) type parameter
   ///
@@ -9968,7 +10306,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddParamIntN(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int bits,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamIntN(
@@ -9984,12 +10322,12 @@ class TrustWalletCore {
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Int,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamIntN');
   late final _TWEthereumAbiFunctionAddParamIntN =
       _TWEthereumAbiFunctionAddParamIntNPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int,
-              ffi.Pointer<TWData1>, bool)>();
+              ffi.Pointer<TWData>, bool)>();
 
   /// Add a bool type parameter
   ///
@@ -10025,7 +10363,7 @@ class TrustWalletCore {
   /// \return the index of the parameter (0-based).
   int TWEthereumAbiFunctionAddParamString(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWString1> val,
+    ffi.Pointer<TWString> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamString(
@@ -10039,12 +10377,12 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamString');
   late final _TWEthereumAbiFunctionAddParamString =
       _TWEthereumAbiFunctionAddParamStringPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWString1>, bool)>();
+              ffi.Pointer<TWString>, bool)>();
 
   /// Add an address type parameter
   ///
@@ -10054,7 +10392,7 @@ class TrustWalletCore {
   /// \return the index of the parameter (0-based).
   int TWEthereumAbiFunctionAddParamAddress(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamAddress(
@@ -10068,12 +10406,12 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamAddress');
   late final _TWEthereumAbiFunctionAddParamAddress =
       _TWEthereumAbiFunctionAddParamAddressPtr.asFunction<
-          int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData1>,
-              bool)>();
+          int Function(
+              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData>, bool)>();
 
   /// Add a bytes type parameter
   ///
@@ -10083,7 +10421,7 @@ class TrustWalletCore {
   /// \return the index of the parameter (0-based).
   int TWEthereumAbiFunctionAddParamBytes(
     ffi.Pointer<TWEthereumAbiFunction> fn,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamBytes(
@@ -10097,12 +10435,12 @@ class TrustWalletCore {
       ffi.NativeFunction<
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamBytes');
   late final _TWEthereumAbiFunctionAddParamBytes =
       _TWEthereumAbiFunctionAddParamBytesPtr.asFunction<
-          int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData1>,
-              bool)>();
+          int Function(
+              ffi.Pointer<TWEthereumAbiFunction>, ffi.Pointer<TWData>, bool)>();
 
   /// Add a bytes[N] type parameter
   ///
@@ -10114,7 +10452,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddParamBytesFix(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int size,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
     bool isOutput,
   ) {
     return _TWEthereumAbiFunctionAddParamBytesFix(
@@ -10130,12 +10468,12 @@ class TrustWalletCore {
           ffi.Int Function(
               ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Size,
-              ffi.Pointer<TWData1>,
+              ffi.Pointer<TWData>,
               ffi.Bool)>>('TWEthereumAbiFunctionAddParamBytesFix');
   late final _TWEthereumAbiFunctionAddParamBytesFix =
       _TWEthereumAbiFunctionAddParamBytesFixPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int,
-              ffi.Pointer<TWData1>, bool)>();
+              ffi.Pointer<TWData>, bool)>();
 
   /// Add a type[] type parameter
   ///
@@ -10219,7 +10557,7 @@ class TrustWalletCore {
   /// \param idx index for the parameter (0-based).
   /// \param isOutput determines if the parameter is an input or output
   /// \return the value of the parameter stored in a block of data.
-  ffi.Pointer<TWData1> TWEthereumAbiFunctionGetParamUInt256(
+  ffi.Pointer<TWData> TWEthereumAbiFunctionGetParamUInt256(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int idx,
     bool isOutput,
@@ -10233,11 +10571,11 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiFunctionGetParamUInt256Ptr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWEthereumAbiFunction>,
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Int, ffi.Bool)>>('TWEthereumAbiFunctionGetParamUInt256');
   late final _TWEthereumAbiFunctionGetParamUInt256 =
       _TWEthereumAbiFunctionGetParamUInt256Ptr.asFunction<
-          ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWData> Function(
               ffi.Pointer<TWEthereumAbiFunction>, int, bool)>();
 
   /// Get a bool type parameter at the given index
@@ -10272,7 +10610,7 @@ class TrustWalletCore {
   /// \param idx index for the parameter (0-based).
   /// \param isOutput determines if the parameter is an input or output
   /// \return the value of the parameter.
-  ffi.Pointer<TWString1> TWEthereumAbiFunctionGetParamString(
+  ffi.Pointer<TWString> TWEthereumAbiFunctionGetParamString(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int idx,
     bool isOutput,
@@ -10286,11 +10624,11 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiFunctionGetParamStringPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWEthereumAbiFunction>,
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Int, ffi.Bool)>>('TWEthereumAbiFunctionGetParamString');
   late final _TWEthereumAbiFunctionGetParamString =
       _TWEthereumAbiFunctionGetParamStringPtr.asFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWEthereumAbiFunction>, int, bool)>();
 
   /// Get an address type parameter at the given index
@@ -10299,7 +10637,7 @@ class TrustWalletCore {
   /// \param idx index for the parameter (0-based).
   /// \param isOutput determines if the parameter is an input or output
   /// \return the value of the parameter.
-  ffi.Pointer<TWData1> TWEthereumAbiFunctionGetParamAddress(
+  ffi.Pointer<TWData> TWEthereumAbiFunctionGetParamAddress(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int idx,
     bool isOutput,
@@ -10313,11 +10651,11 @@ class TrustWalletCore {
 
   late final _TWEthereumAbiFunctionGetParamAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWEthereumAbiFunction>,
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWEthereumAbiFunction>,
               ffi.Int, ffi.Bool)>>('TWEthereumAbiFunctionGetParamAddress');
   late final _TWEthereumAbiFunctionGetParamAddress =
       _TWEthereumAbiFunctionGetParamAddressPtr.asFunction<
-          ffi.Pointer<TWData1> Function(
+          ffi.Pointer<TWData> Function(
               ffi.Pointer<TWEthereumAbiFunction>, int, bool)>();
 
   /// Adding a uint8 type parameter of to the top-level input parameter array
@@ -10433,7 +10771,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddInArrayParamUInt256(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamUInt256(
       fn,
@@ -10445,12 +10783,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamUInt256Ptr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Pointer<TWData1>)>>(
+                  ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamUInt256');
   late final _TWEthereumAbiFunctionAddInArrayParamUInt256 =
       _TWEthereumAbiFunctionAddInArrayParamUInt256Ptr.asFunction<
           int Function(
-              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData>)>();
 
   /// Adding a uint[N] type parameter of to the top-level input parameter array
   ///
@@ -10463,7 +10801,7 @@ class TrustWalletCore {
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
     int bits,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamUIntN(
       fn,
@@ -10476,12 +10814,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamUIntNPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Int, ffi.Pointer<TWData1>)>>(
+                  ffi.Int, ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamUIntN');
   late final _TWEthereumAbiFunctionAddInArrayParamUIntN =
       _TWEthereumAbiFunctionAddInArrayParamUIntNPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int, int,
-              ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWData>)>();
 
   /// Adding a int8 type parameter of to the top-level input parameter array
   ///
@@ -10596,7 +10934,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddInArrayParamInt256(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamInt256(
       fn,
@@ -10608,12 +10946,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamInt256Ptr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Pointer<TWData1>)>>(
+                  ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamInt256');
   late final _TWEthereumAbiFunctionAddInArrayParamInt256 =
       _TWEthereumAbiFunctionAddInArrayParamInt256Ptr.asFunction<
           int Function(
-              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData>)>();
 
   /// Adding a int[N] type parameter of to the top-level input parameter array
   ///
@@ -10626,7 +10964,7 @@ class TrustWalletCore {
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
     int bits,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamIntN(
       fn,
@@ -10639,12 +10977,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamIntNPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Int, ffi.Pointer<TWData1>)>>(
+                  ffi.Int, ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamIntN');
   late final _TWEthereumAbiFunctionAddInArrayParamIntN =
       _TWEthereumAbiFunctionAddInArrayParamIntNPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int, int,
-              ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWData>)>();
 
   /// Adding a bool type parameter of to the top-level input parameter array
   ///
@@ -10681,7 +11019,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddInArrayParamString(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
-    ffi.Pointer<TWString1> val,
+    ffi.Pointer<TWString> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamString(
       fn,
@@ -10693,12 +11031,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamStringPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Pointer<TWString1>)>>(
+                  ffi.Pointer<TWString>)>>(
       'TWEthereumAbiFunctionAddInArrayParamString');
   late final _TWEthereumAbiFunctionAddInArrayParamString =
       _TWEthereumAbiFunctionAddInArrayParamStringPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int,
-              ffi.Pointer<TWString1>)>();
+              ffi.Pointer<TWString>)>();
 
   /// Adding an address type parameter of to the top-level input parameter array
   ///
@@ -10709,7 +11047,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddInArrayParamAddress(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamAddress(
       fn,
@@ -10721,12 +11059,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamAddressPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Pointer<TWData1>)>>(
+                  ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamAddress');
   late final _TWEthereumAbiFunctionAddInArrayParamAddress =
       _TWEthereumAbiFunctionAddInArrayParamAddressPtr.asFunction<
           int Function(
-              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData>)>();
 
   /// Adding a bytes type parameter of to the top-level input parameter array
   ///
@@ -10737,7 +11075,7 @@ class TrustWalletCore {
   int TWEthereumAbiFunctionAddInArrayParamBytes(
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamBytes(
       fn,
@@ -10749,12 +11087,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamBytesPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Pointer<TWData1>)>>(
+                  ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamBytes');
   late final _TWEthereumAbiFunctionAddInArrayParamBytes =
       _TWEthereumAbiFunctionAddInArrayParamBytesPtr.asFunction<
           int Function(
-              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWEthereumAbiFunction>, int, ffi.Pointer<TWData>)>();
 
   /// Adding a int64 type parameter of to the top-level input parameter array
   ///
@@ -10767,7 +11105,7 @@ class TrustWalletCore {
     ffi.Pointer<TWEthereumAbiFunction> fn,
     int arrayIdx,
     int size,
-    ffi.Pointer<TWData1> val,
+    ffi.Pointer<TWData> val,
   ) {
     return _TWEthereumAbiFunctionAddInArrayParamBytesFix(
       fn,
@@ -10780,12 +11118,12 @@ class TrustWalletCore {
   late final _TWEthereumAbiFunctionAddInArrayParamBytesFixPtr = _lookup<
           ffi.NativeFunction<
               ffi.Int Function(ffi.Pointer<TWEthereumAbiFunction>, ffi.Int,
-                  ffi.Size, ffi.Pointer<TWData1>)>>(
+                  ffi.Size, ffi.Pointer<TWData>)>>(
       'TWEthereumAbiFunctionAddInArrayParamBytesFix');
   late final _TWEthereumAbiFunctionAddInArrayParamBytesFix =
       _TWEthereumAbiFunctionAddInArrayParamBytesFixPtr.asFunction<
           int Function(ffi.Pointer<TWEthereumAbiFunction>, int, int,
-              ffi.Pointer<TWData1>)>();
+              ffi.Pointer<TWData>)>();
 
   /// Generate a layer 2 eip2645 derivation path from eth address, layer, application and given index.
   ///
@@ -10795,11 +11133,11 @@ class TrustWalletCore {
   /// \param application non-null layer 2 application (E.G immutablex)
   /// \param index non-null layer 2 index (E.G 1)
   /// \return a valid eip2645 layer 2 derivation path as a string
-  ffi.Pointer<TWString> TWEthereumEip2645GetPath(
-    ffi.Pointer<TWString> ethAddress,
-    ffi.Pointer<TWString> layer,
-    ffi.Pointer<TWString> application,
-    ffi.Pointer<TWString> index,
+  ffi.Pointer<TWString1> TWEthereumEip2645GetPath(
+    ffi.Pointer<TWString1> ethAddress,
+    ffi.Pointer<TWString1> layer,
+    ffi.Pointer<TWString1> application,
+    ffi.Pointer<TWString1> index,
   ) {
     return _TWEthereumEip2645GetPath(
       ethAddress,
@@ -10811,47 +11149,18 @@ class TrustWalletCore {
 
   late final _TWEthereumEip2645GetPathPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWEthereumEip2645GetPath');
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWEthereumEip2645GetPath');
   late final _TWEthereumEip2645GetPath =
       _TWEthereumEip2645GetPathPtr.asFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>();
-
-  /// Generates a deployment address for a ERC-4337 compatible smart contract wallet
-  ///
-  /// \param factoryAddress non-null address of the account factory
-  /// \param logicAddress non-null address of the wallet's logic smart contract
-  /// \param ownerAddress  non-null address of the signing key that controls the smart contract wallet
-  /// \return Ethereum resulting address
-  ffi.Pointer<TWString> TWEthereumEip4337GetDeploymentAddress(
-    ffi.Pointer<TWString> factoryAddress,
-    ffi.Pointer<TWString> logicAddress,
-    ffi.Pointer<TWString> ownerAddress,
-  ) {
-    return _TWEthereumEip4337GetDeploymentAddress(
-      factoryAddress,
-      logicAddress,
-      ownerAddress,
-    );
-  }
-
-  late final _TWEthereumEip4337GetDeploymentAddressPtr = _lookup<
-      ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWEthereumEip4337GetDeploymentAddress');
-  late final _TWEthereumEip4337GetDeploymentAddress =
-      _TWEthereumEip4337GetDeploymentAddressPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>();
 
   /// Encrypts a block of Data using AES in Cipher Block Chaining (CBC) mode.
   ///
@@ -10860,10 +11169,10 @@ class TrustWalletCore {
   /// \param iv initialization vector.
   /// \param mode padding mode.
   /// \return encrypted Data.
-  ffi.Pointer<TWData1> TWAESEncryptCBC(
-    ffi.Pointer<TWData1> key,
-    ffi.Pointer<TWData1> data,
-    ffi.Pointer<TWData1> iv,
+  ffi.Pointer<TWData> TWAESEncryptCBC(
+    ffi.Pointer<TWData> key,
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData> iv,
     int mode,
   ) {
     return _TWAESEncryptCBC(
@@ -10876,14 +11185,11 @@ class TrustWalletCore {
 
   late final _TWAESEncryptCBCPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Int32)>>('TWAESEncryptCBC');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>, ffi.Int32)>>('TWAESEncryptCBC');
   late final _TWAESEncryptCBC = _TWAESEncryptCBCPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>, ffi.Pointer<TWData1>,
-          ffi.Pointer<TWData1>, int)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+          ffi.Pointer<TWData>, int)>();
 
   /// Decrypts a block of data using AES in Cipher Block Chaining (CBC) mode.
   ///
@@ -10892,10 +11198,10 @@ class TrustWalletCore {
   /// \param iv initialization vector Data.
   /// \param mode padding mode.
   /// \return decrypted Data.
-  ffi.Pointer<TWData1> TWAESDecryptCBC(
-    ffi.Pointer<TWData1> key,
-    ffi.Pointer<TWData1> data,
-    ffi.Pointer<TWData1> iv,
+  ffi.Pointer<TWData> TWAESDecryptCBC(
+    ffi.Pointer<TWData> key,
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData> iv,
     int mode,
   ) {
     return _TWAESDecryptCBC(
@@ -10908,14 +11214,11 @@ class TrustWalletCore {
 
   late final _TWAESDecryptCBCPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>,
-              ffi.Int32)>>('TWAESDecryptCBC');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>, ffi.Int32)>>('TWAESDecryptCBC');
   late final _TWAESDecryptCBC = _TWAESDecryptCBCPtr.asFunction<
-      ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>, ffi.Pointer<TWData1>,
-          ffi.Pointer<TWData1>, int)>();
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+          ffi.Pointer<TWData>, int)>();
 
   /// Encrypts a block of data using AES in Counter (CTR) mode.
   ///
@@ -10923,10 +11226,10 @@ class TrustWalletCore {
   /// \param data Data to encrypt.
   /// \param iv initialization vector Data.
   /// \return encrypted Data.
-  ffi.Pointer<TWData1> TWAESEncryptCTR(
-    ffi.Pointer<TWData1> key,
-    ffi.Pointer<TWData1> data,
-    ffi.Pointer<TWData1> iv,
+  ffi.Pointer<TWData> TWAESEncryptCTR(
+    ffi.Pointer<TWData> key,
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData> iv,
   ) {
     return _TWAESEncryptCTR(
       key,
@@ -10937,11 +11240,11 @@ class TrustWalletCore {
 
   late final _TWAESEncryptCTRPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>>('TWAESEncryptCTR');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>)>>('TWAESEncryptCTR');
   late final _TWAESEncryptCTR = _TWAESEncryptCTRPtr.asFunction<
-      ffi.Pointer<TWData1> Function(
-          ffi.Pointer<TWData1>, ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData>, ffi.Pointer<TWData>, ffi.Pointer<TWData>)>();
 
   /// Decrypts a block of data using AES in Counter (CTR) mode.
   ///
@@ -10949,10 +11252,10 @@ class TrustWalletCore {
   /// \param data Data to decrypt.
   /// \param iv initialization vector Data.
   /// \return decrypted Data.
-  ffi.Pointer<TWData1> TWAESDecryptCTR(
-    ffi.Pointer<TWData1> key,
-    ffi.Pointer<TWData1> data,
-    ffi.Pointer<TWData1> iv,
+  ffi.Pointer<TWData> TWAESDecryptCTR(
+    ffi.Pointer<TWData> key,
+    ffi.Pointer<TWData> data,
+    ffi.Pointer<TWData> iv,
   ) {
     return _TWAESDecryptCTR(
       key,
@@ -10963,11 +11266,11 @@ class TrustWalletCore {
 
   late final _TWAESDecryptCTRPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWData1> Function(ffi.Pointer<TWData1>,
-              ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>>('TWAESDecryptCTR');
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>)>>('TWAESDecryptCTR');
   late final _TWAESDecryptCTR = _TWAESDecryptCTRPtr.asFunction<
-      ffi.Pointer<TWData1> Function(
-          ffi.Pointer<TWData1>, ffi.Pointer<TWData1>, ffi.Pointer<TWData1>)>();
+      ffi.Pointer<TWData> Function(
+          ffi.Pointer<TWData>, ffi.Pointer<TWData>, ffi.Pointer<TWData>)>();
 
   /// Create a NEAR Account
   ///
@@ -10975,7 +11278,7 @@ class TrustWalletCore {
   /// \note Account should be deleted by calling \TWNEARAccountDelete
   /// \return Pointer to a nullable NEAR Account.
   ffi.Pointer<TWNEARAccount> TWNEARAccountCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWNEARAccountCreateWithString(
       string,
@@ -10985,9 +11288,10 @@ class TrustWalletCore {
   late final _TWNEARAccountCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWNEARAccount> Function(
-              ffi.Pointer<TWString>)>>('TWNEARAccountCreateWithString');
-  late final _TWNEARAccountCreateWithString = _TWNEARAccountCreateWithStringPtr
-      .asFunction<ffi.Pointer<TWNEARAccount> Function(ffi.Pointer<TWString>)>();
+              ffi.Pointer<TWString1>)>>('TWNEARAccountCreateWithString');
+  late final _TWNEARAccountCreateWithString =
+      _TWNEARAccountCreateWithStringPtr.asFunction<
+          ffi.Pointer<TWNEARAccount> Function(ffi.Pointer<TWString1>)>();
 
   /// Delete the given Near Account
   ///
@@ -11010,7 +11314,7 @@ class TrustWalletCore {
   ///
   /// \param account Pointer to a non-null NEAR Account
   /// \return Non-null string account description
-  ffi.Pointer<TWString> TWNEARAccountDescription(
+  ffi.Pointer<TWString1> TWNEARAccountDescription(
     ffi.Pointer<TWNEARAccount> account,
   ) {
     return _TWNEARAccountDescription(
@@ -11020,10 +11324,11 @@ class TrustWalletCore {
 
   late final _TWNEARAccountDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWNEARAccount>)>>('TWNEARAccountDescription');
-  late final _TWNEARAccountDescription = _TWNEARAccountDescriptionPtr
-      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<TWNEARAccount>)>();
+  late final _TWNEARAccountDescription =
+      _TWNEARAccountDescriptionPtr.asFunction<
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWNEARAccount>)>();
 
   /// Sign a message.
   ///
@@ -11032,10 +11337,10 @@ class TrustWalletCore {
   /// \param message: A custom message which is input to the signing.
   /// \note Address is derived assuming compressed public key format.
   /// \returns the signature, Base64-encoded.  On invalid input empty string is returned. Returned object needs to be deleteed after use.
-  ffi.Pointer<TWString1> TWBitcoinMessageSignerSignMessage(
+  ffi.Pointer<TWString> TWBitcoinMessageSignerSignMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> address,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWBitcoinMessageSignerSignMessage(
       privateKey,
@@ -11046,14 +11351,14 @@ class TrustWalletCore {
 
   late final _TWBitcoinMessageSignerSignMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(
+          ffi.Pointer<TWString> Function(
               ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWBitcoinMessageSignerSignMessage');
+              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWBitcoinMessageSignerSignMessage');
   late final _TWBitcoinMessageSignerSignMessage =
       _TWBitcoinMessageSignerSignMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWString>, ffi.Pointer<TWString>)>();
 
   /// Verify signature for a message.
   ///
@@ -11062,9 +11367,9 @@ class TrustWalletCore {
   /// \param signature: in Base64-encoded form.
   /// \returns false on any invalid input (does not throw).
   bool TWBitcoinMessageSignerVerifyMessage(
-    ffi.Pointer<TWString1> address,
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWBitcoinMessageSignerVerifyMessage(
       address,
@@ -11075,12 +11380,12 @@ class TrustWalletCore {
 
   late final _TWBitcoinMessageSignerVerifyMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWString1>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWBitcoinMessageSignerVerifyMessage');
+          ffi.Bool Function(ffi.Pointer<TWString>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWBitcoinMessageSignerVerifyMessage');
   late final _TWBitcoinMessageSignerVerifyMessage =
       _TWBitcoinMessageSignerVerifyMessagePtr.asFunction<
-          bool Function(ffi.Pointer<TWString1>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>();
+          bool Function(ffi.Pointer<TWString>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>();
 
   /// Creates a new Account with an address, a coin type, derivation enum, derivationPath, publicKey,
   /// and extendedPublicKey. Must be deleted with TWAccountDelete after use.
@@ -11093,12 +11398,12 @@ class TrustWalletCore {
   /// \param extendedPublicKey Base58 encoded extended public key.
   /// \return A new Account.
   ffi.Pointer<TWAccount> TWAccountCreate(
-    ffi.Pointer<TWString> address,
+    ffi.Pointer<TWString1> address,
     int coin,
     int derivation,
-    ffi.Pointer<TWString> derivationPath,
-    ffi.Pointer<TWString> publicKey,
-    ffi.Pointer<TWString> extendedPublicKey,
+    ffi.Pointer<TWString1> derivationPath,
+    ffi.Pointer<TWString1> publicKey,
+    ffi.Pointer<TWString1> extendedPublicKey,
   ) {
     return _TWAccountCreate(
       address,
@@ -11113,20 +11418,20 @@ class TrustWalletCore {
   late final _TWAccountCreatePtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWAccount> Function(
-              ffi.Pointer<TWString>,
+              ffi.Pointer<TWString1>,
               ffi.Int32,
               ffi.Int32,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>,
-              ffi.Pointer<TWString>)>>('TWAccountCreate');
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>,
+              ffi.Pointer<TWString1>)>>('TWAccountCreate');
   late final _TWAccountCreate = _TWAccountCreatePtr.asFunction<
       ffi.Pointer<TWAccount> Function(
-          ffi.Pointer<TWString>,
+          ffi.Pointer<TWString1>,
           int,
           int,
-          ffi.Pointer<TWString>,
-          ffi.Pointer<TWString>,
-          ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1>,
+          ffi.Pointer<TWString1>,
+          ffi.Pointer<TWString1>)>();
 
   /// Deletes an account.
   ///
@@ -11148,7 +11453,7 @@ class TrustWalletCore {
   /// Returns the address of an account.
   ///
   /// \param account Account to get the address of.
-  ffi.Pointer<TWString> TWAccountAddress(
+  ffi.Pointer<TWString1> TWAccountAddress(
     ffi.Pointer<TWAccount> account,
   ) {
     return _TWAccountAddress(
@@ -11158,10 +11463,10 @@ class TrustWalletCore {
 
   late final _TWAccountAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWAccount>)>>('TWAccountAddress');
   late final _TWAccountAddress = _TWAccountAddressPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWAccount>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWAccount>)>();
 
   /// Return CoinType enum of an account.
   ///
@@ -11200,7 +11505,7 @@ class TrustWalletCore {
   /// Returns derivationPath of an account.
   ///
   /// \param account Account to get the derivation path of.
-  ffi.Pointer<TWString> TWAccountDerivationPath(
+  ffi.Pointer<TWString1> TWAccountDerivationPath(
     ffi.Pointer<TWAccount> account,
   ) {
     return _TWAccountDerivationPath(
@@ -11210,15 +11515,15 @@ class TrustWalletCore {
 
   late final _TWAccountDerivationPathPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWAccount>)>>('TWAccountDerivationPath');
   late final _TWAccountDerivationPath = _TWAccountDerivationPathPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWAccount>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWAccount>)>();
 
   /// Returns hex encoded publicKey of an account.
   ///
   /// \param account Account to get the public key of.
-  ffi.Pointer<TWString> TWAccountPublicKey(
+  ffi.Pointer<TWString1> TWAccountPublicKey(
     ffi.Pointer<TWAccount> account,
   ) {
     return _TWAccountPublicKey(
@@ -11228,15 +11533,15 @@ class TrustWalletCore {
 
   late final _TWAccountPublicKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWAccount>)>>('TWAccountPublicKey');
   late final _TWAccountPublicKey = _TWAccountPublicKeyPtr.asFunction<
-      ffi.Pointer<TWString> Function(ffi.Pointer<TWAccount>)>();
+      ffi.Pointer<TWString1> Function(ffi.Pointer<TWAccount>)>();
 
   /// Returns Base58 encoded extendedPublicKey of an account.
   ///
   /// \param account Account to get the extended public key of.
-  ffi.Pointer<TWString> TWAccountExtendedPublicKey(
+  ffi.Pointer<TWString1> TWAccountExtendedPublicKey(
     ffi.Pointer<TWAccount> account,
   ) {
     return _TWAccountExtendedPublicKey(
@@ -11246,19 +11551,19 @@ class TrustWalletCore {
 
   late final _TWAccountExtendedPublicKeyPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWAccount>)>>('TWAccountExtendedPublicKey');
   late final _TWAccountExtendedPublicKey = _TWAccountExtendedPublicKeyPtr
-      .asFunction<ffi.Pointer<TWString> Function(ffi.Pointer<TWAccount>)>();
+      .asFunction<ffi.Pointer<TWString1> Function(ffi.Pointer<TWAccount>)>();
 
   /// Sign a message.
   ///
   /// \param privateKey: the private key used for signing
   /// \param message: A custom hex message which is input to the signing.
   /// \returns the signature, Hex-encoded. On invalid input empty string is returned. Returned object needs to be deleted after use.
-  ffi.Pointer<TWString1> TWStarkExMessageSignerSignMessage(
+  ffi.Pointer<TWString> TWStarkExMessageSignerSignMessage(
     ffi.Pointer<TWPrivateKey> privateKey,
-    ffi.Pointer<TWString1> message,
+    ffi.Pointer<TWString> message,
   ) {
     return _TWStarkExMessageSignerSignMessage(
       privateKey,
@@ -11268,12 +11573,12 @@ class TrustWalletCore {
 
   late final _TWStarkExMessageSignerSignMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString1> Function(ffi.Pointer<TWPrivateKey>,
-              ffi.Pointer<TWString1>)>>('TWStarkExMessageSignerSignMessage');
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWPrivateKey>,
+              ffi.Pointer<TWString>)>>('TWStarkExMessageSignerSignMessage');
   late final _TWStarkExMessageSignerSignMessage =
       _TWStarkExMessageSignerSignMessagePtr.asFunction<
-          ffi.Pointer<TWString1> Function(
-              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString1>)>();
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWPrivateKey>, ffi.Pointer<TWString>)>();
 
   /// Verify signature for a message.
   ///
@@ -11283,8 +11588,8 @@ class TrustWalletCore {
   /// \returns false on any invalid input (does not throw), true if the message can be recovered from the signature
   bool TWStarkExMessageSignerVerifyMessage(
     ffi.Pointer<TWPublicKey> pubKey,
-    ffi.Pointer<TWString1> message,
-    ffi.Pointer<TWString1> signature,
+    ffi.Pointer<TWString> message,
+    ffi.Pointer<TWString> signature,
   ) {
     return _TWStarkExMessageSignerVerifyMessage(
       pubKey,
@@ -11295,12 +11600,12 @@ class TrustWalletCore {
 
   late final _TWStarkExMessageSignerVerifyMessagePtr = _lookup<
       ffi.NativeFunction<
-          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>>('TWStarkExMessageSignerVerifyMessage');
+          ffi.Bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>>('TWStarkExMessageSignerVerifyMessage');
   late final _TWStarkExMessageSignerVerifyMessage =
       _TWStarkExMessageSignerVerifyMessagePtr.asFunction<
-          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString1>,
-              ffi.Pointer<TWString1>)>();
+          bool Function(ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>,
+              ffi.Pointer<TWString>)>();
 
   /// Creates an address from a string representation.
   ///
@@ -11308,7 +11613,7 @@ class TrustWalletCore {
   /// \note Should be deleted with \TWSolanaAddressDelete
   /// \return Non-null pointer to a Solana address data structure
   ffi.Pointer<TWSolanaAddress> TWSolanaAddressCreateWithString(
-    ffi.Pointer<TWString> string,
+    ffi.Pointer<TWString1> string,
   ) {
     return _TWSolanaAddressCreateWithString(
       string,
@@ -11318,10 +11623,10 @@ class TrustWalletCore {
   late final _TWSolanaAddressCreateWithStringPtr = _lookup<
       ffi.NativeFunction<
           ffi.Pointer<TWSolanaAddress> Function(
-              ffi.Pointer<TWString>)>>('TWSolanaAddressCreateWithString');
+              ffi.Pointer<TWString1>)>>('TWSolanaAddressCreateWithString');
   late final _TWSolanaAddressCreateWithString =
       _TWSolanaAddressCreateWithStringPtr.asFunction<
-          ffi.Pointer<TWSolanaAddress> Function(ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWSolanaAddress> Function(ffi.Pointer<TWString1>)>();
 
   /// Delete the given Solana address
   ///
@@ -11345,9 +11650,9 @@ class TrustWalletCore {
   /// \param address Non-null pointer to a Solana Address
   /// \param tokenMintAddress Non-null pointer to a token mint address as a string
   /// \return Null pointer if the Default token address for a token is not found, valid pointer otherwise
-  ffi.Pointer<TWString> TWSolanaAddressDefaultTokenAddress(
+  ffi.Pointer<TWString1> TWSolanaAddressDefaultTokenAddress(
     ffi.Pointer<TWSolanaAddress> address,
-    ffi.Pointer<TWString> tokenMintAddress,
+    ffi.Pointer<TWString1> tokenMintAddress,
   ) {
     return _TWSolanaAddressDefaultTokenAddress(
       address,
@@ -11357,18 +11662,18 @@ class TrustWalletCore {
 
   late final _TWSolanaAddressDefaultTokenAddressPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWSolanaAddress>,
-              ffi.Pointer<TWString>)>>('TWSolanaAddressDefaultTokenAddress');
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWSolanaAddress>,
+              ffi.Pointer<TWString1>)>>('TWSolanaAddressDefaultTokenAddress');
   late final _TWSolanaAddressDefaultTokenAddress =
       _TWSolanaAddressDefaultTokenAddressPtr.asFunction<
-          ffi.Pointer<TWString> Function(
-              ffi.Pointer<TWSolanaAddress>, ffi.Pointer<TWString>)>();
+          ffi.Pointer<TWString1> Function(
+              ffi.Pointer<TWSolanaAddress>, ffi.Pointer<TWString1>)>();
 
   /// Returns the address string representation.
   ///
   /// \param address Non-null pointer to a Solana Address
   /// \return Non-null pointer to the Solana address string representation
-  ffi.Pointer<TWString> TWSolanaAddressDescription(
+  ffi.Pointer<TWString1> TWSolanaAddressDescription(
     ffi.Pointer<TWSolanaAddress> address,
   ) {
     return _TWSolanaAddressDescription(
@@ -11378,11 +11683,95 @@ class TrustWalletCore {
 
   late final _TWSolanaAddressDescriptionPtr = _lookup<
       ffi.NativeFunction<
-          ffi.Pointer<TWString> Function(
+          ffi.Pointer<TWString1> Function(
               ffi.Pointer<TWSolanaAddress>)>>('TWSolanaAddressDescription');
   late final _TWSolanaAddressDescription =
       _TWSolanaAddressDescriptionPtr.asFunction<
-          ffi.Pointer<TWString> Function(ffi.Pointer<TWSolanaAddress>)>();
+          ffi.Pointer<TWString1> Function(ffi.Pointer<TWSolanaAddress>)>();
+
+  /// Calculate a counterfactual address for the smart contract wallet
+  ///
+  /// \param input The serialized data of ContractAddressInput.
+  /// \return The address.
+  ffi.Pointer<TWString> TWBarzGetCounterfactualAddress(
+    ffi.Pointer<TWData> input,
+  ) {
+    return _TWBarzGetCounterfactualAddress(
+      input,
+    );
+  }
+
+  late final _TWBarzGetCounterfactualAddressPtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWString> Function(
+              ffi.Pointer<TWData>)>>('TWBarzGetCounterfactualAddress');
+  late final _TWBarzGetCounterfactualAddress =
+      _TWBarzGetCounterfactualAddressPtr.asFunction<
+          ffi.Pointer<TWString> Function(ffi.Pointer<TWData>)>();
+
+  /// Returns the init code parameter of ERC-4337 User Operation
+  ///
+  /// \param factory Wallet factory address (BarzFactory)
+  /// \param publicKey Public key for the verification facet
+  /// \param verificationFacet Verification facet address
+  /// \return The address.
+  ffi.Pointer<TWData> TWBarzGetInitCode(
+    ffi.Pointer<TWString> factory1,
+    ffi.Pointer<TWPublicKey> publicKey,
+    ffi.Pointer<TWString> verificationFacet,
+    int salt,
+  ) {
+    return _TWBarzGetInitCode(
+      factory1,
+      publicKey,
+      verificationFacet,
+      salt,
+    );
+  }
+
+  late final _TWBarzGetInitCodePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWString>,
+              ffi.Pointer<TWPublicKey>,
+              ffi.Pointer<TWString>,
+              ffi.Uint32)>>('TWBarzGetInitCode');
+  late final _TWBarzGetInitCode = _TWBarzGetInitCodePtr.asFunction<
+      ffi.Pointer<TWData> Function(ffi.Pointer<TWString>,
+          ffi.Pointer<TWPublicKey>, ffi.Pointer<TWString>, int)>();
+
+  /// Converts the original ASN-encoded signature from webauthn to the format accepted by Barz
+  ///
+  /// \param signature Original signature
+  /// \param challenge The original challenge that was signed
+  /// \param authenticatorData Returned from Webauthn API
+  /// \param clientDataJSON Returned from Webauthn API
+  /// \return Bytes of the formatted signature
+  ffi.Pointer<TWData> TWBarzGetFormattedSignature(
+    ffi.Pointer<TWData> signature,
+    ffi.Pointer<TWData> challenge,
+    ffi.Pointer<TWData> authenticatorData,
+    ffi.Pointer<TWString> clientDataJSON,
+  ) {
+    return _TWBarzGetFormattedSignature(
+      signature,
+      challenge,
+      authenticatorData,
+      clientDataJSON,
+    );
+  }
+
+  late final _TWBarzGetFormattedSignaturePtr = _lookup<
+      ffi.NativeFunction<
+          ffi.Pointer<TWData> Function(
+              ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>,
+              ffi.Pointer<TWString>)>>('TWBarzGetFormattedSignature');
+  late final _TWBarzGetFormattedSignature =
+      _TWBarzGetFormattedSignaturePtr.asFunction<
+          ffi.Pointer<TWData> Function(ffi.Pointer<TWData>, ffi.Pointer<TWData>,
+              ffi.Pointer<TWData>, ffi.Pointer<TWString>)>();
 }
 
 class __mbstate_t extends ffi.Union {
@@ -12516,6 +12905,13 @@ abstract class TWFilecoinAddressType {
   static const int TWFilecoinAddressTypeDelegated = 1;
 }
 
+/// Defines a resizable block of data.
+///
+/// The implementantion of these methods should be language-specific to minimize translation overhead. For instance it
+/// should be a `jbyteArray` for Java and an `NSData` for Swift.
+typedef TWData = ffi.Void;
+typedef TWString = ffi.Void;
+
 /// Blockchain enum type
 abstract class TWBlockchain {
   static const int TWBlockchainBitcoin = 0;
@@ -12545,6 +12941,7 @@ abstract class TWBlockchain {
   static const int TWBlockchainHarmony = 25;
   static const int TWBlockchainNEAR = 26;
   static const int TWBlockchainAlgorand = 27;
+  static const int TWBlockchainIOST = 28;
   static const int TWBlockchainPolkadot = 29;
   static const int TWBlockchainCardano = 30;
   static const int TWBlockchainNEO = 31;
@@ -12557,12 +12954,17 @@ abstract class TWBlockchain {
   static const int TWBlockchainThorchain = 38;
   static const int TWBlockchainRonin = 39;
   static const int TWBlockchainKusama = 40;
-  static const int TWBlockchainNervos = 41;
-  static const int TWBlockchainEverscale = 42;
-  static const int TWBlockchainAptos = 43;
-  static const int TWBlockchainHedera = 44;
-  static const int TWBlockchainTheOpenNetwork = 45;
-  static const int TWBlockchainSui = 46;
+  static const int TWBlockchainZen = 41;
+  static const int TWBlockchainBitcoinDiamond = 42;
+  static const int TWBlockchainVerge = 43;
+  static const int TWBlockchainNervos = 44;
+  static const int TWBlockchainEverscale = 45;
+  static const int TWBlockchainAptos = 46;
+  static const int TWBlockchainNebl = 47;
+  static const int TWBlockchainHedera = 48;
+  static const int TWBlockchainTheOpenNetwork = 49;
+  static const int TWBlockchainSui = 50;
+  static const int TWBlockchainGreenfield = 51;
 }
 
 /// Elliptic cruves
@@ -12577,6 +12979,19 @@ abstract class TWCurve {
   static const int TWCurveNone = 7;
 }
 
+/// Non-default coin address derivation names (default, unnamed derivations are not included).
+abstract class TWDerivation {
+  static const int TWDerivationDefault = 0;
+  static const int TWDerivationCustom = 1;
+  static const int TWDerivationBitcoinSegwit = 2;
+  static const int TWDerivationBitcoinLegacy = 3;
+  static const int TWDerivationBitcoinTestnet = 4;
+  static const int TWDerivationLitecoinLegacy = 5;
+  static const int TWDerivationSolanaSolana = 6;
+  static const int TWDerivationBitcoinTestnetSegwit = 7;
+  static const int TWDerivationBitcoinTestnetLegacy = 8;
+}
+
 /// Registered HD version bytes
 ///
 /// \see https://github.com/satoshilabs/slips/blob/master/slip-0132.md
@@ -12588,10 +13003,16 @@ abstract class TWHDVersion {
   static const int TWHDVersionYPRV = 77428856;
   static const int TWHDVersionZPUB = 78792518;
   static const int TWHDVersionZPRV = 78791436;
+  static const int TWHDVersionVPUB = 73342198;
+  static const int TWHDVersionVPRV = 73341116;
+  static const int TWHDVersionTPUB = 70617039;
+  static const int TWHDVersionTPRV = 70615956;
   static const int TWHDVersionLTUB = 27108450;
   static const int TWHDVersionLTPV = 27106558;
   static const int TWHDVersionMTUB = 28471030;
   static const int TWHDVersionMTPV = 28469138;
+  static const int TWHDVersionTTUB = 70711009;
+  static const int TWHDVersionTTPV = 70709117;
   static const int TWHDVersionDPUB = 50178342;
   static const int TWHDVersionDPRV = 50177256;
   static const int TWHDVersionDGUB = 49990397;
@@ -12604,55 +13025,61 @@ abstract class TWHDVersion {
 abstract class TWHRP {
   static const int TWHRPUnknown = 0;
   static const int TWHRPBitcoin = 1;
-  static const int TWHRPBitcoinTestnet = 2;
-  static const int TWHRPLitecoin = 3;
-  static const int TWHRPViacoin = 4;
-  static const int TWHRPGroestlcoin = 5;
-  static const int TWHRPDigiByte = 6;
-  static const int TWHRPMonacoin = 7;
-  static const int TWHRPCosmos = 8;
-  static const int TWHRPBitcoinCash = 9;
-  static const int TWHRPBitcoinGold = 10;
-  static const int TWHRPIoTeX = 11;
-  static const int TWHRPNervos = 12;
-  static const int TWHRPZilliqa = 13;
-  static const int TWHRPTerra = 14;
-  static const int TWHRPCryptoOrg = 15;
-  static const int TWHRPKava = 16;
-  static const int TWHRPOasis = 17;
-  static const int TWHRPBluzelle = 18;
-  static const int TWHRPBandChain = 19;
-  static const int TWHRPMultiversX = 20;
-  static const int TWHRPSecret = 21;
-  static const int TWHRPAgoric = 22;
-  static const int TWHRPBinance = 23;
-  static const int TWHRPECash = 24;
-  static const int TWHRPTHORChain = 25;
-  static const int TWHRPHarmony = 26;
-  static const int TWHRPCardano = 27;
-  static const int TWHRPQtum = 28;
-  static const int TWHRPNativeInjective = 29;
-  static const int TWHRPOsmosis = 30;
-  static const int TWHRPTerraV2 = 31;
-  static const int TWHRPCoreum = 32;
-  static const int TWHRPNativeCanto = 33;
-  static const int TWHRPSommelier = 34;
-  static const int TWHRPFetchAI = 35;
-  static const int TWHRPMars = 36;
-  static const int TWHRPUmee = 37;
-  static const int TWHRPQuasar = 38;
-  static const int TWHRPPersistence = 39;
-  static const int TWHRPAkash = 40;
-  static const int TWHRPNoble = 41;
-  static const int TWHRPStargaze = 42;
-  static const int TWHRPNativeEvmos = 43;
-  static const int TWHRPJuno = 44;
-  static const int TWHRPStride = 45;
-  static const int TWHRPAxelar = 46;
-  static const int TWHRPCrescent = 47;
-  static const int TWHRPKujira = 48;
-  static const int TWHRPComdex = 49;
-  static const int TWHRPNeutron = 50;
+  static const int TWHRPLitecoin = 2;
+  static const int TWHRPViacoin = 3;
+  static const int TWHRPGroestlcoin = 4;
+  static const int TWHRPDigiByte = 5;
+  static const int TWHRPMonacoin = 6;
+  static const int TWHRPSyscoin = 7;
+  static const int TWHRPVerge = 8;
+  static const int TWHRPCosmos = 9;
+  static const int TWHRPBitcoinCash = 10;
+  static const int TWHRPBitcoinGold = 11;
+  static const int TWHRPIoTeX = 12;
+  static const int TWHRPNervos = 13;
+  static const int TWHRPZilliqa = 14;
+  static const int TWHRPTerra = 15;
+  static const int TWHRPCryptoOrg = 16;
+  static const int TWHRPKava = 17;
+  static const int TWHRPOasis = 18;
+  static const int TWHRPBluzelle = 19;
+  static const int TWHRPBandChain = 20;
+  static const int TWHRPMultiversX = 21;
+  static const int TWHRPSecret = 22;
+  static const int TWHRPAgoric = 23;
+  static const int TWHRPBinance = 24;
+  static const int TWHRPECash = 25;
+  static const int TWHRPTHORChain = 26;
+  static const int TWHRPBitcoinDiamond = 27;
+  static const int TWHRPHarmony = 28;
+  static const int TWHRPCardano = 29;
+  static const int TWHRPQtum = 30;
+  static const int TWHRPStratis = 31;
+  static const int TWHRPNativeInjective = 32;
+  static const int TWHRPOsmosis = 33;
+  static const int TWHRPTerraV2 = 34;
+  static const int TWHRPCoreum = 35;
+  static const int TWHRPNativeCanto = 36;
+  static const int TWHRPSommelier = 37;
+  static const int TWHRPFetchAI = 38;
+  static const int TWHRPMars = 39;
+  static const int TWHRPUmee = 40;
+  static const int TWHRPQuasar = 41;
+  static const int TWHRPPersistence = 42;
+  static const int TWHRPAkash = 43;
+  static const int TWHRPNoble = 44;
+  static const int TWHRPSei = 45;
+  static const int TWHRPBitcoinTestnet = 46;
+  static const int TWHRPStargaze = 47;
+  static const int TWHRPNativeEvmos = 48;
+  static const int TWHRPJuno = 49;
+  static const int TWHRPTBinance = 50;
+  static const int TWHRPStride = 51;
+  static const int TWHRPAxelar = 52;
+  static const int TWHRPCrescent = 53;
+  static const int TWHRPKujira = 54;
+  static const int TWHRPComdex = 55;
+  static const int TWHRPNeutron = 56;
 }
 
 /// Defines a resizable string.
@@ -12660,21 +13087,8 @@ abstract class TWHRP {
 /// The implementantion of these methods should be language-specific to minimize translation
 /// overhead. For instance it should be a `jstring` for Java and an `NSString` for Swift. Create
 /// allocates memory, the delete call should be called at the end to release memory.
-typedef TWString = ffi.Void;
-typedef TWData = ffi.Void;
-
-/// Non-default coin address derivation names (default, unnamed derivations are not included).
-abstract class TWDerivation {
-  static const int TWDerivationDefault = 0;
-  static const int TWDerivationCustom = 1;
-  static const int TWDerivationBitcoinSegwit = 2;
-  static const int TWDerivationBitcoinLegacy = 3;
-  static const int TWDerivationBitcoinTestnet = 4;
-  static const int TWDerivationBitcoinTestnetSegwit = 5;
-  static const int TWDerivationBitcoinTestnetLegacy = 6;
-  static const int TWDerivationLitecoinLegacy = 7;
-  static const int TWDerivationSolanaSolana = 8;
-}
+typedef TWString1 = ffi.Void;
+typedef TWData1 = ffi.Void;
 
 /// Public key types
 abstract class TWPublicKeyType {
@@ -12709,6 +13123,7 @@ abstract class TWCoinType {
   static const int TWCoinTypeCallisto = 820;
   static const int TWCoinTypeCardano = 1815;
   static const int TWCoinTypeCosmos = 118;
+  static const int TWCoinTypePivx = 119;
   static const int TWCoinTypeDash = 5;
   static const int TWCoinTypeDecred = 42;
   static const int TWCoinTypeDigiByte = 20;
@@ -12763,6 +13178,7 @@ abstract class TWCoinType {
   static const int TWCoinTypeBandChain = 494;
   static const int TWCoinTypeSmartChainLegacy = 10000714;
   static const int TWCoinTypeSmartChain = 20000714;
+  static const int TWCoinTypeTBinance = 30000714;
   static const int TWCoinTypeOasis = 474;
   static const int TWCoinTypePolygon = 966;
   static const int TWCoinTypeTHORChain = 931;
@@ -12779,10 +13195,15 @@ abstract class TWCoinType {
   static const int TWCoinTypeRonin = 10002020;
   static const int TWCoinTypeOsmosis = 10000118;
   static const int TWCoinTypeECash = 899;
+  static const int TWCoinTypeIOST = 291;
   static const int TWCoinTypeCronosChain = 10000025;
   static const int TWCoinTypeSmartBitcoinCash = 10000145;
   static const int TWCoinTypeKuCoinCommunityChain = 10000321;
+  static const int TWCoinTypeBitcoinDiamond = 999;
   static const int TWCoinTypeBoba = 10000288;
+  static const int TWCoinTypeSyscoin = 57;
+  static const int TWCoinTypeVerge = 77;
+  static const int TWCoinTypeZen = 121;
   static const int TWCoinTypeMetis = 1001088;
   static const int TWCoinTypeAurora = 1323161554;
   static const int TWCoinTypeEvmos = 10009001;
@@ -12793,9 +13214,12 @@ abstract class TWCoinType {
   static const int TWCoinTypeKlaytn = 10008217;
   static const int TWCoinTypeMeter = 18000;
   static const int TWCoinTypeOKXChain = 996;
+  static const int TWCoinTypeStratis = 105105;
+  static const int TWCoinTypeKomodo = 141;
   static const int TWCoinTypeNervos = 309;
   static const int TWCoinTypeEverscale = 396;
   static const int TWCoinTypeAptos = 637;
+  static const int TWCoinTypeNebl = 146;
   static const int TWCoinTypeHedera = 3030;
   static const int TWCoinTypeSecret = 529;
   static const int TWCoinTypeNativeInjective = 10000060;
@@ -12822,6 +13246,19 @@ abstract class TWCoinType {
   static const int TWCoinTypePersistence = 16000118;
   static const int TWCoinTypeAkash = 17000118;
   static const int TWCoinTypeNoble = 18000118;
+  static const int TWCoinTypeScroll = 534353;
+  static const int TWCoinTypeRootstock = 137;
+  static const int TWCoinTypeThetaFuel = 361;
+  static const int TWCoinTypeConfluxeSpace = 1030;
+  static const int TWCoinTypeAcala = 787;
+  static const int TWCoinTypeAcalaEVM = 10000787;
+  static const int TWCoinTypeOpBNB = 204;
+  static const int TWCoinTypeNeon = 245022934;
+  static const int TWCoinTypeBase = 8453;
+  static const int TWCoinTypeSei = 19000118;
+  static const int TWCoinTypeArbitrumNova = 10042170;
+  static const int TWCoinTypeLinea = 59144;
+  static const int TWCoinTypeGreenfield = 5600;
   static const int TWCoinTypeMantle = 10005000;
   static const int TWCoinTypeMantleTestnet = 10005001;
   static const int TWCoinTypeGoerli = 10000005;
@@ -12850,13 +13287,6 @@ class TWTransactionCompiler extends ffi.Opaque {}
 
 class TWStarkWare extends ffi.Opaque {}
 
-/// Defines a resizable string.
-///
-/// The implementantion of these methods should be language-specific to minimize translation
-/// overhead. For instance it should be a `jstring` for Java and an `NSString` for Swift. Create
-/// allocates memory, the delete call should be called at the end to release memory.
-typedef TWString1 = ffi.Void;
-
 /// Bitcoin SIGHASH type.
 abstract class TWBitcoinSigHashType {
   static const int TWBitcoinSigHashTypeAll = 1;
@@ -12875,12 +13305,6 @@ class TWAnySigner extends ffi.Opaque {}
 
 /// Represents a Nervos address.
 class TWNervosAddress extends ffi.Opaque {}
-
-/// Defines a resizable block of data.
-///
-/// The implementantion of these methods should be language-specific to minimize translation overhead. For instance it
-/// should be a `jbyteArray` for Java and an `NSData` for Swift.
-typedef TWData1 = ffi.Void;
 
 /// Preset encryption kind
 abstract class TWStoredKeyEncryption {
@@ -12917,6 +13341,9 @@ class TWBitcoinAddress extends ffi.Opaque {}
 /// Represents an address in C++ for almost any blockchain.
 class TWAnyAddress extends ffi.Opaque {}
 
+/// Represents an ASN.1 DER parser.
+class TWAsnParser extends ffi.Opaque {}
+
 /// THORChain swap functions
 class TWTHORChainSwap extends ffi.Opaque {}
 
@@ -12925,6 +13352,8 @@ class TWBase58 extends ffi.Opaque {}
 
 /// Cardano helper functions
 class TWCardano extends ffi.Opaque {}
+
+class TWPublicKey1 extends ffi.Opaque {}
 
 /// Substrate based chains Address Type
 ///
@@ -12937,14 +13366,21 @@ abstract class TWSS58AddressType {
 /// Represents a Ripple X-address.
 class TWRippleXAddress extends ffi.Opaque {}
 
+/// THORChain swap functions
+class TWLiquidStaking extends ffi.Opaque {}
+
 /// Tron message signing and verification.
 ///
 /// Tron and some other wallets support a message signing & verification format, to create a proof (a signature)
 /// that someone has access to the private keys of a specific address.
 class TWTronMessageSigner extends ffi.Opaque {}
 
+class TWWebAuthn extends ffi.Opaque {}
+
 /// Password-Based Key Derivation Function 2
 class TWPBKDF2 extends ffi.Opaque {}
+
+class TWBitcoinFee extends ffi.Opaque {}
 
 /// Filecoin-Ethereum address converter.
 class TWFilecoinAddressConverter extends ffi.Opaque {}
@@ -13053,17 +13489,25 @@ class TWStarkExMessageSigner extends ffi.Opaque {}
 abstract class TWEthereumChainID {
   static const int TWEthereumChainIDEthereum = 1;
   static const int TWEthereumChainIDClassic = 61;
+  static const int TWEthereumChainIDRootstock = 30;
   static const int TWEthereumChainIDPoa = 99;
+  static const int TWEthereumChainIDOpbnb = 204;
+  static const int TWEthereumChainIDTfuelevm = 361;
   static const int TWEthereumChainIDVechain = 74;
   static const int TWEthereumChainIDCallisto = 820;
   static const int TWEthereumChainIDTomochain = 88;
   static const int TWEthereumChainIDPolygon = 137;
   static const int TWEthereumChainIDOkc = 66;
   static const int TWEthereumChainIDThundertoken = 108;
+  static const int TWEthereumChainIDCfxevm = 1030;
   static const int TWEthereumChainIDGochain = 60;
+  static const int TWEthereumChainIDBase = 8453;
   static const int TWEthereumChainIDMeter = 82;
   static const int TWEthereumChainIDCelo = 42220;
+  static const int TWEthereumChainIDLinea = 59144;
+  static const int TWEthereumChainIDScroll = 534353;
   static const int TWEthereumChainIDWanchain = 888;
+  static const int TWEthereumChainIDGoerli = 5;
   static const int TWEthereumChainIDCronos = 25;
   static const int TWEthereumChainIDOptimism = 10;
   static const int TWEthereumChainIDXdai = 100;
@@ -13073,6 +13517,7 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDKcc = 321;
   static const int TWEthereumChainIDZksync = 324;
   static const int TWEthereumChainIDHeco = 128;
+  static const int TWEthereumChainIDAcalaevm = 787;
   static const int TWEthereumChainIDMetis = 1088;
   static const int TWEthereumChainIDPolygonzkevm = 1101;
   static const int TWEthereumChainIDMoonbeam = 1284;
@@ -13080,16 +13525,24 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDRonin = 2020;
   static const int TWEthereumChainIDKavaevm = 2222;
   static const int TWEthereumChainIDIotexevm = 4689;
+  static const int TWEthereumChainIDMantle = 5000;
+  static const int TWEthereumChainIDMantletestnet = 5001;
   static const int TWEthereumChainIDKlaytn = 8217;
   static const int TWEthereumChainIDAvalanchec = 43114;
   static const int TWEthereumChainIDEvmos = 9001;
+  static const int TWEthereumChainIDBitgert = 32520;
+  static const int TWEthereumChainIDArbitrumnova = 42170;
   static const int TWEthereumChainIDArbitrum = 42161;
   static const int TWEthereumChainIDSmartchain = 56;
+  static const int TWEthereumChainIDNeon = 245022934;
   static const int TWEthereumChainIDAurora = 1313161554;
 }
 
 /// Solana address helper functions
 class TWSolanaAddress extends ffi.Opaque {}
+
+/// Barz functions
+class TWBarz extends ffi.Opaque {}
 
 const int __bool_true_false_are_defined = 1;
 

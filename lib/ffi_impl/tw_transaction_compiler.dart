@@ -86,4 +86,36 @@ abstract class TWTransactionCompiler {
       _lookup<NativeFunction<Pointer<Void> Function(Int32, Pointer<Void>, Pointer<Void>, Pointer<Void>)>>('TWTransactionCompilerCompileWithSignatures');
   static late final _TWTransactionCompilerCompileWithSignatures =
       _TWTransactionCompilerCompileWithSignaturesPtr.asFunction<Pointer<Void> Function(int, Pointer<Void>, Pointer<Void>, Pointer<Void>)>();
+
+
+  Pointer<Void> TWTransactionCompilerCompileWithSignaturesAndPubKeyType(
+      int coinType,
+      Pointer<Void> txInputData,
+      Pointer<Void> signatures,
+      Pointer<Void> publicKeys,
+      int pubKeyType,
+      ) {
+    return _TWTransactionCompilerCompileWithSignaturesAndPubKeyType(
+      coinType,
+      txInputData,
+      signatures,
+      publicKeys,
+      pubKeyType,
+    );
+  }
+
+  late final _TWTransactionCompilerCompileWithSignaturesAndPubKeyTypePtr =
+  _lookup<
+      NativeFunction<
+          Pointer<Void> Function(
+              Int32,
+              Pointer<Void>,
+              Pointer<Void>,
+              Pointer<Void>,
+              Int32)>>(
+      'TWTransactionCompilerCompileWithSignaturesAndPubKeyType');
+  late final _TWTransactionCompilerCompileWithSignaturesAndPubKeyType =
+  _TWTransactionCompilerCompileWithSignaturesAndPubKeyTypePtr.asFunction<
+      Pointer<Void> Function(int, Pointer<Void>,
+          Pointer<Void>, Pointer<Void>, int)>();
 }

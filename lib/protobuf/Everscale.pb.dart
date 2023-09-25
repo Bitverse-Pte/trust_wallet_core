@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Everscale.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -19,23 +23,8 @@ enum Transfer_AccountStateOneof {
   notSet
 }
 
+/// Transfer message
 class Transfer extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, Transfer_AccountStateOneof> _Transfer_AccountStateOneofByTag = {
-    6 : Transfer_AccountStateOneof.encodedContractData,
-    0 : Transfer_AccountStateOneof.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transfer', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
-    ..oo(0, [6])
-    ..aOB(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'bounce')
-    ..e<MessageBehavior>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'behavior', $pb.PbFieldType.OE, defaultOrMaker: MessageBehavior.SimpleTransfer, valueOf: MessageBehavior.valueOf, enumValues: MessageBehavior.values)
-    ..a<$fixnum.Int64>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
-    ..a<$core.int>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expiredAt', $pb.PbFieldType.OU3)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to')
-    ..aOS(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encodedContractData')
-    ..hasRequiredFields = false
-  ;
-
-  Transfer._() : super();
   factory Transfer({
     $core.bool? bounce,
     MessageBehavior? behavior,
@@ -44,29 +33,46 @@ class Transfer extends $pb.GeneratedMessage {
     $core.String? to,
     $core.String? encodedContractData,
   }) {
-    final _result = create();
+    final $result = create();
     if (bounce != null) {
-      _result.bounce = bounce;
+      $result.bounce = bounce;
     }
     if (behavior != null) {
-      _result.behavior = behavior;
+      $result.behavior = behavior;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (expiredAt != null) {
-      _result.expiredAt = expiredAt;
+      $result.expiredAt = expiredAt;
     }
     if (to != null) {
-      _result.to = to;
+      $result.to = to;
     }
     if (encodedContractData != null) {
-      _result.encodedContractData = encodedContractData;
+      $result.encodedContractData = encodedContractData;
     }
-    return _result;
+    return $result;
   }
+  Transfer._() : super();
   factory Transfer.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Transfer.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, Transfer_AccountStateOneof> _Transfer_AccountStateOneofByTag = {
+    6 : Transfer_AccountStateOneof.encodedContractData,
+    0 : Transfer_AccountStateOneof.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Transfer', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
+    ..oo(0, [6])
+    ..aOB(1, _omitFieldNames ? '' : 'bounce')
+    ..e<MessageBehavior>(2, _omitFieldNames ? '' : 'behavior', $pb.PbFieldType.OE, defaultOrMaker: MessageBehavior.SimpleTransfer, valueOf: MessageBehavior.valueOf, enumValues: MessageBehavior.values)
+    ..a<$fixnum.Int64>(3, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.OU6, defaultOrMaker: $fixnum.Int64.ZERO)
+    ..a<$core.int>(4, _omitFieldNames ? '' : 'expiredAt', $pb.PbFieldType.OU3)
+    ..aOS(5, _omitFieldNames ? '' : 'to')
+    ..aOS(6, _omitFieldNames ? '' : 'encodedContractData')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -76,8 +82,10 @@ class Transfer extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Transfer copyWith(void Function(Transfer) updates) => super.copyWith((message) => updates(message as Transfer)) as Transfer; // ignore: deprecated_member_use
+  Transfer copyWith(void Function(Transfer) updates) => super.copyWith((message) => updates(message as Transfer)) as Transfer;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Transfer create() => Transfer._();
   Transfer createEmptyInstance() => create();
@@ -89,6 +97,7 @@ class Transfer extends $pb.GeneratedMessage {
   Transfer_AccountStateOneof whichAccountStateOneof() => _Transfer_AccountStateOneofByTag[$_whichOneof(0)]!;
   void clearAccountStateOneof() => clearField($_whichOneof(0));
 
+  /// If set to true, then the message will be returned if there is an error on the recipient's side.
   @$pb.TagNumber(1)
   $core.bool get bounce => $_getBF(0);
   @$pb.TagNumber(1)
@@ -98,6 +107,7 @@ class Transfer extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearBounce() => clearField(1);
 
+  /// Affect the attached amount and fees
   @$pb.TagNumber(2)
   MessageBehavior get behavior => $_getN(1);
   @$pb.TagNumber(2)
@@ -107,6 +117,7 @@ class Transfer extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearBehavior() => clearField(2);
 
+  /// Amount to send in nano EVER
   @$pb.TagNumber(3)
   $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
@@ -116,6 +127,7 @@ class Transfer extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAmount() => clearField(3);
 
+  /// Expiration UNIX timestamp
   @$pb.TagNumber(4)
   $core.int get expiredAt => $_getIZ(3);
   @$pb.TagNumber(4)
@@ -125,6 +137,7 @@ class Transfer extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearExpiredAt() => clearField(4);
 
+  /// Recipient address
   @$pb.TagNumber(5)
   $core.String get to => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -134,6 +147,7 @@ class Transfer extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearTo() => clearField(5);
 
+  /// Just contract data
   @$pb.TagNumber(6)
   $core.String get encodedContractData => $_getSZ(5);
   @$pb.TagNumber(6)
@@ -149,34 +163,36 @@ enum SigningInput_ActionOneof {
   notSet
 }
 
+/// Input data necessary to create a signed transaction.
 class SigningInput extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, SigningInput_ActionOneof> _SigningInput_ActionOneofByTag = {
-    1 : SigningInput_ActionOneof.transfer,
-    0 : SigningInput_ActionOneof.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
-    ..oo(0, [1])
-    ..aOM<Transfer>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transfer', subBuilder: Transfer.create)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     Transfer? transfer,
     $core.List<$core.int>? privateKey,
   }) {
-    final _result = create();
+    final $result = create();
     if (transfer != null) {
-      _result.transfer = transfer;
+      $result.transfer = transfer;
     }
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
-    return _result;
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, SigningInput_ActionOneof> _SigningInput_ActionOneofByTag = {
+    1 : SigningInput_ActionOneof.transfer,
+    0 : SigningInput_ActionOneof.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
+    ..oo(0, [1])
+    ..aOM<Transfer>(1, _omitFieldNames ? '' : 'transfer', subBuilder: Transfer.create)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -186,8 +202,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -210,6 +228,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   Transfer ensureTransfer() => $_ensure(0);
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(2)
   $core.List<$core.int> get privateKey => $_getN(1);
   @$pb.TagNumber(2)
@@ -220,24 +239,26 @@ class SigningInput extends $pb.GeneratedMessage {
   void clearPrivateKey() => clearField(2);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded')
-    ..hasRequiredFields = false
-  ;
-
-  SigningOutput._() : super();
   factory SigningOutput({
     $core.String? encoded,
   }) {
-    final _result = create();
+    final $result = create();
     if (encoded != null) {
-      _result.encoded = encoded;
+      $result.encoded = encoded;
     }
-    return _result;
+    return $result;
   }
+  SigningOutput._() : super();
   factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Everscale.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'encoded')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -247,8 +268,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -267,3 +290,6 @@ class SigningOutput extends $pb.GeneratedMessage {
   void clearEncoded() => clearField(1);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

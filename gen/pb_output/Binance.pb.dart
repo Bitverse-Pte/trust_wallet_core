@@ -1,9 +1,13 @@
-///
+//
 //  Generated code. Do not modify.
 //  source: Binance.proto
 //
 // @dart = 2.12
-// ignore_for_file: annotate_overrides,camel_case_types,constant_identifier_names,directives_ordering,library_prefixes,non_constant_identifier_names,prefer_final_fields,return_of_invalid_type,unnecessary_const,unnecessary_import,unnecessary_this,unused_import,unused_shown_name
+
+// ignore_for_file: annotate_overrides, camel_case_types, comment_references
+// ignore_for_file: constant_identifier_names, library_prefixes
+// ignore_for_file: non_constant_identifier_names, prefer_final_fields
+// ignore_for_file: unnecessary_import, unnecessary_this, unused_import
 
 import 'dart:core' as $core;
 
@@ -12,17 +16,8 @@ import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'Common.pbenum.dart' as $0;
 
+/// Transaction structure, used internally
 class Transaction extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Transaction', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..p<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'msgs', $pb.PbFieldType.PY)
-    ..p<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signatures', $pb.PbFieldType.PY)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source')
-    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'data', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  Transaction._() : super();
   factory Transaction({
     $core.Iterable<$core.List<$core.int>>? msgs,
     $core.Iterable<$core.List<$core.int>>? signatures,
@@ -30,26 +25,37 @@ class Transaction extends $pb.GeneratedMessage {
     $fixnum.Int64? source,
     $core.List<$core.int>? data,
   }) {
-    final _result = create();
+    final $result = create();
     if (msgs != null) {
-      _result.msgs.addAll(msgs);
+      $result.msgs.addAll(msgs);
     }
     if (signatures != null) {
-      _result.signatures.addAll(signatures);
+      $result.signatures.addAll(signatures);
     }
     if (memo != null) {
-      _result.memo = memo;
+      $result.memo = memo;
     }
     if (source != null) {
-      _result.source = source;
+      $result.source = source;
     }
     if (data != null) {
-      _result.data = data;
+      $result.data = data;
     }
-    return _result;
+    return $result;
   }
+  Transaction._() : super();
   factory Transaction.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Transaction.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Transaction', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..p<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'msgs', $pb.PbFieldType.PY)
+    ..p<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'signatures', $pb.PbFieldType.PY)
+    ..aOS(3, _omitFieldNames ? '' : 'memo')
+    ..aInt64(4, _omitFieldNames ? '' : 'source')
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'data', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -59,8 +65,10 @@ class Transaction extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Transaction copyWith(void Function(Transaction) updates) => super.copyWith((message) => updates(message as Transaction)) as Transaction; // ignore: deprecated_member_use
+  Transaction copyWith(void Function(Transaction) updates) => super.copyWith((message) => updates(message as Transaction)) as Transaction;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Transaction create() => Transaction._();
   Transaction createEmptyInstance() => create();
@@ -69,12 +77,15 @@ class Transaction extends $pb.GeneratedMessage {
   static Transaction getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Transaction>(create);
   static Transaction? _defaultInstance;
 
+  /// array of size 1, containing the transaction message, which are one of the transaction type below
   @$pb.TagNumber(1)
   $core.List<$core.List<$core.int>> get msgs => $_getList(0);
 
+  /// array of size 1, containing the standard signature structure of the transaction sender
   @$pb.TagNumber(2)
   $core.List<$core.List<$core.int>> get signatures => $_getList(1);
 
+  /// a short sentence of remark for the transaction, only for `Transfer` transactions.
   @$pb.TagNumber(3)
   $core.String get memo => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -84,6 +95,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearMemo() => clearField(3);
 
+  /// an identifier for tools triggering this transaction, set to zero if unwilling to disclose.
   @$pb.TagNumber(4)
   $fixnum.Int64 get source => $_getI64(3);
   @$pb.TagNumber(4)
@@ -93,6 +105,7 @@ class Transaction extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearSource() => clearField(4);
 
+  /// reserved for future use
   @$pb.TagNumber(5)
   $core.List<$core.int> get data => $_getN(4);
   @$pb.TagNumber(5)
@@ -103,39 +116,41 @@ class Transaction extends $pb.GeneratedMessage {
   void clearData() => clearField(5);
 }
 
+/// Signature structure, used internally
 class Signature extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'Signature', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'pubKey', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'signature', $pb.PbFieldType.OY)
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountNumber')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sequence')
-    ..hasRequiredFields = false
-  ;
-
-  Signature._() : super();
   factory Signature({
     $core.List<$core.int>? pubKey,
     $core.List<$core.int>? signature,
     $fixnum.Int64? accountNumber,
     $fixnum.Int64? sequence,
   }) {
-    final _result = create();
+    final $result = create();
     if (pubKey != null) {
-      _result.pubKey = pubKey;
+      $result.pubKey = pubKey;
     }
     if (signature != null) {
-      _result.signature = signature;
+      $result.signature = signature;
     }
     if (accountNumber != null) {
-      _result.accountNumber = accountNumber;
+      $result.accountNumber = accountNumber;
     }
     if (sequence != null) {
-      _result.sequence = sequence;
+      $result.sequence = sequence;
     }
-    return _result;
+    return $result;
   }
+  Signature._() : super();
   factory Signature.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory Signature.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'Signature', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'pubKey', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'signature', $pb.PbFieldType.OY)
+    ..aInt64(3, _omitFieldNames ? '' : 'accountNumber')
+    ..aInt64(4, _omitFieldNames ? '' : 'sequence')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -145,8 +160,10 @@ class Signature extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature; // ignore: deprecated_member_use
+  Signature copyWith(void Function(Signature) updates) => super.copyWith((message) => updates(message as Signature)) as Signature;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static Signature create() => Signature._();
   Signature createEmptyInstance() => create();
@@ -155,6 +172,7 @@ class Signature extends $pb.GeneratedMessage {
   static Signature getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<Signature>(create);
   static Signature? _defaultInstance;
 
+  /// public key bytes of the signer address
   @$pb.TagNumber(1)
   $core.List<$core.int> get pubKey => $_getN(0);
   @$pb.TagNumber(1)
@@ -164,6 +182,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearPubKey() => clearField(1);
 
+  /// signature bytes, please check chain access section for signature generation
   @$pb.TagNumber(2)
   $core.List<$core.int> get signature => $_getN(1);
   @$pb.TagNumber(2)
@@ -173,6 +192,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSignature() => clearField(2);
 
+  /// another identifier of signer, which can be read from chain by account REST API or RPC
   @$pb.TagNumber(3)
   $fixnum.Int64 get accountNumber => $_getI64(2);
   @$pb.TagNumber(3)
@@ -182,6 +202,7 @@ class Signature extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearAccountNumber() => clearField(3);
 
+  /// sequence number for the next transaction
   @$pb.TagNumber(4)
   $fixnum.Int64 get sequence => $_getI64(3);
   @$pb.TagNumber(4)
@@ -192,20 +213,8 @@ class Signature extends $pb.GeneratedMessage {
   void clearSequence() => clearField(4);
 }
 
+/// Message for Trade order
 class TradeOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TradeOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'ordertype')
-    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'side')
-    ..aInt64(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'price')
-    ..aInt64(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'quantity')
-    ..aInt64(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeinforce')
-    ..hasRequiredFields = false
-  ;
-
-  TradeOrder._() : super();
   factory TradeOrder({
     $core.List<$core.int>? sender,
     $core.String? id,
@@ -216,35 +225,49 @@ class TradeOrder extends $pb.GeneratedMessage {
     $fixnum.Int64? quantity,
     $fixnum.Int64? timeinforce,
   }) {
-    final _result = create();
+    final $result = create();
     if (sender != null) {
-      _result.sender = sender;
+      $result.sender = sender;
     }
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (ordertype != null) {
-      _result.ordertype = ordertype;
+      $result.ordertype = ordertype;
     }
     if (side != null) {
-      _result.side = side;
+      $result.side = side;
     }
     if (price != null) {
-      _result.price = price;
+      $result.price = price;
     }
     if (quantity != null) {
-      _result.quantity = quantity;
+      $result.quantity = quantity;
     }
     if (timeinforce != null) {
-      _result.timeinforce = timeinforce;
+      $result.timeinforce = timeinforce;
     }
-    return _result;
+    return $result;
   }
+  TradeOrder._() : super();
   factory TradeOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TradeOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TradeOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'sender', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'id')
+    ..aOS(3, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(4, _omitFieldNames ? '' : 'ordertype')
+    ..aInt64(5, _omitFieldNames ? '' : 'side')
+    ..aInt64(6, _omitFieldNames ? '' : 'price')
+    ..aInt64(7, _omitFieldNames ? '' : 'quantity')
+    ..aInt64(8, _omitFieldNames ? '' : 'timeinforce')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -254,8 +277,10 @@ class TradeOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TradeOrder copyWith(void Function(TradeOrder) updates) => super.copyWith((message) => updates(message as TradeOrder)) as TradeOrder; // ignore: deprecated_member_use
+  TradeOrder copyWith(void Function(TradeOrder) updates) => super.copyWith((message) => updates(message as TradeOrder)) as TradeOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TradeOrder create() => TradeOrder._();
   TradeOrder createEmptyInstance() => create();
@@ -264,6 +289,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   static TradeOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TradeOrder>(create);
   static TradeOrder? _defaultInstance;
 
+  /// originating address
   @$pb.TagNumber(1)
   $core.List<$core.int> get sender => $_getN(0);
   @$pb.TagNumber(1)
@@ -273,6 +299,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSender() => clearField(1);
 
+  /// order id, optional
   @$pb.TagNumber(2)
   $core.String get id => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -282,6 +309,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// symbol for trading pair in full name of the tokens
   @$pb.TagNumber(3)
   $core.String get symbol => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -291,6 +319,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSymbol() => clearField(3);
 
+  /// only accept 2 for now, meaning limit order
   @$pb.TagNumber(4)
   $fixnum.Int64 get ordertype => $_getI64(3);
   @$pb.TagNumber(4)
@@ -300,6 +329,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearOrdertype() => clearField(4);
 
+  /// 1 for buy and 2 for sell
   @$pb.TagNumber(5)
   $fixnum.Int64 get side => $_getI64(4);
   @$pb.TagNumber(5)
@@ -309,6 +339,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearSide() => clearField(5);
 
+  /// price of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
   @$pb.TagNumber(6)
   $fixnum.Int64 get price => $_getI64(5);
   @$pb.TagNumber(6)
@@ -318,6 +349,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearPrice() => clearField(6);
 
+  /// quantity of the order, which is the real price multiplied by 1e8 (10^8) and rounded to integer
   @$pb.TagNumber(7)
   $fixnum.Int64 get quantity => $_getI64(6);
   @$pb.TagNumber(7)
@@ -327,6 +359,7 @@ class TradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(7)
   void clearQuantity() => clearField(7);
 
+  /// 1 for Good Till Expire(GTE) order and 3 for Immediate Or Cancel (IOC)
   @$pb.TagNumber(8)
   $fixnum.Int64 get timeinforce => $_getI64(7);
   @$pb.TagNumber(8)
@@ -337,34 +370,36 @@ class TradeOrder extends $pb.GeneratedMessage {
   void clearTimeinforce() => clearField(8);
 }
 
+/// Message for CancelTrade order
 class CancelTradeOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'CancelTradeOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sender', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refid')
-    ..hasRequiredFields = false
-  ;
-
-  CancelTradeOrder._() : super();
   factory CancelTradeOrder({
     $core.List<$core.int>? sender,
     $core.String? symbol,
     $core.String? refid,
   }) {
-    final _result = create();
+    final $result = create();
     if (sender != null) {
-      _result.sender = sender;
+      $result.sender = sender;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (refid != null) {
-      _result.refid = refid;
+      $result.refid = refid;
     }
-    return _result;
+    return $result;
   }
+  CancelTradeOrder._() : super();
   factory CancelTradeOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory CancelTradeOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'CancelTradeOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'sender', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'symbol')
+    ..aOS(3, _omitFieldNames ? '' : 'refid')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -374,8 +409,10 @@ class CancelTradeOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  CancelTradeOrder copyWith(void Function(CancelTradeOrder) updates) => super.copyWith((message) => updates(message as CancelTradeOrder)) as CancelTradeOrder; // ignore: deprecated_member_use
+  CancelTradeOrder copyWith(void Function(CancelTradeOrder) updates) => super.copyWith((message) => updates(message as CancelTradeOrder)) as CancelTradeOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static CancelTradeOrder create() => CancelTradeOrder._();
   CancelTradeOrder createEmptyInstance() => create();
@@ -384,6 +421,7 @@ class CancelTradeOrder extends $pb.GeneratedMessage {
   static CancelTradeOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<CancelTradeOrder>(create);
   static CancelTradeOrder? _defaultInstance;
 
+  /// originating address
   @$pb.TagNumber(1)
   $core.List<$core.int> get sender => $_getN(0);
   @$pb.TagNumber(1)
@@ -393,6 +431,7 @@ class CancelTradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearSender() => clearField(1);
 
+  /// symbol for trading pair in full name of the tokens
   @$pb.TagNumber(2)
   $core.String get symbol => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -402,6 +441,7 @@ class CancelTradeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSymbol() => clearField(2);
 
+  /// order id to cancel
   @$pb.TagNumber(3)
   $core.String get refid => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -412,29 +452,31 @@ class CancelTradeOrder extends $pb.GeneratedMessage {
   void clearRefid() => clearField(3);
 }
 
+/// A token amount, symbol-amount pair.  Could be moved out of SendOrder; kept here for backward compatibility.
 class SendOrder_Token extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendOrder.Token', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'denom')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..hasRequiredFields = false
-  ;
-
-  SendOrder_Token._() : super();
   factory SendOrder_Token({
     $core.String? denom,
     $fixnum.Int64? amount,
   }) {
-    final _result = create();
+    final $result = create();
     if (denom != null) {
-      _result.denom = denom;
+      $result.denom = denom;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
-    return _result;
+    return $result;
   }
+  SendOrder_Token._() : super();
   factory SendOrder_Token.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendOrder_Token.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendOrder.Token', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..aOS(1, _omitFieldNames ? '' : 'denom')
+    ..aInt64(2, _omitFieldNames ? '' : 'amount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -444,8 +486,10 @@ class SendOrder_Token extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SendOrder_Token copyWith(void Function(SendOrder_Token) updates) => super.copyWith((message) => updates(message as SendOrder_Token)) as SendOrder_Token; // ignore: deprecated_member_use
+  SendOrder_Token copyWith(void Function(SendOrder_Token) updates) => super.copyWith((message) => updates(message as SendOrder_Token)) as SendOrder_Token;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SendOrder_Token create() => SendOrder_Token._();
   SendOrder_Token createEmptyInstance() => create();
@@ -454,6 +498,7 @@ class SendOrder_Token extends $pb.GeneratedMessage {
   static SendOrder_Token getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendOrder_Token>(create);
   static SendOrder_Token? _defaultInstance;
 
+  /// Token ID
   @$pb.TagNumber(1)
   $core.String get denom => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -463,6 +508,7 @@ class SendOrder_Token extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearDenom() => clearField(1);
 
+  /// Amount
   @$pb.TagNumber(2)
   $fixnum.Int64 get amount => $_getI64(1);
   @$pb.TagNumber(2)
@@ -473,29 +519,31 @@ class SendOrder_Token extends $pb.GeneratedMessage {
   void clearAmount() => clearField(2);
 }
 
+/// Transaction input
 class SendOrder_Input extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendOrder.Input', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address', $pb.PbFieldType.OY)
-    ..pc<SendOrder_Token>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coins', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..hasRequiredFields = false
-  ;
-
-  SendOrder_Input._() : super();
   factory SendOrder_Input({
     $core.List<$core.int>? address,
     $core.Iterable<SendOrder_Token>? coins,
   }) {
-    final _result = create();
+    final $result = create();
     if (address != null) {
-      _result.address = address;
+      $result.address = address;
     }
     if (coins != null) {
-      _result.coins.addAll(coins);
+      $result.coins.addAll(coins);
     }
-    return _result;
+    return $result;
   }
+  SendOrder_Input._() : super();
   factory SendOrder_Input.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendOrder_Input.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendOrder.Input', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'address', $pb.PbFieldType.OY)
+    ..pc<SendOrder_Token>(2, _omitFieldNames ? '' : 'coins', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -505,8 +553,10 @@ class SendOrder_Input extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SendOrder_Input copyWith(void Function(SendOrder_Input) updates) => super.copyWith((message) => updates(message as SendOrder_Input)) as SendOrder_Input; // ignore: deprecated_member_use
+  SendOrder_Input copyWith(void Function(SendOrder_Input) updates) => super.copyWith((message) => updates(message as SendOrder_Input)) as SendOrder_Input;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SendOrder_Input create() => SendOrder_Input._();
   SendOrder_Input createEmptyInstance() => create();
@@ -515,6 +565,7 @@ class SendOrder_Input extends $pb.GeneratedMessage {
   static SendOrder_Input getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendOrder_Input>(create);
   static SendOrder_Input? _defaultInstance;
 
+  /// source address
   @$pb.TagNumber(1)
   $core.List<$core.int> get address => $_getN(0);
   @$pb.TagNumber(1)
@@ -524,33 +575,36 @@ class SendOrder_Input extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAddress() => clearField(1);
 
+  /// input coin amounts
   @$pb.TagNumber(2)
   $core.List<SendOrder_Token> get coins => $_getList(1);
 }
 
+/// Transaction output
 class SendOrder_Output extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendOrder.Output', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'address', $pb.PbFieldType.OY)
-    ..pc<SendOrder_Token>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'coins', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..hasRequiredFields = false
-  ;
-
-  SendOrder_Output._() : super();
   factory SendOrder_Output({
     $core.List<$core.int>? address,
     $core.Iterable<SendOrder_Token>? coins,
   }) {
-    final _result = create();
+    final $result = create();
     if (address != null) {
-      _result.address = address;
+      $result.address = address;
     }
     if (coins != null) {
-      _result.coins.addAll(coins);
+      $result.coins.addAll(coins);
     }
-    return _result;
+    return $result;
   }
+  SendOrder_Output._() : super();
   factory SendOrder_Output.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendOrder_Output.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendOrder.Output', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'address', $pb.PbFieldType.OY)
+    ..pc<SendOrder_Token>(2, _omitFieldNames ? '' : 'coins', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -560,8 +614,10 @@ class SendOrder_Output extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SendOrder_Output copyWith(void Function(SendOrder_Output) updates) => super.copyWith((message) => updates(message as SendOrder_Output)) as SendOrder_Output; // ignore: deprecated_member_use
+  SendOrder_Output copyWith(void Function(SendOrder_Output) updates) => super.copyWith((message) => updates(message as SendOrder_Output)) as SendOrder_Output;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SendOrder_Output create() => SendOrder_Output._();
   SendOrder_Output createEmptyInstance() => create();
@@ -570,6 +626,7 @@ class SendOrder_Output extends $pb.GeneratedMessage {
   static SendOrder_Output getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendOrder_Output>(create);
   static SendOrder_Output? _defaultInstance;
 
+  /// destination address
   @$pb.TagNumber(1)
   $core.List<$core.int> get address => $_getN(0);
   @$pb.TagNumber(1)
@@ -579,33 +636,36 @@ class SendOrder_Output extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearAddress() => clearField(1);
 
+  /// output coin amounts
   @$pb.TagNumber(2)
   $core.List<SendOrder_Token> get coins => $_getList(1);
 }
 
+/// Message for Send order
 class SendOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SendOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..pc<SendOrder_Input>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: SendOrder_Input.create)
-    ..pc<SendOrder_Output>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'outputs', $pb.PbFieldType.PM, subBuilder: SendOrder_Output.create)
-    ..hasRequiredFields = false
-  ;
-
-  SendOrder._() : super();
   factory SendOrder({
     $core.Iterable<SendOrder_Input>? inputs,
     $core.Iterable<SendOrder_Output>? outputs,
   }) {
-    final _result = create();
+    final $result = create();
     if (inputs != null) {
-      _result.inputs.addAll(inputs);
+      $result.inputs.addAll(inputs);
     }
     if (outputs != null) {
-      _result.outputs.addAll(outputs);
+      $result.outputs.addAll(outputs);
     }
-    return _result;
+    return $result;
   }
+  SendOrder._() : super();
   factory SendOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SendOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SendOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..pc<SendOrder_Input>(1, _omitFieldNames ? '' : 'inputs', $pb.PbFieldType.PM, subBuilder: SendOrder_Input.create)
+    ..pc<SendOrder_Output>(2, _omitFieldNames ? '' : 'outputs', $pb.PbFieldType.PM, subBuilder: SendOrder_Output.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -615,8 +675,10 @@ class SendOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SendOrder copyWith(void Function(SendOrder) updates) => super.copyWith((message) => updates(message as SendOrder)) as SendOrder; // ignore: deprecated_member_use
+  SendOrder copyWith(void Function(SendOrder) updates) => super.copyWith((message) => updates(message as SendOrder)) as SendOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SendOrder create() => SendOrder._();
   SendOrder createEmptyInstance() => create();
@@ -625,24 +687,17 @@ class SendOrder extends $pb.GeneratedMessage {
   static SendOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SendOrder>(create);
   static SendOrder? _defaultInstance;
 
+  /// Send inputs
   @$pb.TagNumber(1)
   $core.List<SendOrder_Input> get inputs => $_getList(0);
 
+  /// Send outputs
   @$pb.TagNumber(2)
   $core.List<SendOrder_Output> get outputs => $_getList(1);
 }
 
+/// Message for TokenIssue order
 class TokenIssueOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TokenIssueOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'name')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'totalSupply')
-    ..aOB(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mintable')
-    ..hasRequiredFields = false
-  ;
-
-  TokenIssueOrder._() : super();
   factory TokenIssueOrder({
     $core.List<$core.int>? from,
     $core.String? name,
@@ -650,26 +705,37 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
     $fixnum.Int64? totalSupply,
     $core.bool? mintable,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (name != null) {
-      _result.name = name;
+      $result.name = name;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (totalSupply != null) {
-      _result.totalSupply = totalSupply;
+      $result.totalSupply = totalSupply;
     }
     if (mintable != null) {
-      _result.mintable = mintable;
+      $result.mintable = mintable;
     }
-    return _result;
+    return $result;
   }
+  TokenIssueOrder._() : super();
   factory TokenIssueOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TokenIssueOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TokenIssueOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'name')
+    ..aOS(3, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(4, _omitFieldNames ? '' : 'totalSupply')
+    ..aOB(5, _omitFieldNames ? '' : 'mintable')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -679,8 +745,10 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TokenIssueOrder copyWith(void Function(TokenIssueOrder) updates) => super.copyWith((message) => updates(message as TokenIssueOrder)) as TokenIssueOrder; // ignore: deprecated_member_use
+  TokenIssueOrder copyWith(void Function(TokenIssueOrder) updates) => super.copyWith((message) => updates(message as TokenIssueOrder)) as TokenIssueOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TokenIssueOrder create() => TokenIssueOrder._();
   TokenIssueOrder createEmptyInstance() => create();
@@ -689,6 +757,7 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   static TokenIssueOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenIssueOrder>(create);
   static TokenIssueOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -698,6 +767,7 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// token name
   @$pb.TagNumber(2)
   $core.String get name => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -707,6 +777,7 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearName() => clearField(2);
 
+  /// token symbol, in full name with "-" suffix
   @$pb.TagNumber(3)
   $core.String get symbol => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -716,6 +787,7 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSymbol() => clearField(3);
 
+  /// total supply
   @$pb.TagNumber(4)
   $fixnum.Int64 get totalSupply => $_getI64(3);
   @$pb.TagNumber(4)
@@ -725,6 +797,7 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearTotalSupply() => clearField(4);
 
+  /// mintable
   @$pb.TagNumber(5)
   $core.bool get mintable => $_getBF(4);
   @$pb.TagNumber(5)
@@ -735,34 +808,36 @@ class TokenIssueOrder extends $pb.GeneratedMessage {
   void clearMintable() => clearField(5);
 }
 
+/// Message for TokenMint order
 class TokenMintOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TokenMintOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..hasRequiredFields = false
-  ;
-
-  TokenMintOrder._() : super();
   factory TokenMintOrder({
     $core.List<$core.int>? from,
     $core.String? symbol,
     $fixnum.Int64? amount,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
-    return _result;
+    return $result;
   }
+  TokenMintOrder._() : super();
   factory TokenMintOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TokenMintOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TokenMintOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(3, _omitFieldNames ? '' : 'amount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -772,8 +847,10 @@ class TokenMintOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TokenMintOrder copyWith(void Function(TokenMintOrder) updates) => super.copyWith((message) => updates(message as TokenMintOrder)) as TokenMintOrder; // ignore: deprecated_member_use
+  TokenMintOrder copyWith(void Function(TokenMintOrder) updates) => super.copyWith((message) => updates(message as TokenMintOrder)) as TokenMintOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TokenMintOrder create() => TokenMintOrder._();
   TokenMintOrder createEmptyInstance() => create();
@@ -782,6 +859,7 @@ class TokenMintOrder extends $pb.GeneratedMessage {
   static TokenMintOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenMintOrder>(create);
   static TokenMintOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -791,6 +869,7 @@ class TokenMintOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// token symbol, in full name with "-" suffix
   @$pb.TagNumber(2)
   $core.String get symbol => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -800,6 +879,7 @@ class TokenMintOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSymbol() => clearField(2);
 
+  /// amount to mint
   @$pb.TagNumber(3)
   $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
@@ -810,34 +890,36 @@ class TokenMintOrder extends $pb.GeneratedMessage {
   void clearAmount() => clearField(3);
 }
 
+/// Message for TokenBurn order
 class TokenBurnOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TokenBurnOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..hasRequiredFields = false
-  ;
-
-  TokenBurnOrder._() : super();
   factory TokenBurnOrder({
     $core.List<$core.int>? from,
     $core.String? symbol,
     $fixnum.Int64? amount,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
-    return _result;
+    return $result;
   }
+  TokenBurnOrder._() : super();
   factory TokenBurnOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TokenBurnOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TokenBurnOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(3, _omitFieldNames ? '' : 'amount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -847,8 +929,10 @@ class TokenBurnOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TokenBurnOrder copyWith(void Function(TokenBurnOrder) updates) => super.copyWith((message) => updates(message as TokenBurnOrder)) as TokenBurnOrder; // ignore: deprecated_member_use
+  TokenBurnOrder copyWith(void Function(TokenBurnOrder) updates) => super.copyWith((message) => updates(message as TokenBurnOrder)) as TokenBurnOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TokenBurnOrder create() => TokenBurnOrder._();
   TokenBurnOrder createEmptyInstance() => create();
@@ -857,6 +941,7 @@ class TokenBurnOrder extends $pb.GeneratedMessage {
   static TokenBurnOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenBurnOrder>(create);
   static TokenBurnOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -866,6 +951,7 @@ class TokenBurnOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// token symbol, in full name with "-" suffix
   @$pb.TagNumber(2)
   $core.String get symbol => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -875,6 +961,7 @@ class TokenBurnOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSymbol() => clearField(2);
 
+  /// amount to burn
   @$pb.TagNumber(3)
   $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
@@ -885,34 +972,36 @@ class TokenBurnOrder extends $pb.GeneratedMessage {
   void clearAmount() => clearField(3);
 }
 
+/// Message for TokenFreeze order
 class TokenFreezeOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TokenFreezeOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..hasRequiredFields = false
-  ;
-
-  TokenFreezeOrder._() : super();
   factory TokenFreezeOrder({
     $core.List<$core.int>? from,
     $core.String? symbol,
     $fixnum.Int64? amount,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
-    return _result;
+    return $result;
   }
+  TokenFreezeOrder._() : super();
   factory TokenFreezeOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TokenFreezeOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TokenFreezeOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(3, _omitFieldNames ? '' : 'amount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -922,8 +1011,10 @@ class TokenFreezeOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TokenFreezeOrder copyWith(void Function(TokenFreezeOrder) updates) => super.copyWith((message) => updates(message as TokenFreezeOrder)) as TokenFreezeOrder; // ignore: deprecated_member_use
+  TokenFreezeOrder copyWith(void Function(TokenFreezeOrder) updates) => super.copyWith((message) => updates(message as TokenFreezeOrder)) as TokenFreezeOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TokenFreezeOrder create() => TokenFreezeOrder._();
   TokenFreezeOrder createEmptyInstance() => create();
@@ -932,6 +1023,7 @@ class TokenFreezeOrder extends $pb.GeneratedMessage {
   static TokenFreezeOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenFreezeOrder>(create);
   static TokenFreezeOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -941,6 +1033,7 @@ class TokenFreezeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// token symbol, in full name with "-" suffix
   @$pb.TagNumber(2)
   $core.String get symbol => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -950,6 +1043,7 @@ class TokenFreezeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSymbol() => clearField(2);
 
+  /// amount of token to freeze
   @$pb.TagNumber(3)
   $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
@@ -960,34 +1054,36 @@ class TokenFreezeOrder extends $pb.GeneratedMessage {
   void clearAmount() => clearField(3);
 }
 
+/// Message for TokenUnfreeze order
 class TokenUnfreezeOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TokenUnfreezeOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'symbol')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount')
-    ..hasRequiredFields = false
-  ;
-
-  TokenUnfreezeOrder._() : super();
   factory TokenUnfreezeOrder({
     $core.List<$core.int>? from,
     $core.String? symbol,
     $fixnum.Int64? amount,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (symbol != null) {
-      _result.symbol = symbol;
+      $result.symbol = symbol;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
-    return _result;
+    return $result;
   }
+  TokenUnfreezeOrder._() : super();
   factory TokenUnfreezeOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TokenUnfreezeOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TokenUnfreezeOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'symbol')
+    ..aInt64(3, _omitFieldNames ? '' : 'amount')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -997,8 +1093,10 @@ class TokenUnfreezeOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TokenUnfreezeOrder copyWith(void Function(TokenUnfreezeOrder) updates) => super.copyWith((message) => updates(message as TokenUnfreezeOrder)) as TokenUnfreezeOrder; // ignore: deprecated_member_use
+  TokenUnfreezeOrder copyWith(void Function(TokenUnfreezeOrder) updates) => super.copyWith((message) => updates(message as TokenUnfreezeOrder)) as TokenUnfreezeOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TokenUnfreezeOrder create() => TokenUnfreezeOrder._();
   TokenUnfreezeOrder createEmptyInstance() => create();
@@ -1007,6 +1105,7 @@ class TokenUnfreezeOrder extends $pb.GeneratedMessage {
   static TokenUnfreezeOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TokenUnfreezeOrder>(create);
   static TokenUnfreezeOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1016,6 +1115,7 @@ class TokenUnfreezeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// token symbol, in full name with "-" suffix
   @$pb.TagNumber(2)
   $core.String get symbol => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1025,6 +1125,7 @@ class TokenUnfreezeOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSymbol() => clearField(2);
 
+  /// amount of token to unfreeze
   @$pb.TagNumber(3)
   $fixnum.Int64 get amount => $_getI64(2);
   @$pb.TagNumber(3)
@@ -1035,22 +1136,8 @@ class TokenUnfreezeOrder extends $pb.GeneratedMessage {
   void clearAmount() => clearField(3);
 }
 
+/// Message for HashTimeLock order
 class HTLTOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'HTLTOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.OY)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'recipientOtherChain')
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'senderOtherChain')
-    ..a<$core.List<$core.int>>(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'randomNumberHash', $pb.PbFieldType.OY)
-    ..aInt64(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timestamp')
-    ..pc<SendOrder_Token>(7, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..aOS(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expectedIncome')
-    ..aInt64(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'heightSpan')
-    ..aOB(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'crossChain')
-    ..hasRequiredFields = false
-  ;
-
-  HTLTOrder._() : super();
   factory HTLTOrder({
     $core.List<$core.int>? from,
     $core.List<$core.int>? to,
@@ -1063,41 +1150,57 @@ class HTLTOrder extends $pb.GeneratedMessage {
     $fixnum.Int64? heightSpan,
     $core.bool? crossChain,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (to != null) {
-      _result.to = to;
+      $result.to = to;
     }
     if (recipientOtherChain != null) {
-      _result.recipientOtherChain = recipientOtherChain;
+      $result.recipientOtherChain = recipientOtherChain;
     }
     if (senderOtherChain != null) {
-      _result.senderOtherChain = senderOtherChain;
+      $result.senderOtherChain = senderOtherChain;
     }
     if (randomNumberHash != null) {
-      _result.randomNumberHash = randomNumberHash;
+      $result.randomNumberHash = randomNumberHash;
     }
     if (timestamp != null) {
-      _result.timestamp = timestamp;
+      $result.timestamp = timestamp;
     }
     if (amount != null) {
-      _result.amount.addAll(amount);
+      $result.amount.addAll(amount);
     }
     if (expectedIncome != null) {
-      _result.expectedIncome = expectedIncome;
+      $result.expectedIncome = expectedIncome;
     }
     if (heightSpan != null) {
-      _result.heightSpan = heightSpan;
+      $result.heightSpan = heightSpan;
     }
     if (crossChain != null) {
-      _result.crossChain = crossChain;
+      $result.crossChain = crossChain;
     }
-    return _result;
+    return $result;
   }
+  HTLTOrder._() : super();
   factory HTLTOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory HTLTOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'HTLTOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'to', $pb.PbFieldType.OY)
+    ..aOS(3, _omitFieldNames ? '' : 'recipientOtherChain')
+    ..aOS(4, _omitFieldNames ? '' : 'senderOtherChain')
+    ..a<$core.List<$core.int>>(5, _omitFieldNames ? '' : 'randomNumberHash', $pb.PbFieldType.OY)
+    ..aInt64(6, _omitFieldNames ? '' : 'timestamp')
+    ..pc<SendOrder_Token>(7, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..aOS(8, _omitFieldNames ? '' : 'expectedIncome')
+    ..aInt64(9, _omitFieldNames ? '' : 'heightSpan')
+    ..aOB(10, _omitFieldNames ? '' : 'crossChain')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1107,8 +1210,10 @@ class HTLTOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  HTLTOrder copyWith(void Function(HTLTOrder) updates) => super.copyWith((message) => updates(message as HTLTOrder)) as HTLTOrder; // ignore: deprecated_member_use
+  HTLTOrder copyWith(void Function(HTLTOrder) updates) => super.copyWith((message) => updates(message as HTLTOrder)) as HTLTOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static HTLTOrder create() => HTLTOrder._();
   HTLTOrder createEmptyInstance() => create();
@@ -1117,6 +1222,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   static HTLTOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<HTLTOrder>(create);
   static HTLTOrder? _defaultInstance;
 
+  /// signer address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1126,6 +1232,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// recipient address
   @$pb.TagNumber(2)
   $core.List<$core.int> get to => $_getN(1);
   @$pb.TagNumber(2)
@@ -1135,6 +1242,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearTo() => clearField(2);
 
+  /// source on other chain, optional
   @$pb.TagNumber(3)
   $core.String get recipientOtherChain => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1144,6 +1252,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearRecipientOtherChain() => clearField(3);
 
+  /// recipient on other chain, optional
   @$pb.TagNumber(4)
   $core.String get senderOtherChain => $_getSZ(3);
   @$pb.TagNumber(4)
@@ -1153,6 +1262,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearSenderOtherChain() => clearField(4);
 
+  /// hash of a random number and timestamp, based on SHA256
   @$pb.TagNumber(5)
   $core.List<$core.int> get randomNumberHash => $_getN(4);
   @$pb.TagNumber(5)
@@ -1162,6 +1272,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearRandomNumberHash() => clearField(5);
 
+  /// timestamp
   @$pb.TagNumber(6)
   $fixnum.Int64 get timestamp => $_getI64(5);
   @$pb.TagNumber(6)
@@ -1171,9 +1282,11 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(6)
   void clearTimestamp() => clearField(6);
 
+  /// amounts
   @$pb.TagNumber(7)
   $core.List<SendOrder_Token> get amount => $_getList(6);
 
+  /// expected gained token on the other chain
   @$pb.TagNumber(8)
   $core.String get expectedIncome => $_getSZ(7);
   @$pb.TagNumber(8)
@@ -1183,6 +1296,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(8)
   void clearExpectedIncome() => clearField(8);
 
+  /// period expressed in block heights
   @$pb.TagNumber(9)
   $fixnum.Int64 get heightSpan => $_getI64(8);
   @$pb.TagNumber(9)
@@ -1192,6 +1306,7 @@ class HTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(9)
   void clearHeightSpan() => clearField(9);
 
+  /// set for cross-chain send
   @$pb.TagNumber(10)
   $core.bool get crossChain => $_getBF(9);
   @$pb.TagNumber(10)
@@ -1202,34 +1317,36 @@ class HTLTOrder extends $pb.GeneratedMessage {
   void clearCrossChain() => clearField(10);
 }
 
+/// Message for Deposit HTLT order
 class DepositHTLTOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'DepositHTLTOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..pc<SendOrder_Token>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'swapId', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  DepositHTLTOrder._() : super();
   factory DepositHTLTOrder({
     $core.List<$core.int>? from,
     $core.Iterable<SendOrder_Token>? amount,
     $core.List<$core.int>? swapId,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (amount != null) {
-      _result.amount.addAll(amount);
+      $result.amount.addAll(amount);
     }
     if (swapId != null) {
-      _result.swapId = swapId;
+      $result.swapId = swapId;
     }
-    return _result;
+    return $result;
   }
+  DepositHTLTOrder._() : super();
   factory DepositHTLTOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory DepositHTLTOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'DepositHTLTOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..pc<SendOrder_Token>(2, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'swapId', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1239,8 +1356,10 @@ class DepositHTLTOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  DepositHTLTOrder copyWith(void Function(DepositHTLTOrder) updates) => super.copyWith((message) => updates(message as DepositHTLTOrder)) as DepositHTLTOrder; // ignore: deprecated_member_use
+  DepositHTLTOrder copyWith(void Function(DepositHTLTOrder) updates) => super.copyWith((message) => updates(message as DepositHTLTOrder)) as DepositHTLTOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static DepositHTLTOrder create() => DepositHTLTOrder._();
   DepositHTLTOrder createEmptyInstance() => create();
@@ -1249,6 +1368,7 @@ class DepositHTLTOrder extends $pb.GeneratedMessage {
   static DepositHTLTOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<DepositHTLTOrder>(create);
   static DepositHTLTOrder? _defaultInstance;
 
+  /// signer address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1258,9 +1378,11 @@ class DepositHTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// amounts
   @$pb.TagNumber(2)
   $core.List<SendOrder_Token> get amount => $_getList(1);
 
+  /// swap ID
   @$pb.TagNumber(3)
   $core.List<$core.int> get swapId => $_getN(2);
   @$pb.TagNumber(3)
@@ -1271,34 +1393,36 @@ class DepositHTLTOrder extends $pb.GeneratedMessage {
   void clearSwapId() => clearField(3);
 }
 
+/// Message for Claim HTLT order
 class ClaimHTLOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'ClaimHTLOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'swapId', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'randomNumber', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  ClaimHTLOrder._() : super();
   factory ClaimHTLOrder({
     $core.List<$core.int>? from,
     $core.List<$core.int>? swapId,
     $core.List<$core.int>? randomNumber,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (swapId != null) {
-      _result.swapId = swapId;
+      $result.swapId = swapId;
     }
     if (randomNumber != null) {
-      _result.randomNumber = randomNumber;
+      $result.randomNumber = randomNumber;
     }
-    return _result;
+    return $result;
   }
+  ClaimHTLOrder._() : super();
   factory ClaimHTLOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory ClaimHTLOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'ClaimHTLOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'swapId', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'randomNumber', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1308,8 +1432,10 @@ class ClaimHTLOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  ClaimHTLOrder copyWith(void Function(ClaimHTLOrder) updates) => super.copyWith((message) => updates(message as ClaimHTLOrder)) as ClaimHTLOrder; // ignore: deprecated_member_use
+  ClaimHTLOrder copyWith(void Function(ClaimHTLOrder) updates) => super.copyWith((message) => updates(message as ClaimHTLOrder)) as ClaimHTLOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static ClaimHTLOrder create() => ClaimHTLOrder._();
   ClaimHTLOrder createEmptyInstance() => create();
@@ -1318,6 +1444,7 @@ class ClaimHTLOrder extends $pb.GeneratedMessage {
   static ClaimHTLOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<ClaimHTLOrder>(create);
   static ClaimHTLOrder? _defaultInstance;
 
+  /// signer address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1327,6 +1454,7 @@ class ClaimHTLOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// swap ID
   @$pb.TagNumber(2)
   $core.List<$core.int> get swapId => $_getN(1);
   @$pb.TagNumber(2)
@@ -1336,6 +1464,7 @@ class ClaimHTLOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearSwapId() => clearField(2);
 
+  /// random number input
   @$pb.TagNumber(3)
   $core.List<$core.int> get randomNumber => $_getN(2);
   @$pb.TagNumber(3)
@@ -1346,29 +1475,31 @@ class ClaimHTLOrder extends $pb.GeneratedMessage {
   void clearRandomNumber() => clearField(3);
 }
 
+/// Message for Refund HTLT order
 class RefundHTLTOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'RefundHTLTOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'swapId', $pb.PbFieldType.OY)
-    ..hasRequiredFields = false
-  ;
-
-  RefundHTLTOrder._() : super();
   factory RefundHTLTOrder({
     $core.List<$core.int>? from,
     $core.List<$core.int>? swapId,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (swapId != null) {
-      _result.swapId = swapId;
+      $result.swapId = swapId;
     }
-    return _result;
+    return $result;
   }
+  RefundHTLTOrder._() : super();
   factory RefundHTLTOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory RefundHTLTOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'RefundHTLTOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'swapId', $pb.PbFieldType.OY)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1378,8 +1509,10 @@ class RefundHTLTOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  RefundHTLTOrder copyWith(void Function(RefundHTLTOrder) updates) => super.copyWith((message) => updates(message as RefundHTLTOrder)) as RefundHTLTOrder; // ignore: deprecated_member_use
+  RefundHTLTOrder copyWith(void Function(RefundHTLTOrder) updates) => super.copyWith((message) => updates(message as RefundHTLTOrder)) as RefundHTLTOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static RefundHTLTOrder create() => RefundHTLTOrder._();
   RefundHTLTOrder createEmptyInstance() => create();
@@ -1388,6 +1521,7 @@ class RefundHTLTOrder extends $pb.GeneratedMessage {
   static RefundHTLTOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<RefundHTLTOrder>(create);
   static RefundHTLTOrder? _defaultInstance;
 
+  /// signer address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1397,6 +1531,7 @@ class RefundHTLTOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// swap ID
   @$pb.TagNumber(2)
   $core.List<$core.int> get swapId => $_getN(1);
   @$pb.TagNumber(2)
@@ -1407,39 +1542,41 @@ class RefundHTLTOrder extends $pb.GeneratedMessage {
   void clearSwapId() => clearField(2);
 }
 
+/// Transfer
 class TransferOut extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TransferOut', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'from', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'to', $pb.PbFieldType.OY)
-    ..aOM<SendOrder_Token>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', subBuilder: SendOrder_Token.create)
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'expireTime')
-    ..hasRequiredFields = false
-  ;
-
-  TransferOut._() : super();
   factory TransferOut({
     $core.List<$core.int>? from,
     $core.List<$core.int>? to,
     SendOrder_Token? amount,
     $fixnum.Int64? expireTime,
   }) {
-    final _result = create();
+    final $result = create();
     if (from != null) {
-      _result.from = from;
+      $result.from = from;
     }
     if (to != null) {
-      _result.to = to;
+      $result.to = to;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (expireTime != null) {
-      _result.expireTime = expireTime;
+      $result.expireTime = expireTime;
     }
-    return _result;
+    return $result;
   }
+  TransferOut._() : super();
   factory TransferOut.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TransferOut.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TransferOut', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'from', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'to', $pb.PbFieldType.OY)
+    ..aOM<SendOrder_Token>(3, _omitFieldNames ? '' : 'amount', subBuilder: SendOrder_Token.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'expireTime')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1449,8 +1586,10 @@ class TransferOut extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TransferOut copyWith(void Function(TransferOut) updates) => super.copyWith((message) => updates(message as TransferOut)) as TransferOut; // ignore: deprecated_member_use
+  TransferOut copyWith(void Function(TransferOut) updates) => super.copyWith((message) => updates(message as TransferOut)) as TransferOut;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TransferOut create() => TransferOut._();
   TransferOut createEmptyInstance() => create();
@@ -1459,6 +1598,7 @@ class TransferOut extends $pb.GeneratedMessage {
   static TransferOut getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TransferOut>(create);
   static TransferOut? _defaultInstance;
 
+  /// source address
   @$pb.TagNumber(1)
   $core.List<$core.int> get from => $_getN(0);
   @$pb.TagNumber(1)
@@ -1468,6 +1608,7 @@ class TransferOut extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFrom() => clearField(1);
 
+  /// recipient address
   @$pb.TagNumber(2)
   $core.List<$core.int> get to => $_getN(1);
   @$pb.TagNumber(2)
@@ -1477,6 +1618,7 @@ class TransferOut extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearTo() => clearField(2);
 
+  /// transfer amount
   @$pb.TagNumber(3)
   SendOrder_Token get amount => $_getN(2);
   @$pb.TagNumber(3)
@@ -1488,6 +1630,7 @@ class TransferOut extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   SendOrder_Token ensureAmount() => $_ensure(2);
 
+  /// expiration time
   @$pb.TagNumber(4)
   $fixnum.Int64 get expireTime => $_getI64(3);
   @$pb.TagNumber(4)
@@ -1499,38 +1642,39 @@ class TransferOut extends $pb.GeneratedMessage {
 }
 
 class SideChainDelegate extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SideChainDelegate', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddr', $pb.PbFieldType.OY)
-    ..aOM<SendOrder_Token>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegation', subBuilder: SendOrder_Token.create)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId')
-    ..hasRequiredFields = false
-  ;
-
-  SideChainDelegate._() : super();
   factory SideChainDelegate({
     $core.List<$core.int>? delegatorAddr,
     $core.List<$core.int>? validatorAddr,
     SendOrder_Token? delegation,
     $core.String? chainId,
   }) {
-    final _result = create();
+    final $result = create();
     if (delegatorAddr != null) {
-      _result.delegatorAddr = delegatorAddr;
+      $result.delegatorAddr = delegatorAddr;
     }
     if (validatorAddr != null) {
-      _result.validatorAddr = validatorAddr;
+      $result.validatorAddr = validatorAddr;
     }
     if (delegation != null) {
-      _result.delegation = delegation;
+      $result.delegation = delegation;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
-    return _result;
+    return $result;
   }
+  SideChainDelegate._() : super();
   factory SideChainDelegate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SideChainDelegate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SideChainDelegate', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'validatorAddr', $pb.PbFieldType.OY)
+    ..aOM<SendOrder_Token>(3, _omitFieldNames ? '' : 'delegation', subBuilder: SendOrder_Token.create)
+    ..aOS(4, _omitFieldNames ? '' : 'chainId')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1540,8 +1684,10 @@ class SideChainDelegate extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SideChainDelegate copyWith(void Function(SideChainDelegate) updates) => super.copyWith((message) => updates(message as SideChainDelegate)) as SideChainDelegate; // ignore: deprecated_member_use
+  SideChainDelegate copyWith(void Function(SideChainDelegate) updates) => super.copyWith((message) => updates(message as SideChainDelegate)) as SideChainDelegate;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SideChainDelegate create() => SideChainDelegate._();
   SideChainDelegate createEmptyInstance() => create();
@@ -1590,16 +1736,6 @@ class SideChainDelegate extends $pb.GeneratedMessage {
 }
 
 class SideChainRedelegate extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SideChainRedelegate', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorSrcAddr', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorDstAddr', $pb.PbFieldType.OY)
-    ..aOM<SendOrder_Token>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', subBuilder: SendOrder_Token.create)
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId')
-    ..hasRequiredFields = false
-  ;
-
-  SideChainRedelegate._() : super();
   factory SideChainRedelegate({
     $core.List<$core.int>? delegatorAddr,
     $core.List<$core.int>? validatorSrcAddr,
@@ -1607,26 +1743,37 @@ class SideChainRedelegate extends $pb.GeneratedMessage {
     SendOrder_Token? amount,
     $core.String? chainId,
   }) {
-    final _result = create();
+    final $result = create();
     if (delegatorAddr != null) {
-      _result.delegatorAddr = delegatorAddr;
+      $result.delegatorAddr = delegatorAddr;
     }
     if (validatorSrcAddr != null) {
-      _result.validatorSrcAddr = validatorSrcAddr;
+      $result.validatorSrcAddr = validatorSrcAddr;
     }
     if (validatorDstAddr != null) {
-      _result.validatorDstAddr = validatorDstAddr;
+      $result.validatorDstAddr = validatorDstAddr;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
-    return _result;
+    return $result;
   }
+  SideChainRedelegate._() : super();
   factory SideChainRedelegate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SideChainRedelegate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SideChainRedelegate', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'validatorSrcAddr', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(3, _omitFieldNames ? '' : 'validatorDstAddr', $pb.PbFieldType.OY)
+    ..aOM<SendOrder_Token>(4, _omitFieldNames ? '' : 'amount', subBuilder: SendOrder_Token.create)
+    ..aOS(5, _omitFieldNames ? '' : 'chainId')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1636,8 +1783,10 @@ class SideChainRedelegate extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SideChainRedelegate copyWith(void Function(SideChainRedelegate) updates) => super.copyWith((message) => updates(message as SideChainRedelegate)) as SideChainRedelegate; // ignore: deprecated_member_use
+  SideChainRedelegate copyWith(void Function(SideChainRedelegate) updates) => super.copyWith((message) => updates(message as SideChainRedelegate)) as SideChainRedelegate;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SideChainRedelegate create() => SideChainRedelegate._();
   SideChainRedelegate createEmptyInstance() => create();
@@ -1695,38 +1844,39 @@ class SideChainRedelegate extends $pb.GeneratedMessage {
 }
 
 class SideChainUndelegate extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SideChainUndelegate', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
-    ..a<$core.List<$core.int>>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'validatorAddr', $pb.PbFieldType.OY)
-    ..aOM<SendOrder_Token>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', subBuilder: SendOrder_Token.create)
-    ..aOS(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId')
-    ..hasRequiredFields = false
-  ;
-
-  SideChainUndelegate._() : super();
   factory SideChainUndelegate({
     $core.List<$core.int>? delegatorAddr,
     $core.List<$core.int>? validatorAddr,
     SendOrder_Token? amount,
     $core.String? chainId,
   }) {
-    final _result = create();
+    final $result = create();
     if (delegatorAddr != null) {
-      _result.delegatorAddr = delegatorAddr;
+      $result.delegatorAddr = delegatorAddr;
     }
     if (validatorAddr != null) {
-      _result.validatorAddr = validatorAddr;
+      $result.validatorAddr = validatorAddr;
     }
     if (amount != null) {
-      _result.amount = amount;
+      $result.amount = amount;
     }
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
-    return _result;
+    return $result;
   }
+  SideChainUndelegate._() : super();
   factory SideChainUndelegate.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SideChainUndelegate.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SideChainUndelegate', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'delegatorAddr', $pb.PbFieldType.OY)
+    ..a<$core.List<$core.int>>(2, _omitFieldNames ? '' : 'validatorAddr', $pb.PbFieldType.OY)
+    ..aOM<SendOrder_Token>(3, _omitFieldNames ? '' : 'amount', subBuilder: SendOrder_Token.create)
+    ..aOS(4, _omitFieldNames ? '' : 'chainId')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1736,8 +1886,10 @@ class SideChainUndelegate extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SideChainUndelegate copyWith(void Function(SideChainUndelegate) updates) => super.copyWith((message) => updates(message as SideChainUndelegate)) as SideChainUndelegate; // ignore: deprecated_member_use
+  SideChainUndelegate copyWith(void Function(SideChainUndelegate) updates) => super.copyWith((message) => updates(message as SideChainUndelegate)) as SideChainUndelegate;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SideChainUndelegate create() => SideChainUndelegate._();
   SideChainUndelegate createEmptyInstance() => create();
@@ -1785,39 +1937,41 @@ class SideChainUndelegate extends $pb.GeneratedMessage {
   void clearChainId() => clearField(4);
 }
 
+/// Message for TimeLock order
 class TimeLockOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeLockOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress', $pb.PbFieldType.OY)
-    ..aOS(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..pc<SendOrder_Token>(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lockTime')
-    ..hasRequiredFields = false
-  ;
-
-  TimeLockOrder._() : super();
   factory TimeLockOrder({
     $core.List<$core.int>? fromAddress,
     $core.String? description,
     $core.Iterable<SendOrder_Token>? amount,
     $fixnum.Int64? lockTime,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (amount != null) {
-      _result.amount.addAll(amount);
+      $result.amount.addAll(amount);
     }
     if (lockTime != null) {
-      _result.lockTime = lockTime;
+      $result.lockTime = lockTime;
     }
-    return _result;
+    return $result;
   }
+  TimeLockOrder._() : super();
   factory TimeLockOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeLockOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeLockOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'fromAddress', $pb.PbFieldType.OY)
+    ..aOS(2, _omitFieldNames ? '' : 'description')
+    ..pc<SendOrder_Token>(3, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..aInt64(4, _omitFieldNames ? '' : 'lockTime')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1827,8 +1981,10 @@ class TimeLockOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeLockOrder copyWith(void Function(TimeLockOrder) updates) => super.copyWith((message) => updates(message as TimeLockOrder)) as TimeLockOrder; // ignore: deprecated_member_use
+  TimeLockOrder copyWith(void Function(TimeLockOrder) updates) => super.copyWith((message) => updates(message as TimeLockOrder)) as TimeLockOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeLockOrder create() => TimeLockOrder._();
   TimeLockOrder createEmptyInstance() => create();
@@ -1837,6 +1993,7 @@ class TimeLockOrder extends $pb.GeneratedMessage {
   static TimeLockOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeLockOrder>(create);
   static TimeLockOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get fromAddress => $_getN(0);
   @$pb.TagNumber(1)
@@ -1846,6 +2003,7 @@ class TimeLockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// Description (optional)
   @$pb.TagNumber(2)
   $core.String get description => $_getSZ(1);
   @$pb.TagNumber(2)
@@ -1855,9 +2013,11 @@ class TimeLockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearDescription() => clearField(2);
 
+  /// Array of symbol/amount pairs. see SDK https://github.com/binance-chain/javascript-sdk/blob/master/docs/api-docs/classes/tokenmanagement.md#timelock
   @$pb.TagNumber(3)
   $core.List<SendOrder_Token> get amount => $_getList(2);
 
+  /// lock time
   @$pb.TagNumber(4)
   $fixnum.Int64 get lockTime => $_getI64(3);
   @$pb.TagNumber(4)
@@ -1868,17 +2028,8 @@ class TimeLockOrder extends $pb.GeneratedMessage {
   void clearLockTime() => clearField(4);
 }
 
+/// Message for TimeRelock order
 class TimeRelockOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeRelockOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress', $pb.PbFieldType.OY)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'description')
-    ..pc<SendOrder_Token>(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
-    ..aInt64(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'lockTime')
-    ..hasRequiredFields = false
-  ;
-
-  TimeRelockOrder._() : super();
   factory TimeRelockOrder({
     $core.List<$core.int>? fromAddress,
     $fixnum.Int64? id,
@@ -1886,26 +2037,37 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
     $core.Iterable<SendOrder_Token>? amount,
     $fixnum.Int64? lockTime,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
     if (description != null) {
-      _result.description = description;
+      $result.description = description;
     }
     if (amount != null) {
-      _result.amount.addAll(amount);
+      $result.amount.addAll(amount);
     }
     if (lockTime != null) {
-      _result.lockTime = lockTime;
+      $result.lockTime = lockTime;
     }
-    return _result;
+    return $result;
   }
+  TimeRelockOrder._() : super();
   factory TimeRelockOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeRelockOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeRelockOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'fromAddress', $pb.PbFieldType.OY)
+    ..aInt64(2, _omitFieldNames ? '' : 'id')
+    ..aOS(3, _omitFieldNames ? '' : 'description')
+    ..pc<SendOrder_Token>(4, _omitFieldNames ? '' : 'amount', $pb.PbFieldType.PM, subBuilder: SendOrder_Token.create)
+    ..aInt64(5, _omitFieldNames ? '' : 'lockTime')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1915,8 +2077,10 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeRelockOrder copyWith(void Function(TimeRelockOrder) updates) => super.copyWith((message) => updates(message as TimeRelockOrder)) as TimeRelockOrder; // ignore: deprecated_member_use
+  TimeRelockOrder copyWith(void Function(TimeRelockOrder) updates) => super.copyWith((message) => updates(message as TimeRelockOrder)) as TimeRelockOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeRelockOrder create() => TimeRelockOrder._();
   TimeRelockOrder createEmptyInstance() => create();
@@ -1925,6 +2089,7 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   static TimeRelockOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeRelockOrder>(create);
   static TimeRelockOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get fromAddress => $_getN(0);
   @$pb.TagNumber(1)
@@ -1934,6 +2099,7 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// order ID
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
   @$pb.TagNumber(2)
@@ -1943,6 +2109,7 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearId() => clearField(2);
 
+  /// Description (optional)
   @$pb.TagNumber(3)
   $core.String get description => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -1952,9 +2119,11 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearDescription() => clearField(3);
 
+  /// Array of symbol/amount pairs.
   @$pb.TagNumber(4)
   $core.List<SendOrder_Token> get amount => $_getList(3);
 
+  /// lock time
   @$pb.TagNumber(5)
   $fixnum.Int64 get lockTime => $_getI64(4);
   @$pb.TagNumber(5)
@@ -1965,29 +2134,31 @@ class TimeRelockOrder extends $pb.GeneratedMessage {
   void clearLockTime() => clearField(5);
 }
 
+/// Message for TimeUnlock order
 class TimeUnlockOrder extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TimeUnlockOrder', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'fromAddress', $pb.PbFieldType.OY)
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'id')
-    ..hasRequiredFields = false
-  ;
-
-  TimeUnlockOrder._() : super();
   factory TimeUnlockOrder({
     $core.List<$core.int>? fromAddress,
     $fixnum.Int64? id,
   }) {
-    final _result = create();
+    final $result = create();
     if (fromAddress != null) {
-      _result.fromAddress = fromAddress;
+      $result.fromAddress = fromAddress;
     }
     if (id != null) {
-      _result.id = id;
+      $result.id = id;
     }
-    return _result;
+    return $result;
   }
+  TimeUnlockOrder._() : super();
   factory TimeUnlockOrder.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory TimeUnlockOrder.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'TimeUnlockOrder', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'fromAddress', $pb.PbFieldType.OY)
+    ..aInt64(2, _omitFieldNames ? '' : 'id')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -1997,8 +2168,10 @@ class TimeUnlockOrder extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  TimeUnlockOrder copyWith(void Function(TimeUnlockOrder) updates) => super.copyWith((message) => updates(message as TimeUnlockOrder)) as TimeUnlockOrder; // ignore: deprecated_member_use
+  TimeUnlockOrder copyWith(void Function(TimeUnlockOrder) updates) => super.copyWith((message) => updates(message as TimeUnlockOrder)) as TimeUnlockOrder;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static TimeUnlockOrder create() => TimeUnlockOrder._();
   TimeUnlockOrder createEmptyInstance() => create();
@@ -2007,6 +2180,7 @@ class TimeUnlockOrder extends $pb.GeneratedMessage {
   static TimeUnlockOrder getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<TimeUnlockOrder>(create);
   static TimeUnlockOrder? _defaultInstance;
 
+  /// owner address
   @$pb.TagNumber(1)
   $core.List<$core.int> get fromAddress => $_getN(0);
   @$pb.TagNumber(1)
@@ -2016,6 +2190,7 @@ class TimeUnlockOrder extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearFromAddress() => clearField(1);
 
+  /// order ID
   @$pb.TagNumber(2)
   $fixnum.Int64 get id => $_getI64(1);
   @$pb.TagNumber(2)
@@ -2049,60 +2224,8 @@ enum SigningInput_OrderOneof {
   notSet
 }
 
+/// Input data necessary to create a signed transaction.
 class SigningInput extends $pb.GeneratedMessage {
-  static const $core.Map<$core.int, SigningInput_OrderOneof> _SigningInput_OrderOneofByTag = {
-    8 : SigningInput_OrderOneof.tradeOrder,
-    9 : SigningInput_OrderOneof.cancelTradeOrder,
-    10 : SigningInput_OrderOneof.sendOrder,
-    11 : SigningInput_OrderOneof.freezeOrder,
-    12 : SigningInput_OrderOneof.unfreezeOrder,
-    13 : SigningInput_OrderOneof.htltOrder,
-    14 : SigningInput_OrderOneof.depositHTLTOrder,
-    15 : SigningInput_OrderOneof.claimHTLTOrder,
-    16 : SigningInput_OrderOneof.refundHTLTOrder,
-    17 : SigningInput_OrderOneof.issueOrder,
-    18 : SigningInput_OrderOneof.mintOrder,
-    19 : SigningInput_OrderOneof.burnOrder,
-    20 : SigningInput_OrderOneof.transferOutOrder,
-    21 : SigningInput_OrderOneof.sideDelegateOrder,
-    22 : SigningInput_OrderOneof.sideRedelegateOrder,
-    23 : SigningInput_OrderOneof.sideUndelegateOrder,
-    24 : SigningInput_OrderOneof.timeLockOrder,
-    25 : SigningInput_OrderOneof.timeRelockOrder,
-    26 : SigningInput_OrderOneof.timeUnlockOrder,
-    0 : SigningInput_OrderOneof.notSet
-  };
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningInput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..oo(0, [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])
-    ..aOS(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'chainId')
-    ..aInt64(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'accountNumber')
-    ..aInt64(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sequence')
-    ..aInt64(4, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'source')
-    ..aOS(5, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'memo')
-    ..a<$core.List<$core.int>>(6, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'privateKey', $pb.PbFieldType.OY)
-    ..aOM<TradeOrder>(8, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'tradeOrder', subBuilder: TradeOrder.create)
-    ..aOM<CancelTradeOrder>(9, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'cancelTradeOrder', subBuilder: CancelTradeOrder.create)
-    ..aOM<SendOrder>(10, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sendOrder', subBuilder: SendOrder.create)
-    ..aOM<TokenFreezeOrder>(11, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'freezeOrder', subBuilder: TokenFreezeOrder.create)
-    ..aOM<TokenUnfreezeOrder>(12, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'unfreezeOrder', subBuilder: TokenUnfreezeOrder.create)
-    ..aOM<HTLTOrder>(13, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'htltOrder', subBuilder: HTLTOrder.create)
-    ..aOM<DepositHTLTOrder>(14, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'depositHTLTOrder', protoName: 'depositHTLT_order', subBuilder: DepositHTLTOrder.create)
-    ..aOM<ClaimHTLOrder>(15, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'claimHTLTOrder', protoName: 'claimHTLT_order', subBuilder: ClaimHTLOrder.create)
-    ..aOM<RefundHTLTOrder>(16, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'refundHTLTOrder', protoName: 'refundHTLT_order', subBuilder: RefundHTLTOrder.create)
-    ..aOM<TokenIssueOrder>(17, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'issueOrder', subBuilder: TokenIssueOrder.create)
-    ..aOM<TokenMintOrder>(18, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'mintOrder', subBuilder: TokenMintOrder.create)
-    ..aOM<TokenBurnOrder>(19, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'burnOrder', subBuilder: TokenBurnOrder.create)
-    ..aOM<TransferOut>(20, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'transferOutOrder', subBuilder: TransferOut.create)
-    ..aOM<SideChainDelegate>(21, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sideDelegateOrder', subBuilder: SideChainDelegate.create)
-    ..aOM<SideChainRedelegate>(22, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sideRedelegateOrder', subBuilder: SideChainRedelegate.create)
-    ..aOM<SideChainUndelegate>(23, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'sideUndelegateOrder', subBuilder: SideChainUndelegate.create)
-    ..aOM<TimeLockOrder>(24, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeLockOrder', subBuilder: TimeLockOrder.create)
-    ..aOM<TimeRelockOrder>(25, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeRelockOrder', subBuilder: TimeRelockOrder.create)
-    ..aOM<TimeUnlockOrder>(26, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'timeUnlockOrder', subBuilder: TimeUnlockOrder.create)
-    ..hasRequiredFields = false
-  ;
-
-  SigningInput._() : super();
   factory SigningInput({
     $core.String? chainId,
     $fixnum.Int64? accountNumber,
@@ -2130,86 +2253,140 @@ class SigningInput extends $pb.GeneratedMessage {
     TimeRelockOrder? timeRelockOrder,
     TimeUnlockOrder? timeUnlockOrder,
   }) {
-    final _result = create();
+    final $result = create();
     if (chainId != null) {
-      _result.chainId = chainId;
+      $result.chainId = chainId;
     }
     if (accountNumber != null) {
-      _result.accountNumber = accountNumber;
+      $result.accountNumber = accountNumber;
     }
     if (sequence != null) {
-      _result.sequence = sequence;
+      $result.sequence = sequence;
     }
     if (source != null) {
-      _result.source = source;
+      $result.source = source;
     }
     if (memo != null) {
-      _result.memo = memo;
+      $result.memo = memo;
     }
     if (privateKey != null) {
-      _result.privateKey = privateKey;
+      $result.privateKey = privateKey;
     }
     if (tradeOrder != null) {
-      _result.tradeOrder = tradeOrder;
+      $result.tradeOrder = tradeOrder;
     }
     if (cancelTradeOrder != null) {
-      _result.cancelTradeOrder = cancelTradeOrder;
+      $result.cancelTradeOrder = cancelTradeOrder;
     }
     if (sendOrder != null) {
-      _result.sendOrder = sendOrder;
+      $result.sendOrder = sendOrder;
     }
     if (freezeOrder != null) {
-      _result.freezeOrder = freezeOrder;
+      $result.freezeOrder = freezeOrder;
     }
     if (unfreezeOrder != null) {
-      _result.unfreezeOrder = unfreezeOrder;
+      $result.unfreezeOrder = unfreezeOrder;
     }
     if (htltOrder != null) {
-      _result.htltOrder = htltOrder;
+      $result.htltOrder = htltOrder;
     }
     if (depositHTLTOrder != null) {
-      _result.depositHTLTOrder = depositHTLTOrder;
+      $result.depositHTLTOrder = depositHTLTOrder;
     }
     if (claimHTLTOrder != null) {
-      _result.claimHTLTOrder = claimHTLTOrder;
+      $result.claimHTLTOrder = claimHTLTOrder;
     }
     if (refundHTLTOrder != null) {
-      _result.refundHTLTOrder = refundHTLTOrder;
+      $result.refundHTLTOrder = refundHTLTOrder;
     }
     if (issueOrder != null) {
-      _result.issueOrder = issueOrder;
+      $result.issueOrder = issueOrder;
     }
     if (mintOrder != null) {
-      _result.mintOrder = mintOrder;
+      $result.mintOrder = mintOrder;
     }
     if (burnOrder != null) {
-      _result.burnOrder = burnOrder;
+      $result.burnOrder = burnOrder;
     }
     if (transferOutOrder != null) {
-      _result.transferOutOrder = transferOutOrder;
+      $result.transferOutOrder = transferOutOrder;
     }
     if (sideDelegateOrder != null) {
-      _result.sideDelegateOrder = sideDelegateOrder;
+      $result.sideDelegateOrder = sideDelegateOrder;
     }
     if (sideRedelegateOrder != null) {
-      _result.sideRedelegateOrder = sideRedelegateOrder;
+      $result.sideRedelegateOrder = sideRedelegateOrder;
     }
     if (sideUndelegateOrder != null) {
-      _result.sideUndelegateOrder = sideUndelegateOrder;
+      $result.sideUndelegateOrder = sideUndelegateOrder;
     }
     if (timeLockOrder != null) {
-      _result.timeLockOrder = timeLockOrder;
+      $result.timeLockOrder = timeLockOrder;
     }
     if (timeRelockOrder != null) {
-      _result.timeRelockOrder = timeRelockOrder;
+      $result.timeRelockOrder = timeRelockOrder;
     }
     if (timeUnlockOrder != null) {
-      _result.timeUnlockOrder = timeUnlockOrder;
+      $result.timeUnlockOrder = timeUnlockOrder;
     }
-    return _result;
+    return $result;
   }
+  SigningInput._() : super();
   factory SigningInput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningInput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static const $core.Map<$core.int, SigningInput_OrderOneof> _SigningInput_OrderOneofByTag = {
+    8 : SigningInput_OrderOneof.tradeOrder,
+    9 : SigningInput_OrderOneof.cancelTradeOrder,
+    10 : SigningInput_OrderOneof.sendOrder,
+    11 : SigningInput_OrderOneof.freezeOrder,
+    12 : SigningInput_OrderOneof.unfreezeOrder,
+    13 : SigningInput_OrderOneof.htltOrder,
+    14 : SigningInput_OrderOneof.depositHTLTOrder,
+    15 : SigningInput_OrderOneof.claimHTLTOrder,
+    16 : SigningInput_OrderOneof.refundHTLTOrder,
+    17 : SigningInput_OrderOneof.issueOrder,
+    18 : SigningInput_OrderOneof.mintOrder,
+    19 : SigningInput_OrderOneof.burnOrder,
+    20 : SigningInput_OrderOneof.transferOutOrder,
+    21 : SigningInput_OrderOneof.sideDelegateOrder,
+    22 : SigningInput_OrderOneof.sideRedelegateOrder,
+    23 : SigningInput_OrderOneof.sideUndelegateOrder,
+    24 : SigningInput_OrderOneof.timeLockOrder,
+    25 : SigningInput_OrderOneof.timeRelockOrder,
+    26 : SigningInput_OrderOneof.timeUnlockOrder,
+    0 : SigningInput_OrderOneof.notSet
+  };
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningInput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..oo(0, [8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])
+    ..aOS(1, _omitFieldNames ? '' : 'chainId')
+    ..aInt64(2, _omitFieldNames ? '' : 'accountNumber')
+    ..aInt64(3, _omitFieldNames ? '' : 'sequence')
+    ..aInt64(4, _omitFieldNames ? '' : 'source')
+    ..aOS(5, _omitFieldNames ? '' : 'memo')
+    ..a<$core.List<$core.int>>(6, _omitFieldNames ? '' : 'privateKey', $pb.PbFieldType.OY)
+    ..aOM<TradeOrder>(8, _omitFieldNames ? '' : 'tradeOrder', subBuilder: TradeOrder.create)
+    ..aOM<CancelTradeOrder>(9, _omitFieldNames ? '' : 'cancelTradeOrder', subBuilder: CancelTradeOrder.create)
+    ..aOM<SendOrder>(10, _omitFieldNames ? '' : 'sendOrder', subBuilder: SendOrder.create)
+    ..aOM<TokenFreezeOrder>(11, _omitFieldNames ? '' : 'freezeOrder', subBuilder: TokenFreezeOrder.create)
+    ..aOM<TokenUnfreezeOrder>(12, _omitFieldNames ? '' : 'unfreezeOrder', subBuilder: TokenUnfreezeOrder.create)
+    ..aOM<HTLTOrder>(13, _omitFieldNames ? '' : 'htltOrder', subBuilder: HTLTOrder.create)
+    ..aOM<DepositHTLTOrder>(14, _omitFieldNames ? '' : 'depositHTLTOrder', protoName: 'depositHTLT_order', subBuilder: DepositHTLTOrder.create)
+    ..aOM<ClaimHTLOrder>(15, _omitFieldNames ? '' : 'claimHTLTOrder', protoName: 'claimHTLT_order', subBuilder: ClaimHTLOrder.create)
+    ..aOM<RefundHTLTOrder>(16, _omitFieldNames ? '' : 'refundHTLTOrder', protoName: 'refundHTLT_order', subBuilder: RefundHTLTOrder.create)
+    ..aOM<TokenIssueOrder>(17, _omitFieldNames ? '' : 'issueOrder', subBuilder: TokenIssueOrder.create)
+    ..aOM<TokenMintOrder>(18, _omitFieldNames ? '' : 'mintOrder', subBuilder: TokenMintOrder.create)
+    ..aOM<TokenBurnOrder>(19, _omitFieldNames ? '' : 'burnOrder', subBuilder: TokenBurnOrder.create)
+    ..aOM<TransferOut>(20, _omitFieldNames ? '' : 'transferOutOrder', subBuilder: TransferOut.create)
+    ..aOM<SideChainDelegate>(21, _omitFieldNames ? '' : 'sideDelegateOrder', subBuilder: SideChainDelegate.create)
+    ..aOM<SideChainRedelegate>(22, _omitFieldNames ? '' : 'sideRedelegateOrder', subBuilder: SideChainRedelegate.create)
+    ..aOM<SideChainUndelegate>(23, _omitFieldNames ? '' : 'sideUndelegateOrder', subBuilder: SideChainUndelegate.create)
+    ..aOM<TimeLockOrder>(24, _omitFieldNames ? '' : 'timeLockOrder', subBuilder: TimeLockOrder.create)
+    ..aOM<TimeRelockOrder>(25, _omitFieldNames ? '' : 'timeRelockOrder', subBuilder: TimeRelockOrder.create)
+    ..aOM<TimeUnlockOrder>(26, _omitFieldNames ? '' : 'timeUnlockOrder', subBuilder: TimeUnlockOrder.create)
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2219,8 +2396,10 @@ class SigningInput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput; // ignore: deprecated_member_use
+  SigningInput copyWith(void Function(SigningInput) updates) => super.copyWith((message) => updates(message as SigningInput)) as SigningInput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningInput create() => SigningInput._();
   SigningInput createEmptyInstance() => create();
@@ -2232,6 +2411,7 @@ class SigningInput extends $pb.GeneratedMessage {
   SigningInput_OrderOneof whichOrderOneof() => _SigningInput_OrderOneofByTag[$_whichOneof(0)]!;
   void clearOrderOneof() => clearField($_whichOneof(0));
 
+  /// Chain ID
   @$pb.TagNumber(1)
   $core.String get chainId => $_getSZ(0);
   @$pb.TagNumber(1)
@@ -2241,6 +2421,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearChainId() => clearField(1);
 
+  /// Source account number
   @$pb.TagNumber(2)
   $fixnum.Int64 get accountNumber => $_getI64(1);
   @$pb.TagNumber(2)
@@ -2250,6 +2431,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearAccountNumber() => clearField(2);
 
+  /// Sequence number (account specific)
   @$pb.TagNumber(3)
   $fixnum.Int64 get sequence => $_getI64(2);
   @$pb.TagNumber(3)
@@ -2259,6 +2441,11 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(3)
   void clearSequence() => clearField(3);
 
+  /// Transaction source, see https://github.com/bnb-chain/BEPs/blob/master/BEP10.md
+  /// Some important values:
+  ///  0: Default source value (e.g. for Binance Chain Command Line, or SDKs)
+  ///  1: Binance DEX Web Wallet
+  ///  2: Trust Wallet
   @$pb.TagNumber(4)
   $fixnum.Int64 get source => $_getI64(3);
   @$pb.TagNumber(4)
@@ -2268,6 +2455,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(4)
   void clearSource() => clearField(4);
 
+  /// Optional memo
   @$pb.TagNumber(5)
   $core.String get memo => $_getSZ(4);
   @$pb.TagNumber(5)
@@ -2277,6 +2465,7 @@ class SigningInput extends $pb.GeneratedMessage {
   @$pb.TagNumber(5)
   void clearMemo() => clearField(5);
 
+  /// The secret private key used for signing (32 bytes).
   @$pb.TagNumber(6)
   $core.List<$core.int> get privateKey => $_getN(5);
   @$pb.TagNumber(6)
@@ -2496,34 +2685,36 @@ class SigningInput extends $pb.GeneratedMessage {
   TimeUnlockOrder ensureTimeUnlockOrder() => $_ensure(24);
 }
 
+/// Result containing the signed and encoded transaction.
 class SigningOutput extends $pb.GeneratedMessage {
-  static final $pb.BuilderInfo _i = $pb.BuilderInfo(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'SigningOutput', package: const $pb.PackageName(const $core.bool.fromEnvironment('protobuf.omit_message_names') ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
-    ..a<$core.List<$core.int>>(1, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'encoded', $pb.PbFieldType.OY)
-    ..e<$0.SigningError>(2, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
-    ..aOS(3, const $core.bool.fromEnvironment('protobuf.omit_field_names') ? '' : 'errorMessage')
-    ..hasRequiredFields = false
-  ;
-
-  SigningOutput._() : super();
   factory SigningOutput({
     $core.List<$core.int>? encoded,
     $0.SigningError? error,
     $core.String? errorMessage,
   }) {
-    final _result = create();
+    final $result = create();
     if (encoded != null) {
-      _result.encoded = encoded;
+      $result.encoded = encoded;
     }
     if (error != null) {
-      _result.error = error;
+      $result.error = error;
     }
     if (errorMessage != null) {
-      _result.errorMessage = errorMessage;
+      $result.errorMessage = errorMessage;
     }
-    return _result;
+    return $result;
   }
+  SigningOutput._() : super();
   factory SigningOutput.fromBuffer($core.List<$core.int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromBuffer(i, r);
   factory SigningOutput.fromJson($core.String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) => create()..mergeFromJson(i, r);
+
+  static final $pb.BuilderInfo _i = $pb.BuilderInfo(_omitMessageNames ? '' : 'SigningOutput', package: const $pb.PackageName(_omitMessageNames ? '' : 'TW.Binance.Proto'), createEmptyInstance: create)
+    ..a<$core.List<$core.int>>(1, _omitFieldNames ? '' : 'encoded', $pb.PbFieldType.OY)
+    ..e<$0.SigningError>(2, _omitFieldNames ? '' : 'error', $pb.PbFieldType.OE, defaultOrMaker: $0.SigningError.OK, valueOf: $0.SigningError.valueOf, enumValues: $0.SigningError.values)
+    ..aOS(3, _omitFieldNames ? '' : 'errorMessage')
+    ..hasRequiredFields = false
+  ;
+
   @$core.Deprecated(
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.deepCopy] instead. '
@@ -2533,8 +2724,10 @@ class SigningOutput extends $pb.GeneratedMessage {
   'Using this can add significant overhead to your binary. '
   'Use [GeneratedMessageGenericExtensions.rebuild] instead. '
   'Will be removed in next major version')
-  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput; // ignore: deprecated_member_use
+  SigningOutput copyWith(void Function(SigningOutput) updates) => super.copyWith((message) => updates(message as SigningOutput)) as SigningOutput;
+
   $pb.BuilderInfo get info_ => _i;
+
   @$core.pragma('dart2js:noInline')
   static SigningOutput create() => SigningOutput._();
   SigningOutput createEmptyInstance() => create();
@@ -2543,6 +2736,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   static SigningOutput getDefault() => _defaultInstance ??= $pb.GeneratedMessage.$_defaultFor<SigningOutput>(create);
   static SigningOutput? _defaultInstance;
 
+  /// Signed and encoded transaction bytes.
   @$pb.TagNumber(1)
   $core.List<$core.int> get encoded => $_getN(0);
   @$pb.TagNumber(1)
@@ -2552,6 +2746,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(1)
   void clearEncoded() => clearField(1);
 
+  /// OK (=0) or other codes in case of error
   @$pb.TagNumber(2)
   $0.SigningError get error => $_getN(1);
   @$pb.TagNumber(2)
@@ -2561,6 +2756,7 @@ class SigningOutput extends $pb.GeneratedMessage {
   @$pb.TagNumber(2)
   void clearError() => clearField(2);
 
+  /// error description in case of error
   @$pb.TagNumber(3)
   $core.String get errorMessage => $_getSZ(2);
   @$pb.TagNumber(3)
@@ -2571,3 +2767,6 @@ class SigningOutput extends $pb.GeneratedMessage {
   void clearErrorMessage() => clearField(3);
 }
 
+
+const _omitFieldNames = $core.bool.fromEnvironment('protobuf.omit_field_names');
+const _omitMessageNames = $core.bool.fromEnvironment('protobuf.omit_message_names');

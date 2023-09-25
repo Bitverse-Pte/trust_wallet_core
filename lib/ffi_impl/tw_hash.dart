@@ -174,6 +174,32 @@ abstract class TWHash {
   static late final _TWHashBlake2bPtr = _lookup<NativeFunction<Pointer<Void> Function(Pointer<Void>, Size)>>('TWHashBlake2b');
   static late final _TWHashBlake2b = _TWHashBlake2bPtr.asFunction<Pointer<Void> Function(Pointer<Void>, int)>();
 
+  
+  /// Computes the Groestl512 of a block of data.
+  ///
+  /// \param data Non-null block of data
+  /// \return Non-null computed Groestl512 block of data
+  Pointer<Void> TWHashBlake2bPersonal(
+      Pointer<Void> data,
+      Pointer<Void> personal,
+      int outlen,
+      ) {
+    return _TWHashBlake2bPersonal(
+      data,
+      personal,
+      outlen,
+    );
+  }
+
+  late final _TWHashBlake2bPersonalPtr = _lookup<
+      NativeFunction<
+          Pointer<Void> Function(Pointer<Void>, Pointer<Void>,
+              Size)>>('TWHashBlake2bPersonal');
+  late final _TWHashBlake2bPersonal = _TWHashBlake2bPersonalPtr.asFunction<
+      Pointer<Void> Function(
+          Pointer<Void>, Pointer<Void>, int)>();
+
+
   /// Computes the Groestl512 of a block of data.
   ///
   /// \param data Non-null block of data
