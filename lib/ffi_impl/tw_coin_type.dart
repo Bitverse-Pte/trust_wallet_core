@@ -295,7 +295,7 @@ abstract class TWCoinType {
   static late final _TWCoinTypeDeriveAddressFromPublicKey = _TWCoinTypeDeriveAddressFromPublicKeyPtr.asFunction<Pointer<Utf8> Function(int, Pointer<Void>)>();
 
   /// Derives the address for a particular coin from the public key with the derivation.
-  Pointer<Utf8> TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(
+  static Pointer<Utf8> TWCoinTypeDeriveAddressFromPublicKeyAndDerivation(
       int coin,
       Pointer<Void> publicKey,
       int derivation,
@@ -307,11 +307,11 @@ abstract class TWCoinType {
     );
   }
 
-  late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivationPtr = _lookup<
+  static late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivationPtr = _lookup<
       NativeFunction<
           Pointer<Utf8> Function(Int32, Pointer<Void>,
               Int32)>>('TWCoinTypeDeriveAddressFromPublicKeyAndDerivation');
-  late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivation =
+  static late final _TWCoinTypeDeriveAddressFromPublicKeyAndDerivation =
   _TWCoinTypeDeriveAddressFromPublicKeyAndDerivationPtr.asFunction<
       Pointer<Utf8> Function(
           int, Pointer<Void>, int)>();

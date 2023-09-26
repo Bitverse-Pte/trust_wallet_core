@@ -53,6 +53,8 @@ part 'dart_impl/tw_coin_type_configuration_impl.dart';
 
 part 'dart_impl/tw_ethereum_abi_function_impl.dart';
 
+part 'dart_impl/tw_transaction_compiler_impl.dart';
+
 part 'ffi_impl/tw_account.dart';
 
 part 'ffi_impl/tw_aes.dart';

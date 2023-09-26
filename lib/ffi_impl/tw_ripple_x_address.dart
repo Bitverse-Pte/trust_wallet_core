@@ -118,7 +118,7 @@ abstract class TWRippleXAddress {
   ///
   /// \param input The serialized data of LiquidStakingInput.
   /// \return The serialized data of LiquidStakingOutput.
-  Pointer<Void> TWLiquidStakingBuildRequest(
+  static Pointer<Void> TWLiquidStakingBuildRequest(
       Pointer<Void> input,
       ) {
     return _TWLiquidStakingBuildRequest(
@@ -126,10 +126,10 @@ abstract class TWRippleXAddress {
     );
   }
 
-  late final _TWLiquidStakingBuildRequestPtr = _lookup<
+  static late final _TWLiquidStakingBuildRequestPtr = _lookup<
       NativeFunction<
           Pointer<Void> Function(
               Pointer<Void>)>>('TWLiquidStakingBuildRequest');
-  late final _TWLiquidStakingBuildRequest = _TWLiquidStakingBuildRequestPtr
+  static late final _TWLiquidStakingBuildRequest = _TWLiquidStakingBuildRequestPtr
       .asFunction<Pointer<Void> Function(Pointer<Void>)>();
 }

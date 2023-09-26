@@ -379,7 +379,7 @@ abstract class TWBitcoinScript {
   /// \param pubkey Non-null pointer to a pubkey
   /// \note Must be deleted with \TWBitcoinScriptDelete
   /// \return A pointer to the built script
-  Pointer<Void> TWBitcoinScriptBuildBRC20InscribeTransfer(
+  static Pointer<Void> TWBitcoinScriptBuildBRC20InscribeTransfer(
       Pointer<Utf8> ticker,
       Pointer<Utf8> amount,
       Pointer<Void> pubkey,
@@ -391,12 +391,12 @@ abstract class TWBitcoinScript {
     );
   }
 
-  late final _TWBitcoinScriptBuildBRC20InscribeTransferPtr = _lookup<
+  static late final _TWBitcoinScriptBuildBRC20InscribeTransferPtr = _lookup<
       NativeFunction<
           Pointer<Void> Function(Pointer<Utf8>,
               Pointer<Utf8>, Pointer<Void>)>>(
       'TWBitcoinScriptBuildBRC20InscribeTransfer');
-  late final _TWBitcoinScriptBuildBRC20InscribeTransfer =
+  static late final _TWBitcoinScriptBuildBRC20InscribeTransfer =
   _TWBitcoinScriptBuildBRC20InscribeTransferPtr.asFunction<
       Pointer<Void> Function(Pointer<Utf8>,
           Pointer<Utf8>, Pointer<Void>)>();

@@ -105,7 +105,7 @@ class PrivateKey {
     return res;
   }
 
-  Uint8List signAsDER(Uint8List digest, int curve) {
+  Uint8List signAsDER(Uint8List digest) {
     final digestPoint = TWData.TWDataCreateWithBytes(digest.toPointerUint8(), digest.length);
     final data = TWPrivateKeyImpl.signAsDER(_nativehandle, digestPoint);
     final res = TWData.TWDataBytes(data).asTypedList(TWData.TWDataSize(data));

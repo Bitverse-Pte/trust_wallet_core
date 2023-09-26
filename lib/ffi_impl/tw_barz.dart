@@ -6,7 +6,7 @@ abstract class TWBarz {
   ///
   /// \param input The serialized data of ContractAddressInput.
   /// \return The address.
-  Pointer<Utf8> TWBarzGetCounterfactualAddress(
+  static Pointer<Utf8> TWBarzGetCounterfactualAddress(
       Pointer<Void> input,
       ) {
     return _TWBarzGetCounterfactualAddress(
@@ -14,11 +14,11 @@ abstract class TWBarz {
     );
   }
 
-  late final _TWBarzGetCounterfactualAddressPtr = _lookup<
+  static late final _TWBarzGetCounterfactualAddressPtr = _lookup<
       NativeFunction<
           Pointer<Utf8> Function(
               Pointer<Void>)>>('TWBarzGetCounterfactualAddress');
-  late final _TWBarzGetCounterfactualAddress =
+  static late final _TWBarzGetCounterfactualAddress =
   _TWBarzGetCounterfactualAddressPtr.asFunction<
       Pointer<Utf8> Function(Pointer<Void>)>();
 
@@ -28,7 +28,7 @@ abstract class TWBarz {
   /// \param publicKey Public key for the verification facet
   /// \param verificationFacet Verification facet address
   /// \return The address.
-  Pointer<Void> TWBarzGetInitCode(
+  static Pointer<Void> TWBarzGetInitCode(
       Pointer<Utf8> factory1,
       Pointer<Void> publicKey,
       Pointer<Utf8> verificationFacet,
@@ -42,14 +42,14 @@ abstract class TWBarz {
     );
   }
 
-  late final _TWBarzGetInitCodePtr = _lookup<
+  static late final _TWBarzGetInitCodePtr = _lookup<
       NativeFunction<
           Pointer<Void> Function(
               Pointer<Utf8>,
               Pointer<Void>,
               Pointer<Utf8>,
               Uint32)>>('TWBarzGetInitCode');
-  late final _TWBarzGetInitCode = _TWBarzGetInitCodePtr.asFunction<
+  static late final _TWBarzGetInitCode = _TWBarzGetInitCodePtr.asFunction<
       Pointer<Void> Function(Pointer<Utf8>,
           Pointer<Void>, Pointer<Utf8>, int)>();
 
@@ -60,7 +60,7 @@ abstract class TWBarz {
   /// \param authenticatorData Returned from Webauthn API
   /// \param clientDataJSON Returned from Webauthn API
   /// \return Bytes of the formatted signature
-  Pointer<Void> TWBarzGetFormattedSignature(
+  static Pointer<Void> TWBarzGetFormattedSignature(
       Pointer<Void> signature,
       Pointer<Void> challenge,
       Pointer<Void> authenticatorData,
@@ -74,14 +74,14 @@ abstract class TWBarz {
     );
   }
 
-  late final _TWBarzGetFormattedSignaturePtr = _lookup<
+  static late final _TWBarzGetFormattedSignaturePtr = _lookup<
       NativeFunction<
           Pointer<Void> Function(
               Pointer<Void>,
               Pointer<Void>,
               Pointer<Void>,
               Pointer<Utf8>)>>('TWBarzGetFormattedSignature');
-  late final _TWBarzGetFormattedSignature =
+  static late final _TWBarzGetFormattedSignature =
   _TWBarzGetFormattedSignaturePtr.asFunction<
       Pointer<Void> Function(Pointer<Void>, Pointer<Void>,
           Pointer<Void>, Pointer<Utf8>)>();

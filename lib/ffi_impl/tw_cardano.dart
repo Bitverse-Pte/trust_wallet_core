@@ -58,7 +58,7 @@ abstract class TWCardano {
   /// Return the legacy(byron) address.
   /// \param publicKey A valid public key with TWPublicKeyTypeED25519Cardano type.
   /// \return the legacy(byron) address, as string, or empty string on error.
-  Pointer<Utf8> TWCardanoGetByronAddress(
+  static Pointer<Utf8> TWCardanoGetByronAddress(
       Pointer<Void> publicKey,
       ) {
     return _TWCardanoGetByronAddress(
@@ -66,11 +66,11 @@ abstract class TWCardano {
     );
   }
 
-  late final _TWCardanoGetByronAddressPtr = _lookup<
+  static late final _TWCardanoGetByronAddressPtr = _lookup<
       NativeFunction<
           Pointer<Utf8> Function(
               Pointer<Void>)>>('TWCardanoGetByronAddress');
-  late final _TWCardanoGetByronAddress = _TWCardanoGetByronAddressPtr
+  static late final _TWCardanoGetByronAddress = _TWCardanoGetByronAddressPtr
       .asFunction<Pointer<Utf8> Function(Pointer<Void>)>();
 
 }

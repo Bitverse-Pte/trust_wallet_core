@@ -6,7 +6,7 @@ abstract class TWBitcoinFee {
   /// \param data: the signed transaction in its final form.
   /// \param satVb: the satoshis per vbyte amount. The passed on string is interpreted as a unit64_t.
   /// \returns the fee denominated in satoshis or nullptr if the transaction failed to be decoded.
-  Pointer<Utf8> TWBitcoinFeeCalculateFee(
+  static Pointer<Utf8> TWBitcoinFeeCalculateFee(
       Pointer<Void> data,
       Pointer<Utf8> satVb,
       ) {
@@ -16,11 +16,11 @@ abstract class TWBitcoinFee {
     );
   }
 
-  late final _TWBitcoinFeeCalculateFeePtr = _lookup<
+  static late final _TWBitcoinFeeCalculateFeePtr = _lookup<
       NativeFunction<
           Pointer<Utf8> Function(Pointer<Void>,
               Pointer<Utf8>)>>('TWBitcoinFeeCalculateFee');
-  late final _TWBitcoinFeeCalculateFee =
+  static late final _TWBitcoinFeeCalculateFee =
   _TWBitcoinFeeCalculateFeePtr.asFunction<
       Pointer<Utf8> Function(
           Pointer<Void>, Pointer<Utf8>)>();
