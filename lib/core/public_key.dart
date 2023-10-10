@@ -57,6 +57,10 @@ class PublicKey {
     return TWPublicKeyImpl.verify(_nativehandle, signature, message);
   }
 
+  bool verifyAsDER(Uint8List signature, Uint8List message) {
+    return TWPublicKeyImpl.verifyAsDER(_nativehandle, signature, message);
+  }
+
   bool verifySchnorr(Uint8List signature, Uint8List message) {
     return TWPublicKeyImpl.verifyZilliqaSchnorr(_nativehandle, signature, message);
   }

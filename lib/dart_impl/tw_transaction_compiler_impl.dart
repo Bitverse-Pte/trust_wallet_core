@@ -36,8 +36,8 @@ class TWTransactionCompilerImpl extends TWTransactionCompiler{
     final _data = TWData.TWDataCreateWithBytes(txInput.toPointerUint8(), txInput.length);
     final _out = TWTransactionCompiler.TWTransactionCompilerPreImageHashes(coinType, _data);
     Uint8List dataOut = TWData.TWDataBytes(_out).asTypedList(TWData.TWDataSize(_out));
-    TWData.TWDataDelete(_data);
     TWData.TWDataDelete(_out);
+    TWData.TWDataDelete(_data);
     return dataOut;
   }
 
