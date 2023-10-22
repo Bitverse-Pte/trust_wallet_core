@@ -36,7 +36,6 @@ class TWTransactionCompilerImpl extends TWTransactionCompiler{
     final _data = TWData.TWDataCreateWithBytes(txInput.toPointerUint8(), txInput.length);
     final _out = TWTransactionCompiler.TWTransactionCompilerPreImageHashes(coinType, _data);
     Uint8List dataOut = TWData.TWDataBytes(_out).asTypedList(TWData.TWDataSize(_out));
-    TWData.TWDataDelete(_out);
     TWData.TWDataDelete(_data);
     return dataOut;
   }
@@ -73,7 +72,6 @@ class TWTransactionCompilerImpl extends TWTransactionCompiler{
     TWDataVector.TWDataVectorDelete(signaturesDataVector);
     TWDataVector.TWDataVectorDelete(publicKeysDataVector);
     TWData.TWDataDelete(inputData);
-    TWData.TWDataDelete(_out);
     return dataOut;
   }
 
@@ -97,9 +95,7 @@ class TWTransactionCompilerImpl extends TWTransactionCompiler{
 
     final _out = TWTransactionCompiler.TWTransactionCompilerCompileWithSignaturesAndPubKeyType(coinType, txInputData, signatures, publicKeys, pubKeyType);
 
-    Uint8List dataOut = TWData.TWDataBytes(_out).asTypedList(TWData.TWDataSize(_out));
-    TWData.TWDataDelete(_out);
-    return dataOut;
+    return TWData.TWDataBytes(_out).asTypedList(TWData.TWDataSize(_out));
   }
 
 
