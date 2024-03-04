@@ -131,6 +131,8 @@ abstract class TWCoinType {
   static const int TWCoinTypeMantleTestnet = 10005001;
   static const int TWCoinTypeGoerli = 10000005;
   static const int TWCoinTypeBitgert = 10032520;
+  static const int TWCoinTypeMerlin = 10004200;
+  static const int TWCoinTypeMerlinTestnet = 10686868;
 
   /// Returns the blockchain for a coin type.
   ///

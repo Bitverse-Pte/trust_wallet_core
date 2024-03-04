@@ -13263,6 +13263,8 @@ abstract class TWCoinType {
   static const int TWCoinTypeMantleTestnet = 10005001;
   static const int TWCoinTypeGoerli = 10000005;
   static const int TWCoinTypeBitgert = 10032520;
+  static const int TWCoinTypeMerlin = 10004200;
+  static const int TWCoinTypeMerlinTestnet = 10686868;
 }
 
 /// CoinTypeConfiguration functions
@@ -13536,6 +13538,8 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDSmartchain = 56;
   static const int TWEthereumChainIDNeon = 245022934;
   static const int TWEthereumChainIDAurora = 1313161554;
+  static const int TWEthereumChainIDMerlin = 4200;
+  static const int TWEthereumChainIDMerlinTestnet = 686868;
 }
 
 /// Solana address helper functions
