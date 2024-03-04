@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios13.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name WalletCore
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import Foundation
@@ -37,8 +37,8 @@ extension WalletCore.Account : Swift.Hashable {
   }
 }
 extension WalletCore.Account : Swift.Codable {
-  final public func encode(to encoder: any Swift.Encoder) throws
-  convenience public init(from decoder: any Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  convenience public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class Account {
   final public var address: Swift.String {
@@ -287,11 +287,11 @@ extension WalletCore.TW_Algorand_Proto_SigningOutput : SwiftProtobuf.Message, Sw
 public typealias SigningInput = SwiftProtobuf.Message
 public typealias SigningOutput = SwiftProtobuf.Message
 @_hasMissingDesignatedInitializers final public class AnySigner {
-  public static func sign<SigningOutput>(input: any SwiftProtobuf.Message, coin: WalletCore.CoinType) -> SigningOutput where SigningOutput : SwiftProtobuf.Message
+  public static func sign<SigningOutput>(input: WalletCore.SigningInput, coin: WalletCore.CoinType) -> SigningOutput where SigningOutput : SwiftProtobuf.Message
   public static func nativeSign(data: Foundation.Data, coin: WalletCore.CoinType) -> Foundation.Data
   public static func supportsJSON(coin: WalletCore.CoinType) -> Swift.Bool
   public static func signJSON(_ json: Swift.String, key: Foundation.Data, coin: WalletCore.CoinType) -> Swift.String
-  public static func plan<TransactionPlan>(input: any SwiftProtobuf.Message, coin: WalletCore.CoinType) -> TransactionPlan where TransactionPlan : SwiftProtobuf.Message
+  public static func plan<TransactionPlan>(input: WalletCore.SigningInput, coin: WalletCore.CoinType) -> TransactionPlan where TransactionPlan : SwiftProtobuf.Message
   public static func nativePlan(data: Foundation.Data, coin: WalletCore.CoinType) -> Foundation.Data
   @objc deinit
 }
@@ -2377,6 +2377,8 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case mantleTestnet
   case goerli
   case bitgert
+  case merlin
+  case merlinTestnet
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -3481,8 +3483,8 @@ extension WalletCore.DerivationPath : Swift.Equatable, Swift.Hashable, Swift.Cus
   }
 }
 extension WalletCore.DerivationPath : Swift.Codable {
-  final public func encode(to encoder: any Swift.Encoder) throws
-  convenience public init(from decoder: any Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  convenience public init(from decoder: Swift.Decoder) throws
 }
 extension WalletCore.DerivationPathIndex : Swift.Equatable, Swift.Hashable, Swift.CustomStringConvertible {
   public static func == (lhs: WalletCore.DerivationPathIndex, rhs: WalletCore.DerivationPathIndex) -> Swift.Bool
@@ -3493,8 +3495,8 @@ extension WalletCore.DerivationPathIndex : Swift.Equatable, Swift.Hashable, Swif
   }
 }
 extension WalletCore.DerivationPathIndex : Swift.Codable {
-  final public func encode(to encoder: any Swift.Encoder) throws
-  convenience public init(from decoder: any Swift.Decoder) throws
+  final public func encode(to encoder: Swift.Encoder) throws
+  convenience public init(from decoder: Swift.Decoder) throws
 }
 @_hasMissingDesignatedInitializers final public class DerivationPath {
   final public var purpose: WalletCore.Purpose {
@@ -4082,6 +4084,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case moonriver
   case ronin
   case kavaevm
+  case merlin
   case iotexevm
   case mantle
   case mantletestnet
@@ -4091,6 +4094,7 @@ public enum EthereumChainID : Swift.UInt32, Swift.CaseIterable {
   case bitgert
   case arbitrumnova
   case arbitrum
+  case merlintestnet
   case smartchain
   case neon
   case aurora
@@ -11317,8 +11321,8 @@ public struct UniversalAssetID : Swift.CustomStringConvertible, Swift.Equatable,
   }
 }
 extension WalletCore.UniversalAssetID : Swift.Codable {
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
 }
 public typealias VeChainClause = WalletCore.TW_VeChain_Proto_Clause
 public typealias VeChainSigningInput = WalletCore.TW_VeChain_Proto_SigningInput
@@ -11423,8 +11427,8 @@ public struct Watch : Swift.Codable, Swift.Equatable {
   public var address: Swift.String
   public var xpub: Swift.String?
   public init(coin: WalletCore.CoinType, name: Swift.String, address: Swift.String, xpub: Swift.String?)
-  public init(from decoder: any Swift.Decoder) throws
-  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
   public static func == (a: WalletCore.Watch, b: WalletCore.Watch) -> Swift.Bool
 }
 public typealias WavesTransferMessage = WalletCore.TW_Waves_Proto_TransferMessage
