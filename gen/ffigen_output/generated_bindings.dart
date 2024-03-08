@@ -2799,6 +2799,14 @@ class TrustWalletCore {
   set HRP_NATIVEEVMOS(ffi.Pointer<ffi.Char> value) =>
       _HRP_NATIVEEVMOS.value = value;
 
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_YYMMTESTNET =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_YYMMTESTNET');
+
+  ffi.Pointer<ffi.Char> get HRP_YYMMTESTNET => _HRP_YYMMTESTNET.value;
+
+  set HRP_YYMMTESTNET(ffi.Pointer<ffi.Char> value) =>
+      _HRP_YYMMTESTNET.value = value;
+
   late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_JUNO =
       _lookup<ffi.Pointer<ffi.Char>>('HRP_JUNO');
 
@@ -11872,151 +11880,316 @@ abstract class idtype_t {
   static const int P_PGID = 2;
 }
 
-class __darwin_arm_exception_state extends ffi.Struct {
-  @__uint32_t()
-  external int __exception;
+class __darwin_i386_thread_state extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int __eax;
 
-  @__uint32_t()
-  external int __fsr;
+  @ffi.UnsignedInt()
+  external int __ebx;
 
-  @__uint32_t()
-  external int __far;
+  @ffi.UnsignedInt()
+  external int __ecx;
+
+  @ffi.UnsignedInt()
+  external int __edx;
+
+  @ffi.UnsignedInt()
+  external int __edi;
+
+  @ffi.UnsignedInt()
+  external int __esi;
+
+  @ffi.UnsignedInt()
+  external int __ebp;
+
+  @ffi.UnsignedInt()
+  external int __esp;
+
+  @ffi.UnsignedInt()
+  external int __ss;
+
+  @ffi.UnsignedInt()
+  external int __eflags;
+
+  @ffi.UnsignedInt()
+  external int __eip;
+
+  @ffi.UnsignedInt()
+  external int __cs;
+
+  @ffi.UnsignedInt()
+  external int __ds;
+
+  @ffi.UnsignedInt()
+  external int __es;
+
+  @ffi.UnsignedInt()
+  external int __fs;
+
+  @ffi.UnsignedInt()
+  external int __gs;
 }
 
+class __darwin_fp_control extends ffi.Opaque {}
+
+class __darwin_fp_status extends ffi.Opaque {}
+
+class __darwin_mmst_reg extends ffi.Struct {
+  @ffi.Array.multi([10])
+  external ffi.Array<ffi.Char> __mmst_reg;
+
+  @ffi.Array.multi([6])
+  external ffi.Array<ffi.Char> __mmst_rsrv;
+}
+
+class __darwin_xmm_reg extends ffi.Struct {
+  @ffi.Array.multi([16])
+  external ffi.Array<ffi.Char> __xmm_reg;
+}
+
+class __darwin_ymm_reg extends ffi.Struct {
+  @ffi.Array.multi([32])
+  external ffi.Array<ffi.Char> __ymm_reg;
+}
+
+class __darwin_zmm_reg extends ffi.Struct {
+  @ffi.Array.multi([64])
+  external ffi.Array<ffi.Char> __zmm_reg;
+}
+
+class __darwin_opmask_reg extends ffi.Struct {
+  @ffi.Array.multi([8])
+  external ffi.Array<ffi.Char> __opmask_reg;
+}
+
+class __darwin_i386_float_state extends ffi.Opaque {}
+
+class __darwin_i386_avx_state extends ffi.Opaque {}
+
+class __darwin_i386_avx512_state extends ffi.Opaque {}
+
+class __darwin_i386_exception_state extends ffi.Struct {
+  @__uint16_t()
+  external int __trapno;
+
+  @__uint16_t()
+  external int __cpu;
+
+  @__uint32_t()
+  external int __err;
+
+  @__uint32_t()
+  external int __faultvaddr;
+}
+
+typedef __uint16_t = ffi.UnsignedShort;
 typedef __uint32_t = ffi.UnsignedInt;
 
-class __darwin_arm_exception_state64 extends ffi.Struct {
-  @__uint64_t()
-  external int __far;
+class __darwin_x86_debug_state32 extends ffi.Struct {
+  @ffi.UnsignedInt()
+  external int __dr0;
 
-  @__uint32_t()
-  external int __esr;
+  @ffi.UnsignedInt()
+  external int __dr1;
 
-  @__uint32_t()
-  external int __exception;
+  @ffi.UnsignedInt()
+  external int __dr2;
+
+  @ffi.UnsignedInt()
+  external int __dr3;
+
+  @ffi.UnsignedInt()
+  external int __dr4;
+
+  @ffi.UnsignedInt()
+  external int __dr5;
+
+  @ffi.UnsignedInt()
+  external int __dr6;
+
+  @ffi.UnsignedInt()
+  external int __dr7;
 }
 
-typedef __uint64_t = ffi.UnsignedLongLong;
+class __x86_instruction_state extends ffi.Struct {
+  @ffi.Int()
+  external int __insn_stream_valid_bytes;
 
-class __darwin_arm_thread_state extends ffi.Struct {
-  @ffi.Array.multi([13])
-  external ffi.Array<__uint32_t> __r;
+  @ffi.Int()
+  external int __insn_offset;
 
-  @__uint32_t()
-  external int __sp;
+  @ffi.Int()
+  external int __out_of_synch;
 
-  @__uint32_t()
-  external int __lr;
+  @ffi.Array.multi([2380])
+  external ffi.Array<__uint8_t> __insn_bytes;
 
-  @__uint32_t()
-  external int __pc;
-
-  @__uint32_t()
-  external int __cpsr;
-}
-
-class __darwin_arm_thread_state64 extends ffi.Struct {
-  @ffi.Array.multi([29])
-  external ffi.Array<__uint64_t> __x;
-
-  @__uint64_t()
-  external int __fp;
-
-  @__uint64_t()
-  external int __lr;
-
-  @__uint64_t()
-  external int __sp;
-
-  @__uint64_t()
-  external int __pc;
-
-  @__uint32_t()
-  external int __cpsr;
-
-  @__uint32_t()
-  external int __pad;
-}
-
-class __darwin_arm_vfp_state extends ffi.Struct {
   @ffi.Array.multi([64])
-  external ffi.Array<__uint32_t> __r;
-
-  @__uint32_t()
-  external int __fpscr;
+  external ffi.Array<__uint8_t> __insn_cacheline;
 }
 
-class __darwin_arm_neon_state64 extends ffi.Opaque {}
+typedef __uint8_t = ffi.UnsignedChar;
 
-class __darwin_arm_neon_state extends ffi.Opaque {}
+class __last_branch_record extends ffi.Opaque {}
 
-class __arm_pagein_state extends ffi.Struct {
+class __last_branch_state extends ffi.Opaque {}
+
+class __x86_pagein_state extends ffi.Struct {
   @ffi.Int()
   external int __pagein_error;
 }
 
-class __arm_legacy_debug_state extends ffi.Struct {
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __bvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __bcr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __wvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __wcr;
-}
-
-class __darwin_arm_debug_state32 extends ffi.Struct {
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __bvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __bcr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __wvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint32_t> __wcr;
+class __darwin_x86_thread_state64 extends ffi.Struct {
+  @__uint64_t()
+  external int __rax;
 
   @__uint64_t()
-  external int __mdscr_el1;
-}
-
-class __darwin_arm_debug_state64 extends ffi.Struct {
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint64_t> __bvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint64_t> __bcr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint64_t> __wvr;
-
-  @ffi.Array.multi([16])
-  external ffi.Array<__uint64_t> __wcr;
+  external int __rbx;
 
   @__uint64_t()
-  external int __mdscr_el1;
+  external int __rcx;
+
+  @__uint64_t()
+  external int __rdx;
+
+  @__uint64_t()
+  external int __rdi;
+
+  @__uint64_t()
+  external int __rsi;
+
+  @__uint64_t()
+  external int __rbp;
+
+  @__uint64_t()
+  external int __rsp;
+
+  @__uint64_t()
+  external int __r8;
+
+  @__uint64_t()
+  external int __r9;
+
+  @__uint64_t()
+  external int __r10;
+
+  @__uint64_t()
+  external int __r11;
+
+  @__uint64_t()
+  external int __r12;
+
+  @__uint64_t()
+  external int __r13;
+
+  @__uint64_t()
+  external int __r14;
+
+  @__uint64_t()
+  external int __r15;
+
+  @__uint64_t()
+  external int __rip;
+
+  @__uint64_t()
+  external int __rflags;
+
+  @__uint64_t()
+  external int __cs;
+
+  @__uint64_t()
+  external int __fs;
+
+  @__uint64_t()
+  external int __gs;
 }
 
-class __darwin_arm_cpmu_state64 extends ffi.Struct {
+typedef __uint64_t = ffi.UnsignedLongLong;
+
+class __darwin_x86_thread_full_state64 extends ffi.Struct {
+  external __darwin_x86_thread_state64 __ss64;
+
+  @__uint64_t()
+  external int __ds;
+
+  @__uint64_t()
+  external int __es;
+
+  @__uint64_t()
+  external int __ss;
+
+  @__uint64_t()
+  external int __gsbase;
+}
+
+class __darwin_x86_float_state64 extends ffi.Opaque {}
+
+class __darwin_x86_avx_state64 extends ffi.Opaque {}
+
+class __darwin_x86_avx512_state64 extends ffi.Opaque {}
+
+class __darwin_x86_exception_state64 extends ffi.Struct {
+  @__uint16_t()
+  external int __trapno;
+
+  @__uint16_t()
+  external int __cpu;
+
+  @__uint32_t()
+  external int __err;
+
+  @__uint64_t()
+  external int __faultvaddr;
+}
+
+class __darwin_x86_debug_state64 extends ffi.Struct {
+  @__uint64_t()
+  external int __dr0;
+
+  @__uint64_t()
+  external int __dr1;
+
+  @__uint64_t()
+  external int __dr2;
+
+  @__uint64_t()
+  external int __dr3;
+
+  @__uint64_t()
+  external int __dr4;
+
+  @__uint64_t()
+  external int __dr5;
+
+  @__uint64_t()
+  external int __dr6;
+
+  @__uint64_t()
+  external int __dr7;
+}
+
+class __darwin_x86_cpmu_state64 extends ffi.Struct {
   @ffi.Array.multi([16])
   external ffi.Array<__uint64_t> __ctrs;
 }
 
-class __darwin_mcontext32 extends ffi.Struct {
-  external __darwin_arm_exception_state __es;
+class __darwin_mcontext32 extends ffi.Opaque {}
 
-  external __darwin_arm_thread_state __ss;
+class __darwin_mcontext_avx32 extends ffi.Opaque {}
 
-  external __darwin_arm_vfp_state __fs;
-}
+class __darwin_mcontext_avx512_32 extends ffi.Opaque {}
 
 class __darwin_mcontext64 extends ffi.Opaque {}
+
+class __darwin_mcontext64_full extends ffi.Opaque {}
+
+class __darwin_mcontext_avx64 extends ffi.Opaque {}
+
+class __darwin_mcontext_avx64_full extends ffi.Opaque {}
+
+class __darwin_mcontext_avx512_64 extends ffi.Opaque {}
+
+class __darwin_mcontext_avx512_64_full extends ffi.Opaque {}
 
 class __darwin_sigaltstack extends ffi.Struct {
   external ffi.Pointer<ffi.Void> ss_sp;
@@ -12837,24 +13010,6 @@ class proc_rlimit_control_wakeupmon extends ffi.Struct {
 typedef id_t = __darwin_id_t;
 typedef __darwin_id_t = __uint32_t;
 
-@ffi.Packed(1)
-class _OSUnalignedU16 extends ffi.Struct {
-  @ffi.Uint16()
-  external int __val;
-}
-
-@ffi.Packed(1)
-class _OSUnalignedU32 extends ffi.Struct {
-  @ffi.Uint32()
-  external int __val;
-}
-
-@ffi.Packed(1)
-class _OSUnalignedU64 extends ffi.Struct {
-  @ffi.Uint64()
-  external int __val;
-}
-
 class wait extends ffi.Opaque {}
 
 class div_t extends ffi.Struct {
@@ -12885,7 +13040,6 @@ typedef dev_t = __darwin_dev_t;
 typedef __darwin_dev_t = __int32_t;
 typedef mode_t = __darwin_mode_t;
 typedef __darwin_mode_t = __uint16_t;
-typedef __uint16_t = ffi.UnsignedShort;
 
 /// HD wallet purpose
 ///
@@ -13072,14 +13226,15 @@ abstract class TWHRP {
   static const int TWHRPBitcoinTestnet = 46;
   static const int TWHRPStargaze = 47;
   static const int TWHRPNativeEvmos = 48;
-  static const int TWHRPJuno = 49;
-  static const int TWHRPTBinance = 50;
-  static const int TWHRPStride = 51;
-  static const int TWHRPAxelar = 52;
-  static const int TWHRPCrescent = 53;
-  static const int TWHRPKujira = 54;
-  static const int TWHRPComdex = 55;
-  static const int TWHRPNeutron = 56;
+  static const int TWHRPYymmTestnet = 49;
+  static const int TWHRPJuno = 50;
+  static const int TWHRPTBinance = 51;
+  static const int TWHRPStride = 52;
+  static const int TWHRPAxelar = 53;
+  static const int TWHRPCrescent = 54;
+  static const int TWHRPKujira = 55;
+  static const int TWHRPComdex = 56;
+  static const int TWHRPNeutron = 57;
 }
 
 /// Defines a resizable string.
@@ -13265,6 +13420,9 @@ abstract class TWCoinType {
   static const int TWCoinTypeBitgert = 10032520;
   static const int TWCoinTypeMerlin = 10004200;
   static const int TWCoinTypeMerlinTestnet = 10686868;
+  static const int TWCoinTypeBlast = 100081457;
+  static const int TWCoinTypeBlastTestnetSepolia = 168587773;
+  static const int TWCoinTypeYymmTestnet = 20585858;
 }
 
 /// CoinTypeConfiguration functions
@@ -13526,6 +13684,7 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDMoonriver = 1285;
   static const int TWEthereumChainIDRonin = 2020;
   static const int TWEthereumChainIDKavaevm = 2222;
+  static const int TWEthereumChainIDMerlin = 4200;
   static const int TWEthereumChainIDIotexevm = 4689;
   static const int TWEthereumChainIDMantle = 5000;
   static const int TWEthereumChainIDMantletestnet = 5001;
@@ -13535,11 +13694,12 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDBitgert = 32520;
   static const int TWEthereumChainIDArbitrumnova = 42170;
   static const int TWEthereumChainIDArbitrum = 42161;
+  static const int TWEthereumChainIDMerlintestnet = 686868;
   static const int TWEthereumChainIDSmartchain = 56;
+  static const int TWEthereumChainIDBlast = 81457;
+  static const int TWEthereumChainIDBlasttestnet = 168587773;
   static const int TWEthereumChainIDNeon = 245022934;
   static const int TWEthereumChainIDAurora = 1313161554;
-  static const int TWEthereumChainIDMerlin = 4200;
-  static const int TWEthereumChainIDMerlinTestnet = 686868;
 }
 
 /// Solana address helper functions
@@ -13548,17 +13708,17 @@ class TWSolanaAddress extends ffi.Opaque {}
 /// Barz functions
 class TWBarz extends ffi.Opaque {}
 
-const int __bool_true_false_are_defined = 1;
-
 const int true1 = 1;
 
 const int false1 = 0;
 
-const int __DARWIN_ONLY_64_BIT_INO_T = 1;
+const int __bool_true_false_are_defined = 1;
+
+const int __DARWIN_ONLY_64_BIT_INO_T = 0;
 
 const int __DARWIN_ONLY_UNIX_CONFORMANCE = 1;
 
-const int __DARWIN_ONLY_VERS_1050 = 1;
+const int __DARWIN_ONLY_VERS_1050 = 0;
 
 const int __DARWIN_UNIX03 = 1;
 
@@ -13567,6 +13727,10 @@ const int __DARWIN_64_BIT_INO_T = 1;
 const int __DARWIN_VERS_1050 = 1;
 
 const int __DARWIN_NON_CANCELABLE = 0;
+
+const String __DARWIN_SUF_64_BIT_INO_T = '\$INODE64';
+
+const String __DARWIN_SUF_1050 = '\$1050';
 
 const String __DARWIN_SUF_EXTSN = '\$DARWIN_EXTSN';
 
@@ -13581,10 +13745,6 @@ const int __STDC_WANT_LIB_EXT1__ = 1;
 const int __DARWIN_NO_LONG_LONG = 0;
 
 const int _DARWIN_FEATURE_64_BIT_INODE = 1;
-
-const int _DARWIN_FEATURE_ONLY_64_BIT_INODE = 1;
-
-const int _DARWIN_FEATURE_ONLY_VERS_1050 = 1;
 
 const int _DARWIN_FEATURE_ONLY_UNIX_CONFORMANCE = 1;
 
@@ -13834,10 +13994,6 @@ const int __MAC_13_0 = 130000;
 
 const int __MAC_13_1 = 130100;
 
-const int __MAC_13_2 = 130200;
-
-const int __MAC_13_3 = 130300;
-
 const int __IPHONE_2_0 = 20000;
 
 const int __IPHONE_2_1 = 20100;
@@ -13964,10 +14120,6 @@ const int __IPHONE_16_1 = 160100;
 
 const int __IPHONE_16_2 = 160200;
 
-const int __IPHONE_16_3 = 160300;
-
-const int __IPHONE_16_4 = 160400;
-
 const int __TVOS_9_0 = 90000;
 
 const int __TVOS_9_1 = 90100;
@@ -14040,10 +14192,6 @@ const int __TVOS_16_1 = 160100;
 
 const int __TVOS_16_2 = 160200;
 
-const int __TVOS_16_3 = 160300;
-
-const int __TVOS_16_4 = 160400;
-
 const int __WATCHOS_1_0 = 10000;
 
 const int __WATCHOS_2_0 = 20000;
@@ -14111,10 +14259,6 @@ const int __WATCHOS_9_0 = 90000;
 const int __WATCHOS_9_1 = 90100;
 
 const int __WATCHOS_9_2 = 90200;
-
-const int __WATCHOS_9_3 = 90300;
-
-const int __WATCHOS_9_4 = 90400;
 
 const int MAC_OS_X_VERSION_10_0 = 1000;
 
@@ -14192,9 +14336,9 @@ const int __DRIVERKIT_20_0 = 200000;
 
 const int __DRIVERKIT_21_0 = 210000;
 
-const int __MAC_OS_X_VERSION_MIN_REQUIRED = 130000;
+const int __MAC_OS_X_VERSION_MIN_REQUIRED = 120000;
 
-const int __MAC_OS_X_VERSION_MAX_ALLOWED = 130300;
+const int __MAC_OS_X_VERSION_MAX_ALLOWED = 130100;
 
 const int __ENABLE_LEGACY_MAC_AVAILABILITY = 1;
 
@@ -14202,7 +14346,7 @@ const int __DARWIN_NSIG = 32;
 
 const int NSIG = 32;
 
-const int _ARM_SIGNAL_ = 1;
+const int _I386_SIGNAL_H_ = 1;
 
 const int SIGHUP = 1;
 
@@ -14268,7 +14412,27 @@ const int SIGUSR1 = 30;
 
 const int SIGUSR2 = 31;
 
-const int __DARWIN_OPAQUE_ARM_THREAD_STATE64 = 0;
+const int FP_PREC_24B = 0;
+
+const int FP_PREC_53B = 2;
+
+const int FP_PREC_64B = 3;
+
+const int FP_RND_NEAR = 0;
+
+const int FP_RND_DOWN = 1;
+
+const int FP_RND_UP = 2;
+
+const int FP_CHOP = 3;
+
+const int FP_STATE_BYTES = 512;
+
+const int _X86_INSTRUCTION_STATE_MAX_INSN_BYTES = 2380;
+
+const int _X86_INSTRUCTION_STATE_CACHELINE_SIZE = 64;
+
+const int __LASTBRANCH_MAX = 32;
 
 const int SIGEV_NONE = 0;
 

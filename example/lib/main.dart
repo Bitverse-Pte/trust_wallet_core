@@ -6,6 +6,7 @@ import 'package:flutter_trust_wallet_core_example/cosmos_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/tron_example.dart';
+import 'package:flutter_trust_wallet_core_example/yymm_testnet_example.dart';
 
 List<String> logs = [];
 
@@ -90,6 +91,12 @@ class _ExampleState extends State<Example> {
                     name: 'Cosmos',
                     builder: (_) {
                       return CosmosExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'YymmTestnet',
+                    builder: (_) {
+                      return YymmTestnetExample(wallet);
                     },
                   ),
                   _exampleItem(

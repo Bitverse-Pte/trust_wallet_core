@@ -133,6 +133,9 @@ abstract class TWCoinType {
   static const int TWCoinTypeBitgert = 10032520;
   static const int TWCoinTypeMerlin = 10004200;
   static const int TWCoinTypeMerlinTestnet = 10686868;
+  static const int TWCoinTypeBlast = 100081457;
+  static const int TWCoinTypeBlastTestnetSepolia = 168587773;
+  static const int TWCoinTypeYymmTestnet = 20585858;
 
   /// Returns the blockchain for a coin type.
   ///

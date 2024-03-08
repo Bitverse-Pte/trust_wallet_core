@@ -66,6 +66,8 @@ enum TWEthereumChainID {
     TWEthereumChainIDArbitrum = 42161,
     TWEthereumChainIDMerlintestnet = 686868,
     TWEthereumChainIDSmartchain = 56,
+    TWEthereumChainIDBlast = 81457,
+    TWEthereumChainIDBlasttestnet = 168587773,
     TWEthereumChainIDNeon = 245022934,
     TWEthereumChainIDAurora = 1313161554,
 };

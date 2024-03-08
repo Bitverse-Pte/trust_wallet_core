@@ -54,6 +54,7 @@ enum TWEthereumChainID {
     TWEthereumChainIDMoonriver = 1285,
     TWEthereumChainIDRonin = 2020,
     TWEthereumChainIDKavaevm = 2222,
+    TWEthereumChainIDMerlin = 4200,
     TWEthereumChainIDIotexevm = 4689,
     TWEthereumChainIDMantle = 5000,
     TWEthereumChainIDMantletestnet = 5001,
@@ -63,7 +64,10 @@ enum TWEthereumChainID {
     TWEthereumChainIDBitgert = 32520,
     TWEthereumChainIDArbitrumnova = 42170,
     TWEthereumChainIDArbitrum = 42161,
+    TWEthereumChainIDMerlintestnet = 686868,
     TWEthereumChainIDSmartchain = 56,
+    TWEthereumChainIDBlast = 81457,
+    TWEthereumChainIDBlasttestnet = 168587773,
     TWEthereumChainIDNeon = 245022934,
     TWEthereumChainIDAurora = 1313161554,
 };
