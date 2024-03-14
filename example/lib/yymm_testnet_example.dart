@@ -41,6 +41,8 @@ class _YymmTestnetExampleState extends BaseExampleState<YymmTestnetExample> {
 
     privateKey.delete();
     publicKey.delete();
+
+    test();
   }
 
   void test(){

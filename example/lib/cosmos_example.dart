@@ -19,7 +19,7 @@ class _CosmosExampleState extends BaseExampleState<CosmosExample> {
   @override
   void initState() {
     super.initState();
-    int coinId = TWCoinType.TWCoinTypeCosmos;
+    int coinId = TWCoinType.TWCoinTypeYymmTestnet;
     /// 可以指定派生路径
     /// String derivationPath = "m/44'/60'/0'/0/0";
     /// final privateKey = widget.wallet.getKey(coinId, derivationPath);
