@@ -2807,6 +2807,14 @@ class TrustWalletCore {
   set HRP_YYMMTESTNET(ffi.Pointer<ffi.Char> value) =>
       _HRP_YYMMTESTNET.value = value;
 
+  late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_YYMMDEVNET =
+      _lookup<ffi.Pointer<ffi.Char>>('HRP_YYMMDEVNET');
+
+  ffi.Pointer<ffi.Char> get HRP_YYMMDEVNET => _HRP_YYMMDEVNET.value;
+
+  set HRP_YYMMDEVNET(ffi.Pointer<ffi.Char> value) =>
+      _HRP_YYMMDEVNET.value = value;
+
   late final ffi.Pointer<ffi.Pointer<ffi.Char>> _HRP_JUNO =
       _lookup<ffi.Pointer<ffi.Char>>('HRP_JUNO');
 
@@ -13227,14 +13235,15 @@ abstract class TWHRP {
   static const int TWHRPStargaze = 47;
   static const int TWHRPNativeEvmos = 48;
   static const int TWHRPYymmTestnet = 49;
-  static const int TWHRPJuno = 50;
-  static const int TWHRPTBinance = 51;
-  static const int TWHRPStride = 52;
-  static const int TWHRPAxelar = 53;
-  static const int TWHRPCrescent = 54;
-  static const int TWHRPKujira = 55;
-  static const int TWHRPComdex = 56;
-  static const int TWHRPNeutron = 57;
+  static const int TWHRPYymmDevnet = 50;
+  static const int TWHRPJuno = 51;
+  static const int TWHRPTBinance = 52;
+  static const int TWHRPStride = 53;
+  static const int TWHRPAxelar = 54;
+  static const int TWHRPCrescent = 55;
+  static const int TWHRPKujira = 56;
+  static const int TWHRPComdex = 57;
+  static const int TWHRPNeutron = 58;
 }
 
 /// Defines a resizable string.
@@ -13423,6 +13432,7 @@ abstract class TWCoinType {
   static const int TWCoinTypeBlast = 100081457;
   static const int TWCoinTypeBlastTestnetSepolia = 168587773;
   static const int TWCoinTypeYymmTestnet = 20585858;
+  static const int TWCoinTypeYymmDevnet = 21585858;
 }
 
 /// CoinTypeConfiguration functions

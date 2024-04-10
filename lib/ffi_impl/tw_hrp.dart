@@ -54,12 +54,13 @@ abstract class TWHRP {
   static const int TWHRPStargaze = 47;
   static const int TWHRPNativeEvmos = 48;
   static const int TWHRPYymmTestnet = 49;
-  static const int TWHRPJuno = 50;
-  static const int TWHRPTBinance = 51;
-  static const int TWHRPStride = 52;
-  static const int TWHRPAxelar = 53;
-  static const int TWHRPCrescent = 54;
-  static const int TWHRPKujira = 55;
-  static const int TWHRPComdex = 56;
-  static const int TWHRPNeutron = 57;
+  static const int TWHRPYymmDevnet = 50;
+  static const int TWHRPJuno = 51;
+  static const int TWHRPTBinance = 52;
+  static const int TWHRPStride = 53;
+  static const int TWHRPAxelar = 54;
+  static const int TWHRPCrescent = 55;
+  static const int TWHRPKujira = 56;
+  static const int TWHRPComdex = 57;
+  static const int TWHRPNeutron = 58;
  }
