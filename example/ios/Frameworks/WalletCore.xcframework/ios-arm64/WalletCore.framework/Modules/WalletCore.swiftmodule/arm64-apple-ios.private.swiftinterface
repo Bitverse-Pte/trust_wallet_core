@@ -2382,6 +2382,7 @@ public enum CoinType : Swift.UInt32, Swift.CaseIterable {
   case blast
   case blastTestnetSepolia
   case yymmTestnet
+  case yymmDevnet
   public init?(rawValue: Swift.UInt32)
   public typealias AllCases = [WalletCore.CoinType]
   public typealias RawValue = Swift.UInt32
@@ -4902,6 +4903,7 @@ public enum HRP : Swift.UInt32, Swift.CaseIterable, Swift.CustomStringConvertibl
   case stargaze
   case nativeEvmos
   case yymmTestnet
+  case yymmDevnet
   case juno
   case tbinance
   case stride
