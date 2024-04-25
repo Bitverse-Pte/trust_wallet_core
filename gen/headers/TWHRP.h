@@ -66,6 +66,7 @@ enum TWHRP {
     TWHRPSei     /* "sei" */,
     TWHRPBitcoinTestnet     /* "tb" */,
     TWHRPStargaze     /* "stars" */,
+    TWHRPYymm     /* "yymm" */,
     TWHRPNativeEvmos     /* "evmos" */,
     TWHRPYymmTestnet     /* "yymm" */,
     TWHRPYymmDevnet     /* "yymm" */,
@@ -126,6 +127,7 @@ static const char *_Nonnull HRP_NOBLE = "noble";
 static const char *_Nonnull HRP_SEI = "sei";
 static const char *_Nonnull HRP_BITCOINTESTNET = "tb";
 static const char *_Nonnull HRP_STARGAZE = "stars";
+static const char *_Nonnull HRP_YYMM = "yymm";
 static const char *_Nonnull HRP_NATIVEEVMOS = "evmos";
 static const char *_Nonnull HRP_YYMMTESTNET = "yymm";
 static const char *_Nonnull HRP_YYMMDEVNET = "yymm";
