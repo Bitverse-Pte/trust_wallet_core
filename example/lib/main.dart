@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
+import 'package:flutter_trust_wallet_core_example/avax_fuji_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
 import 'package:flutter_trust_wallet_core_example/cosmos_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
+import 'package:flutter_trust_wallet_core_example/mantle_sepolia_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
+import 'package:flutter_trust_wallet_core_example/sepolia_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/tron_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_devnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_mainnet_example.dart';
@@ -111,6 +114,24 @@ class _ExampleState extends State<Example> {
                     name: 'YymmDevnet',
                     builder: (_) {
                       return YymmDevnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'AvaxFujiTestnet',
+                    builder: (_) {
+                      return AvaxFujiTestnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'MantleSepoliaTestnet',
+                    builder: (_) {
+                      return MantleSepoliaTestnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'SepoliaTestnet',
+                    builder: (_) {
+                      return SepoliaTestnetExample(wallet);
                     },
                   ),
                   _exampleItem(
