@@ -3,6 +3,8 @@ import 'package:flutter_trust_wallet_core/flutter_trust_wallet_core.dart';
 import 'package:flutter_trust_wallet_core_example/avax_fuji_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/bitcoin_transaction_example.dart';
+import 'package:flutter_trust_wallet_core_example/bitlayer_mainnet_example.dart';
+import 'package:flutter_trust_wallet_core_example/bitlayer_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/cosmos_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
 import 'package:flutter_trust_wallet_core_example/mantle_sepolia_testnet_example.dart';
@@ -114,6 +116,18 @@ class _ExampleState extends State<Example> {
                     name: 'YymmDevnet',
                     builder: (_) {
                       return YymmDevnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'BitlayerTestnet',
+                    builder: (_) {
+                      return BitlayerTestnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'BitlayerMainnet',
+                    builder: (_) {
+                      return BitlayerMainnetExample(wallet);
                     },
                   ),
                   _exampleItem(
