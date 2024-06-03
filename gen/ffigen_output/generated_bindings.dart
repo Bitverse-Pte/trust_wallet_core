@@ -13445,6 +13445,8 @@ abstract class TWCoinType {
   static const int TWCoinTypeMantleSepoliaTestnet = 10005003;
   static const int TWCoinTypeSepoliaTestnet = 11155111;
   static const int TWCoinTypeAvalancheFujiTestnet = 10043113;
+  static const int TWCoinTypeBitlayerMainnet = 10200901;
+  static const int TWCoinTypeBitlayerTestnet = 10200810;
 }
 
 /// CoinTypeConfiguration functions
@@ -13718,6 +13720,8 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDArbitrumnova = 42170;
   static const int TWEthereumChainIDArbitrum = 42161;
   static const int TWEthereumChainIDAvalanchefujitestnet = 43113;
+  static const int TWEthereumChainIDBitlayertestnet = 200810;
+  static const int TWEthereumChainIDBitlayer = 200901;
   static const int TWEthereumChainIDMerlintestnet = 686868;
   static const int TWEthereumChainIDSepolia = 11155111;
   static const int TWEthereumChainIDSmartchain = 56;
