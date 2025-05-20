@@ -143,6 +143,8 @@ abstract class TWCoinType {
   static const int TWCoinTypeAvalancheFujiTestnet = 10043113;
   static const int TWCoinTypeBitlayerMainnet = 10200901;
   static const int TWCoinTypeBitlayerTestnet = 10200810;
+  static const int TWCoinTypeHyperEVM = 10000999;
+  static const int TWCoinTypeHyperEVMTestnet = 10000998;
 
   /// Returns the blockchain for a coin type.
   ///

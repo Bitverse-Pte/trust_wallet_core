@@ -7,6 +7,8 @@ import 'package:flutter_trust_wallet_core_example/bitlayer_mainnet_example.dart'
 import 'package:flutter_trust_wallet_core_example/bitlayer_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/cosmos_example.dart';
 import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
+import 'package:flutter_trust_wallet_core_example/hyperevm_mainnet_example.dart';
+import 'package:flutter_trust_wallet_core_example/hyperevm_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/mantle_sepolia_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/sepolia_testnet_example.dart';
@@ -116,6 +118,18 @@ class _ExampleState extends State<Example> {
                     name: 'YymmDevnet',
                     builder: (_) {
                       return YymmDevnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'HyperEVM',
+                    builder: (_) {
+                      return HyperEvmMainnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'HyperEVMTestnet',
+                    builder: (_) {
+                      return HyperEvmTestnetExample(wallet);
                     },
                   ),
                   _exampleItem(

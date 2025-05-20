@@ -54,6 +54,8 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDAvalanchefujitestnet = 43113;
   static const int TWEthereumChainIDBitlayertestnet = 200810;
   static const int TWEthereumChainIDBitlayer = 200901;
+  static const int TWEthereumChainIDTWCoinTypeHyperEVM = 999;
+  static const int TWEthereumChainIDHyperEVMTestnet = 998;
   static const int TWEthereumChainIDMerlintestnet = 686868;
   static const int TWEthereumChainIDSepolia = 11155111;
   static const int TWEthereumChainIDSmartchain = 56;
