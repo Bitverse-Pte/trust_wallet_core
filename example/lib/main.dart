@@ -10,6 +10,8 @@ import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
 import 'package:flutter_trust_wallet_core_example/mantle_sepolia_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/sepolia_testnet_example.dart';
+import 'package:flutter_trust_wallet_core_example/solana_example.dart';
+import 'package:flutter_trust_wallet_core_example/ton_address_example.dart';
 import 'package:flutter_trust_wallet_core_example/tron_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_devnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_mainnet_example.dart';
@@ -40,8 +42,9 @@ class Example extends StatefulWidget {
 class _ExampleState extends State<Example> {
   late HDWallet wallet;
   //String mnemonic = "rent craft script crucial item someone dream federal notice page shrug pipe young hover duty"; // 有测试币的 tron地址
-  String mnemonic = "across father winter fox pony erosion dinner venture search brown destroy good";
+  // String mnemonic = "gasp become thing view slow uncover derive private media bounce lunch network"; // ce85
   //String mnemonic = "lens merge apology vast reunion someone dutch pond entire gather swear time";
+  String mnemonic = "abstract share damage dish annual volcano spawn make strike analyst say oil"; //220c
 
   @override
   void initState() {
@@ -77,9 +80,21 @@ class _ExampleState extends State<Example> {
                 padding: EdgeInsets.zero,
                 children: [
                   _exampleItem(
+                    name: 'Solana',
+                    builder: (_) {
+                      return SolanaExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
                     name: 'Ethereum',
                     builder: (_) {
                       return EthereumExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'TON Address',
+                    builder: (_) {
+                      return TonAddressExample(wallet);
                     },
                   ),
                   _exampleItem(
