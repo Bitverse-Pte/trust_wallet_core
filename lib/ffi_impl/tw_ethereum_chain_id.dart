@@ -61,6 +61,7 @@ abstract class TWEthereumChainID {
   static const int TWEthereumChainIDSmartchain = 56;
   static const int TWEthereumChainIDBlast = 81457;
   static const int TWEthereumChainIDBlasttestnet = 168587773;
+  static const int TWEthereumChainIDPharostestnet = 688688;
   static const int TWEthereumChainIDNeon = 245022934;
   static const int TWEthereumChainIDAurora = 1313161554;
 }
