@@ -10,6 +10,7 @@ import 'package:flutter_trust_wallet_core_example/ethereum_example.dart';
 import 'package:flutter_trust_wallet_core_example/hyperevm_mainnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/hyperevm_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/mantle_sepolia_testnet_example.dart';
+import 'package:flutter_trust_wallet_core_example/pharos_atlantic_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/pharos_testnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/private_key_is_valid_example.dart';
 import 'package:flutter_trust_wallet_core_example/sepolia_testnet_example.dart';
@@ -167,6 +168,12 @@ class _ExampleState extends State<Example> {
                     name: 'PharosTestnet',
                     builder: (_) {
                       return PharosTestnetExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'PharosAtlanticTestnet',
+                    builder: (_) {
+                      return PharosAtlanticTestnetExample(wallet);
                     },
                   ),
                   _exampleItem(
