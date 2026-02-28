@@ -23,4 +23,9 @@ your project file structs will look like this
 
 then you are ready to run.
 
-
+#generate files with new chain
+1. first run commands in wallet-core, generate all android and ios files
+2. copy /include/TrustWalletCore/*.h files to /gen/headers
+3. run 'dart run ffigen' in project root path
+4. the generated_binding.dart will be changed
+5. copy TWCoinType.dart etc. 

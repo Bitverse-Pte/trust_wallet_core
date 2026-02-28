@@ -1,8 +1,6 @@
-// Copyright © 2017-2020 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 
@@ -28,6 +26,7 @@ typedef TWData *_Nonnull TW_Binance_Proto_TransferOut;
 typedef TWData *_Nonnull TW_Binance_Proto_SideChainDelegate;
 typedef TWData *_Nonnull TW_Binance_Proto_SideChainRedelegate;
 typedef TWData *_Nonnull TW_Binance_Proto_SideChainUndelegate;
+typedef TWData *_Nonnull TW_Binance_Proto_SideChainStakeMigration;
 typedef TWData *_Nonnull TW_Binance_Proto_TimeLockOrder;
 typedef TWData *_Nonnull TW_Binance_Proto_TimeRelockOrder;
 typedef TWData *_Nonnull TW_Binance_Proto_TimeUnlockOrder;

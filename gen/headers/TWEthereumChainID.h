@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE from \registry.json, changes made here WILL BE LOST.
 //
@@ -20,22 +18,27 @@ enum TWEthereumChainID {
     TWEthereumChainIDEthereum = 1,
     TWEthereumChainIDClassic = 61,
     TWEthereumChainIDRootstock = 30,
+    TWEthereumChainIDManta = 169,
     TWEthereumChainIDPoa = 99,
     TWEthereumChainIDOpbnb = 204,
     TWEthereumChainIDTfuelevm = 361,
     TWEthereumChainIDVechain = 74,
     TWEthereumChainIDCallisto = 820,
-    TWEthereumChainIDTomochain = 88,
+    TWEthereumChainIDViction = 88,
     TWEthereumChainIDPolygon = 137,
     TWEthereumChainIDOkc = 66,
     TWEthereumChainIDThundertoken = 108,
     TWEthereumChainIDCfxevm = 1030,
+    TWEthereumChainIDLightlink = 1890,
+    TWEthereumChainIDBouncebit = 6001,
     TWEthereumChainIDGochain = 60,
+    TWEthereumChainIDZeneon = 7332,
     TWEthereumChainIDBase = 8453,
     TWEthereumChainIDMeter = 82,
     TWEthereumChainIDCelo = 42220,
     TWEthereumChainIDLinea = 59144,
-    TWEthereumChainIDScroll = 534353,
+    TWEthereumChainIDScroll = 534352,
+    TWEthereumChainIDZklinknova = 810180,
     TWEthereumChainIDWanchain = 888,
     TWEthereumChainIDGoerli = 5,
     TWEthereumChainIDCronos = 25,
@@ -48,10 +51,13 @@ enum TWEthereumChainID {
     TWEthereumChainIDZksync = 324,
     TWEthereumChainIDHeco = 128,
     TWEthereumChainIDAcalaevm = 787,
+    TWEthereumChainIDHyperevmtestnet = 998,
+    TWEthereumChainIDHyperevm = 999,
     TWEthereumChainIDMetis = 1088,
     TWEthereumChainIDPolygonzkevm = 1101,
     TWEthereumChainIDMoonbeam = 1284,
     TWEthereumChainIDMoonriver = 1285,
+    TWEthereumChainIDPharos = 1672,
     TWEthereumChainIDRonin = 2020,
     TWEthereumChainIDKavaevm = 2222,
     TWEthereumChainIDMerlin = 4200,
@@ -69,8 +75,11 @@ enum TWEthereumChainID {
     TWEthereumChainIDBitlayertestnet = 200810,
     TWEthereumChainIDBitlayer = 200901,
     TWEthereumChainIDMerlintestnet = 686868,
+    TWEthereumChainIDPharostestnet = 688688,
+    TWEthereumChainIDPharosatlantictestnet = 688689,
     TWEthereumChainIDSepolia = 11155111,
     TWEthereumChainIDSmartchain = 56,
+    TWEthereumChainIDZetaevm = 7000,
     TWEthereumChainIDBlast = 81457,
     TWEthereumChainIDBlasttestnet = 168587773,
     TWEthereumChainIDNeon = 245022934,

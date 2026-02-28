@@ -1,8 +1,6 @@
-// Copyright © 2017-2020 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE, changes made here WILL BE LOST.
 
@@ -16,5 +14,6 @@ typedef TWData *_Nonnull TW_Cosmos_Proto_Height;
 typedef TWData *_Nonnull TW_Cosmos_Proto_THORChainAsset;
 typedef TWData *_Nonnull TW_Cosmos_Proto_THORChainCoin;
 typedef TWData *_Nonnull TW_Cosmos_Proto_Message;
+typedef TWData *_Nonnull TW_Cosmos_Proto_SignerInfo;
 typedef TWData *_Nonnull TW_Cosmos_Proto_SigningInput;
 typedef TWData *_Nonnull TW_Cosmos_Proto_SigningOutput;

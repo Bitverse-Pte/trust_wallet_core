@@ -19,6 +19,7 @@ import 'package:flutter_trust_wallet_core_example/tron_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_devnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_mainnet_example.dart';
 import 'package:flutter_trust_wallet_core_example/yymm_testnet_example.dart';
+import 'package:flutter_trust_wallet_core_example/zigchain_mainnet_example.dart';
 
 List<String> logs = [];
 
@@ -181,6 +182,12 @@ class _ExampleState extends State<Example> {
                     name: 'Pharos',
                     builder: (_) {
                       return PharosExample(wallet);
+                    },
+                  ),
+                  _exampleItem(
+                    name: 'ZIGChain',
+                    builder: (_) {
+                      return ZIGChainMainnetExample(wallet);
                     },
                   ),
                   _exampleItem(

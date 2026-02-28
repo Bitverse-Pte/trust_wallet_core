@@ -1,8 +1,6 @@
-// Copyright © 2017-2023 Trust Wallet.
+// SPDX-License-Identifier: Apache-2.0
 //
-// This file is part of Trust. The full Trust copyright notice, including
-// terms governing use, modification, and redistribution, is contained in the
-// file LICENSE at the root of the source code distribution tree.
+// Copyright © 2017 Trust Wallet.
 //
 // This is a GENERATED FILE from \registry.json, changes made here WILL BE LOST.
 //
@@ -54,6 +52,7 @@ enum TWHRP {
     TWHRPOsmosis     /* "osmo" */,
     TWHRPTerraV2     /* "terra" */,
     TWHRPCoreum     /* "core" */,
+    TWHRPNativeZetaChain     /* "zeta" */,
     TWHRPNativeCanto     /* "canto" */,
     TWHRPSommelier     /* "somm" */,
     TWHRPFetchAI     /* "fetch" */,
@@ -67,9 +66,12 @@ enum TWHRP {
     TWHRPBitcoinTestnet     /* "tb" */,
     TWHRPStargaze     /* "stars" */,
     TWHRPYymm     /* "yymm" */,
+    TWHRPZIGChain     /* "zig" */,
     TWHRPNativeEvmos     /* "evmos" */,
     TWHRPYymmTestnet     /* "yymm" */,
+    TWHRPTia     /* "celestia" */,
     TWHRPYymmDevnet     /* "yymm" */,
+    TWHRPDydx     /* "dydx" */,
     TWHRPJuno     /* "juno" */,
     TWHRPTBinance     /* "tbnb" */,
     TWHRPStride     /* "stride" */,
@@ -115,6 +117,7 @@ static const char *_Nonnull HRP_NATIVEINJECTIVE = "inj";
 static const char *_Nonnull HRP_OSMOSIS = "osmo";
 static const char *_Nonnull HRP_TERRAV2 = "terra";
 static const char *_Nonnull HRP_COREUM = "core";
+static const char *_Nonnull HRP_ZETACHAIN = "zeta";
 static const char *_Nonnull HRP_NATIVECANTO = "canto";
 static const char *_Nonnull HRP_SOMMELIER = "somm";
 static const char *_Nonnull HRP_FETCHAI = "fetch";
@@ -128,9 +131,12 @@ static const char *_Nonnull HRP_SEI = "sei";
 static const char *_Nonnull HRP_BITCOINTESTNET = "tb";
 static const char *_Nonnull HRP_STARGAZE = "stars";
 static const char *_Nonnull HRP_YYMM = "yymm";
+static const char *_Nonnull HRP_ZIGCHAIN = "zig";
 static const char *_Nonnull HRP_NATIVEEVMOS = "evmos";
 static const char *_Nonnull HRP_YYMMTESTNET = "yymm";
+static const char *_Nonnull HRP_TIA = "celestia";
 static const char *_Nonnull HRP_YYMMDEVNET = "yymm";
+static const char *_Nonnull HRP_DYDX = "dydx";
 static const char *_Nonnull HRP_JUNO = "juno";
 static const char *_Nonnull HRP_TBINANCE = "tbnb";
 static const char *_Nonnull HRP_STRIDE = "stride";

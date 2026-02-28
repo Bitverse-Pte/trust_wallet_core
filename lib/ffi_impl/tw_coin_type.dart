@@ -148,6 +148,7 @@ abstract class TWCoinType {
   static const int TWCoinTypePharosTestnet = 10688688;
   static const int TWCoinTypePharosAtlanticTestnet = 10688689;
   static const int TWCoinTypePharos = 10001672;
+  static const int TWCoinTypeZIGChain = 20006868;
 
   /// Returns the blockchain for a coin type.
   ///
